@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && ssh -i \"C:/Users/.ssh/my-react-app-key.pem\" ec2-user@3.35.167.255 \"sudo chown -R ec2-user:ec2-user /var/www/html/react-app && sudo chmod -R 775 /var/www/html/react-app\" && cd build && scp -i \"C:/Users/.ssh/my-react-app-key.pem\" -r * ec2-user@3.35.167.255:/var/www/html/react-app/ && ssh -i \"C:/Users/.ssh/my-react-app-key.pem\" ec2-user@3.35.167.255 \"sudo chown -R nginx:nginx /var/www/html/react-app && sudo chmod -R 755 /var/www/html/react-app && sudo systemctl restart nginx\""
   },
   "eslintConfig": {
     "extends": [
