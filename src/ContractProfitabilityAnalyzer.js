@@ -14,63 +14,129 @@ const SAMPLE_CONTRACTS = {
     ],
     availableItems: [
       { 
-        id: 1, name: "고성능 노트북", price: 1000000, theme: "electronics",
+        id: 1, 
+        name: "고성능 노트북",
+        theme: "electronics",
         availableQuantities: [1, 2, 5],
         recommendedQuantity: 2,
-        profitByQuantity: {
-          1: 375000,  // 37.5%
-          2: 350000,  // 35%
-          5: 300000   // 30%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 1000000,    // 1개 구매시 총액
+            totalProfit: 375000     // 1개 구매시 총 수익
+          },
+          2: {
+            totalPrice: 1900000,    // 2개 구매시 총액 (5% 할인 적용)
+            totalProfit: 700000     // 2개 구매시 총 수익
+          },
+          5: {
+            totalPrice: 4500000,    // 5개 구매시 총액 (10% 할인 적용)
+            totalProfit: 1500000    // 5개 구매시 총 수익
+          }
         }
       },
       { 
-        id: 2, name: "무선 마우스", price: 50000, theme: "electronics",
+        id: 2, 
+        name: "무선 마우스",
+        theme: "electronics",
         availableQuantities: [1, 3, 10],
         recommendedQuantity: 3,
-        profitByQuantity: {
-          1: 17500,   // 35%
-          3: 15000,   // 30%
-          10: 12500   // 25%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 50000,
+            totalProfit: 17500
+          },
+          3: {
+            totalPrice: 135000,    // 3개 구매시 총액 (10% 할인)
+            totalProfit: 45000
+          },
+          10: {
+            totalPrice: 400000,    // 10개 구매시 총액 (20% 할인)
+            totalProfit: 125000
+          }
         }
       },
       { 
-        id: 3, name: "인체공학 의자", price: 250000, theme: "furniture",
+        id: 3, 
+        name: "인체공학 의자",
+        theme: "furniture",
         availableQuantities: [1, 2, 3],
         recommendedQuantity: 2,
-        profitByQuantity: {
-          1: 100000,  // 40%
-          2: 87500,   // 35%
-          3: 75000    // 30%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 250000,
+            totalProfit: 100000
+          },
+          2: {
+            totalPrice: 475000,    // 5% 할인
+            totalProfit: 175000
+          },
+          3: {
+            totalPrice: 675000,    // 10% 할인
+            totalProfit: 225000
+          }
         }
       },
       { 
-        id: 4, name: "스탠딩 데스크", price: 400000, theme: "furniture",
+        id: 4, 
+        name: "스탠딩 데스크",
+        theme: "furniture",
         availableQuantities: [1, 2, 3],
         recommendedQuantity: 1,
-        profitByQuantity: {
-          1: 160000,  // 40%
-          2: 140000,  // 35%
-          3: 120000   // 30%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 400000,
+            totalProfit: 160000
+          },
+          2: {
+            totalPrice: 760000,    // 5% 할인
+            totalProfit: 280000
+          },
+          3: {
+            totalPrice: 1080000,   // 10% 할인
+            totalProfit: 360000
+          }
         }
       },
       { 
-        id: 5, name: "모니터 받침대", price: 80000, theme: "office",
+        id: 5, 
+        name: "모니터 받침대",
+        theme: "office",
         availableQuantities: [1, 5, 10],
         recommendedQuantity: 5,
-        profitByQuantity: {
-          1: 24000,   // 30%
-          5: 20000,   // 25%
-          10: 16000   // 20%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 80000,
+            totalProfit: 24000
+          },
+          5: {
+            totalPrice: 360000,    // 10% 할인
+            totalProfit: 100000
+          },
+          10: {
+            totalPrice: 640000,    // 20% 할인
+            totalProfit: 160000
+          }
         }
       },
       { 
-        id: 6, name: "문서 파쇄기", price: 150000, theme: "office",
+        id: 6, 
+        name: "문서 파쇄기",
+        theme: "office",
         availableQuantities: [1, 2, 3],
         recommendedQuantity: 1,
-        profitByQuantity: {
-          1: 52500,   // 35%
-          2: 45000,   // 30%
-          3: 37500    // 25%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 150000,
+            totalProfit: 52500
+          },
+          2: {
+            totalPrice: 285000,    // 5% 할인
+            totalProfit: 90000
+          },
+          3: {
+            totalPrice: 405000,    // 10% 할인
+            totalProfit: 112500
+          }
         }
       }
     ]
@@ -83,63 +149,129 @@ const SAMPLE_CONTRACTS = {
     ],
     availableItems: [
       { 
-        id: 3, name: "인체공학 의자", price: 250000, theme: "furniture",
+        id: 3, 
+        name: "인체공학 의자",
+        theme: "furniture",
         availableQuantities: [1, 2, 3],
         recommendedQuantity: 2,
-        profitByQuantity: {
-          1: 100000,  // 40%
-          2: 87500,   // 35%
-          3: 75000    // 30%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 250000,
+            totalProfit: 100000
+          },
+          2: {
+            totalPrice: 475000,
+            totalProfit: 175000
+          },
+          3: {
+            totalPrice: 675000,
+            totalProfit: 225000
+          }
         }
       },
       { 
-        id: 4, name: "스탠딩 데스크", price: 400000, theme: "furniture",
+        id: 4, 
+        name: "스탠딩 데스크",
+        theme: "furniture",
         availableQuantities: [1, 2, 3],
         recommendedQuantity: 1,
-        profitByQuantity: {
-          1: 160000,  // 40%
-          2: 140000,  // 35%
-          3: 120000   // 30%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 400000,
+            totalProfit: 160000
+          },
+          2: {
+            totalPrice: 760000,
+            totalProfit: 280000
+          },
+          3: {
+            totalPrice: 1080000,
+            totalProfit: 360000
+          }
         }
       },
       { 
-        id: 7, name: "화상회의 카메라", price: 200000, theme: "electronics",
+        id: 7, 
+        name: "화상회의 카메라",
+        theme: "electronics",
         availableQuantities: [1, 2, 5],
         recommendedQuantity: 2,
-        profitByQuantity: {
-          1: 70000,   // 35%
-          2: 60000,   // 30%
-          5: 50000    // 25%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 200000,
+            totalProfit: 70000
+          },
+          2: {
+            totalPrice: 380000,    // 5% 할인
+            totalProfit: 120000
+          },
+          5: {
+            totalPrice: 900000,    // 10% 할인
+            totalProfit: 250000
+          }
         }
       },
       { 
-        id: 8, name: "회의실 스피커", price: 180000, theme: "electronics",
+        id: 8, 
+        name: "회의실 스피커",
+        theme: "electronics",
         availableQuantities: [1, 2, 3],
         recommendedQuantity: 2,
-        profitByQuantity: {
-          1: 63000,   // 35%
-          2: 54000,   // 30%
-          3: 45000    // 25%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 180000,
+            totalProfit: 63000
+          },
+          2: {
+            totalPrice: 342000,    // 5% 할인
+            totalProfit: 108000
+          },
+          3: {
+            totalPrice: 486000,    // 10% 할인
+            totalProfit: 135000
+          }
         }
       },
       { 
-        id: 9, name: "책장", price: 120000, theme: "furniture",
+        id: 9, 
+        name: "책장",
+        theme: "furniture",
         availableQuantities: [1, 3, 5],
         recommendedQuantity: 3,
-        profitByQuantity: {
-          1: 42000,   // 35%
-          3: 36000,   // 30%
-          5: 30000    // 25%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 120000,
+            totalProfit: 42000
+          },
+          3: {
+            totalPrice: 324000,    // 10% 할인
+            totalProfit: 108000
+          },
+          5: {
+            totalPrice: 480000,    // 20% 할인
+            totalProfit: 150000
+          }
         }
       },
       { 
-        id: 10, name: "서류 보관함", price: 90000, theme: "office",
+        id: 10, 
+        name: "서류 보관함",
+        theme: "office",
         availableQuantities: [1, 5, 10],
         recommendedQuantity: 5,
-        profitByQuantity: {
-          1: 31500,   // 35%
-          5: 27000,   // 30%
-          10: 22500   // 25%
+        priceAndProfitByQuantity: {
+          1: {
+            totalPrice: 90000,
+            totalProfit: 31500
+          },
+          5: {
+            totalPrice: 405000,    // 10% 할인
+            totalProfit: 135000
+          },
+          10: {
+            totalPrice: 720000,    // 20% 할인
+            totalProfit: 225000
+          }
         }
       }
     ]
@@ -240,7 +372,7 @@ const ContractProfitabilityAnalyzer = () => {
     const modification = modifications?.find(mod => mod.id === item.id);
     const originalQuantity = contract.items?.find(i => i.id === item.id)?.quantity;
     
-    // 수정사항이 있지만 수��� 원래와 같은 경우 수정으로 표시하지 않음
+    // 수정사항이 있지만 수 원래와 같은 경우 수정으로 표시하지 않음
     const isQuantityModified = modification?.quantity !== undefined && 
                              modification.quantity !== originalQuantity;
     
@@ -254,24 +386,22 @@ const ContractProfitabilityAnalyzer = () => {
   };
 
   const calculateMetrics = (items) => {
-    const totalPrice = items.reduce((sum, item) => {
+    const totals = items.reduce((sum, item) => {
       const itemDetails = contract?.availableItems.find(i => i.id === item.id);
-      return sum + (itemDetails?.price || 0) * item.quantity;
-    }, 0);
+      const metrics = itemDetails?.priceAndProfitByQuantity[item.quantity] || { totalPrice: 0, totalProfit: 0 };
+      
+      return {
+        totalPrice: sum.totalPrice + metrics.totalPrice,
+        totalProfit: sum.totalProfit + metrics.totalProfit
+      };
+    }, { totalPrice: 0, totalProfit: 0 });
 
-    const totalProfit = items.reduce((sum, item) => {
-      const itemDetails = contract?.availableItems.find(i => i.id === item.id);
-      const profit = itemDetails?.profitByQuantity[item.quantity] || 0;
-      return sum + (profit * item.quantity);
-    }, 0);
-
-    const profitability = totalPrice > 0 
-      ? ((totalProfit / totalPrice) * 100).toFixed(1) 
+    const profitability = totals.totalPrice > 0 
+      ? ((totals.totalProfit / totals.totalPrice) * 100).toFixed(1) 
       : '0.0';
 
     return {
-      totalPrice,
-      totalProfit,
+      ...totals,
       profitability
     };
   };
@@ -296,7 +426,7 @@ const ContractProfitabilityAnalyzer = () => {
 
     // 세트 아이템 처리
     if (setInfo) {
-        // 현재 세트의 모�� 아이템이 원래 ��태와 동일한지 확인
+        // 현재 세트의 모 아이템이 원래 태와 동일한지 확인
         const isSetUnchanged = setInfo.ids.every(id => {
             const originalSetItem = contract?.items.find(i => i.id === id);
             const modSetItem = modifications.find(mod => mod.id === id);
@@ -441,6 +571,8 @@ const ContractProfitabilityAnalyzer = () => {
       return contract?.availableItems.find(i => i.id === item.id);
     };
 
+    const details = getItemDetails();
+
     const getCurrentContractQuantity = () => {
       return contract?.items.find(i => i.id === item.id)?.quantity;
     };
@@ -449,6 +581,7 @@ const ContractProfitabilityAnalyzer = () => {
     const [previewQuantity, setPreviewQuantity] = useState(() => {
       const existingMod = modifications.find(mod => mod.id === item.id);
       const originalItem = contract?.items.find(i => i.id === item.id);
+      const details = getItemDetails();
       
       if (existingMod && existingMod.action !== 'remove') {
         return existingMod.quantity;
@@ -456,7 +589,7 @@ const ContractProfitabilityAnalyzer = () => {
       if (originalItem) {
         return originalItem.quantity;
       }
-      return getItemDetails()?.recommendedQuantity || 0;
+      return details?.recommendedQuantity || 0;
     });
 
     // useEffect 추가하여 modifications 변경 시 previewQuantity 동기화
@@ -513,36 +646,16 @@ const ContractProfitabilityAnalyzer = () => {
       }
     };
 
-    const calculateProfit = (quantity) => {
-      const itemDetails = getItemDetails();
-      if (!itemDetails?.profitByQuantity) return 0;
-
-      // quantity가 확히 일치하는 수이 있으면 사용
-      if (itemDetails.profitByQuantity[quantity]) {
-        return itemDetails.profitByQuantity[quantity];
+    const getMetricsForQuantity = (quantity) => {
+      if (!details?.priceAndProfitByQuantity || !quantity) {
+        return { totalPrice: 0, totalProfit: 0 };
       }
-
-      // 없으면 가장 가까운 낮은 수량의 수익 사용
-      const availableQuantities = Object.keys(itemDetails.profitByQuantity)
-        .map(Number)
-        .sort((a, b) => a - b);
-      
-      for (let q of availableQuantities) {
-        if (q <= quantity) {
-          return itemDetails.profitByQuantity[q];
-        }
-      }
-
-      // 모든 수량보다 작으면 가장 작은 수량의 수익 사용
-      return itemDetails.profitByQuantity[availableQuantities[0]];
+      return details.priceAndProfitByQuantity[quantity] || { totalPrice: 0, totalProfit: 0 };
     };
 
-    const itemDetails = getItemDetails();
-    const profit = calculateProfit(previewQuantity);
-    const totalPrice = itemDetails ? itemDetails.price * previewQuantity : 0;
-    const totalProfit = profit * previewQuantity;
-    const profitability = profit && itemDetails?.price 
-      ? ((profit / itemDetails.price) * 100).toFixed(1) 
+    const metrics = getMetricsForQuantity(previewQuantity);
+    const profitability = metrics.totalPrice > 0 
+      ? ((metrics.totalProfit / metrics.totalPrice) * 100).toFixed(1) 
       : '0.0';
 
     // 미리보기 수량으로 수익률 영향도 계산
@@ -557,24 +670,21 @@ const ContractProfitabilityAnalyzer = () => {
       // 현재 계약의 전체 수익률 계산
       const currentItems = contract.items.map(contractItem => {
         const itemDetails = contract.availableItems.find(i => i.id === contractItem.id);
-        const profit = itemDetails?.profitByQuantity[contractItem.quantity] || 0;
-        return {
-          price: itemDetails?.price || 0,
-          profit,
-          quantity: contractItem.quantity
-        };
+        const metrics = itemDetails?.priceAndProfitByQuantity[contractItem.quantity] || 
+                       { totalPrice: 0, totalProfit: 0 };
+        return metrics;
       });
 
-      const currentTotalPrice = currentItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      const currentTotalProfit = currentItems.reduce((sum, item) => sum + (item.profit * item.quantity), 0);
+      const currentTotalPrice = currentItems.reduce((sum, item) => sum + item.totalPrice, 0);
+      const currentTotalProfit = currentItems.reduce((sum, item) => sum + item.totalProfit, 0);
       const currentProfitability = currentTotalPrice ? (currentTotalProfit / currentTotalPrice) * 100 : 0;
 
       // 새 아이템 추가 시 수익률 계산
-      const newItemProfit = calculateProfit(previewQuantity);
-      const newItemPrice = itemDetails?.price || 0;
+      const newItemMetrics = details?.priceAndProfitByQuantity[previewQuantity] || 
+                            { totalPrice: 0, totalProfit: 0 };
 
-      const newTotalPrice = currentTotalPrice + (newItemPrice * previewQuantity);
-      const newTotalProfit = currentTotalProfit + (newItemProfit * previewQuantity);
+      const newTotalPrice = currentTotalPrice + newItemMetrics.totalPrice;
+      const newTotalProfit = currentTotalProfit + newItemMetrics.totalProfit;
       const newProfitability = newTotalPrice ? (newTotalProfit / newTotalPrice) * 100 : 0;
 
       const impact = newProfitability - currentProfitability;
@@ -668,7 +778,7 @@ const ContractProfitabilityAnalyzer = () => {
 
     const statusInfo = getItemStatusInfo();
 
-    // 세트 정보 가져오기
+    // 세트 정보 가오기
     const setInfo = getSetInfo(contract?.id, item.id);
     const isSetHeader = setInfo?.ids[0] === item.id;
 
@@ -691,7 +801,7 @@ const ContractProfitabilityAnalyzer = () => {
           return;
         }
 
-        // 원래 상태가 아닌 경우 기존 로직 실행
+        // 원래 상태가 아닌 경우 기존 로직 행
         const newModifications = modifications.filter(mod => 
           !setInfo.ids.includes(mod.id)
         );
@@ -732,14 +842,14 @@ const ContractProfitabilityAnalyzer = () => {
           <div className="flex-1">
             {/* 첫 번째 줄: 아이템 이름과 수량 선택 */}
             <div className="flex items-center gap-2 mb-2">
-              <span className="font-medium">{itemDetails?.name}</span>
+              <span className="font-medium">{details?.name}</span>
               <select 
                 className="border rounded px-2 py-1 text-sm"
                 value={previewQuantity}
                 onChange={handleQuantityChange}
                 disabled={!contract}
               >
-                {itemDetails?.availableQuantities?.map(q => (
+                {details?.availableQuantities?.map(q => (
                   <option key={q} value={q}>{q}개</option>
                 ))}
               </select>
@@ -747,8 +857,8 @@ const ContractProfitabilityAnalyzer = () => {
 
             {/* 두 번째 줄: 가격 정보 */}
             <div className="text-sm text-gray-500 mb-2">
-              가격: ₩{totalPrice.toLocaleString()} | 
-              수익: ₩{totalProfit.toLocaleString()} | 
+              가격: ₩{metrics.totalPrice.toLocaleString()} | 
+              수익: ₩{metrics.totalProfit.toLocaleString()} | 
               수익률: {profitability}%
             </div>
 
@@ -780,9 +890,9 @@ const ContractProfitabilityAnalyzer = () => {
               )}
               
               {/* 테마 배지 */}
-              {showThemeBadge && itemDetails?.theme && (
+              {showThemeBadge && details?.theme && (
                 <Badge variant="outline" className="text-gray-500 border-gray-300">
-                  {itemDetails.theme}
+                  {details.theme}
                 </Badge>
               )}
             </div>
@@ -919,15 +1029,10 @@ const ContractProfitabilityAnalyzer = () => {
                   const itemDetails = contract.availableItems.find(i => i.id === contractItem.id);
                   if (!itemDetails) return null;
 
-                  // 현재 수량에 따른 수익 계산
-                  const currentProfit = itemDetails.profitByQuantity[contractItem.quantity] || 
-                                      itemDetails.profitByQuantity[Math.min(...Object.keys(itemDetails.profitByQuantity))];
-                  
-                  // ItemCard에 전달할 통합 정보 생성
+                  // ItemCard에 전달할 통합 정보 구성
                   const itemWithDetails = {
                     ...itemDetails,
-                    quantity: contractItem.quantity,
-                    included: true
+                    quantity: contractItem.quantity
                   };
 
                   return (
@@ -946,7 +1051,7 @@ const ContractProfitabilityAnalyzer = () => {
             </CardContent>
           </Card>
 
-          {/* 수정된 아이템 */}
+          {/* 정된 아이템 */}
           <Card className="flex-1 overflow-auto">
             <CardHeader className="py-3">
               <CardTitle>수정 사항</CardTitle>
