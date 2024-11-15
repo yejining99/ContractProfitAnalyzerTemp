@@ -3,287 +3,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Badge } from "./components/ui/badge";
 import { Plus, Minus, Search, TrendingUp, TrendingDown, PlusCircle } from "lucide-react";
+import { SAMPLE_CONTRACTS } from './data/sample-contracts';
+import { INCOMPATIBLE_ITEMS } from './data/incompatible-items';
+import { SET_ITEMS } from './data/set-items';
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "./components/ui/select";
 
-// 샘플 계약 데이터 수정
-const SAMPLE_CONTRACTS = {
-  '001': {
-    id: "001",
-    items: [
-      { id: 1, quantity: 5 },
-      { id: 2, quantity: 1 },
-    ],
-    availableItems: [
-      { 
-        id: 1, 
-        name: "고성능 노트북",
-        theme: "electronics",
-        availableQuantities: [1, 2, 5],
-        recommendedQuantity: 2,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 1000000,    // 1개 구매시 총액
-            totalProfit: 375000     // 1개 구매시 총 수익
-          },
-          2: {
-            totalPrice: 1900000,    // 2개 구매시 총액 (5% 할인 적용)
-            totalProfit: 700000     // 2개 구매시 총 수익
-          },
-          5: {
-            totalPrice: 4500000,    // 5개 구매시 총액 (10% 할인 적용)
-            totalProfit: 1500000    // 5개 구매시 총 수익
-          }
-        }
-      },
-      { 
-        id: 2, 
-        name: "무선 마우스",
-        theme: "electronics",
-        availableQuantities: [1, 3, 10],
-        recommendedQuantity: 3,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 50000,
-            totalProfit: 17500
-          },
-          3: {
-            totalPrice: 135000,    // 3개 구매시 총액 (10% 할인)
-            totalProfit: 45000
-          },
-          10: {
-            totalPrice: 400000,    // 10개 구매시 총액 (20% 할인)
-            totalProfit: 125000
-          }
-        }
-      },
-      { 
-        id: 3, 
-        name: "인체공학 의자",
-        theme: "furniture",
-        availableQuantities: [1, 2, 3],
-        recommendedQuantity: 2,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 250000,
-            totalProfit: 100000
-          },
-          2: {
-            totalPrice: 475000,    // 5% 할인
-            totalProfit: 175000
-          },
-          3: {
-            totalPrice: 675000,    // 10% 할인
-            totalProfit: 225000
-          }
-        }
-      },
-      { 
-        id: 4, 
-        name: "스탠딩 데스크",
-        theme: "furniture",
-        availableQuantities: [1, 2, 3],
-        recommendedQuantity: 1,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 400000,
-            totalProfit: 160000
-          },
-          2: {
-            totalPrice: 760000,    // 5% 할인
-            totalProfit: 280000
-          },
-          3: {
-            totalPrice: 1080000,   // 10% 할인
-            totalProfit: 360000
-          }
-        }
-      },
-      { 
-        id: 5, 
-        name: "모니터 받침대",
-        theme: "office",
-        availableQuantities: [1, 5, 10],
-        recommendedQuantity: 5,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 80000,
-            totalProfit: 24000
-          },
-          5: {
-            totalPrice: 360000,    // 10% 할인
-            totalProfit: 100000
-          },
-          10: {
-            totalPrice: 640000,    // 20% 할인
-            totalProfit: 160000
-          }
-        }
-      },
-      { 
-        id: 6, 
-        name: "문서 파쇄기",
-        theme: "office",
-        availableQuantities: [1, 2, 3],
-        recommendedQuantity: 1,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 150000,
-            totalProfit: 52500
-          },
-          2: {
-            totalPrice: 285000,    // 5% 할인
-            totalProfit: 90000
-          },
-          3: {
-            totalPrice: 405000,    // 10% 할인
-            totalProfit: 112500
-          }
-        }
-      }
-    ]
-  },
-  '002': {
-    id: "002",
-    items: [
-      { id: 3, quantity: 3 },
-      { id: 4, quantity: 2 }
-    ],
-    availableItems: [
-      { 
-        id: 3, 
-        name: "인체공학 의자",
-        theme: "furniture",
-        availableQuantities: [1, 2, 3],
-        recommendedQuantity: 2,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 250000,
-            totalProfit: 100000
-          },
-          2: {
-            totalPrice: 475000,
-            totalProfit: 175000
-          },
-          3: {
-            totalPrice: 675000,
-            totalProfit: 225000
-          }
-        }
-      },
-      { 
-        id: 4, 
-        name: "스탠딩 데스크",
-        theme: "furniture",
-        availableQuantities: [1, 2, 3],
-        recommendedQuantity: 1,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 400000,
-            totalProfit: 160000
-          },
-          2: {
-            totalPrice: 760000,
-            totalProfit: 280000
-          },
-          3: {
-            totalPrice: 1080000,
-            totalProfit: 360000
-          }
-        }
-      },
-      { 
-        id: 7, 
-        name: "화상회의 카메라",
-        theme: "electronics",
-        availableQuantities: [1, 2, 5],
-        recommendedQuantity: 2,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 200000,
-            totalProfit: 70000
-          },
-          2: {
-            totalPrice: 380000,    // 5% 할인
-            totalProfit: 120000
-          },
-          5: {
-            totalPrice: 900000,    // 10% 할인
-            totalProfit: 250000
-          }
-        }
-      },
-      { 
-        id: 8, 
-        name: "회의실 스피커",
-        theme: "electronics",
-        availableQuantities: [1, 2, 3],
-        recommendedQuantity: 2,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 180000,
-            totalProfit: 63000
-          },
-          2: {
-            totalPrice: 342000,    // 5% 할인
-            totalProfit: 108000
-          },
-          3: {
-            totalPrice: 486000,    // 10% 할인
-            totalProfit: 135000
-          }
-        }
-      },
-      { 
-        id: 9, 
-        name: "책장",
-        theme: "furniture",
-        availableQuantities: [1, 3, 5],
-        recommendedQuantity: 3,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 120000,
-            totalProfit: 42000
-          },
-          3: {
-            totalPrice: 324000,    // 10% 할인
-            totalProfit: 108000
-          },
-          5: {
-            totalPrice: 480000,    // 20% 할인
-            totalProfit: 150000
-          }
-        }
-      },
-      { 
-        id: 10, 
-        name: "서류 보관함",
-        theme: "office",
-        availableQuantities: [1, 5, 10],
-        recommendedQuantity: 5,
-        priceAndProfitByQuantity: {
-          1: {
-            totalPrice: 90000,
-            totalProfit: 31500
-          },
-          5: {
-            totalPrice: 405000,    // 10% 할인
-            totalProfit: 135000
-          },
-          10: {
-            totalPrice: 720000,    // 20% 할인
-            totalProfit: 225000
-          }
-        }
-      }
-    ]
-  }
-};
-
-// 계약별 사용 가능한 아이템을 가져오는 함수 수정
+// 계약별 사용 가능한 아이템 목록을 조회하는 함수
 const getAvailableItems = (contractId) => {
   return SAMPLE_CONTRACTS[contractId]?.availableItems || [];
 };
 
-// 상수를 컴포넌트 외부로 이동
+// 수익성 영향도 레벨을 정의하는 상수
+// 각 레벨마다 임계값, 라벨, 색상, 아이콘을 지정
 const PROFITABILITY_IMPACT_LEVELS = {
   MUCH_BETTER: { threshold: 2.0, label: '많이 개선', color: 'border-red-500 text-red-700 bg-red-50', icon: '▲▲' },
   BETTER: { threshold: 0.5, label: '개선', color: 'border-red-500 text-red-700', icon: '▲' },
@@ -292,20 +29,12 @@ const PROFITABILITY_IMPACT_LEVELS = {
   MUCH_WORSE: { threshold: -Infinity, label: '많이 하락', color: 'border-blue-500 text-blue-700 bg-blue-50', icon: '▼▼' }
 };
 
-// 동시 판매 불가 리스트 추가
-const INCOMPATIBLE_ITEMS = {
-  '001': [
-    [1, 3],  // 고성능 노트북 - 인체공학 의자
-    [2, 3],  // 무선 마우스 - 인체공학 의자
-    [2, 6],  // 무선 마우스 - 문서 파쇄기
-  ]
-};
-
-// 동시 판매 불가 체크 함수를 컴포넌트 외부로 이동
+// 동시 판매 불가능한 아이템 체크 함수
+// 현재 아이템이 기존 선택된 아이템들과 충돌하는지 확인
 const checkIncompatibility = (contractId, itemId, currentItems, contract, modifications) => {
   const incompatiblePairs = INCOMPATIBLE_ITEMS[contractId] || [];
   
-  // 현재 실제 상태의 아이템 목록 가져오기
+  // 현재 활성화된 아이템 목록 필터링 (삭제 예쩡인 아이템 제외)
   const activeItems = currentItems.filter(item => {
     const modification = modifications.find(mod => mod.id === item.id);
     // 삭제 예정인 아이템은 제외
@@ -313,6 +42,7 @@ const checkIncompatibility = (contractId, itemId, currentItems, contract, modifi
     return true;
   });
   
+  // 충돌 여부 확인
   for (const [id1, id2] of incompatiblePairs) {
     if (itemId === id1) {
       // 현재 아이템이 첫 번째 아이템인 경우
@@ -340,15 +70,8 @@ const checkIncompatibility = (contractId, itemId, currentItems, contract, modifi
   return { isIncompatible: false };
 };
 
-// SET_ITEMS 단순화
-const SET_ITEMS = {
-  '001': [
-    [3, 4],  // 의자와 데스크
-    [1, 2],  // 노트북과 마우스
-  ]
-};
-
-// getSetInfo 함수 수정
+// 세트 아이템 정보 조회 함수
+// 특정 아이템이 세트에 포함되어 있는지 확인하고 세트 정보 반환
 const getSetInfo = (contractId, itemId) => {
   const sets = SET_ITEMS[contractId] || [];
   const foundSet = sets.find(set => set.includes(itemId));
@@ -361,10 +84,17 @@ const getSetInfo = (contractId, itemId) => {
 };
 
 const ContractProfitabilityAnalyzer = () => {
+  // 상태 관리
+  // 현재 선택된 계약 ID
   const [contractId, setContractId] = useState("");
+  // 현재 계약 정보
   const [contract, setContract] = useState(null);
+  // 계약 수정 사항 목록
   const [modifications, setModifications] = useState([]);
+  // 상태 추가
+  const [selectedType, setSelectedType] = useState("all");
 
+  // 아이템의 현재 상태 확인 변수 (포함 여부, 수정 여부 등)
   const getItemStatus = (item) => {
     if (!contract) return { included: false, modified: false };
     
@@ -372,7 +102,7 @@ const ContractProfitabilityAnalyzer = () => {
     const modification = modifications?.find(mod => mod.id === item.id);
     const originalQuantity = contract.items?.find(i => i.id === item.id)?.quantity;
     
-    // 수정사항이 있지만 수 원래와 같은 경우 수정으로 표시하지 않음
+    // 수정사항이 있더라도 수량이 원래와 같은 경우 수정으로 표시하지 않음
     const isQuantityModified = modification?.quantity !== undefined && 
                              modification.quantity !== originalQuantity;
     
@@ -385,6 +115,7 @@ const ContractProfitabilityAnalyzer = () => {
     };
   };
 
+  // 메트릭스(총 가격, 총 수익, 수익률) 계산 함수
   const calculateMetrics = (items) => {
     const totals = items.reduce((sum, item) => {
       const itemDetails = contract?.availableItems.find(i => i.id === item.id);
@@ -406,6 +137,7 @@ const ContractProfitabilityAnalyzer = () => {
     };
   };
 
+  // 계약 검색 함수
   const searchContract = () => {
     const foundContract = SAMPLE_CONTRACTS[contractId];
     setContract(foundContract || null);
@@ -417,6 +149,7 @@ const ContractProfitabilityAnalyzer = () => {
     }
   };
 
+  // 아이템 토글(추가/제거/수정) 함수
   const toggleItem = (item, quantity = null, modType = 'add') => {
     const existingMod = modifications.find(mod => mod.id === item.id);
     const originalItem = contract?.items.find(i => i.id === item.id);
@@ -564,6 +297,19 @@ const ContractProfitabilityAnalyzer = () => {
     return items;
   };
 
+  // 테마 필터링 함수 수정
+  const filterItemsByTheme = (items, theme) => {
+    if (theme === 'all') return items;
+    return items.filter(item => {
+      // theme이 문자열인 경우와 배열인 경우 모두 처리
+      if (Array.isArray(item.theme)) {
+        return item.theme.includes(theme);
+      }
+      return item.theme === theme;
+    });
+  };
+
+  // ItemCard 컴포넌트 - 개별 아이템을 표시하는 하위 컴포넌트
   const ItemCard = ({ item, showThemeBadge = false }) => {
     const status = getItemStatus(item);
     
@@ -889,11 +635,32 @@ const ContractProfitabilityAnalyzer = () => {
                 </Badge>
               )}
               
-              {/* 테마 배지 */}
+              {/* 테마 배지들 */}
               {showThemeBadge && details?.theme && (
-                <Badge variant="outline" className="text-gray-500 border-gray-300">
-                  {details.theme}
-                </Badge>
+                Array.isArray(details.theme) ? (
+                  // 배열인 경우 모든 테마에 대해 배지 표시
+                  details.theme.map(t => (
+                    <Badge 
+                      key={t}
+                      variant="outline" 
+                      className="text-gray-500 border-gray-300"
+                    >
+                      {t === 'electronics' ? '전자기기' : 
+                       t === 'furniture' ? '가구' : 
+                       t === 'office' ? '사무용품' : t}
+                    </Badge>
+                  ))
+                ) : (
+                  // 문자열인 경우 단일 배지 표시
+                  <Badge 
+                    variant="outline" 
+                    className="text-gray-500 border-gray-300"
+                  >
+                    {details.theme === 'electronics' ? '전자기기' : 
+                     details.theme === 'furniture' ? '가구' : 
+                     details.theme === 'office' ? '사무용품' : details.theme}
+                  </Badge>
+                )
               )}
             </div>
           </div>
@@ -990,15 +757,28 @@ const ContractProfitabilityAnalyzer = () => {
     return (Number(modifiedMetrics.profitability) - Number(originalMetrics.profitability)).toFixed(1);
   }, [modifiedMetrics.profitability, originalMetrics.profitability]);
 
+  // JSX 렌더링
   return (
     <div className="flex flex-col h-screen">
+      {/* 메인 컨텐츠 영역 */}
       <div className="flex flex-1 p-4 gap-4 overflow-hidden">
-        {/* 왼쪽 패널 */}
+        {/* 왼쪽 패널: 계약 검색, 현재 계약 아이템, 수정 사항 */}
         <div className="w-1/2 flex flex-col gap-4">
           {/* 검색 영역 */}
           <Card className="shadow-sm">
             <CardContent className="py-3">
-              <div className="flex gap-2">
+              <div className="flex items-center gap-2 mt-2">
+                <select
+                  value={selectedType}
+                  onChange={(e) => setSelectedType(e.target.value)}
+                  className="w-[140px] p-2 border rounded bg-white"
+                >
+                  <option value="all">전체</option>
+                  <option value="sick">유병자실손</option>
+                  <option value="old">노후실손</option>
+                  <option value="normal1">실손1</option>
+                  <option value="normal2">실손2</option>
+                </select>
                 <input 
                   type="text"
                   placeholder="계약 번호 입력"
@@ -1071,7 +851,7 @@ const ContractProfitabilityAnalyzer = () => {
           </Card>
         </div>
 
-        {/* 오른쪽 패널 */}
+        {/* 오른쪽 패널: 전체 아이템 목록 */}
         <Card className="w-1/2 overflow-hidden flex flex-col">
           <CardHeader className="py-3">
             <CardTitle className="flex items-center justify-between">
@@ -1114,7 +894,12 @@ const ContractProfitabilityAnalyzer = () => {
               {["electronics", "furniture", "office"].map(theme => (
                 <TabsContent key={theme} value={theme} className="space-y-2">
                   {(contract ? contract.availableItems : [])
-                    .filter(item => item.theme === theme)
+                    .filter(item => 
+                      // 배열인 경우와 문자열인 경우 모두 처리
+                      Array.isArray(item.theme) 
+                        ? item.theme.includes(theme) 
+                        : item.theme === theme
+                    )
                     .map(item => (
                       <ItemCard key={item.id} item={item} />
                     ))}
@@ -1125,7 +910,7 @@ const ContractProfitabilityAnalyzer = () => {
         </Card>
       </div>
 
-      {/* 하 수익성 분석 패널 */}
+      {/* 하단 수익성 분석 패널 */}
       {contract && (
         <div className="border-t bg-gray-50">
           <div className="container mx-auto p-4">
