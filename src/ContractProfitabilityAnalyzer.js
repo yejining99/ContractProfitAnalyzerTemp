@@ -233,7 +233,7 @@ const ContractProfitabilityAnalyzer = () => {
             !setInfo.ids.includes(mod.id)
         );
         
-        // 세트의 각 아이템을 현재 화면에 표시된 ���량으로 추가
+        // 세트의 각 아이템을 현재 화면에 표시된 수량으로 추가
         setInfo.ids.forEach(id => {
             const itemDetails = contract?.availableItems.find(i => i.id === id);
             if (itemDetails) {
@@ -825,6 +825,24 @@ const ContractProfitabilityAnalyzer = () => {
     );
   };
 
+  const randomSort = (items: Item[]) => {
+    // 모든 아이템을 하나의 배열로 펼치기
+    const allItems = items.flatMap(item => {
+      if (item.type === 'set') {
+        return item.items;
+      }
+      return item;
+    });
+    
+    // Fisher-Yates 알고리즘으로 모든 아이템을 완전히 랜덤하게 섞기
+    for (let i = allItems.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+    }
+    
+    return allItems;
+  };
+
   // JSX 렌더링
   return (
     <div className="flex flex-col h-screen">
@@ -843,7 +861,7 @@ const ContractProfitabilityAnalyzer = () => {
                 >
                   <option value="all">전체</option>
                   <option value="sick">유병자실손</option>
-                  <option value="old">노후실손</option>
+                  <option value="old">노후��손</option>
                   <option value="normal1">실손1</option>
                   <option value="normal2">실손2</option>
                 </select>
@@ -961,17 +979,18 @@ const ContractProfitabilityAnalyzer = () => {
                         }
                       });
 
-                      // 2. 세트 그룹들과 일반 아이템들을 각각 랜덤 정렬
-                      const shuffledSetGroups = [...setGroups].sort(() => Math.random() - 0.5);
-                      const shuffledNormalItems = [...normalItems].sort(() => Math.random() - 0.5);
-
-                      // 3. 정렬된 세트 그룹들을 펼치고 일반 아이템들과 합치기
-                      const shuffledItems = [
-                        ...shuffledSetGroups.flatMap(group => group),
-                        ...shuffledNormalItems
+                      // 2. 세트 그룹들과 일반 아이템들을 하나의 배열로 만들어서 랜덤하게 섞기
+                      const combinedGroups = [
+                        ...setGroups.map(group => ({ type: 'set', items: group })),
+                        ...normalItems.map(item => ({ type: 'single', items: [item] }))
                       ];
 
-                      // 4. 상태 업데이트
+                      const shuffledGroups = combinedGroups.sort(() => Math.random() - 0.5);
+
+                      // 3. 섞인 그룹들에서 아이템 추출
+                      const shuffledItems = shuffledGroups.flatMap(group => group.items);
+
+                      // 3. 상태 업데이트
                       setContract(prev => ({
                         ...prev,
                         availableItems: shuffledItems
