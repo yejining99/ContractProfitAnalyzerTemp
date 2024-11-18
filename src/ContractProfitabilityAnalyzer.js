@@ -3,9 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Badge } from "./components/ui/badge";
 import { Plus, Minus, Search, TrendingUp, TrendingDown, PlusCircle } from "lucide-react";
-import { SAMPLE_CONTRACTS, getContractThemeRatio } from './data/sample-contracts';
+import { SAMPLE_CONTRACTS } from './data/sample-contracts';
 import { INCOMPATIBLE_ITEMS } from './data/incompatible-items';
 import { SET_ITEMS } from './data/set-items';
+import { getContractThemeRatio } from './data/sample-contracts';
 // import {
 //   Select,
 //   SelectContent,
@@ -536,7 +537,7 @@ const ContractProfitabilityAnalyzer = () => {
         // 세트의 모든 아이템이 원래 상태로 돌아가는지 확인
         const isRestoringToOriginal = setInfo.ids.every(id => {
           const originalItem = contract.items.find(i => i.id === id);
-          return originalItem; // 원래 계약에 있던 아이템인지 확인
+          return originalItem; // ��래 계약에 있던 아이템인지 확인
         });
 
         if (isRestoringToOriginal) {
@@ -761,8 +762,18 @@ const ContractProfitabilityAnalyzer = () => {
   const getThemeRatioDisplay = () => {
     if (!contract) return null;
     
-    const ratio = getContractThemeRatio(contract.id);
-    if (!ratio) return null;
+    const themeCount = getContractThemeRatio(contract.id);
+    if (!themeCount) return null;
+
+    // 총 개수 계산
+    const total = Object.values(themeCount).reduce((sum, count) => sum + count, 0);
+
+    // 비율 계산 (소수점 제거)
+    const ratio = {
+      electronics: Math.round((themeCount.electronics / total) * 100),
+      furniture: Math.round((themeCount.furniture / total) * 100),
+      office: Math.round((themeCount.office / total) * 100)
+    };
 
     return (
       <Card className="shadow-sm">
@@ -773,47 +784,47 @@ const ContractProfitabilityAnalyzer = () => {
           <div className="space-y-3">
             {/* 프로그레스 바 컨테이너 */}
             <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden flex">
-              {ratio.electronics > 0 && (
+              {themeCount.electronics > 0 && (
                 <div 
                   className="bg-blue-500 h-full" 
                   style={{ width: `${ratio.electronics}%` }}
-                  title={`전자기기: ${ratio.electronics.toFixed(1)}%`}
+                  title={`전자기기: (${ratio.electronics}%)`}
                 />
               )}
-              {ratio.furniture > 0 && (
+              {themeCount.furniture > 0 && (
                 <div 
                   className="bg-green-500 h-full" 
                   style={{ width: `${ratio.furniture}%` }}
-                  title={`가구: ${ratio.furniture.toFixed(1)}%`}
+                  title={`가구: (${ratio.furniture}%)`}
                 />
               )}
-              {ratio.office > 0 && (
+              {themeCount.office > 0 && (
                 <div 
                   className="bg-yellow-500 h-full" 
                   style={{ width: `${ratio.office}%` }}
-                  title={`사무용품: ${ratio.office.toFixed(1)}%`}
+                  title={`사무용품: (${ratio.office}%)`}
                 />
               )}
             </div>
 
             {/* 범례 */}
             <div className="flex justify-center gap-4 text-sm">
-              {ratio.electronics > 0 && (
+              {themeCount.electronics > 0 && (
                 <div className="flex items-center gap-1">
                   <div className="w-3 h-3 bg-blue-500 rounded"></div>
-                  <span>전자기기 {ratio.electronics.toFixed(1)}%</span>
+                  <span>전자기기 ({ratio.electronics}%)</span>
                 </div>
               )}
-              {ratio.furniture > 0 && (
+              {themeCount.furniture > 0 && (
                 <div className="flex items-center gap-1">
                   <div className="w-3 h-3 bg-green-500 rounded"></div>
-                  <span>가구 {ratio.furniture.toFixed(1)}%</span>
+                  <span>가구 ({ratio.furniture}%)</span>
                 </div>
               )}
-              {ratio.office > 0 && (
+              {themeCount.office > 0 && (
                 <div className="flex items-center gap-1">
                   <div className="w-3 h-3 bg-yellow-500 rounded"></div>
-                  <span>사무용품 {ratio.office.toFixed(1)}%</span>
+                  <span>사무용품 ({ratio.office}%)</span>
                 </div>
               )}
             </div>
@@ -924,7 +935,23 @@ const ContractProfitabilityAnalyzer = () => {
         <Card className="w-1/2 overflow-hidden flex flex-col">
           <CardHeader className="py-3">
             <CardTitle className="flex items-center justify-between">
-              <span>전체 아이템</span>
+              <div className="flex items-center gap-2">
+                <span>전체 아이템</span>
+                {/* 정렬 버튼 추가 */}
+                <button
+                  onClick={() => {
+                    if (!contract) return;
+                    const shuffled = [...contract.availableItems].sort(() => Math.random() - 0.5);
+                    setContract(prev => ({
+                      ...prev,
+                      availableItems: shuffled
+                    }));
+                  }}
+                  className="px-2 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+                >
+                  랜덤 정렬
+                </button>
+              </div>
               <div className="flex items-center gap-3 text-sm font-normal">
                 <span className="flex items-center gap-1">
                   <div className="w-3 h-3 bg-blue-50 border border-blue-200 rounded"></div>
