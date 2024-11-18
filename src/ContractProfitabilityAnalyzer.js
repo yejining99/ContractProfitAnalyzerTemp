@@ -233,7 +233,7 @@ const ContractProfitabilityAnalyzer = () => {
             !setInfo.ids.includes(mod.id)
         );
         
-        // 세트의 각 아이템을 현재 화면에 표시된 ���량으로 추가
+        // 세트의 각 아이템을 현재 화면에 표시된 수량으로 추가
         setInfo.ids.forEach(id => {
             const itemDetails = contract?.availableItems.find(i => i.id === id);
             if (itemDetails) {

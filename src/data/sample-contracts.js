@@ -11,7 +11,7 @@ export const SAMPLE_CONTRACTS = {
           id: 1, 
           name: "고성능 노트북", //담보이름
           theme: ["electronics", "furniture"], // 태그 (종수술, 자동차 등)
-          confidence: 0.87,
+          confidence: 0.2,
           availableQuantities: [1, 2, 5], //필요한가? //가입금액
           // sorting: [숫자들 0.000XXX] (availItem 각각에 대해서 주기) 
           recommendedQuantity: 2, // 추천하는 가입금액. 이게 필요한가? (많이 팔리는 담보의 가입금액? 천원. 기본값)
@@ -34,7 +34,7 @@ export const SAMPLE_CONTRACTS = {
           id: 2, 
           name: "무선 마우스",
           theme: "electronics",
-          confidence: 0.87,
+          confidence: 0.2,
           availableQuantities: [1, 3, 10],
           recommendedQuantity: 3,
           priceAndProfitByQuantity: {
@@ -110,7 +110,7 @@ export const SAMPLE_CONTRACTS = {
             },
             5: {
               totalPrice: 360000,    // 10% 할인
-              totalProfit: 100000
+              totalProfit: 180000
             },
             10: {
               totalPrice: 640000,    // 20% 할인
