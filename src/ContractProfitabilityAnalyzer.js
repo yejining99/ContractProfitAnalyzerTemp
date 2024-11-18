@@ -537,7 +537,7 @@ const ContractProfitabilityAnalyzer = () => {
         // 세트의 모든 아이템이 원래 상태로 돌아가는지 확인
         const isRestoringToOriginal = setInfo.ids.every(id => {
           const originalItem = contract.items.find(i => i.id === id);
-          return originalItem; // ��래 계약에 있던 아이템인지 확인
+          return originalItem; // 래 계약에 있던 아이템인지 확인
         });
 
         if (isRestoringToOriginal) {
@@ -936,21 +936,47 @@ const ContractProfitabilityAnalyzer = () => {
           <CardHeader className="py-3">
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span>전체 아이템</span>
-                {/* 정렬 버튼 추가 */}
-                <button
-                  onClick={() => {
-                    if (!contract) return;
-                    const shuffled = [...contract.availableItems].sort(() => Math.random() - 0.5);
-                    setContract(prev => ({
-                      ...prev,
-                      availableItems: shuffled
-                    }));
-                  }}
-                  className="px-2 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
-                >
-                  랜덤 정렬
-                </button>
+                <h3 className="text-lg font-semibold">전체 아이템</h3>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => {
+                      if (!contract) return;
+                      const shuffled = [...contract.availableItems].sort(() => Math.random() - 0.5);
+                      setContract(prev => ({
+                        ...prev,
+                        availableItems: shuffled
+                      }));
+                    }}
+                    className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+                    disabled={!contract}
+                  >
+                    🎲 랜덤 정렬
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (!contract) return;
+                      const sorted = [...contract.availableItems].sort((a, b) => {
+                        // 수정된 아이템 우선 정렬
+                        const aModified = modifications.some(mod => mod.id === a.id);
+                        const bModified = modifications.some(mod => mod.id === b.id);
+                        
+                        if (aModified && !bModified) return -1;
+                        if (!aModified && bModified) return 1;
+                        
+                        // confidence 값으로 내림차순 정렬
+                        return b.confidence - a.confidence;
+                      });
+                      setContract(prev => ({
+                        ...prev,
+                        availableItems: sorted
+                      }));
+                    }}
+                    className="px-3 py-1.5 text-sm bg-blue-100 hover:bg-blue-200 rounded-md transition-colors"
+                    disabled={!contract}
+                  >
+                    ⭐ 추천 정렬
+                  </button>
+                </div>
               </div>
               <div className="flex items-center gap-3 text-sm font-normal">
                 <span className="flex items-center gap-1">

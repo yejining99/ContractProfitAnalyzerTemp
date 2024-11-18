@@ -11,6 +11,7 @@ export const SAMPLE_CONTRACTS = {
           id: 1, 
           name: "고성능 노트북", //담보이름
           theme: ["electronics", "furniture"], // 태그 (종수술, 자동차 등)
+          confidence: 0.87,
           availableQuantities: [1, 2, 5], //필요한가? //가입금액
           // sorting: [숫자들 0.000XXX] (availItem 각각에 대해서 주기) 
           recommendedQuantity: 2, // 추천하는 가입금액. 이게 필요한가? (많이 팔리는 담보의 가입금액? 천원. 기본값)
@@ -33,6 +34,7 @@ export const SAMPLE_CONTRACTS = {
           id: 2, 
           name: "무선 마우스",
           theme: "electronics",
+          confidence: 0.87,
           availableQuantities: [1, 3, 10],
           recommendedQuantity: 3,
           priceAndProfitByQuantity: {
@@ -54,6 +56,7 @@ export const SAMPLE_CONTRACTS = {
           id: 3, 
           name: "인체공학 의자",
           theme: "furniture",
+          confidence: 0.92,
           availableQuantities: [1, 2, 3],
           recommendedQuantity: 2,
           priceAndProfitByQuantity: {
@@ -75,6 +78,7 @@ export const SAMPLE_CONTRACTS = {
           id: 4, 
           name: "스탠딩 데스크",
           theme: "furniture",
+          confidence: 0.92,
           availableQuantities: [1, 2, 3],
           recommendedQuantity: 1,
           priceAndProfitByQuantity: {
@@ -96,6 +100,7 @@ export const SAMPLE_CONTRACTS = {
           id: 5, 
           name: "모니터 받침대",
           theme: "office",
+          confidence: 0.45,
           availableQuantities: [1, 5, 10],
           recommendedQuantity: 5,
           priceAndProfitByQuantity: {
@@ -117,6 +122,7 @@ export const SAMPLE_CONTRACTS = {
           id: 6, 
           name: "문서 파쇄기",
           theme: "office",
+          confidence: 0.83,
           availableQuantities: [1, 2, 3],
           recommendedQuantity: 1,
           priceAndProfitByQuantity: {
@@ -147,6 +153,7 @@ export const SAMPLE_CONTRACTS = {
           id: 3, 
           name: "인체공학 의자",
           theme: "furniture",
+          confidence: 0.92,
           availableQuantities: [1, 2, 3],
           recommendedQuantity: 2,
           priceAndProfitByQuantity: {
@@ -168,6 +175,7 @@ export const SAMPLE_CONTRACTS = {
           id: 4, 
           name: "스탠딩 데스크",
           theme: "furniture",
+          confidence: 0.78,
           availableQuantities: [1, 2, 3],
           recommendedQuantity: 1,
           priceAndProfitByQuantity: {
@@ -189,6 +197,7 @@ export const SAMPLE_CONTRACTS = {
           id: 7, 
           name: "화상회의 카메라",
           theme: "electronics",
+          confidence: 0.71,
           availableQuantities: [1, 2, 5],
           recommendedQuantity: 2,
           priceAndProfitByQuantity: {
@@ -210,6 +219,7 @@ export const SAMPLE_CONTRACTS = {
           id: 8, 
           name: "회의실 스피커",
           theme: "electronics",
+          confidence: 0.89,
           availableQuantities: [1, 2, 3],
           recommendedQuantity: 2,
           priceAndProfitByQuantity: {
@@ -231,6 +241,7 @@ export const SAMPLE_CONTRACTS = {
           id: 9, 
           name: "책장",
           theme: "furniture",
+          confidence: 0.55,
           availableQuantities: [1, 3, 5],
           recommendedQuantity: 3,
           priceAndProfitByQuantity: {
@@ -252,6 +263,7 @@ export const SAMPLE_CONTRACTS = {
           id: 10, 
           name: "서류 보관함",
           theme: "office",
+          confidence: 0.67,
           availableQuantities: [1, 5, 10],
           recommendedQuantity: 5,
           priceAndProfitByQuantity: {
@@ -278,7 +290,7 @@ export const SAMPLE_CONTRACTS = {
 
   1. 계약 정보
   id: 계약 번호 (문자열)
-  items: 현재 계약에 포함��� 아이템 배열
+  items: 현재 계약에 포함 아이템 배열
   availableItems: 선택 가능한 전체 아이템 배열
   
   2. 아이템 정보
