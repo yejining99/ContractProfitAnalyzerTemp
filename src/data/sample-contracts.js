@@ -283,6 +283,147 @@ export const SAMPLE_CONTRACTS = {
         }
       ]
     },
+    '003': {
+      id: "003",
+      items: [
+        { id: 7, quantity: 2, theme: ["electronics"] },
+        { id: 8, quantity: 1, theme: ["electronics"] }
+      ],
+      availableItems: [
+        { 
+          id: 7, 
+          name: "화상회의 카메라",
+          theme: "electronics",
+          confidence: 0.85,
+          availableQuantities: [1, 2, 5],
+          recommendedQuantity: 2,
+          priceAndProfitByQuantity: {
+            1: {
+              totalPrice: 200000,
+              totalProfit: 70000
+            },
+            2: {
+              totalPrice: 380000,
+              totalProfit: 120000
+            },
+            5: {
+              totalPrice: 900000,
+              totalProfit: 250000
+            }
+          }
+        },
+        { 
+          id: 8, 
+          name: "회의실 스피커",
+          theme: "electronics",
+          confidence: 0.92,
+          availableQuantities: [1, 2, 3],
+          recommendedQuantity: 1,
+          priceAndProfitByQuantity: {
+            1: {
+              totalPrice: 180000,
+              totalProfit: 63000
+            },
+            2: {
+              totalPrice: 342000,
+              totalProfit: 108000
+            },
+            3: {
+              totalPrice: 486000,
+              totalProfit: 135000
+            }
+          }
+        },
+        { 
+          id: 11, 
+          name: "무선 키보드",
+          theme: "electronics",
+          confidence: 0.78,
+          availableQuantities: [1, 2, 3],
+          recommendedQuantity: 1,
+          priceAndProfitByQuantity: {
+            1: {
+              totalPrice: 120000,
+              totalProfit: 42000
+            },
+            2: {
+              totalPrice: 228000,
+              totalProfit: 76000
+            },
+            3: {
+              totalPrice: 324000,
+              totalProfit: 108000
+            }
+          }
+        },
+        { 
+          id: 12, 
+          name: "블루투스 이어폰",
+          theme: "electronics",
+          confidence: 0.76,
+          availableQuantities: [1, 2, 5],
+          recommendedQuantity: 2,
+          priceAndProfitByQuantity: {
+            1: {
+              totalPrice: 150000,
+              totalProfit: 52500
+            },
+            2: {
+              totalPrice: 285000,    // 5% 할인
+              totalProfit: 95000
+            },
+            5: {
+              totalPrice: 675000,    // 10% 할인
+              totalProfit: 202500
+            }
+          }
+        },
+        { 
+          id: 13, 
+          name: "웹캠",
+          theme: "electronics",
+          confidence: 0.88,
+          availableQuantities: [1, 3, 5],
+          recommendedQuantity: 1,
+          priceAndProfitByQuantity: {
+            1: {
+              totalPrice: 90000,
+              totalProfit: 31500
+            },
+            3: {
+              totalPrice: 243000,    // 10% 할인
+              totalProfit: 81000
+            },
+            5: {
+              totalPrice: 360000,    // 20% 할인
+              totalProfit: 112500
+            }
+          }
+        },
+        { 
+          id: 14, 
+          name: "USB 허브",
+          theme: "electronics",
+          confidence: 0.71,
+          availableQuantities: [1, 2, 4],
+          recommendedQuantity: 2,
+          priceAndProfitByQuantity: {
+            1: {
+              totalPrice: 45000,
+              totalProfit: 15750
+            },
+            2: {
+              totalPrice: 85500,     // 5% 할인
+              totalProfit: 28500
+            },
+            4: {
+              totalPrice: 162000,    // 10% 할인
+              totalProfit: 54000
+            }
+          }
+        }
+      ]
+    },
   };
 
   /*
