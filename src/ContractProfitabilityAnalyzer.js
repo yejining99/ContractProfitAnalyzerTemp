@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Badge } from "./components/ui/badge";
 import { Plus, Minus, Search, TrendingUp, TrendingDown, PlusCircle } from "lucide-react";
-import { SAMPLE_CONTRACTS } from './data/sample-contracts';
+import { SAMPLE_CONTRACTS, getContractThemeRatio } from './data/sample-contracts';
 import { INCOMPATIBLE_ITEMS } from './data/incompatible-items';
 import { SET_ITEMS } from './data/set-items';
 // import {
@@ -757,6 +757,72 @@ const ContractProfitabilityAnalyzer = () => {
     return (Number(modifiedMetrics.profitability) - Number(originalMetrics.profitability)).toFixed(1);
   }, [modifiedMetrics.profitability, originalMetrics.profitability]);
 
+  // theme 비율을 계산하는 함수
+  const getThemeRatioDisplay = () => {
+    if (!contract) return null;
+    
+    const ratio = getContractThemeRatio(contract.id);
+    if (!ratio) return null;
+
+    return (
+      <Card className="shadow-sm">
+        <CardHeader className="py-3">
+          <CardTitle>계약 테마 구성</CardTitle>
+        </CardHeader>
+        <CardContent className="py-3">
+          <div className="space-y-3">
+            {/* 프로그레스 바 컨테이너 */}
+            <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden flex">
+              {ratio.electronics > 0 && (
+                <div 
+                  className="bg-blue-500 h-full" 
+                  style={{ width: `${ratio.electronics}%` }}
+                  title={`전자기기: ${ratio.electronics.toFixed(1)}%`}
+                />
+              )}
+              {ratio.furniture > 0 && (
+                <div 
+                  className="bg-green-500 h-full" 
+                  style={{ width: `${ratio.furniture}%` }}
+                  title={`가구: ${ratio.furniture.toFixed(1)}%`}
+                />
+              )}
+              {ratio.office > 0 && (
+                <div 
+                  className="bg-yellow-500 h-full" 
+                  style={{ width: `${ratio.office}%` }}
+                  title={`사무용품: ${ratio.office.toFixed(1)}%`}
+                />
+              )}
+            </div>
+
+            {/* 범례 */}
+            <div className="flex justify-center gap-4 text-sm">
+              {ratio.electronics > 0 && (
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 bg-blue-500 rounded"></div>
+                  <span>전자기기 {ratio.electronics.toFixed(1)}%</span>
+                </div>
+              )}
+              {ratio.furniture > 0 && (
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 bg-green-500 rounded"></div>
+                  <span>가구 {ratio.furniture.toFixed(1)}%</span>
+                </div>
+              )}
+              {ratio.office > 0 && (
+                <div className="flex items-center gap-1">
+                  <div className="w-3 h-3 bg-yellow-500 rounded"></div>
+                  <span>사무용품 {ratio.office.toFixed(1)}%</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  };
+
   // JSX 렌더링
   return (
     <div className="flex flex-col h-screen">
@@ -796,6 +862,9 @@ const ContractProfitabilityAnalyzer = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* 테마 비율 표시 - 검색 영역 아래에 추가 */}
+          {getThemeRatioDisplay()}
 
           {/* 현재 계약 아이템 */}
           <Card className="flex-1 overflow-auto">

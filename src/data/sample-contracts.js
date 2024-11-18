@@ -3,8 +3,8 @@ export const SAMPLE_CONTRACTS = {
     '001': {
       id: "001",
       items: [
-        { id: 1, quantity: 5 }, //id: cov_cd
-        { id: 2, quantity: 1 }, //
+        { id: 1, quantity: 5 , theme: ["electronics", "furniture"]}, //id: cov_cd
+        { id: 2, quantity: 1 , theme: ["electronics"]}, //
       ],
       availableItems: [
         { 
@@ -278,7 +278,7 @@ export const SAMPLE_CONTRACTS = {
 
   1. 계약 정보
   id: 계약 번호 (문자열)
-  items: 현재 계약에 포함된 아이템 배열
+  items: 현재 계약에 포함��� 아이템 배열
   availableItems: 선택 가능한 전체 아이템 배열
   
   2. 아이템 정보
@@ -303,3 +303,33 @@ export const SAMPLE_CONTRACTS = {
   furniture: 가구
   office: 사무용품
   */
+
+export const getContractThemeRatio = (contractId) => {
+  const contract = SAMPLE_CONTRACTS[contractId];
+  if (!contract) return null;
+
+  // theme 카운트를 저장할 객체
+  const themeCount = {
+    electronics: 0,
+    furniture: 0,
+    office: 0
+  };
+
+  // 각 아이템의 theme 카운트
+  contract.items.forEach(item => {
+    const themes = Array.isArray(item.theme) ? item.theme : [item.theme];
+    themes.forEach(theme => {
+      themeCount[theme] += 1;
+    });
+  });
+
+  // 총 카운트 계산 (중복 포함)
+  const total = Object.values(themeCount).reduce((sum, count) => sum + count, 0);
+
+  // 비율 계산 (백분율)
+  return {
+    electronics: (themeCount.electronics / total) * 100,
+    furniture: (themeCount.furniture / total) * 100,
+    office: (themeCount.office / total) * 100
+  };
+};
