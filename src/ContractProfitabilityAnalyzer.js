@@ -116,7 +116,7 @@ const ContractProfitabilityAnalyzer = () => {
     };
   };
 
-  // 메트릭스(총 가격, 총 수익, 수익률) 계산 함수
+  // 메트릭스(총 가격, 총 익, 수익률) 계산 수
   const calculateMetrics = (items) => {
     const totals = items.reduce((sum, item) => {
       const itemDetails = contract?.availableItems.find(i => i.id === item.id);
@@ -195,7 +195,7 @@ const ContractProfitabilityAnalyzer = () => {
 
     if (modType === 'remove') {
         if (setInfo) {
-            // 세트의 모든 아이템에 대한 삭제 처리
+            // 세트의 모든 아이템에 대한 삭제 리
             const newModifications = modifications.filter(mod => 
                 !setInfo.ids.includes(mod.id)
             );
@@ -233,11 +233,11 @@ const ContractProfitabilityAnalyzer = () => {
             !setInfo.ids.includes(mod.id)
         );
         
-        // 세트의 각 아이템을 현재 화면에 표시된 수량으로 추가
+        // 세트의 각 아이템을 현재 화면에 표시된 ���량으로 추가
         setInfo.ids.forEach(id => {
             const itemDetails = contract?.availableItems.find(i => i.id === id);
             if (itemDetails) {
-                // 현재 아이템인 경우 선택된 수량 사용, 그 외의 경우 해당 아이템의 현재 표시된 수량 사용
+                // 현재 아이템인 경우 선택된 수 사용, 그 외의 경우 해당 아이템의 현재 표시된 수량 사용
                 const itemMod = modifications.find(mod => mod.id === id);
                 const itemQuantity = id === item.id ? 
                     actualQuantity : 
@@ -310,7 +310,7 @@ const ContractProfitabilityAnalyzer = () => {
     });
   };
 
-  // ItemCard 컴포넌트 - 개별 아이템을 표시하는 하위 컴포넌트
+  // ItemCard 컴포넌트 - 개별 아이템을 표시하는 위 컴포넌트
   const ItemCard = ({ item, showThemeBadge = false }) => {
     const status = getItemStatus(item);
     
@@ -363,7 +363,7 @@ const ContractProfitabilityAnalyzer = () => {
       
       // 세트 아이템인 경우
       if (setInfo) {
-          // 세트의 모든 아이템에 대한 기존 수정사항 제거
+          // 세트의 모든 아이템 대한 기존 수정사 제거
           const newModifications = modifications.filter(mod => 
               !setInfo.ids.includes(mod.id)
           );
@@ -585,36 +585,36 @@ const ContractProfitabilityAnalyzer = () => {
         )}
         
         {/* 아이템 카드 - 세트 아이템인 경우 들여쓰기 적용 */}
-        <div className={`flex items-center p-3 rounded-lg border ${statusInfo.style} ${setInfo ? 'ml-4' : ''}`}>
+        <div className={`flex items-center p-2 rounded-lg border ${statusInfo.style} ${setInfo ? 'ml-3' : ''}`}>
           <div className="flex-1">
-            {/* 첫 번째 줄: 아이템 이름과 수량 선택 */}
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-medium">{details?.name}</span>
-              <select 
-                className="border rounded px-2 py-1 text-sm"
-                value={previewQuantity}
-                onChange={handleQuantityChange}
-                disabled={!contract}
-              >
-                {details?.availableQuantities?.map(q => (
-                  <option key={q} value={q}>{q}개</option>
-                ))}
-              </select>
+            {/* 한 줄로 표시되는 정보를 justify-between으로 분리 */}
+            <div className="flex items-center justify-between">
+              {/* 왼쪽: 이름과 수량 */}
+              <div className="flex items-center gap-2">
+                <span className="font-medium">{details?.name}</span>
+                <select 
+                  className="border rounded px-2 py-1 text-sm"
+                  value={previewQuantity}
+                  onChange={handleQuantityChange}
+                  disabled={!contract}
+                >
+                  {details?.availableQuantities?.map(q => (
+                    <option key={q} value={q}>{q}개</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* 오른쪽: 가격 정보 */}
+              <span className="text-gray-500">
+                가격: ₩{metrics.totalPrice.toLocaleString()} | 
+                수익: ₩{metrics.totalProfit.toLocaleString()} | 
+                수익률: {profitability}%
+              </span>
             </div>
 
-            {/* 두 번째 줄: 가격 정보 */}
-            <div className="text-sm text-gray-500 mb-2">
-              가격: ₩{metrics.totalPrice.toLocaleString()} | 
-              수익: ₩{metrics.totalProfit.toLocaleString()} | 
-              수익률: {profitability}%
-            </div>
-
-            {/* 세 번째 줄: 뱃지들 */}
-            <div className="flex flex-wrap gap-1.5 items-center">
-              {/* 상태 뱃지 (현재 계약, 새로 추가 등) */}
+            {/* 배지들은 그대로 아래에 유지 */}
+            <div className="flex flex-wrap gap-1.5 items-center mt-1">
               {statusInfo.badge}
-              
-              {/* 수익률 영향도 배지 */}
               {profitabilityImpact && (
                 <Badge 
                   variant="outline" 
@@ -624,8 +624,6 @@ const ContractProfitabilityAnalyzer = () => {
                   <span>{profitabilityImpact.label}</span>
                 </Badge>
               )}
-              
-              {/* 동시 판매 불가 배지 */}
               {incompatibilityWarning && (
                 <Badge 
                   variant="outline" 
@@ -635,11 +633,8 @@ const ContractProfitabilityAnalyzer = () => {
                   <span>{incompatibilityWarning.label}</span>
                 </Badge>
               )}
-              
-              {/* 테마 배지들 */}
               {showThemeBadge && details?.theme && (
                 Array.isArray(details.theme) ? (
-                  // 배열인 경우 모든 테마에 대해 배지 표시
                   details.theme.map(t => (
                     <Badge 
                       key={t}
@@ -652,7 +647,6 @@ const ContractProfitabilityAnalyzer = () => {
                     </Badge>
                   ))
                 ) : (
-                  // 문자열인 경우 단일 배지 표시
                   <Badge 
                     variant="outline" 
                     className="text-gray-500 border-gray-300"
@@ -668,7 +662,6 @@ const ContractProfitabilityAnalyzer = () => {
 
           {/* 아이콘 영역 */}
           <div className="flex items-center gap-2 ml-2">
-            {/* 삭제된 아이템 다시 추가하기 */}
             {status.modified && status.action === 'remove' && (
               <div 
                 onClick={handleReAddItem}
@@ -677,7 +670,6 @@ const ContractProfitabilityAnalyzer = () => {
                 +
               </div>
             )}
-            {/* 삭제 아이콘 (기존 아이템이나 추가된 아이템) */}
             {(status.originallyIncluded || status.modified) && status.action !== 'remove' && (
               <div 
                 onClick={handleRemoveItem}
@@ -686,7 +678,6 @@ const ContractProfitabilityAnalyzer = () => {
                 −
               </div>
             )}
-            {/* 추가 이콘 - 새로운 아이템이고 아직 추가되지 않은 경우에만 표시 */}
             {!status.modified && !status.originallyIncluded && (
               <div 
                 onClick={handleAddItem}
@@ -777,11 +768,11 @@ const ContractProfitabilityAnalyzer = () => {
 
     return (
       <Card className="shadow-sm">
-        <CardHeader className="py-3">
+        <CardHeader className="py-2">
           <CardTitle>계약 테마 구성</CardTitle>
         </CardHeader>
-        <CardContent className="py-3">
-          <div className="space-y-3">
+        <CardContent className="py-2">
+          <div className="space-y-2">
             {/* 프로그레스 바 컨테이너 */}
             <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden flex">
               {themeCount.electronics > 0 && (
@@ -838,13 +829,13 @@ const ContractProfitabilityAnalyzer = () => {
   return (
     <div className="flex flex-col h-screen">
       {/* 메인 컨텐츠 영역 */}
-      <div className="flex flex-1 p-4 gap-4 overflow-hidden">
+      <div className="flex flex-1 p-2 gap-2 overflow-hidden">
         {/* 왼쪽 패널: 계약 검색, 현재 계약 아이템, 수정 사항 */}
-        <div className="w-1/2 flex flex-col gap-4">
+        <div className="w-1/2 flex flex-col gap-2">
           {/* 검색 영역 */}
           <Card className="shadow-sm">
-            <CardContent className="py-3">
-              <div className="flex items-center gap-2 mt-2">
+            <CardContent className="py-2">
+              <div className="flex items-center gap-2 mt-1">
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
@@ -879,11 +870,11 @@ const ContractProfitabilityAnalyzer = () => {
 
           {/* 현재 계약 아이템 */}
           <Card className="flex-1 overflow-auto">
-            <CardHeader className="py-3">
+            <CardHeader className="py-2">
               <CardTitle>현재 계약 아이템</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {contract?.items.map(contractItem => {
                   // availableItems에서 해당 아이템의 상세 정보 찾기
                   const itemDetails = contract.availableItems.find(i => i.id === contractItem.id);
@@ -913,11 +904,11 @@ const ContractProfitabilityAnalyzer = () => {
 
           {/* 정된 아이템 */}
           <Card className="flex-1 overflow-auto">
-            <CardHeader className="py-3">
+            <CardHeader className="py-2">
               <CardTitle>수정 사항</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {modifications.map(mod => (
                   <ItemCard key={mod.id} item={mod} />
                 ))}
@@ -933,7 +924,7 @@ const ContractProfitabilityAnalyzer = () => {
 
         {/* 오른쪽 패널: 전체 아이템 목록 */}
         <Card className="w-1/2 overflow-hidden flex flex-col">
-          <CardHeader className="py-3">
+          <CardHeader className="py-2">
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <h3 className="text-lg font-semibold">전체 아이템</h3>
@@ -941,10 +932,49 @@ const ContractProfitabilityAnalyzer = () => {
                   <button
                     onClick={() => {
                       if (!contract) return;
-                      const shuffled = [...contract.availableItems].sort(() => Math.random() - 0.5);
+                      
+                      // 1. 세트 아이템과 일반 아이템 분리
+                      const setItems = new Set(); // 모든 세트 아이템의 ID를 저장
+                      const setGroups = []; // 세트 그룹들을 저장
+                      const normalItems = []; // 일반 아이템들을 저장
+
+                      contract.availableItems.forEach(item => {
+                        const setInfo = getSetInfo(contract.id, item.id);
+                        
+                        if (setInfo) {
+                          // 이미 처리된 세트는 건너뛰기
+                          if (setItems.has(item.id)) return;
+                          
+                          // 현재 세트의 모든 아이템을 찾아서 그룹으로 저장
+                          const setGroup = setInfo.ids.map(id => 
+                            contract.availableItems.find(i => i.id === id)
+                          ).filter(Boolean);
+                          
+                          // 세트 아이템 ID들을 저장
+                          setInfo.ids.forEach(id => setItems.add(id));
+                          
+                          // 세트 그룹 저장
+                          setGroups.push(setGroup);
+                        } else if (!setItems.has(item.id)) {
+                          // 세트에 포함되지 않은 일반 아이템만 저장
+                          normalItems.push(item);
+                        }
+                      });
+
+                      // 2. 세트 그룹들과 일반 아이템들을 각각 랜덤 정렬
+                      const shuffledSetGroups = [...setGroups].sort(() => Math.random() - 0.5);
+                      const shuffledNormalItems = [...normalItems].sort(() => Math.random() - 0.5);
+
+                      // 3. 정렬된 세트 그룹들을 펼치고 일반 아이템들과 합치기
+                      const shuffledItems = [
+                        ...shuffledSetGroups.flatMap(group => group),
+                        ...shuffledNormalItems
+                      ];
+
+                      // 4. 상태 업데이트
                       setContract(prev => ({
                         ...prev,
-                        availableItems: shuffled
+                        availableItems: shuffledItems
                       }));
                     }}
                     className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
@@ -955,26 +985,115 @@ const ContractProfitabilityAnalyzer = () => {
                   <button
                     onClick={() => {
                       if (!contract) return;
-                      const sorted = [...contract.availableItems].sort((a, b) => {
-                        // 수정된 아이템 우선 정렬
-                        const aModified = modifications.some(mod => mod.id === a.id);
-                        const bModified = modifications.some(mod => mod.id === b.id);
-                        
-                        if (aModified && !bModified) return -1;
-                        if (!aModified && bModified) return 1;
-                        
-                        // confidence 값으로 내림차순 정렬
-                        return b.confidence - a.confidence;
+                      
+                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      const groups = [];
+                      const processedItems = new Set();
+
+                      contract.availableItems.forEach(item => {
+                        if (processedItems.has(item.id)) return;
+
+                        const setInfo = getSetInfo(contract.id, item.id);
+                        if (setInfo) {
+                          // 세트 아이템인 경우
+                          const groupItems = setInfo.ids.map(id => 
+                            contract.availableItems.find(i => i.id === id)
+                          ).filter(Boolean);
+                          
+                          setInfo.ids.forEach(id => processedItems.add(id));
+                          
+                          groups.push({
+                            type: 'set',
+                            items: groupItems,
+                            confidence: Math.min(...groupItems.map(item => item.confidence || 0))
+                          });
+                        } else {
+                          // 일반 아이템인 경우
+                          groups.push({
+                            type: 'single',
+                            items: [item],
+                            confidence: item.confidence || 0
+                          });
+                          processedItems.add(item.id);
+                        }
                       });
+
+                      // 2. 모든 그룹을 confidence 기준으로 정렬
+                      groups.sort((a, b) => b.confidence - a.confidence);
+
+                      // 3. 정렬된 그룹에서 아이템 추출
+                      const sortedItems = groups.flatMap(group => group.items);
+
                       setContract(prev => ({
                         ...prev,
-                        availableItems: sorted
+                        availableItems: sortedItems
                       }));
                     }}
                     className="px-3 py-1.5 text-sm bg-blue-100 hover:bg-blue-200 rounded-md transition-colors"
                     disabled={!contract}
                   >
                     ⭐ 추천 정렬
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (!contract) return;
+                      
+                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      const groups = [];
+                      const processedItems = new Set();
+
+                      contract.availableItems.forEach(item => {
+                        if (processedItems.has(item.id)) return;
+
+                        const setInfo = getSetInfo(contract.id, item.id);
+                        if (setInfo) {
+                          // 세트 아이템인 경우
+                          const groupItems = setInfo.ids.map(id => 
+                            contract.availableItems.find(i => i.id === id)
+                          ).filter(Boolean);
+                          
+                          setInfo.ids.forEach(id => processedItems.add(id));
+                          
+                          // 세트 내 가장 높은 수익률 계산
+                          const maxProfitability = Math.max(...groupItems.map(item => {
+                            const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                            return metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
+                          }));
+
+                          groups.push({
+                            type: 'set',
+                            items: groupItems,
+                            profitability: maxProfitability
+                          });
+                        } else {
+                          // 일반 아이템인 경우
+                          const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                          const profitability = metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
+
+                          groups.push({
+                            type: 'single',
+                            items: [item],
+                            profitability: profitability
+                          });
+                          processedItems.add(item.id);
+                        }
+                      });
+
+                      // 2. 모든 그룹을 수익률 기준으로 정렬
+                      groups.sort((a, b) => b.profitability - a.profitability);
+
+                      // 3. 정렬된 그룹에서 아이템 추출
+                      const sortedItems = groups.flatMap(group => group.items);
+
+                      setContract(prev => ({
+                        ...prev,
+                        availableItems: sortedItems
+                      }));
+                    }}
+                    className="px-3 py-1.5 text-sm bg-green-100 hover:bg-green-200 rounded-md transition-colors"
+                    disabled={!contract}
+                  >
+                    💰 KMV 정렬
                   </button>
                 </div>
               </div>
@@ -998,7 +1117,7 @@ const ContractProfitabilityAnalyzer = () => {
               </div>
             </CardTitle>
           </CardHeader>
-          <CardContent className="overflow-auto max-h-[calc(100vh-13rem)] flex-1">
+          <CardContent className="overflow-auto max-h-[calc(100vh-10rem)] flex-1">
             <Tabs defaultValue="all" className="w-full">
               <TabsList className="mb-4">
                 <TabsTrigger value="all">전체</TabsTrigger>
@@ -1035,21 +1154,21 @@ const ContractProfitabilityAnalyzer = () => {
       {/* 하단 수익성 분석 패널 */}
       {contract && (
         <div className="border-t bg-gray-50">
-          <div className="container mx-auto p-4">
-            <div className="flex justify-between items-center gap-8">
+          <div className="container mx-auto p-2">
+            <div className="flex justify-between items-center gap-4">
               {/* 현재 계약 수익성 */}
               <div className="flex-1">
                 <h3 className="text-sm font-medium text-gray-500 mb-1">현재 계약</h3>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-white p-3 rounded-lg">
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="bg-white p-2 rounded-lg">
                     <div className="text-sm text-gray-500">총 가격</div>
                     <div className="text-lg font-medium">₩{originalMetrics.totalPrice.toLocaleString()}</div>
                   </div>
-                  <div className="bg-white p-3 rounded-lg">
+                  <div className="bg-white p-2 rounded-lg">
                     <div className="text-sm text-gray-500">총 수익</div>
                     <div className="text-lg font-medium">₩{originalMetrics.totalProfit.toLocaleString()}</div>
                   </div>
-                  <div className="bg-white p-3 rounded-lg">
+                  <div className="bg-white p-2 rounded-lg">
                     <div className="text-sm text-gray-500">수익률</div>
                     <div className="text-lg font-medium">{originalMetrics.profitability}%</div>
                   </div>
@@ -1088,8 +1207,8 @@ const ContractProfitabilityAnalyzer = () => {
                     </Badge>
                   )}
                 </h3>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className={`bg-white p-3 rounded-lg ${
+                <div className="grid grid-cols-3 gap-2">
+                  <div className={`bg-white p-2 rounded-lg ${
                     modifiedMetrics.totalPrice !== originalMetrics.totalPrice 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
@@ -1097,7 +1216,7 @@ const ContractProfitabilityAnalyzer = () => {
                     <div className="text-sm text-gray-500">총 가격</div>
                     <div className="text-lg font-medium">₩{modifiedMetrics.totalPrice.toLocaleString()}</div>
                   </div>
-                  <div className={`bg-white p-3 rounded-lg ${
+                  <div className={`bg-white p-2 rounded-lg ${
                     modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
@@ -1105,7 +1224,7 @@ const ContractProfitabilityAnalyzer = () => {
                     <div className="text-sm text-gray-500">총 수익</div>
                     <div className="text-lg font-medium">₩{modifiedMetrics.totalProfit.toLocaleString()}</div>
                   </div>
-                  <div className={`bg-white p-3 rounded-lg ${
+                  <div className={`bg-white p-2 rounded-lg ${
                     modifiedMetrics.profitability !== originalMetrics.profitability 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
