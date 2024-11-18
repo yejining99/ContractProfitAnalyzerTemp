@@ -114,7 +114,7 @@ export const SAMPLE_CONTRACTS = {
             },
             10: {
               totalPrice: 640000,    // 20% 할인
-              totalProfit: 160001
+              totalProfit: 160005
             }
           }
         },
