@@ -94,6 +94,10 @@ const ContractProfitabilityAnalyzer = () => {
   const [modifications, setModifications] = useState([]);
   // 상태 추가
   const [selectedType, setSelectedType] = useState("all");
+  // 원본 계약 정보를 저장하는 상태 추가
+  const [originalContract, setOriginalContract] = useState(null);
+  // 정렬된 아이템을 저장하는 상태 추가
+  const [sortedItems, setSortedItems] = useState([]);
 
   // 아이템의 현재 상태 확인 변수 (포함 여부, 수정 여부 등)
   const getItemStatus = (item) => {
@@ -141,11 +145,12 @@ const ContractProfitabilityAnalyzer = () => {
   // 계약 검색 함수
   const searchContract = () => {
     const foundContract = SAMPLE_CONTRACTS[contractId];
-    setContract(foundContract || null);
-    setModifications([]);
-    
-    if (!foundContract) {
-      // 계약을 찾지 못한 경우 처리 (옵션)
+    if (foundContract) {
+      setOriginalContract(foundContract);
+      setContract(foundContract);
+      setSortedItems(foundContract.availableItems);
+      setModifications([]);
+    } else {
       alert('계약을 찾을 수 없습니다.');
     }
   };
@@ -861,7 +866,7 @@ const ContractProfitabilityAnalyzer = () => {
                 >
                   <option value="all">전체</option>
                   <option value="sick">유병자실손</option>
-                  <option value="old">노후��손</option>
+                  <option value="old">노후손</option>
                   <option value="normal1">실손1</option>
                   <option value="normal2">실손2</option>
                 </select>
@@ -949,15 +954,18 @@ const ContractProfitabilityAnalyzer = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={() => {
-                      if (!contract) return;
+                      if (!contract || !originalContract) return;
+                      
+                      // 원본 데이터를 복사하여 사용
+                      const itemsToSort = [...originalContract.availableItems];
                       
                       // 1. 세트 아이템과 일반 아이템 분리
-                      const setItems = new Set(); // 모든 세트 아이템의 ID를 저장
-                      const setGroups = []; // 세트 그룹들을 저장
-                      const normalItems = []; // 일반 아이템들을 저장
+                      const setItems = new Set();
+                      const setGroups = [];
+                      const normalItems = [];
 
-                      contract.availableItems.forEach(item => {
-                        const setInfo = getSetInfo(contract.id, item.id);
+                      itemsToSort.forEach(item => {
+                        const setInfo = getSetInfo(originalContract.id, item.id);
                         
                         if (setInfo) {
                           // 이미 처리된 세트는 건너뛰기
@@ -965,7 +973,7 @@ const ContractProfitabilityAnalyzer = () => {
                           
                           // 현재 세트의 모든 아이템을 찾아서 그룹으로 저장
                           const setGroup = setInfo.ids.map(id => 
-                            contract.availableItems.find(i => i.id === id)
+                            itemsToSort.find(i => i.id === id)
                           ).filter(Boolean);
                           
                           // 세트 아이템 ID들을 저장
@@ -990,11 +998,8 @@ const ContractProfitabilityAnalyzer = () => {
                       // 3. 섞인 그룹들에서 아이템 추출
                       const shuffledItems = shuffledGroups.flatMap(group => group.items);
 
-                      // 3. 상태 업데이트
-                      setContract(prev => ({
-                        ...prev,
-                        availableItems: shuffledItems
-                      }));
+                      // 4. 상태 업데이트
+                      setSortedItems(shuffledItems);
                     }}
                     className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
                     disabled={!contract}
@@ -1003,20 +1008,23 @@ const ContractProfitabilityAnalyzer = () => {
                   </button>
                   <button
                     onClick={() => {
-                      if (!contract) return;
+                      if (!contract || !originalContract) return;
+                      
+                      // 원본 데이터를 복사하여 사용
+                      const itemsToSort = [...originalContract.availableItems];
                       
                       // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
-                      contract.availableItems.forEach(item => {
+                      itemsToSort.forEach(item => {
                         if (processedItems.has(item.id)) return;
 
-                        const setInfo = getSetInfo(contract.id, item.id);
+                        const setInfo = getSetInfo(originalContract.id, item.id);
                         if (setInfo) {
                           // 세트 아이템인 경우
                           const groupItems = setInfo.ids.map(id => 
-                            contract.availableItems.find(i => i.id === id)
+                            itemsToSort.find(i => i.id === id)
                           ).filter(Boolean);
                           
                           setInfo.ids.forEach(id => processedItems.add(id));
@@ -1043,10 +1051,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 3. 정렬된 그룹에서 아이템 추출
                       const sortedItems = groups.flatMap(group => group.items);
 
-                      setContract(prev => ({
-                        ...prev,
-                        availableItems: sortedItems
-                      }));
+                      setSortedItems(sortedItems);
                     }}
                     className="px-3 py-1.5 text-sm bg-blue-100 hover:bg-blue-200 rounded-md transition-colors"
                     disabled={!contract}
@@ -1055,25 +1060,27 @@ const ContractProfitabilityAnalyzer = () => {
                   </button>
                   <button
                     onClick={() => {
-                      if (!contract) return;
+                      if (!contract || !originalContract) return;
+                      
+                      // 원본 데이터를 복사하여 사용
+                      const itemsToSort = [...originalContract.availableItems];
                       
                       // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
-                      contract.availableItems.forEach(item => {
+                      itemsToSort.forEach(item => {
                         if (processedItems.has(item.id)) return;
 
-                        const setInfo = getSetInfo(contract.id, item.id);
+                        const setInfo = getSetInfo(originalContract.id, item.id);
                         if (setInfo) {
                           // 세트 아이템인 경우
                           const groupItems = setInfo.ids.map(id => 
-                            contract.availableItems.find(i => i.id === id)
+                            itemsToSort.find(i => i.id === id)
                           ).filter(Boolean);
                           
                           setInfo.ids.forEach(id => processedItems.add(id));
                           
-                          // 세트 내 가장 높은 수익률 계산
                           const maxProfitability = Math.max(...groupItems.map(item => {
                             const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
                             return metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
@@ -1104,10 +1111,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 3. 정렬된 그룹에서 아이템 추출
                       const sortedItems = groups.flatMap(group => group.items);
 
-                      setContract(prev => ({
-                        ...prev,
-                        availableItems: sortedItems
-                      }));
+                      setSortedItems(sortedItems);
                     }}
                     className="px-3 py-1.5 text-sm bg-green-100 hover:bg-green-200 rounded-md transition-colors"
                     disabled={!contract}
@@ -1146,16 +1150,15 @@ const ContractProfitabilityAnalyzer = () => {
               </TabsList>
 
               <TabsContent value="all" className="space-y-2">
-                {(contract ? contract.availableItems : []).map(item => (
+                {(sortedItems || []).map(item => (
                   <ItemCard key={item.id} item={item} showThemeBadge={true} />
                 ))}
               </TabsContent>
 
               {["electronics", "furniture", "office"].map(theme => (
                 <TabsContent key={theme} value={theme} className="space-y-2">
-                  {(contract ? contract.availableItems : [])
+                  {(sortedItems || [])
                     .filter(item => 
-                      // 배열인 경우와 문자열인 경우 모두 처리
                       Array.isArray(item.theme) 
                         ? item.theme.includes(theme) 
                         : item.theme === theme

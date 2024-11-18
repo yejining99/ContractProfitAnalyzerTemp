@@ -145,8 +145,8 @@ export const SAMPLE_CONTRACTS = {
     '002': {
       id: "002",
       items: [
-        { id: 3, quantity: 3 },
-        { id: 4, quantity: 2 }
+        { id: 3, quantity: 3, theme: ["furniture"] },
+        { id: 4, quantity: 2, theme: ["furniture"] }
       ],
       availableItems: [
         { 
@@ -282,7 +282,7 @@ export const SAMPLE_CONTRACTS = {
           }
         }
       ]
-    }
+    },
   };
 
   /*

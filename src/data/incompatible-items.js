@@ -10,4 +10,4 @@ export const INCOMPATIBLE_ITEMS = {
       [2, 3],  // 무선 마우스 - 인체공학 의자
       [2, 6],  // 무선 마우스 - 문서 파쇄기
     ]
-  };
+};
