@@ -84,6 +84,28 @@ const getSetInfo = (contractId, itemId) => {
   return null;
 };
 
+// theme 매핑 상수 추가
+const THEME_MAPPING = {
+  '종수술': '종수술',
+  '자동차': '자동차',
+  '암': '암',
+  '일당': '일당',
+  '일반질병상해':'일반질병상해',
+  '2대': '2대',
+  '재물':'재물'
+};
+
+// theme 표시용 레이블 매핑
+const THEME_LABELS = {
+  '종수술': '종수술',
+  '자동차': '자동차',
+  '암': '암',
+  '일당': '일당',
+  '일반질병상해':'일반질병상해',
+  '2대': '2대',
+  '재물':'재물'
+};
+
 const ContractProfitabilityAnalyzer = () => {
   // 상태 관리
   // 현재 선택된 계약 ID
@@ -646,9 +668,7 @@ const ContractProfitabilityAnalyzer = () => {
                       variant="outline" 
                       className="text-gray-500 border-gray-300"
                     >
-                      {t === 'electronics' ? '전자기기' : 
-                       t === 'furniture' ? '가구' : 
-                       t === 'office' ? '사무용품' : t}
+                      {THEME_LABELS[THEME_MAPPING[t]] || t}
                     </Badge>
                   ))
                 ) : (
@@ -656,9 +676,7 @@ const ContractProfitabilityAnalyzer = () => {
                     variant="outline" 
                     className="text-gray-500 border-gray-300"
                   >
-                    {details.theme === 'electronics' ? '전자기기' : 
-                     details.theme === 'furniture' ? '가구' : 
-                     details.theme === 'office' ? '사무용품' : details.theme}
+                    {THEME_LABELS[THEME_MAPPING[details.theme]] || details.theme}
                   </Badge>
                 )
               )}
@@ -761,15 +779,12 @@ const ContractProfitabilityAnalyzer = () => {
     const themeCount = getContractThemeRatio(contract.id);
     if (!themeCount) return null;
 
-    // 총 개수 계산
     const total = Object.values(themeCount).reduce((sum, count) => sum + count, 0);
-
-    // 비율 계산 (소수점 제거)
-    const ratio = {
-      electronics: Math.round((themeCount.electronics / total) * 100),
-      furniture: Math.round((themeCount.furniture / total) * 100),
-      office: Math.round((themeCount.office / total) * 100)
-    };
+    
+    const ratio = {};
+    Object.entries(themeCount).forEach(([theme, count]) => {
+      ratio[theme] = Math.round((count / total) * 100);
+    });
 
     return (
       <Card className="shadow-sm">
@@ -780,49 +795,34 @@ const ContractProfitabilityAnalyzer = () => {
           <div className="space-y-2">
             {/* 프로그레스 바 컨테이너 */}
             <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden flex">
-              {themeCount.electronics > 0 && (
-                <div 
-                  className="bg-blue-500 h-full" 
-                  style={{ width: `${ratio.electronics}%` }}
-                  title={`전자기기: (${ratio.electronics}%)`}
-                />
-              )}
-              {themeCount.furniture > 0 && (
-                <div 
-                  className="bg-green-500 h-full" 
-                  style={{ width: `${ratio.furniture}%` }}
-                  title={`가구: (${ratio.furniture}%)`}
-                />
-              )}
-              {themeCount.office > 0 && (
-                <div 
-                  className="bg-yellow-500 h-full" 
-                  style={{ width: `${ratio.office}%` }}
-                  title={`사무용품: (${ratio.office}%)`}
-                />
-              )}
+              {Object.entries(ratio).map(([theme, percentage], index) => (
+                percentage > 0 && (
+                  <div 
+                    key={theme}
+                    className={`h-full`}
+                    style={{ 
+                      width: `${percentage}%`,
+                      backgroundColor: `hsl(${index * 45}, 70%, 50%)`
+                    }}
+                    title={`${theme}: ${percentage}%`}
+                  />
+                )
+              ))}
             </div>
 
             {/* 범례 */}
-            <div className="flex justify-center gap-4 text-sm">
-              {themeCount.electronics > 0 && (
-                <div className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-blue-500 rounded"></div>
-                  <span>전자기기 ({ratio.electronics}%)</span>
-                </div>
-              )}
-              {themeCount.furniture > 0 && (
-                <div className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-green-500 rounded"></div>
-                  <span>가구 ({ratio.furniture}%)</span>
-                </div>
-              )}
-              {themeCount.office > 0 && (
-                <div className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-yellow-500 rounded"></div>
-                  <span>사무용품 ({ratio.office}%)</span>
-                </div>
-              )}
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              {Object.entries(ratio).map(([theme, percentage], index) => (
+                percentage > 0 && (
+                  <div key={theme} className="flex items-center gap-1">
+                    <div 
+                      className="w-3 h-3 rounded"
+                      style={{ backgroundColor: `hsl(${index * 45}, 70%, 50%)` }}
+                    ></div>
+                    <span>{THEME_LABELS[theme]} ({percentage}%)</span>
+                  </div>
+                )
+              ))}
             </div>
           </div>
         </CardContent>
@@ -1013,7 +1013,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
                       
-                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      // 1. 모든 아이템을 그룹화 (세트 ��는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
@@ -1144,9 +1144,13 @@ const ContractProfitabilityAnalyzer = () => {
             <Tabs defaultValue="all" className="w-full">
               <TabsList className="mb-4">
                 <TabsTrigger value="all">전체</TabsTrigger>
-                <TabsTrigger value="electronics">전자기기</TabsTrigger>
-                <TabsTrigger value="furniture">가구</TabsTrigger>
-                <TabsTrigger value="office">사무용품</TabsTrigger>
+                <TabsTrigger value="종수술">종수술</TabsTrigger>
+                <TabsTrigger value="자동차">자동차</TabsTrigger>
+                <TabsTrigger value="암">암</TabsTrigger>
+                <TabsTrigger value="일당">일당</TabsTrigger>
+                <TabsTrigger value="일반질병상해">일반질병상해</TabsTrigger>
+                <TabsTrigger value="2대">2대</TabsTrigger>
+                <TabsTrigger value="재물">재물</TabsTrigger>
               </TabsList>
 
               <TabsContent value="all" className="space-y-2">
@@ -1155,14 +1159,15 @@ const ContractProfitabilityAnalyzer = () => {
                 ))}
               </TabsContent>
 
-              {["electronics", "furniture", "office"].map(theme => (
+              {Object.keys(THEME_MAPPING).map(theme => (
                 <TabsContent key={theme} value={theme} className="space-y-2">
                   {(sortedItems || [])
-                    .filter(item => 
-                      Array.isArray(item.theme) 
-                        ? item.theme.includes(theme) 
-                        : item.theme === theme
-                    )
+                    .filter(item => {
+                      const itemTheme = Array.isArray(item.theme) 
+                        ? item.theme
+                        : [item.theme];
+                      return itemTheme.includes(theme);
+                    })
                     .map(item => (
                       <ItemCard key={item.id} item={item} />
                     ))}
