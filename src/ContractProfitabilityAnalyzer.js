@@ -351,7 +351,7 @@ const ContractProfitabilityAnalyzer = () => {
       return contract?.items.find(i => i.id === item.id)?.quantity;
     };
 
-    // 수량 상태 초기화 로직 수정
+    // 수량 상태 초화 로직 수정
     const [previewQuantity, setPreviewQuantity] = useState(() => {
       const existingMod = modifications.find(mod => mod.id === item.id);
       const originalItem = contract?.items.find(i => i.id === item.id);
@@ -535,7 +535,7 @@ const ContractProfitabilityAnalyzer = () => {
         // 기존 아이템의 수량 변경인 경우
         return {
           style: 'bg-yellow-50 border-yellow-200',
-          badge: <Badge variant="outline" className="border-yellow-500 text-yellow-700 bg-yellow-50">수량 변경</Badge>
+          badge: <Badge variant="outline" className="border-yellow-500 text-yellow-700 bg-yellow-50">량 변경</Badge>
         };
       }
       if (status.originallyIncluded) {
@@ -626,15 +626,15 @@ const ContractProfitabilityAnalyzer = () => {
                   disabled={!contract}
                 >
                   {details?.availableQuantities?.map(q => (
-                    <option key={q} value={q}>{q}개</option>
+                    <option key={q} value={q}>{q}원</option>
                   ))}
                 </select>
               </div>
 
-              {/* 오른쪽: 가격 정보 */}
+              {/* 오른쪽: 보험료, KMV, 수익률 정보 */}
               <span className="text-gray-500">
-                가격: ₩{metrics.totalPrice.toLocaleString()} | 
-                수익: ₩{metrics.totalProfit.toLocaleString()} | 
+                보험료: ₩{metrics.totalPrice.toLocaleString()} | 
+                KMV: ₩{metrics.totalProfit.toLocaleString()} | 
                 수익률: {profitability}%
               </span>
             </div>
@@ -830,23 +830,7 @@ const ContractProfitabilityAnalyzer = () => {
     );
   };
 
-  const randomSort = (items: Item[]) => {
-    // 모든 아이템을 하나의 배열로 펼치기
-    const allItems = items.flatMap(item => {
-      if (item.type === 'set') {
-        return item.items;
-      }
-      return item;
-    });
-    
-    // Fisher-Yates 알고리즘으로 모든 아이템을 완전히 랜덤하게 섞기
-    for (let i = allItems.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
-    }
-    
-    return allItems;
-  };
+
 
   // JSX 렌더링
   return (
@@ -903,7 +887,7 @@ const ContractProfitabilityAnalyzer = () => {
                   const itemDetails = contract.availableItems.find(i => i.id === contractItem.id);
                   if (!itemDetails) return null;
 
-                  // ItemCard에 전달할 통합 정보 구성
+                  // ItemCard에 전���할 통합 정보 구성
                   const itemWithDetails = {
                     ...itemDetails,
                     quantity: contractItem.quantity
@@ -959,61 +943,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
                       
-                      // 1. 세트 아이템과 일반 아이템 분리
-                      const setItems = new Set();
-                      const setGroups = [];
-                      const normalItems = [];
-
-                      itemsToSort.forEach(item => {
-                        const setInfo = getSetInfo(originalContract.id, item.id);
-                        
-                        if (setInfo) {
-                          // 이미 처리된 세트는 건너뛰기
-                          if (setItems.has(item.id)) return;
-                          
-                          // 현재 세트의 모든 아이템을 찾아서 그룹으로 저장
-                          const setGroup = setInfo.ids.map(id => 
-                            itemsToSort.find(i => i.id === id)
-                          ).filter(Boolean);
-                          
-                          // 세트 아이템 ID들을 저장
-                          setInfo.ids.forEach(id => setItems.add(id));
-                          
-                          // 세트 그룹 저장
-                          setGroups.push(setGroup);
-                        } else if (!setItems.has(item.id)) {
-                          // 세트에 포함되지 않은 일반 아이템만 저장
-                          normalItems.push(item);
-                        }
-                      });
-
-                      // 2. 세트 그룹들과 일반 아이템들을 하나의 배열로 만들어서 랜덤하게 섞기
-                      const combinedGroups = [
-                        ...setGroups.map(group => ({ type: 'set', items: group })),
-                        ...normalItems.map(item => ({ type: 'single', items: [item] }))
-                      ];
-
-                      const shuffledGroups = combinedGroups.sort(() => Math.random() - 0.5);
-
-                      // 3. 섞인 그룹들에서 아이템 추출
-                      const shuffledItems = shuffledGroups.flatMap(group => group.items);
-
-                      // 4. 상태 업데이트
-                      setSortedItems(shuffledItems);
-                    }}
-                    className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
-                    disabled={!contract}
-                  >
-                    🎲 랜덤 정렬
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (!contract || !originalContract) return;
-                      
-                      // 원본 데이터를 복사하여 사용
-                      const itemsToSort = [...originalContract.availableItems];
-                      
-                      // 1. 모든 아이템을 그룹화 (세트 ��는 단일 아이템)
+                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
@@ -1031,22 +961,80 @@ const ContractProfitabilityAnalyzer = () => {
                           
                           groups.push({
                             type: 'set',
-                            items: groupItems,
-                            confidence: Math.min(...groupItems.map(item => item.confidence || 0))
+                            items: groupItems
                           });
                         } else {
                           // 일반 아이템인 경우
                           groups.push({
                             type: 'single',
-                            items: [item],
-                            confidence: item.confidence || 0
+                            items: [item]
                           });
                           processedItems.add(item.id);
                         }
                       });
 
-                      // 2. 모든 그룹을 confidence 기준으로 정렬
-                      groups.sort((a, b) => b.confidence - a.confidence);
+                      // 2. 그룹 단위로 랜덤 정렬
+                      const randomizedGroups = groups.sort(() => Math.random() - 0.5);
+
+                      // 3. 정렬된 그룹에서 아이템 추출
+                      const randomizedItems = randomizedGroups.flatMap(group => group.items);
+                      
+                      setSortedItems(randomizedItems);
+                    }}
+                    className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+                    disabled={!contract}
+                  >
+                    🎲 랜덤 정렬
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (!contract || !originalContract) return;
+                      
+                      // 원본 데이터를 복사하여 사용
+                      const itemsToSort = [...originalContract.availableItems];
+                      
+                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      const groups = [];
+                      const processedItems = new Set();
+
+                      itemsToSort.forEach(item => {
+                        if (processedItems.has(item.id)) return;
+
+                        const setInfo = getSetInfo(originalContract.id, item.id);
+                        if (setInfo) {
+                          // 세트 아이템인 경우
+                          const groupItems = setInfo.ids.map(id => 
+                            itemsToSort.find(i => i.id === id)
+                          ).filter(Boolean);
+                          
+                          setInfo.ids.forEach(id => processedItems.add(id));
+                          
+                          const maxProfitability = Math.max(...groupItems.map(item => {
+                            const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                            return metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
+                          }));
+
+                          groups.push({
+                            type: 'set',
+                            items: groupItems,
+                            profitability: maxProfitability
+                          });
+                        } else {
+                          // 일반 아이템인 경우
+                          const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                          const profitability = metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
+
+                          groups.push({
+                            type: 'single',
+                            items: [item],
+                            profitability: profitability
+                          });
+                          processedItems.add(item.id);
+                        }
+                      });
+
+                      // 2. 모든 그룹을 수익률 기준으로 정렬
+                      groups.sort((a, b) => b.profitability - a.profitability);
 
                       // 3. 정렬된 그룹에서 아이템 추출
                       const sortedItems = groups.flatMap(group => group.items);
