@@ -351,7 +351,7 @@ const ContractProfitabilityAnalyzer = () => {
       return contract?.items.find(i => i.id === item.id)?.quantity;
     };
 
-    // 수량 상태 초화 로직 수정
+    // 수량 상태 초���화 로직 수정
     const [previewQuantity, setPreviewQuantity] = useState(() => {
       const existingMod = modifications.find(mod => mod.id === item.id);
       const originalItem = contract?.items.find(i => i.id === item.id);
@@ -887,7 +887,7 @@ const ContractProfitabilityAnalyzer = () => {
                   const itemDetails = contract.availableItems.find(i => i.id === contractItem.id);
                   if (!itemDetails) return null;
 
-                  // ItemCard에 전���할 통합 정보 구성
+                  // ItemCard에 전달할 통합 정보 구성
                   const itemWithDetails = {
                     ...itemDetails,
                     quantity: contractItem.quantity
@@ -993,7 +993,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
                       
-                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      // 1. 모든 아이템을 그룹화 (세트 는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
@@ -1009,32 +1009,24 @@ const ContractProfitabilityAnalyzer = () => {
                           
                           setInfo.ids.forEach(id => processedItems.add(id));
                           
-                          const maxProfitability = Math.max(...groupItems.map(item => {
-                            const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                            return metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
-                          }));
-
                           groups.push({
                             type: 'set',
                             items: groupItems,
-                            profitability: maxProfitability
+                            confidence: Math.min(...groupItems.map(item => item.confidence || 0))
                           });
                         } else {
                           // 일반 아이템인 경우
-                          const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                          const profitability = metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
-
                           groups.push({
                             type: 'single',
                             items: [item],
-                            profitability: profitability
+                            confidence: item.confidence || 0
                           });
                           processedItems.add(item.id);
                         }
                       });
 
-                      // 2. 모든 그룹을 수익률 기준으로 정렬
-                      groups.sort((a, b) => b.profitability - a.profitability);
+                      // 2. 모든 그룹을 confidence 기준으로 정렬
+                      groups.sort((a, b) => b.confidence - a.confidence);
 
                       // 3. 정렬된 그룹에서 아이템 추출
                       const sortedItems = groups.flatMap(group => group.items);
