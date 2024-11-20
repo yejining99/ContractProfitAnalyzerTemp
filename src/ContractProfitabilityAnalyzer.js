@@ -222,7 +222,7 @@ const ContractProfitabilityAnalyzer = () => {
             const originalSetItem = contract?.items.find(i => i.id === id);
             const modSetItem = modifications.find(mod => mod.id === id);
             
-            // 원래 있던 아이템이고 수량이 같으면 변경 없음
+            // 원래 있던 아이템이고 수량이 같으면 변 없음
             if (originalSetItem) {
                 if (modSetItem?.action === 'add' && 
                     modSetItem.quantity === originalSetItem.quantity) {
@@ -663,9 +663,9 @@ const ContractProfitabilityAnalyzer = () => {
 
               {/* 오른쪽: 보험료, KMV, 수익률 정보 */}
               <span className="text-gray-500">
-                보험료: ₩{metrics.totalPrice.toLocaleString()} | 
-                KMV: ₩{metrics.totalProfit.toLocaleString()} | 
-                수익률: {profitability}%
+                월납P: ₩{Math.floor(metrics.totalPrice).toLocaleString()} | 
+                KMV: ₩{Math.floor(metrics.totalProfit).toLocaleString()} | 
+                KMV(%): {Math.floor(profitability)}%
               </span>
             </div>
 
@@ -1072,7 +1072,7 @@ const ContractProfitabilityAnalyzer = () => {
                     onClick={() => {
                       if (!contract || !originalContract) return;
                       
-                      // 원본 데이터를 복사하여 사���
+                      // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
                       
                       // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
@@ -1188,7 +1188,7 @@ const ContractProfitabilityAnalyzer = () => {
         </Card>
       </div>
 
-      {/* 하단 수익성 분석 ��널 */}
+      {/* 하단 수익성 분석 널 */}
       {contract && (
         <div className="border-t bg-gray-50">
           <div className="container mx-auto p-2">
@@ -1198,16 +1198,16 @@ const ContractProfitabilityAnalyzer = () => {
                 <h3 className="text-sm font-medium text-gray-500 mb-1">현재 계약</h3>
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-white p-2 rounded-lg">
-                    <div className="text-sm text-gray-500">총 가격</div>
-                    <div className="text-lg font-medium">₩{originalMetrics.totalPrice.toLocaleString()}</div>
+                    <div className="text-sm text-gray-500">월납P</div>
+                    <div className="text-lg font-medium">₩{Math.floor(originalMetrics.totalPrice).toLocaleString()}</div>
                   </div>
                   <div className="bg-white p-2 rounded-lg">
-                    <div className="text-sm text-gray-500">총 수익</div>
-                    <div className="text-lg font-medium">₩{originalMetrics.totalProfit.toLocaleString()}</div>
+                    <div className="text-sm text-gray-500">KMV</div>
+                    <div className="text-lg font-medium">₩{Math.floor(originalMetrics.totalProfit).toLocaleString()}</div>
                   </div>
                   <div className="bg-white p-2 rounded-lg">
-                    <div className="text-sm text-gray-500">수익률</div>
-                    <div className="text-lg font-medium">{originalMetrics.profitability}%</div>
+                    <div className="text-sm text-gray-500">KMV(%)</div>
+                    <div className="text-lg font-medium">{Math.floor(originalMetrics.profitability)}%</div>
                   </div>
                 </div>
               </div>
@@ -1250,23 +1250,23 @@ const ContractProfitabilityAnalyzer = () => {
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
                   }`}>
-                    <div className="text-sm text-gray-500">총 가격</div>
-                    <div className="text-lg font-medium">₩{modifiedMetrics.totalPrice.toLocaleString()}</div>
+                    <div className="text-sm text-gray-500">월납P</div>
+                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}</div>
                   </div>
                   <div className={`bg-white p-2 rounded-lg ${
                     modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
                   }`}>
-                    <div className="text-sm text-gray-500">총 수익</div>
-                    <div className="text-lg font-medium">₩{modifiedMetrics.totalProfit.toLocaleString()}</div>
+                    <div className="text-sm text-gray-500">KMV</div>
+                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalProfit).toLocaleString()}</div>
                   </div>
                   <div className={`bg-white p-2 rounded-lg ${
                     modifiedMetrics.profitability !== originalMetrics.profitability 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
                   }`}>
-                    <div className="text-sm text-gray-500">수익률</div>
+                    <div className="text-sm text-gray-500">KMV(%)</div>
                     <div className={`text-lg font-medium ${
                       Number(profitabilityChange) !== 0
                         ? Number(profitabilityChange) > 0 
@@ -1274,7 +1274,7 @@ const ContractProfitabilityAnalyzer = () => {
                           : 'text-blue-500'
                         : ''
                     }`}>
-                      {modifiedMetrics.profitability}%
+                      {Math.floor(modifiedMetrics.profitability)}%
                     </div>
                   </div>
                 </div>
