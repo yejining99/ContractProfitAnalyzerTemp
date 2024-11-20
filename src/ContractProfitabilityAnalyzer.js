@@ -6,7 +6,6 @@ import { Plus, Minus, Search, TrendingUp, TrendingDown, PlusCircle } from "lucid
 import { SAMPLE_CONTRACTS } from './data/sample-contracts';
 import { INCOMPATIBLE_ITEMS } from './data/incompatible-items';
 import { SET_ITEMS } from './data/set-items';
-import { getContractThemeRatio } from './data/sample-contracts';
 // import {
 //   Select,
 //   SelectContent,
@@ -93,6 +92,37 @@ const THEME_MAPPING = {
   '일반질병상해':'일반질병상해',
   '2대': '2대',
   '재물':'재물'
+};
+
+// 계약의 테마 비율을 계산하는 함수
+const getContractThemeRatio = (contractId) => {
+  const contract = SAMPLE_CONTRACTS[contractId];
+  if (!contract) return null;
+
+  // theme 카운트를 저장할 객체
+  const themeCount = Object.keys(THEME_MAPPING).reduce((acc, key) => {
+    acc[key] = 0;
+    return acc;
+  }, {});
+
+  // 각 아이템의 theme 카운트
+  contract.items.forEach(item => {
+    const themes = Array.isArray(item.theme) ? item.theme : [item.theme];
+    themes.forEach(theme => {
+      if (themeCount.hasOwnProperty(theme)) {
+        themeCount[theme] += 1;
+      }
+    });
+  });
+
+  // 카운트가 0인 theme 제거
+  Object.keys(themeCount).forEach(key => {
+    if (themeCount[key] === 0) {
+      delete themeCount[key];
+    }
+  });
+
+  return themeCount;
 };
 
 // theme 표시용 레이블 매핑
@@ -351,7 +381,7 @@ const ContractProfitabilityAnalyzer = () => {
       return contract?.items.find(i => i.id === item.id)?.quantity;
     };
 
-    // 수량 상태 초���화 로직 수정
+    // 수량 상태 초화 로직 수정
     const [previewQuantity, setPreviewQuantity] = useState(() => {
       const existingMod = modifications.find(mod => mod.id === item.id);
       const originalItem = contract?.items.find(i => i.id === item.id);
@@ -1042,7 +1072,7 @@ const ContractProfitabilityAnalyzer = () => {
                     onClick={() => {
                       if (!contract || !originalContract) return;
                       
-                      // 원본 데이터를 복사하여 사용
+                      // 원본 데이터를 복사하여 사���
                       const itemsToSort = [...originalContract.availableItems];
                       
                       // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
@@ -1158,7 +1188,7 @@ const ContractProfitabilityAnalyzer = () => {
         </Card>
       </div>
 
-      {/* 하단 수익성 분석 패널 */}
+      {/* 하단 수익성 분석 ��널 */}
       {contract && (
         <div className="border-t bg-gray-50">
           <div className="container mx-auto p-2">
