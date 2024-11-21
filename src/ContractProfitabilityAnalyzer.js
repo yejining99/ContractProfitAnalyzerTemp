@@ -635,9 +635,47 @@ const ContractProfitabilityAnalyzer = () => {
       <div>
         {/* 세트 헤더 표시 (세트의 첫 번째 아이템인 경우에만) */}
         {isSetHeader && (
-          <div className="flex items-center gap-2 mb-2 pl-2 text-sm text-purple-700 font-medium">
-            <PlusCircle size={16} className="text-purple-500" />
-            세트 아이템
+          <div className="flex items-center justify-between mb-2 pl-2 pr-4 py-2 bg-purple-50 rounded-lg border border-purple-100">
+            <div className="flex items-center gap-2 text-sm text-purple-700 font-medium">
+              <PlusCircle size={16} className="text-purple-500" />
+              세트 아이템
+            </div>
+            
+            {/* 세트 전체 메트릭스 */}
+            <div className="flex items-center gap-4 text-sm">
+              {(() => {
+                // 세트에 속한 모든 아이템의 메트릭스 계산
+                const setMetrics = setInfo.ids.reduce((acc, itemId) => {
+                  const itemDetails = contract?.availableItems.find(i => i.id === itemId);
+                  const mod = modifications.find(m => m.id === itemId);
+                  const quantity = mod?.quantity || itemDetails?.recommendedQuantity;
+                  const metrics = itemDetails?.priceAndProfitByQuantity[quantity] || { totalPrice: 0, totalProfit: 0 };
+                  
+                  return {
+                    totalPrice: acc.totalPrice + metrics.totalPrice,
+                    totalProfit: acc.totalProfit + metrics.totalProfit
+                  };
+                }, { totalPrice: 0, totalProfit: 0 });
+
+                const profitability = setMetrics.totalPrice > 0 
+                  ? ((setMetrics.totalProfit / setMetrics.totalPrice) * 100).toFixed(1) 
+                  : '0.0';
+
+                return (
+                  <>
+                    <span className="text-purple-600">
+                      전체 월납P: ₩{Math.floor(setMetrics.totalPrice).toLocaleString()}
+                    </span>
+                    <span className="text-purple-600">
+                      KMV: ₩{Math.floor(setMetrics.totalProfit).toLocaleString()}
+                    </span>
+                    <span className="text-purple-600">
+                      KMV(%): {Math.floor(profitability)}%
+                    </span>
+                  </>
+                );
+              })()}
+            </div>
           </div>
         )}
         
@@ -902,7 +940,39 @@ const ContractProfitabilityAnalyzer = () => {
             </CardContent>
           </Card>
 
-          {/* 테마 비율 표시 - 검색 영역 아래에 추가 */}
+          {/* 계약 기본 정보 - 검색 영역 아래 추가 */}
+          {contract && (
+            <Card className="shadow-sm">
+              <CardHeader className="py-2">
+                <CardTitle>계약 기본 정보</CardTitle>
+              </CardHeader>
+              <CardContent className="py-2">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500">채널:</span>
+                    <span className="font-medium">{contract.channel}</span>
+                  </div>
+                  <span className="text-gray-300">•</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500">상품명:</span>
+                    <span className="font-medium">{contract.unt_pd_nm}</span>
+                  </div>
+                  <span className="text-gray-300">•</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500">나이:</span>
+                    <span className="font-medium">{contract.age}세</span>
+                  </div>
+                  <span className="text-gray-300">•</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500">성별:</span>
+                    <span className="font-medium">{contract.sex}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* 테마 비율 표시 */}
           {getThemeRatioDisplay()}
 
           {/* 현재 계약 아이템 */}
@@ -1091,16 +1161,25 @@ const ContractProfitabilityAnalyzer = () => {
                           
                           setInfo.ids.forEach(id => processedItems.add(id));
                           
-                          const maxProfitability = Math.max(...groupItems.map(item => {
+                          // 세트 전체의 메트릭스 계산
+                          const setMetrics = groupItems.reduce((acc, item) => {
                             const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                            return metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
-                          }));
+                            return {
+                              totalPrice: acc.totalPrice + (metrics?.totalPrice || 0),
+                              totalProfit: acc.totalProfit + (metrics?.totalProfit || 0)
+                            };
+                          }, { totalPrice: 0, totalProfit: 0 });
+
+                          const setProfitability = setMetrics.totalPrice > 0 
+                            ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
+                            : 0;
 
                           groups.push({
                             type: 'set',
                             items: groupItems,
-                            profitability: maxProfitability
+                            profitability: setProfitability
                           });
+                          
                         } else {
                           // 일반 아이템인 경우
                           const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
@@ -1127,6 +1206,82 @@ const ContractProfitabilityAnalyzer = () => {
                     disabled={!contract}
                   >
                     💰 KMV 정렬
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (!contract || !originalContract) return;
+                      
+                      // 원본 데이터를 복사하여 사용
+                      const itemsToSort = [...originalContract.availableItems];
+                      
+                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      const groups = [];
+                      const processedItems = new Set();
+
+                      itemsToSort.forEach(item => {
+                        if (processedItems.has(item.id)) return;
+
+                        const setInfo = getSetInfo(originalContract.id, item.id);
+                        if (setInfo) {
+                          // 세트 아이템인 경우
+                          const groupItems = setInfo.ids.map(id => 
+                            itemsToSort.find(i => i.id === id)
+                          ).filter(Boolean);
+                          
+                          setInfo.ids.forEach(id => processedItems.add(id));
+                          
+                          // 세트 전체의 메트릭스 계산
+                          const setMetrics = groupItems.reduce((acc, item) => {
+                            const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                            return {
+                              totalPrice: acc.totalPrice + (metrics?.totalPrice || 0),
+                              totalProfit: acc.totalProfit + (metrics?.totalProfit || 0)
+                            };
+                          }, { totalPrice: 0, totalProfit: 0 });
+
+                          // 세트의 평균 추천도 계산
+                          const avgConfidence = groupItems.reduce((sum, item) => 
+                            sum + (item.confidence || 0), 0) / groupItems.length;
+
+                          const setProfitability = setMetrics.totalPrice > 0 
+                            ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
+                            : 0;
+
+                          // 추천도와 수익률을 곱한 점수 계산
+                          const score = avgConfidence * setProfitability;
+
+                          groups.push({
+                            type: 'set',
+                            items: groupItems,
+                            score: score
+                          });
+                        } else {
+                          // 일반 아이템인 경우
+                          const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                          const profitability = metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
+                          const score = (item.confidence || 0) * profitability;
+
+                          groups.push({
+                            type: 'single',
+                            items: [item],
+                            score: score
+                          });
+                          processedItems.add(item.id);
+                        }
+                      });
+
+                      // 2. 모든 그룹을 점수 기준으로 정렬
+                      groups.sort((a, b) => b.score - a.score);
+
+                      // 3. 정렬된 그룹에서 아이템 추출
+                      const sortedItems = groups.flatMap(group => group.items);
+
+                      setSortedItems(sortedItems);
+                    }}
+                    className="px-3 py-1.5 text-sm bg-purple-100 hover:bg-purple-200 rounded-md transition-colors"
+                    disabled={!contract}
+                  >
+                    🎯 추천×KMV 정렬
                   </button>
                 </div>
               </div>

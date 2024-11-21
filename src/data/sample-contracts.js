@@ -2,6 +2,10 @@
 export const SAMPLE_CONTRACTS = {
     "0": {
         "id": "0",
+        "channel" : "GA",
+        "age": "32",
+        "sex" : "남",
+        "unt_pd_nm": "내Mom대로 5.10.5",
         "items": [
             {
                 "id": "633380",
