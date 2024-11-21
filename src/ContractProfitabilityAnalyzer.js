@@ -150,6 +150,8 @@ const ContractProfitabilityAnalyzer = () => {
   const [originalContract, setOriginalContract] = useState(null);
   // 정렬된 아이템을 저장하는 상태 추가
   const [sortedItems, setSortedItems] = useState([]);
+  // 실손 할인 선택 상태 추가
+  const [selectedSilsonType, setSelectedSilsonType] = useState(null);
 
   // 아이템의 현재 상태 확인 변수 (포함 여부, 수정 여부 등)
   const getItemStatus = (item) => {
@@ -555,7 +557,7 @@ const ContractProfitabilityAnalyzer = () => {
             badge: <Badge variant="outline" className="border-red-500 text-red-700 bg-red-50">삭제 예정</Badge>
           };
         }
-        // 새로 추가된 아이템인 경우 (수량 변경과 관계없이)
+        // 새로 추가된 아이템인 우 (수량 변경과 계없이)
         if (!status.originallyIncluded) {
           return {
             style: 'bg-green-50 border-green-200',
@@ -667,7 +669,7 @@ const ContractProfitabilityAnalyzer = () => {
                       전체 월납P: ₩{Math.floor(setMetrics.totalPrice).toLocaleString()}
                     </span>
                     <span className="text-purple-600">
-                      KMV: ₩{Math.floor(setMetrics.totalProfit).toLocaleString()}
+                      KMV: {Math.floor(setMetrics.totalProfit).toLocaleString()}
                     </span>
                     <span className="text-purple-600">
                       KMV(%): {Math.floor(profitability)}%
@@ -787,8 +789,9 @@ const ContractProfitabilityAnalyzer = () => {
   const originalMetrics = useMemo(() => {
     if (!contract) return { totalPrice: 0, totalProfit: 0, profitability: '0.0' };
     
-    // contract.items를 직접 사하여 원본 계약 데이터만으로 계산
+    // 기본 메트릭스 계산만 하고 실손 할인은 적용하지 않음
     return calculateMetrics(contract.items);
+    
   }, [contract]);
 
   // 수정된 아이템 목록을 가져오는 함수 수정
@@ -832,7 +835,11 @@ const ContractProfitabilityAnalyzer = () => {
     if (!contract) return { totalPrice: 0, totalProfit: 0, profitability: '0.0' };
     
     const modifiedItems = getModifiedItems();
-    return calculateMetrics(modifiedItems);
+    const metrics = calculateMetrics(modifiedItems);
+    
+    // 실손 할인은 별도로 표시하고 KMV에는 반영하지 않음
+    return metrics;
+    
   }, [contract, modifications, getModifiedItems]);
 
   // 수익률 변화 계산
@@ -911,24 +918,29 @@ const ContractProfitabilityAnalyzer = () => {
           <Card className="shadow-sm">
             <CardContent className="py-2">
               <div className="flex items-center gap-2 mt-1">
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-[140px] p-2 border rounded bg-white"
-                >
-                  <option value="all">전체</option>
-                  <option value="sick">유병자실손</option>
-                  <option value="old">노후손</option>
-                  <option value="normal1">실손1</option>
-                  <option value="normal2">실손2</option>
-                </select>
-                <input 
-                  type="text"
-                  placeholder="계약 번호 입력"
-                  className="flex-1 p-2 border rounded"
-                  value={contractId}
-                  onChange={(e) => setContractId(e.target.value)}
-                />
+                <div className="flex-1 flex gap-2">
+                  <input 
+                    type="text"
+                    placeholder="계약 번호 입력"
+                    className="flex-1 p-2 border rounded"
+                    value={contractId}
+                    onChange={(e) => setContractId(e.target.value)}
+                  />
+                  {contract?.silson_discount && (
+                    <select
+                      value={selectedSilsonType || ''}
+                      onChange={(e) => setSelectedSilsonType(e.target.value)}
+                      className="w-[100px] p-2 border rounded bg-white"
+                    >
+                      <option value="">할인선택</option>
+                      {contract.silson_discount.map(discount => (
+                        <option key={discount.tag} value={discount.tag}>
+                          {discount.tag}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                </div>
                 <button
                   className="px-4 py-2 bg-red-500 text-white rounded flex items-center gap-2 hover:bg-red-600"
                   onClick={searchContract}
@@ -965,7 +977,7 @@ const ContractProfitabilityAnalyzer = () => {
                   <span className="text-gray-300">•</span>
                   <div className="flex items-center gap-2">
                     <span className="text-gray-500">성별:</span>
-                    <span className="font-medium">{contract.sex}</span>
+                    <span className="font-medium">{contract.gndr}</span>
                   </div>
                 </div>
               </CardContent>
@@ -1359,10 +1371,20 @@ const ContractProfitabilityAnalyzer = () => {
                   <div className="bg-white p-2 rounded-lg">
                     <div className="text-sm text-gray-500">KMV</div>
                     <div className="text-lg font-medium">₩{Math.floor(originalMetrics.totalProfit).toLocaleString()}</div>
+                    {selectedSilsonType && contract?.silson_discount && (
+                      <div className="text-sm text-blue-600 mt-1">
+                        차감 KMV: ₩{Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}
+                      </div>
+                    )}
                   </div>
                   <div className="bg-white p-2 rounded-lg">
                     <div className="text-sm text-gray-500">KMV(%)</div>
                     <div className="text-lg font-medium">{Math.floor(originalMetrics.profitability)}%</div>
+                    {selectedSilsonType && contract?.silson_discount && (
+                      <div className="text-sm text-blue-600 mt-1">
+                        {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

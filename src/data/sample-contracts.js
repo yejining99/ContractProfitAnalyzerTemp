@@ -4,8 +4,13 @@ export const SAMPLE_CONTRACTS = {
         "id": "0",
         "channel" : "GA",
         "age": "32",
-        "sex" : "남",
+        "gndr" : "남",
         "unt_pd_nm": "내Mom대로 5.10.5",
+        "silson_discount": [
+            {'tag': '유병자', 'kmv_adj': 0.0},
+            {'tag': '일반1', 'kmv_adj': -194572.979913},
+            {'tag': '노후', 'kmv_adj': 0.0},
+            {'tag': '일반2', 'kmv_adj': -194915.95471100006}],
         "items": [
             {
                 "id": "633380",
