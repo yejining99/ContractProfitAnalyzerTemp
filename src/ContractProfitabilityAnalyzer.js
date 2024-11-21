@@ -1419,7 +1419,7 @@ const ContractProfitabilityAnalyzer = () => {
                     <div className="text-lg font-medium">{Math.floor(originalMetrics.profitability)}%</div>
                     {selectedSilsonType && contract?.silson_discount && (
                       <div className="text-sm text-blue-600 mt-1">
-                        {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
+                        차감 KMV(%): {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
                       </div>
                     )}
                   </div>

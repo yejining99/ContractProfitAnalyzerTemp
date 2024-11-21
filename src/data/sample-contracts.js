@@ -8,8 +8,8 @@ export const SAMPLE_CONTRACTS = {
         "unt_pd_nm": "내Mom대로 5.10.5",
         "silson_discount": [
             {'tag': '유병자', 'kmv_adj': 0.0},
-            {'tag': '일반1', 'kmv_adj': -194572.979913},
             {'tag': '노후', 'kmv_adj': 0.0},
+            {'tag': '일반1', 'kmv_adj': -194572.979913},
             {'tag': '일반2', 'kmv_adj': -194915.95471100006}],
         'items': [{'id': '633380',
                     'name': '암진단비(유사암제외)(면책기간미적용)',
