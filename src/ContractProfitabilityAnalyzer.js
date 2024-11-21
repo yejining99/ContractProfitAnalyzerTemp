@@ -176,15 +176,10 @@ const ContractProfitabilityAnalyzer = () => {
 
   // 메트릭스(총 가격, 총 익, 수익률) 계산 수
   const calculateMetrics = (items) => {
-    const totals = items.reduce((sum, item) => {
-      const itemDetails = contract?.availableItems.find(i => i.id === item.id);
-      const metrics = itemDetails?.priceAndProfitByQuantity[item.quantity] || { totalPrice: 0, totalProfit: 0 };
-      
-      return {
-        totalPrice: sum.totalPrice + metrics.totalPrice,
-        totalProfit: sum.totalProfit + metrics.totalProfit
-      };
-    }, { totalPrice: 0, totalProfit: 0 });
+    const totals = items.reduce((sum, item) => ({
+      totalPrice: sum.totalPrice + item.totalPrice,
+      totalProfit: sum.totalProfit + item.totalProfit
+    }), { totalPrice: 0, totalProfit: 0 });
 
     const profitability = totals.totalPrice > 0 
       ? ((totals.totalProfit / totals.totalPrice) * 100).toFixed(1) 
@@ -217,7 +212,7 @@ const ContractProfitabilityAnalyzer = () => {
     
     const actualQuantity = quantity || item.recommendedQuantity;
 
-    // 세트 아이템 처리
+    // 세트 아이템 처
     if (setInfo) {
         // 현재 세트의 모 아이템이 원래 태와 동일한지 확인
         const isSetUnchanged = setInfo.ids.every(id => {
@@ -545,7 +540,7 @@ const ContractProfitabilityAnalyzer = () => {
     const incompatibilityWarning = getIncompatibilityWarning();
 
     const handleRemoveItem = () => {
-      toggleItem(item, null, 'remove');  // toggleItem의 remove 로직 사용
+      toggleItem(item, null, 'remove');  // toggleItem remove 로직 사용
     };
 
     // 아이템 상태에 따른 스타일과 라벨 결정
@@ -789,9 +784,20 @@ const ContractProfitabilityAnalyzer = () => {
   const originalMetrics = useMemo(() => {
     if (!contract) return { totalPrice: 0, totalProfit: 0, profitability: '0.0' };
     
-    // 기본 메트릭스 계산만 하고 실손 할인은 적용하지 않음
-    return calculateMetrics(contract.items);
-    
+    // items 배열의 값들을 직접 합산
+    const totals = contract.items.reduce((sum, item) => ({
+      totalPrice: sum.totalPrice + item.totalPrice,
+      totalProfit: sum.totalProfit + item.totalProfit
+    }), { totalPrice: 0, totalProfit: 0 });
+
+    const profitability = totals.totalPrice > 0 
+      ? ((totals.totalProfit / totals.totalPrice) * 100).toFixed(1) 
+      : '0.0';
+
+    return {
+      ...totals,
+      profitability
+    };
   }, [contract]);
 
   // 수정된 아이템 목록을 가져오는 함수 수정
@@ -811,17 +817,24 @@ const ContractProfitabilityAnalyzer = () => {
         }
       } else {
         // 추가 또는 수정
+        const itemDetails = contract.availableItems.find(i => i.id === mod.id);
+        const metrics = itemDetails?.priceAndProfitByQuantity[mod.quantity] || { totalPrice: 0, totalProfit: 0 };
+        
         if (existingIndex !== -1) {
           // 기존 아이템 수정
           items[existingIndex] = {
             id: mod.id,
-            quantity: mod.quantity
+            quantity: mod.quantity,
+            totalPrice: metrics.totalPrice,
+            totalProfit: metrics.totalProfit
           };
         } else {
           // 새 아이템 추가
           items.push({
             id: mod.id,
-            quantity: mod.quantity
+            quantity: mod.quantity,
+            totalPrice: metrics.totalPrice,
+            totalProfit: metrics.totalProfit
           });
         }
       }
@@ -994,22 +1007,46 @@ const ContractProfitabilityAnalyzer = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-1">
-                {contract?.items.map(contractItem => {
-                  // availableItems에서 해당 아이템의 상세 정보 찾기
-                  const itemDetails = contract.availableItems.find(i => i.id === contractItem.id);
-                  if (!itemDetails) return null;
-
-                  // ItemCard에 전달할 통합 정보 구성
-                  const itemWithDetails = {
-                    ...itemDetails,
-                    quantity: contractItem.quantity
-                  };
-
+                {contract?.items.map(item => {
+                  // 아이템 이름 가져오기
+                  const itemDetails = contract.availableItems.find(i => i.id === item.id);
+                  
                   return (
-                    <ItemCard 
-                      key={contractItem.id} 
-                      item={itemWithDetails}
-                    />
+                    <div key={item.id} className={`flex items-center p-2 rounded-lg border bg-blue-50 border-blue-200`}>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          {/* 왼쪽: 이름과 수량 */}
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium">{itemDetails?.name}</span>
+                            <span className="border rounded px-2 py-1 text-sm bg-gray-50">
+                              {item.quantity}원
+                            </span>
+                          </div>
+
+                          {/* 오른쪽: 보험료, KMV, 수익률 정보 */}
+                          <span className="text-gray-500">
+                            월납P: ₩{Math.floor(item.totalPrice).toLocaleString()} | 
+                            KMV: ₩{Math.floor(item.totalProfit).toLocaleString()} | 
+                            KMV(%): {Math.floor((item.totalProfit / item.totalPrice) * 100)}%
+                          </span>
+                        </div>
+
+                        {/* 배지 영역 */}
+                        <div className="flex flex-wrap gap-1.5 items-center mt-1">
+                          <Badge variant="secondary">현재 계약</Badge>
+                        </div>
+                      </div>
+
+                      {/* 삭제 버튼 */}
+                      <div className="flex items-center gap-2 ml-2">
+                        <div 
+                          onClick={() => toggleItem(item, null, 'remove')}
+                          className="cursor-pointer text-xl font-bold px-2 py-1 text-red-500 hover:text-red-700 hover:bg-red-50 rounded"
+                        >
+                          −
+                        </div>
+                      </div>
+                    </div>
                   );
                 })}
                 {contract && contract.items.length === 0 && (
@@ -1259,7 +1296,7 @@ const ContractProfitabilityAnalyzer = () => {
                             ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
                             : 0;
 
-                          // 추천도와 수익률을 곱한 점수 계산
+                          // 추천도와 수익률을 곱한 점수 계
                           const score = avgConfidence * setProfitability;
 
                           groups.push({
@@ -1436,7 +1473,14 @@ const ContractProfitabilityAnalyzer = () => {
                       : ''
                   }`}>
                     <div className="text-sm text-gray-500">KMV</div>
-                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalProfit).toLocaleString()}</div>
+                    <div className="text-lg font-medium">
+                      ₩{Math.floor(
+                        modifiedMetrics.totalProfit + 
+                        (selectedSilsonType && contract?.silson_discount 
+                          ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                          : 0)
+                      ).toLocaleString()}
+                    </div>
                   </div>
                   <div className={`bg-white p-2 rounded-lg ${
                     modifiedMetrics.profitability !== originalMetrics.profitability 
@@ -1451,7 +1495,12 @@ const ContractProfitabilityAnalyzer = () => {
                           : 'text-blue-500'
                         : ''
                     }`}>
-                      {Math.floor(modifiedMetrics.profitability)}%
+                      {Math.floor(
+                        ((modifiedMetrics.totalProfit + 
+                          (selectedSilsonType && contract?.silson_discount 
+                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                            : 0)) / modifiedMetrics.totalPrice) * 100
+                      )}%
                     </div>
                   </div>
                 </div>

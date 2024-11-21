@@ -11,57 +11,48 @@ export const SAMPLE_CONTRACTS = {
             {'tag': '일반1', 'kmv_adj': -194572.979913},
             {'tag': '노후', 'kmv_adj': 0.0},
             {'tag': '일반2', 'kmv_adj': -194915.95471100006}],
-        "items": [
-            {
-                "id": "633380",
-                "quantity": 50000000,
-                "theme": [
-                    "일반질병상해"
-                ]
-            },
-            {
-                "id": "630228",
-                "quantity": 30000000,
-                "theme": [
-                    "2대"
-                ]
-            },
-            {
-                "id": "630527",
-                "quantity": 10000000,
-                "theme": [
-                    "2대"
-                ]
-            },
-            {
-                "id": "610605",
-                "quantity": 50000000,
-                "theme": [
-                    "일당"
-                ]
-            },
-            {
-                "id": "630235",
-                "quantity": 30000000,
-                "theme": [
-                    "2대"
-                ]
-            },
-            {
-                "id": "633391",
-                "quantity": 50000,
-                "theme": [
-                    "일반질병상해"
-                ]
-            },
-            {
-                "id": "610015",
-                "quantity": 50000000,
-                "theme": [
-                    "일당"
-                ]
-            }
-        ],
+        'items': [{'id': '633380',
+                    'name': '암진단비(유사암제외)(면책기간미적용)',
+                    'quantity': 50000000,
+                    'theme': ['일반질병상해'],
+                    'totalPrice': 56950.0,
+                    'totalProfit': 952260.682456},
+                {'id': '630228',
+                    'name': '뇌혈관질환진단',
+                    'quantity': 30000000,
+                    'theme': ['2대'],
+                    'totalPrice': 26970.0,
+                    'totalProfit': 351805.810741},
+                {'id': '630527',
+                    'name': '유사암진단비',
+                    'quantity': 10000000,
+                    'theme': ['2대'],
+                    'totalPrice': 1500.0,
+                    'totalProfit': 15684.939143},
+                {'id': '610605',
+                    'name': '일반상해고도후유장해',
+                    'quantity': 50000000,
+                    'theme': ['일당'],
+                    'totalPrice': 300.0,
+                    'totalProfit': 6846.15265},
+                {'id': '630235',
+                    'name': '허혈성심질환진단',
+                    'quantity': 30000000,
+                    'theme': ['2대'],
+                    'totalPrice': 17490.0,
+                    'totalProfit': 250408.004799},
+                {'id': '633391',
+                    'name': '암직접치료통원일당(상급종합병원)(면책기간미적용)',
+                    'quantity': 50000,
+                    'theme': ['일반질병상해'],
+                    'totalPrice': 2455.0,
+                    'totalProfit': 49017.42717},
+                {'id': '610015',
+                    'name': '일반상해사망',
+                    'quantity': 50000000,
+                    'theme': ['일당'],
+                    'totalPrice': 2400.0,
+                    'totalProfit': 55406.183985}],
         "availableItems": [
             {
                 "id": "632342",
