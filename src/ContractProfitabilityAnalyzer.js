@@ -884,7 +884,7 @@ const ContractProfitabilityAnalyzer = () => {
     return (Number(modifiedMetrics.profitability) - Number(originalMetrics.profitability)).toFixed(1);
   }, [modifiedMetrics.profitability, originalMetrics.profitability]);
 
-  // theme 비율을 계산하는 함수
+  // theme 비율을 계산��는 함수
   const getThemeRatioDisplay = () => {
     if (!contract) return null;
     
@@ -1118,7 +1118,7 @@ const ContractProfitabilityAnalyzer = () => {
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <h3 className="text-lg font-semibold">전체 아이템</h3>
-                <div className="flex gap-2">
+                <div className="flex gap-1">
                   <button
                     onClick={() => {
                       if (!contract || !originalContract) return;
@@ -1164,10 +1164,10 @@ const ContractProfitabilityAnalyzer = () => {
                       
                       setSortedItems(randomizedItems);
                     }}
-                    className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+                    className="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
                     disabled={!contract}
                   >
-                    🎲 랜덤 정렬
+                    🎲 랜덤정렬
                   </button>
                   <button
                     onClick={() => {
@@ -1216,10 +1216,10 @@ const ContractProfitabilityAnalyzer = () => {
 
                       setSortedItems(sortedItems);
                     }}
-                    className="px-3 py-1.5 text-sm bg-blue-100 hover:bg-blue-200 rounded-md transition-colors"
+                    className="px-2 py-1 text-xs bg-blue-100 hover:bg-blue-200 rounded transition-colors"
                     disabled={!contract}
                   >
-                    ⭐ 추천 정렬
+                    ⭐ 추천정렬
                   </button>
                   <button
                     onClick={() => {
@@ -1285,10 +1285,10 @@ const ContractProfitabilityAnalyzer = () => {
 
                       setSortedItems(sortedItems);
                     }}
-                    className="px-3 py-1.5 text-sm bg-green-100 hover:bg-green-200 rounded-md transition-colors"
+                    className="px-2 py-1 text-xs bg-green-100 hover:bg-green-200 rounded transition-colors"
                     disabled={!contract}
                   >
-                    💰 KMV 정렬
+                    💰 KMV정렬
                   </button>
                   <button
                     onClick={() => {
@@ -1361,10 +1361,10 @@ const ContractProfitabilityAnalyzer = () => {
 
                       setSortedItems(sortedItems);
                     }}
-                    className="px-3 py-1.5 text-sm bg-purple-100 hover:bg-purple-200 rounded-md transition-colors"
+                    className="px-2 py-1 text-xs bg-purple-100 hover:bg-purple-200 rounded transition-colors"
                     disabled={!contract}
                   >
-                    🎯 추천×KMV 정렬
+                    🎯 추천×KMV정렬
                   </button>
                 </div>
               </div>
