@@ -500,15 +500,8 @@ const ContractProfitabilityAnalyzer = () => {
       }
 
       // 현재 계약의 전체 수익률 계산
-      const currentItems = contract.items.map(contractItem => {
-        const itemDetails = contract.availableItems.find(i => i.id === contractItem.id);
-        const metrics = itemDetails?.priceAndProfitByQuantity[contractItem.quantity] || 
-                       { totalPrice: 0, totalProfit: 0 };
-        return metrics;
-      });
-
-      const currentTotalPrice = currentItems.reduce((sum, item) => sum + item.totalPrice, 0);
-      const currentTotalProfit = currentItems.reduce((sum, item) => sum + item.totalProfit, 0);
+      const currentTotalPrice = contract.items.reduce((sum, item) => sum + item.totalPrice, 0);
+      const currentTotalProfit = contract.items.reduce((sum, item) => sum + item.totalProfit, 0);
       const currentProfitability = currentTotalPrice ? (currentTotalProfit / currentTotalPrice) * 100 : 0;
 
       // 새 아이템 추가 시 수익률 계산
