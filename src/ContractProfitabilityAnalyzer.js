@@ -197,7 +197,38 @@ const ContractProfitabilityAnalyzer = () => {
     if (foundContract) {
       setOriginalContract(foundContract);
       setContract(foundContract);
-      setSortedItems(foundContract.availableItems);
+      
+      // 아이템들을 세트별로 그룹화하여 정렬
+      const itemsToSort = [...foundContract.availableItems];
+      const groups = [];
+      const processedItems = new Set();
+
+      // 먼저 세트 아이템들을 그룹화
+      itemsToSort.forEach(item => {
+        if (processedItems.has(item.id)) return;
+
+        const setInfo = getSetInfo(foundContract.id, item.id);
+        if (setInfo) {
+          // 세트 아이템인 경우
+          const groupItems = setInfo.ids.map(id => 
+            itemsToSort.find(i => i.id === id)
+          ).filter(Boolean);
+          
+          // 처리된 아이템들 표시
+          setInfo.ids.forEach(id => processedItems.add(id));
+          
+          // 세트의 첫 번째 아이템이 해당 세트의 대표 아이템인 경우에만 추가
+          if (setInfo.ids[0] === item.id) {
+            groups.push(...groupItems);
+          }
+        } else if (!processedItems.has(item.id)) {
+          // 일반 아이템인 경우
+          groups.push(item);
+          processedItems.add(item.id);
+        }
+      });
+
+      setSortedItems(groups);
       setModifications([]);
     } else {
       alert('계약을 찾을 수 없습니다.');
@@ -562,7 +593,7 @@ const ContractProfitabilityAnalyzer = () => {
         // 기존 아이템의 수량 변경인 경우
         return {
           style: 'bg-yellow-50 border-yellow-200',
-          badge: <Badge variant="outline" className="border-yellow-500 text-yellow-700 bg-yellow-50">량 변경</Badge>
+          badge: <Badge variant="outline" className="border-yellow-500 text-yellow-700 bg-yellow-50">수량 변경</Badge>
         };
       }
       if (status.originallyIncluded) {
@@ -945,7 +976,7 @@ const ContractProfitabilityAnalyzer = () => {
                       onChange={(e) => setSelectedSilsonType(e.target.value)}
                       className="w-[100px] p-2 border rounded bg-white"
                     >
-                      <option value="">할인선택</option>
+                      <option value="">차감선택</option>
                       {contract.silson_discount.map(discount => (
                         <option key={discount.tag} value={discount.tag}>
                           {discount.tag}
@@ -1010,9 +1041,17 @@ const ContractProfitabilityAnalyzer = () => {
                 {contract?.items.map(item => {
                   // 아이템 이름 가져오기
                   const itemDetails = contract.availableItems.find(i => i.id === item.id);
+                  // 삭제 예정 여부 확인
+                  const isScheduledForRemoval = modifications.some(mod => 
+                    mod.id === item.id && mod.action === 'remove'
+                  );
                   
                   return (
-                    <div key={item.id} className={`flex items-center p-2 rounded-lg border bg-blue-50 border-blue-200`}>
+                    <div key={item.id} className={`flex items-center p-2 rounded-lg border ${
+                      isScheduledForRemoval 
+                        ? 'bg-red-50 border-red-200' 
+                        : 'bg-blue-50 border-blue-200'
+                    }`}>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           {/* 왼쪽: 이름과 수량 */}
@@ -1033,7 +1072,9 @@ const ContractProfitabilityAnalyzer = () => {
 
                         {/* 배지 영역 */}
                         <div className="flex flex-wrap gap-1.5 items-center mt-1">
-                          <Badge variant="secondary">현재 계약</Badge>
+                          <Badge variant="secondary">
+                            {isScheduledForRemoval ? '삭제 예정' : '현재 계약'}
+                          </Badge>
                         </div>
                       </div>
 
@@ -1419,7 +1460,7 @@ const ContractProfitabilityAnalyzer = () => {
                     <div className="text-lg font-medium">{Math.floor(originalMetrics.profitability)}%</div>
                     {selectedSilsonType && contract?.silson_discount && (
                       <div className="text-sm text-blue-600 mt-1">
-                        차감 KMV(%): {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
+                        차감 후 KMV(%): {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
                       </div>
                     )}
                   </div>
