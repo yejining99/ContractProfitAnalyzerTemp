@@ -22,10 +22,10 @@ const getAvailableItems = (contractId) => {
 // 수익성 영향도 레벨을 정의하는 상수
 // 각 레벨마다 임계값, 라벨, 색상, 아이콘을 지정
 const PROFITABILITY_IMPACT_LEVELS = {
-  MUCH_BETTER: { threshold: 2.0, label: '많이 개선', color: 'border-red-500 text-red-700 bg-red-50', icon: '▲▲' },
-  BETTER: { threshold: 0.5, label: '개선', color: 'border-red-500 text-red-700', icon: '▲' },
-  SIMILAR: { threshold: -0.5, label: '비슷', color: 'border-gray-500 text-gray-700', icon: '•' },
-  WORSE: { threshold: -2.0, label: '하락', color: 'border-blue-500 text-blue-700', icon: '▼' },
+  MUCH_BETTER: { threshold: 100, label: '많이 개선', color: 'border-red-500 text-red-700 bg-red-50', icon: '▲▲' },
+  BETTER: { threshold: 10, label: '개선', color: 'border-red-500 text-red-700', icon: '▲' },
+  SIMILAR: { threshold: -5, label: '비슷', color: 'border-gray-500 text-gray-700', icon: '•' },
+  WORSE: { threshold: -10, label: '하락', color: 'border-blue-500 text-blue-700', icon: '▼' },
   MUCH_WORSE: { threshold: -Infinity, label: '많이 하락', color: 'border-blue-500 text-blue-700 bg-blue-50', icon: '▼▼' }
 };
 
@@ -1040,7 +1040,7 @@ const ContractProfitabilityAnalyzer = () => {
                   );
                   
                   return (
-                    <div key={item.id} className={`flex items-center p-2 rounded-lg border ${
+                    <div key={item.id} className={`flex items-center p-1.5 rounded-lg border ${
                       isScheduledForRemoval 
                         ? 'bg-red-50 border-red-200' 
                         : 'bg-blue-50 border-blue-200'
@@ -1061,13 +1061,6 @@ const ContractProfitabilityAnalyzer = () => {
                             KMV: ₩{Math.floor(item.totalProfit).toLocaleString()} | 
                             KMV(%): {Math.floor((item.totalProfit / item.totalPrice) * 100)}%
                           </span>
-                        </div>
-
-                        {/* 배지 영역 */}
-                        <div className="flex flex-wrap gap-1.5 items-center mt-1">
-                          <Badge variant="secondary">
-                            {isScheduledForRemoval ? '삭제 예정' : '현재 계약'}
-                          </Badge>
                         </div>
                       </div>
 
