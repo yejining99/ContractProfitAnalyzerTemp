@@ -14,10 +14,6 @@ import { SET_ITEMS } from './data/set-items';
 //   SelectValue,
 // } from "./components/ui/select";
 
-// 계약별 사용 가능한 아이템 목록을 조회하는 함수
-const getAvailableItems = (contractId) => {
-  return SAMPLE_CONTRACTS[contractId]?.availableItems || [];
-};
 
 // 수익성 영향도 레벨을 정의하는 상수
 // 각 레벨마다 임계값, 라벨, 색상, 아이콘을 지정
@@ -85,13 +81,24 @@ const getSetInfo = (contractId, itemId) => {
 
 // theme 매핑 상수 추가
 const THEME_MAPPING = {
-  '종수술': '종수술',
-  '자동차': '자동차',
-  '암': '암',
-  '일당': '일당',
-  '일반질병상해':'일반질병상해',
-  '2대': '2대',
-  '재물':'재물'
+  '수술': '수술',
+  '할증/제도성': '할증/제도성',
+  '3대진단': '3대진단',
+  '사망후유': '사망후유',
+  '기타': '기타',
+  '운전/비용': '운전/비용',
+  '재물/배상': '재물/배상',
+  '골절/화상': '골절/화상',
+  '입원일당': '입원일당',
+  '의료비': '의료비',
+  '치아': '치아',
+  '태아출생': '태아출생',
+  '재고자산': '재고자산',
+  '화재손해': '화재손해',
+  '배상책임': '배상책임',
+  '통합': '통합',
+  '예약': '예약',
+  '건물': '건물'
 };
 
 // 계약의 테마 비율을 계산하는 함수
@@ -127,13 +134,24 @@ const getContractThemeRatio = (contractId) => {
 
 // theme 표시용 레이블 매핑
 const THEME_LABELS = {
-  '종수술': '종수술',
-  '자동차': '자동차',
-  '암': '암',
-  '일당': '일당',
-  '일반질병상해':'일반질병상해',
-  '2대': '2대',
-  '재물':'재물'
+  '수술': '수술',
+  '할증/제도성': '할증/제도성',
+  '3대진단': '3대진단',
+  '사망후유': '사망후유',
+  '기타': '기타',
+  '운전/비용': '운전/비용',
+  '재물/배상': '재물/배상',
+  '골절/화상': '골절/화상',
+  '입원일당': '입원일당',
+  '의료비': '의료비',
+  '치아': '치아',
+  '태아출생': '태아출생',
+  '재고자산': '재고자산',
+  '화재손해': '화재손해',
+  '배상책임': '배상책임',
+  '통합': '통합',
+  '예약': '예약',
+  '건물': '건물'
 };
 
 const ContractProfitabilityAnalyzer = () => {
@@ -371,7 +389,7 @@ const ContractProfitabilityAnalyzer = () => {
         // 새로운 아이템 추가
         items.push(mod);
       } else {
-        // 수량 변경
+        // 량 변경
         items = items.map(item => 
           item.id === mod.id 
             ? { ...item, quantity: mod.quantity }
@@ -884,7 +902,7 @@ const ContractProfitabilityAnalyzer = () => {
     return (Number(modifiedMetrics.profitability) - Number(originalMetrics.profitability)).toFixed(1);
   }, [modifiedMetrics.profitability, originalMetrics.profitability]);
 
-  // theme 비율을 계산��는 함수
+  // theme 비율을 계산는 함수
   const getThemeRatioDisplay = () => {
     if (!contract) return null;
     
@@ -942,7 +960,70 @@ const ContractProfitabilityAnalyzer = () => {
     );
   };
 
+  // 사용 가능한 테마만 필터링하는 함수 수정
+  const getAvailableThemes = useMemo(() => {
+    if (!sortedItems?.length) return ["all"];
+    
+    // 모든 아이템의 테마를 수집
+    const availableThemes = new Set(["all"]);
+    
+    sortedItems.forEach(item => {
+      if (Array.isArray(item.theme)) {
+        item.theme.forEach(theme => availableThemes.add(theme));
+      } else if (item.theme) {
+        availableThemes.add(item.theme);
+      }
+    });
+    
+    // Set을 배열로 변환하고 정렬
+    return Array.from(availableThemes).sort((a, b) => {
+      // "all"은 항상 첫 번째
+      if (a === "all") return -1;
+      if (b === "all") return 1;
+      
+      // "기타"는 항상 마지막
+      if (a === "기타") return 1;
+      if (b === "기타") return -1;
+      
+      // 나머지는 알파벳 순
+      return a.localeCompare(b);
+    });
+  }, [sortedItems]);
 
+  // Tabs 컴포넌트 부분 수정
+  <Tabs 
+    defaultValue="all" 
+    className="w-full"
+    onValueChange={(value) => setSelectedType(value)}
+  >
+    <TabsList className="mb-4 flex flex-wrap gap-1">
+      {getAvailableThemes.map(theme => (
+        <TabsTrigger key={theme} value={theme}>
+          {theme === "all" ? "전체" : THEME_LABELS[theme] || theme}
+        </TabsTrigger>
+      ))}
+    </TabsList>
+
+    {getAvailableThemes.map(theme => (
+      <TabsContent key={theme} value={theme} className="space-y-2">
+        {(sortedItems || [])
+          .filter(item => {
+            if (theme === "all") return true;
+            
+            // theme이 배열인 경우와 문자열인 경우 모두 처리
+            const itemThemes = Array.isArray(item.theme) ? item.theme : [item.theme];
+            return itemThemes.includes(theme);
+          })
+          .map(item => (
+            <ItemCard 
+              key={item.id} 
+              item={item} 
+              showThemeBadge={theme === "all"} 
+            />
+          ))}
+      </TabsContent>
+    ))}
+  </Tabs>
 
   // JSX 렌더링
   return (
@@ -1119,7 +1200,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
                       
-                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      // 1. 든 아이템을 그룹화 (세트 또는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
@@ -1382,35 +1463,35 @@ const ContractProfitabilityAnalyzer = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="overflow-auto max-h-[calc(100vh-10rem)] flex-1">
-            <Tabs defaultValue="all" className="w-full">
-              <TabsList className="mb-4">
-                <TabsTrigger value="all">전체</TabsTrigger>
-                <TabsTrigger value="종수술">종수술</TabsTrigger>
-                <TabsTrigger value="자동차">자동차</TabsTrigger>
-                <TabsTrigger value="암">암</TabsTrigger>
-                <TabsTrigger value="일당">일당</TabsTrigger>
-                <TabsTrigger value="일반질병상해">일반질병상해</TabsTrigger>
-                <TabsTrigger value="2대">2대</TabsTrigger>
-                <TabsTrigger value="재물">재물</TabsTrigger>
+            <Tabs 
+              defaultValue="all" 
+              className="w-full"
+              onValueChange={(value) => setSelectedType(value)}
+            >
+              <TabsList className="mb-4 flex flex-wrap gap-1">
+                {getAvailableThemes.map(theme => (
+                  <TabsTrigger key={theme} value={theme}>
+                    {theme === "all" ? "전체" : THEME_LABELS[theme] || theme}
+                  </TabsTrigger>
+                ))}
               </TabsList>
 
-              <TabsContent value="all" className="space-y-2">
-                {(sortedItems || []).map(item => (
-                  <ItemCard key={item.id} item={item} showThemeBadge={true} />
-                ))}
-              </TabsContent>
-
-              {Object.keys(THEME_MAPPING).map(theme => (
+              {getAvailableThemes.map(theme => (
                 <TabsContent key={theme} value={theme} className="space-y-2">
                   {(sortedItems || [])
                     .filter(item => {
-                      const itemTheme = Array.isArray(item.theme) 
-                        ? item.theme
-                        : [item.theme];
-                      return itemTheme.includes(theme);
+                      if (theme === "all") return true;
+                      
+                      // theme이 배열인 경우와 문자열인 경우 모두 처리
+                      const itemThemes = Array.isArray(item.theme) ? item.theme : [item.theme];
+                      return itemThemes.includes(theme);
                     })
                     .map(item => (
-                      <ItemCard key={item.id} item={item} />
+                      <ItemCard 
+                        key={item.id} 
+                        item={item} 
+                        showThemeBadge={theme === "all"} 
+                      />
                     ))}
                 </TabsContent>
               ))}
