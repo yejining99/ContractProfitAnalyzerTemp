@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Badge } from "./components/ui/badge";
@@ -20,7 +20,7 @@ import { SET_ITEMS } from './data/set-items';
 const PROFITABILITY_IMPACT_LEVELS = {
   MUCH_BETTER: { threshold: 100, label: '많이 개선', color: 'border-red-500 text-red-700 bg-red-50', icon: '▲▲' },
   BETTER: { threshold: 10, label: '개선', color: 'border-red-500 text-red-700', icon: '▲' },
-  SIMILAR: { threshold: -5, label: '비슷', color: 'border-gray-500 text-gray-700', icon: '•' },
+  SIMILAR: { threshold: -1, label: '비슷', color: 'border-gray-500 text-gray-700', icon: '•' },
   WORSE: { threshold: -10, label: '하락', color: 'border-blue-500 text-blue-700', icon: '▼' },
   MUCH_WORSE: { threshold: -Infinity, label: '많이 하락', color: 'border-blue-500 text-blue-700 bg-blue-50', icon: '▼▼' }
 };
@@ -170,6 +170,16 @@ const ContractProfitabilityAnalyzer = () => {
   const [sortedItems, setSortedItems] = useState([]);
   // 실손 할인 선택 상태 추가
   const [selectedSilsonType, setSelectedSilsonType] = useState(null);
+
+  // 스크롤을 위한 ref 추가
+  const itemListRef = useRef(null);
+
+  // 스크롤 초기화 함수
+  const resetScroll = () => {
+    if (itemListRef.current) {
+      itemListRef.current.scrollTop = 0;
+    }
+  };
 
   // 아이템의 현재 상태 확인 변수 (포함 여부, 수정 여부 등)
   const getItemStatus = (item) => {
@@ -389,7 +399,7 @@ const ContractProfitabilityAnalyzer = () => {
         // 새로운 아이템 추가
         items.push(mod);
       } else {
-        // 량 변경
+        // 량 변��
         items = items.map(item => 
           item.id === mod.id 
             ? { ...item, quantity: mod.quantity }
@@ -1237,6 +1247,9 @@ const ContractProfitabilityAnalyzer = () => {
                       const randomizedItems = randomizedGroups.flatMap(group => group.items);
                       
                       setSortedItems(randomizedItems);
+                      
+                      // 스크롤 초기화 추가
+                      resetScroll();
                     }}
                     className="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
                     disabled={!contract}
@@ -1289,6 +1302,9 @@ const ContractProfitabilityAnalyzer = () => {
                       const sortedItems = groups.flatMap(group => group.items);
 
                       setSortedItems(sortedItems);
+                      
+                      // 스크롤 초기화 추가
+                      resetScroll();
                     }}
                     className="px-2 py-1 text-xs bg-blue-100 hover:bg-blue-200 rounded transition-colors"
                     disabled={!contract}
@@ -1358,6 +1374,9 @@ const ContractProfitabilityAnalyzer = () => {
                       const sortedItems = groups.flatMap(group => group.items);
 
                       setSortedItems(sortedItems);
+                      
+                      // 스크롤 초기화 추가
+                      resetScroll();
                     }}
                     className="px-2 py-1 text-xs bg-green-100 hover:bg-green-200 rounded transition-colors"
                     disabled={!contract}
@@ -1434,6 +1453,9 @@ const ContractProfitabilityAnalyzer = () => {
                       const sortedItems = groups.flatMap(group => group.items);
 
                       setSortedItems(sortedItems);
+                      
+                      // 스크롤 초기화 추가
+                      resetScroll();
                     }}
                     className="px-2 py-1 text-xs bg-purple-100 hover:bg-purple-200 rounded transition-colors"
                     disabled={!contract}
@@ -1462,7 +1484,10 @@ const ContractProfitabilityAnalyzer = () => {
               </div>
             </CardTitle>
           </CardHeader>
-          <CardContent className="overflow-auto max-h-[calc(100vh-10rem)] flex-1">
+          <CardContent 
+            ref={itemListRef}
+            className="overflow-auto max-h-[calc(100vh-10rem)] flex-1"
+          >
             <Tabs 
               defaultValue="all" 
               className="w-full"
