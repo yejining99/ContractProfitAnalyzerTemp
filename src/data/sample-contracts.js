@@ -5,7 +5,7 @@ export const SAMPLE_CONTRACTS = {
         "channel": "GA",
         "age": 47,
         "gndr": "남",
-        "unt_pd_nm": "내Mom대로 5.10.5",
+        "unt_pd_nm": "이목구비",
         "silson_discount": [
             {
                 "tag": "노후",
@@ -822,7 +822,7 @@ export const SAMPLE_CONTRACTS = {
         "channel": "TA",
         "age": 0,
         "gndr": "남",
-        "unt_pd_nm": "내Mom대로 5.10.5",
+        "unt_pd_nm": "내Mom같은 베이비",
         "silson_discount": [
             {
                 "tag": "노후",
@@ -9730,7 +9730,7 @@ export const SAMPLE_CONTRACTS = {
         "channel": "GA",
         "age": 0,
         "gndr": "남",
-        "unt_pd_nm": "The좋은 알뜰",
+        "unt_pd_nm": "내Mom같은 베이비",
         "silson_discount": [
             {
                 "tag": "노후",
@@ -16403,7 +16403,7 @@ export const SAMPLE_CONTRACTS = {
         "channel": "TA",
         "age": 24,
         "gndr": "남",
-        "unt_pd_nm": "The좋은 알파",
+        "unt_pd_nm": "내Mom대로 5.10.5",
         "silson_discount": [
             {
                 "tag": "노후",
@@ -21052,7 +21052,7 @@ export const SAMPLE_CONTRACTS = {
         "channel": "TM",
         "age": 19,
         "gndr": "여",
-        "unt_pd_nm": "간편 3.10.5(세)",
+        "unt_pd_nm": "내Mom대로 5.10.5",
         "silson_discount": [
             {
                 "tag": "노후",

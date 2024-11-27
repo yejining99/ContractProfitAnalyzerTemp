@@ -306,17 +306,16 @@ const ContractProfitabilityAnalyzer = () => {
         return;
     }
 
+    // modType이 'remove'일 때의 로직 수정
     if (modType === 'remove') {
         if (setInfo) {
-            // 세트의 모든 아이템에 대한 삭제 리
+            // 세트 아이템 삭제 로직은 그대로 유지
             const newModifications = modifications.filter(mod => 
                 !setInfo.ids.includes(mod.id)
             );
             
-            // 기존 아이템들에 대해 삭제 처리 추가
             setInfo.ids.forEach(id => {
-                const itemOriginal = contract?.items.find(i => i.id === id);
-                if (itemOriginal) {
+                if (contract?.items.find(i => i.id === id)) {
                     newModifications.push({
                         id,
                         action: 'remove'
@@ -326,15 +325,13 @@ const ContractProfitabilityAnalyzer = () => {
             
             setModifications(newModifications);
         } else {
-            // 일반 아이템 삭제
+            // 일반 아이템 삭제 로직 수정
+            // 기존 아이템이든 아니든 삭제 처리
+            const newModifications = modifications.filter(mod => mod.id !== item.id);
             if (originalItem) {
-                setModifications([
-                    ...modifications.filter(mod => mod.id !== item.id),
-                    { id: item.id, action: 'remove' }
-                ]);
-            } else {
-                setModifications(modifications.filter(mod => mod.id !== item.id));
+                newModifications.push({ id: item.id, action: 'remove' });
             }
+            setModifications(newModifications);
         }
         return;
     }
@@ -399,7 +396,7 @@ const ContractProfitabilityAnalyzer = () => {
         // 새로운 아이템 추가
         items.push(mod);
       } else {
-        // 량 변��
+        // 량 변
         items = items.map(item => 
           item.id === mod.id 
             ? { ...item, quantity: mod.quantity }
@@ -729,15 +726,15 @@ const ContractProfitabilityAnalyzer = () => {
         )}
         
         {/* 아이템 카드 - 세트 아이템인 경우 들여쓰기 적용 */}
-        <div className={`flex items-center p-2 rounded-lg border ${statusInfo.style} ${setInfo ? 'ml-3' : ''}`}>
+        <div className={`flex items-center p-1 rounded-lg border ${statusInfo.style} ${setInfo ? 'ml-2' : ''}`}>
           <div className="flex-1">
             {/* 한 줄로 표시되는 정보를 justify-between으로 분리 */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between text-sm">
               {/* 왼쪽: 이름과 수량 */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <span className="font-medium">{details?.name}</span>
                 <select 
-                  className="border rounded px-2 py-1 text-sm"
+                  className="border rounded px-1 py-0.5 text-xs"
                   value={previewQuantity}
                   onChange={handleQuantityChange}
                   disabled={!contract}
@@ -749,20 +746,22 @@ const ContractProfitabilityAnalyzer = () => {
               </div>
 
               {/* 오른쪽: 보험료, KMV, 수익률 정보 */}
-              <span className="text-gray-500">
+              <span className="text-gray-500 text-xs">
                 월납P: ₩{Math.floor(metrics.totalPrice).toLocaleString()} | 
                 KMV: ₩{Math.floor(metrics.totalProfit).toLocaleString()} | 
                 KMV(%): {Math.floor(profitability)}%
               </span>
             </div>
 
-            {/* 배지들은 그대로 아래에 유지 */}
-            <div className="flex flex-wrap gap-1.5 items-center mt-1">
-              {statusInfo.badge}
+            {/* 배지들의 크기도 조정 */}
+            <div className="flex flex-wrap gap-1 items-center mt-0.5">
+              {statusInfo.badge && React.cloneElement(statusInfo.badge, { 
+                className: statusInfo.badge.props.className + ' text-xs py-0.5'
+              })}
               {profitabilityImpact && (
                 <Badge 
                   variant="outline" 
-                  className={`flex items-center gap-1 ${profitabilityImpact.color}`}
+                  className={`flex items-center gap-1 text-xs py-0.5 ${profitabilityImpact.color}`}
                 >
                   <span>{profitabilityImpact.icon}</span>
                   <span>{profitabilityImpact.label}</span>
@@ -771,7 +770,7 @@ const ContractProfitabilityAnalyzer = () => {
               {incompatibilityWarning && (
                 <Badge 
                   variant="outline" 
-                  className={`flex items-center gap-1 ${incompatibilityWarning.color}`}
+                  className={`flex items-center gap-1 text-xs py-0.5 ${incompatibilityWarning.color}`}
                 >
                   <span>⚠️</span>
                   <span>{incompatibilityWarning.label}</span>
@@ -783,7 +782,7 @@ const ContractProfitabilityAnalyzer = () => {
                     <Badge 
                       key={t}
                       variant="outline" 
-                      className="text-gray-500 border-gray-300"
+                      className="text-gray-500 border-gray-300 text-xs py-0.5"
                     >
                       {THEME_LABELS[THEME_MAPPING[t]] || t}
                     </Badge>
@@ -791,7 +790,7 @@ const ContractProfitabilityAnalyzer = () => {
                 ) : (
                   <Badge 
                     variant="outline" 
-                    className="text-gray-500 border-gray-300"
+                    className="text-gray-500 border-gray-300 text-xs py-0.5"
                   >
                     {THEME_LABELS[THEME_MAPPING[details.theme]] || details.theme}
                   </Badge>
@@ -800,12 +799,12 @@ const ContractProfitabilityAnalyzer = () => {
             </div>
           </div>
 
-          {/* 아이콘 영역 */}
-          <div className="flex items-center gap-2 ml-2">
+          {/* 아이콘 영역 크기도 조정 */}
+          <div className="flex items-center gap-1 ml-1.5">
             {status.modified && status.action === 'remove' && (
               <div 
                 onClick={handleReAddItem}
-                className="cursor-pointer text-xl font-bold px-2 py-1 text-green-500 hover:text-green-700 hover:bg-green-50 rounded"
+                className="cursor-pointer text-base font-bold px-1.5 py-0.5 text-green-500 hover:text-green-700 hover:bg-green-50 rounded"
               >
                 +
               </div>
@@ -1120,37 +1119,39 @@ const ContractProfitabilityAnalyzer = () => {
             <CardHeader className="py-2">
               <CardTitle>현재 계약 아이템</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-1">
+            <CardContent className="py-1">
+              <div className="space-y-0.5">
                 {contract?.items.map(item => {
-                  // 아이템 이름 가져오기
                   const itemDetails = contract.availableItems.find(i => i.id === item.id);
-                  // 삭제 예정 여부 확인
                   const isScheduledForRemoval = modifications.some(mod => 
                     mod.id === item.id && mod.action === 'remove'
                   );
                   
+                  const kmvPercentage = item.totalPrice > 0 
+                    ? Math.floor((item.totalProfit / item.totalPrice) * 100)
+                    : 0;
+                  
                   return (
-                    <div key={item.id} className={`flex items-center p-1.5 rounded-lg border ${
+                    <div key={item.id} className={`flex items-center p-1 rounded-lg border ${ 
                       isScheduledForRemoval 
                         ? 'bg-red-50 border-red-200' 
                         : 'bg-blue-50 border-blue-200'
                     }`}>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between text-sm">
                           {/* 왼쪽: 이름과 수량 */}
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium">{itemDetails?.name}</span>
-                            <span className="border rounded px-2 py-1 text-sm bg-gray-50">
+                          <div className="flex items-center gap-1">
+                            <span className="font-medium text-sm">{itemDetails?.name}</span>
+                            <span className="border rounded px-1.5 py-0.5 text-xs bg-gray-50">
                               {item.quantity}원
                             </span>
                           </div>
 
                           {/* 오른쪽: 보험료, KMV, 수익률 정보 */}
-                          <span className="text-gray-500">
+                          <span className="text-gray-500 text-xs">
                             월납P: ₩{Math.floor(item.totalPrice).toLocaleString()} | 
                             KMV: ₩{Math.floor(item.totalProfit).toLocaleString()} | 
-                            KMV(%): {Math.floor((item.totalProfit / item.totalPrice) * 100)}%
+                            KMV(%): {kmvPercentage}%
                           </span>
                         </div>
                       </div>
@@ -1210,7 +1211,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
                       
-                      // 1. 든 아이템을 그룹화 (세트 또는 단일 아이템)
+                      // 1. 든 아이템을 그룹화 (세트 또는 단일 ���이템)
                       const groups = [];
                       const processedItems = new Set();
 
@@ -1345,7 +1346,8 @@ const ContractProfitabilityAnalyzer = () => {
 
                           const setProfitability = setMetrics.totalPrice > 0 
                             ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
-                            : 0;
+                            : -Infinity;
+                            
 
                           groups.push({
                             type: 'set',
@@ -1356,7 +1358,10 @@ const ContractProfitabilityAnalyzer = () => {
                         } else {
                           // 일반 아이템인 경우
                           const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                          const profitability = metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
+                          // 수정: totalPrice가 0인 경우 -Infinity로 처리하여 마지막으로 정렬되도록 함
+                          const profitability = metrics?.totalPrice > 0 
+                            ? (metrics.totalProfit / metrics.totalPrice) * 100 
+                            : -Infinity;
 
                           groups.push({
                             type: 'single',
@@ -1421,7 +1426,7 @@ const ContractProfitabilityAnalyzer = () => {
 
                           const setProfitability = setMetrics.totalPrice > 0 
                             ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
-                            : 0;
+                            : -Infinity;
 
                           // 추천도와 수익률을 곱한 점수 계
                           const score = avgConfidence * setProfitability;
@@ -1434,8 +1439,13 @@ const ContractProfitabilityAnalyzer = () => {
                         } else {
                           // 일반 아이템인 경우
                           const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                          const profitability = metrics ? (metrics.totalProfit / metrics.totalPrice) * 100 : 0;
+                          const profitability = metrics?.totalPrice > 0 
+                            ? (metrics.totalProfit / metrics.totalPrice) * 100 
+                            : -Infinity;
                           const score = (item.confidence || 0) * profitability;
+
+
+                          
 
                           groups.push({
                             type: 'single',
