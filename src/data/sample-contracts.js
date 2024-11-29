@@ -3557,12 +3557,60 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "quantity": 10000000,
+                "theme": "3대진단",
+                "totalPrice": 12670.0,
+                "totalProfit": 243261.07256
+            },
+            {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "quantity": 200000,
                 "theme": "골절/화상",
                 "totalPrice": 158.0,
                 "totalProfit": 1333.282139
+            },
+            {
+                "id": "632285",
+                "name": "[특별조건부]표적항암약물허가치료비Ⅱ",
+                "quantity": 0,
+                "theme": "할증/제도성",
+                "totalPrice": 368.0,
+                "totalProfit": 12963.829363
+            },
+            {
+                "id": "631838",
+                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병2종]",
+                "quantity": 0,
+                "theme": "수술",
+                "totalPrice": 120.0,
+                "totalProfit": 3555.852334
+            },
+            {
+                "id": "631807",
+                "name": "수술비(1~7종, 연간3회한)[질병6종]",
+                "quantity": 4000000,
+                "theme": "수술",
+                "totalPrice": 3960.0,
+                "totalProfit": 81360.47025
+            },
+            {
+                "id": "630377",
+                "name": "[특별조건부]질병수술비",
+                "quantity": 0,
+                "theme": "할증/제도성",
+                "totalPrice": 1165.0,
+                "totalProfit": -1815.512584
+            },
+            {
+                "id": "631804",
+                "name": "수술비(1~7종, 연간3회한)[질병3종]",
+                "quantity": 300000,
+                "theme": "수술",
+                "totalPrice": 573.0,
+                "totalProfit": 11130.466815
             },
             {
                 "id": "610605",
@@ -3573,12 +3621,44 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 127.48473
             },
             {
+                "id": "631841",
+                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병5종]",
+                "quantity": 0,
+                "theme": "수술",
+                "totalPrice": 338.0,
+                "totalProfit": 10794.768816
+            },
+            {
                 "id": "610470",
                 "name": "상해수술위로금",
                 "quantity": 500000,
                 "theme": "수술",
                 "totalPrice": 1855.0,
                 "totalProfit": 44665.592433
+            },
+            {
+                "id": "631839",
+                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병3종]",
+                "quantity": 0,
+                "theme": "수술",
+                "totalPrice": 94.0,
+                "totalProfit": 2509.591014
+            },
+            {
+                "id": "630680",
+                "name": "[특별조건부]항암방사선약물치료비",
+                "quantity": 0,
+                "theme": "할증/제도성",
+                "totalPrice": 293.0,
+                "totalProfit": 9933.005809
+            },
+            {
+                "id": "631806",
+                "name": "수술비(1~7종, 연간3회한)[질병5종]",
+                "quantity": 3000000,
+                "theme": "수술",
+                "totalPrice": 2070.0,
+                "totalProfit": 43939.072443
             },
             {
                 "id": "610933",
@@ -3589,12 +3669,28 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 1664.729264
             },
             {
+                "id": "630701",
+                "name": "[특별조건부]암진단비(유사암 제외)",
+                "quantity": 0,
+                "theme": "3대진단",
+                "totalPrice": 3235.0,
+                "totalProfit": 105795.326804
+            },
+            {
                 "id": "632649",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)",
                 "quantity": 2000000,
                 "theme": "기타",
                 "totalPrice": 24.0,
                 "totalProfit": -1306.509988
+            },
+            {
+                "id": "632279",
+                "name": "표적항암약물허가치료비Ⅱ",
+                "quantity": 10000000,
+                "theme": "3대진단",
+                "totalPrice": 2400.0,
+                "totalProfit": 45453.425339
             },
             {
                 "id": "610487",
@@ -3613,12 +3709,36 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 2597.800005
             },
             {
+                "id": "631837",
+                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병1종]",
+                "quantity": 0,
+                "theme": "수술",
+                "totalPrice": 415.0,
+                "totalProfit": 13122.191751
+            },
+            {
                 "id": "610929",
                 "name": "신화상치료비(화상수술비)",
                 "quantity": 200000,
                 "theme": "골절/화상",
                 "totalPrice": 15.0,
                 "totalProfit": 317.724448
+            },
+            {
+                "id": "631808",
+                "name": "수술비(1~7종, 연간3회한)[질병7종]",
+                "quantity": 10000000,
+                "theme": "수술",
+                "totalPrice": 2600.0,
+                "totalProfit": 53485.801981
+            },
+            {
+                "id": "630718",
+                "name": "[특별조건부]유사암진단비",
+                "quantity": 0,
+                "theme": "3대진단",
+                "totalPrice": 223.0,
+                "totalProfit": 7948.925215
             },
             {
                 "id": "640046",
@@ -3637,6 +3757,46 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 560.607403
             },
             {
+                "id": "631840",
+                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병4종]",
+                "quantity": 0,
+                "theme": "수술",
+                "totalPrice": 493.0,
+                "totalProfit": 14138.929671
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "quantity": 10000000,
+                "theme": "3대진단",
+                "totalPrice": 3150.0,
+                "totalProfit": 51644.537953
+            },
+            {
+                "id": "630763",
+                "name": "뇌혈관질환 수술비",
+                "quantity": 5000000,
+                "theme": "3대진단",
+                "totalPrice": 1370.0,
+                "totalProfit": 26219.121188
+            },
+            {
+                "id": "660052",
+                "name": "가족일상생활중배상책임(Ⅲ)",
+                "quantity": 100000000,
+                "theme": "재물/배상",
+                "totalPrice": 2078.0,
+                "totalProfit": 7502.892583
+            },
+            {
+                "id": "631842",
+                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병6종]",
+                "quantity": 0,
+                "theme": "수술",
+                "totalPrice": 660.0,
+                "totalProfit": 21634.282437
+            },
+            {
                 "id": "630022",
                 "name": "질병수술위로금",
                 "quantity": 200000,
@@ -3653,6 +3813,30 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 570.247116
             },
             {
+                "id": "631803",
+                "name": "수술비(1~7종, 연간3회한)[질병2종]",
+                "quantity": 200000,
+                "theme": "수술",
+                "totalPrice": 720.0,
+                "totalProfit": 15096.696358
+            },
+            {
+                "id": "630527",
+                "name": "유사암진단비",
+                "quantity": 4000000,
+                "theme": "3대진단",
+                "totalPrice": 1192.0,
+                "totalProfit": 8768.097649
+            },
+            {
+                "id": "631843",
+                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병7종]",
+                "quantity": 0,
+                "theme": "수술",
+                "totalPrice": 425.0,
+                "totalProfit": 13458.701592
+            },
+            {
                 "id": "610912",
                 "name": "골절(치아파절제외)진단비Ⅱ",
                 "quantity": 200000,
@@ -3661,12 +3845,44 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 11877.903298
             },
             {
+                "id": "630766",
+                "name": "허혈성심장질환수술비",
+                "quantity": 5000000,
+                "theme": "3대진단",
+                "totalPrice": 1135.0,
+                "totalProfit": 25962.337236
+            },
+            {
+                "id": "631805",
+                "name": "수술비(1~7종, 연간3회한)[질병4종]",
+                "quantity": 1000000,
+                "theme": "수술",
+                "totalPrice": 3010.0,
+                "totalProfit": 68228.476161
+            },
+            {
+                "id": "630697",
+                "name": "암진단비(유사암 제외)",
+                "quantity": 20000000,
+                "theme": "3대진단",
+                "totalPrice": 18540.0,
+                "totalProfit": 194241.009742
+            },
+            {
                 "id": "630024",
                 "name": "항암방사선약물치료비",
                 "quantity": 3000000,
                 "theme": "3대진단",
                 "totalPrice": 1830.0,
                 "totalProfit": 26940.98843
+            },
+            {
+                "id": "631802",
+                "name": "수술비(1~7종, 연간3회한)[질병1종]",
+                "quantity": 100000,
+                "theme": "수술",
+                "totalPrice": 2540.0,
+                "totalProfit": 59643.512979
             }
         ],
         "availableItems": [
@@ -3674,7 +3890,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631858",
                 "name": "질병수술비(특정5대질병 제외)",
                 "theme": "수술",
-                "confidence": 0.2175124748557677,
+                "confidence": 0.28540244399029197,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -3710,7 +3926,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631744",
                 "name": "뇌전증진단비",
                 "theme": "3대진단",
-                "confidence": 0.0021223451842334283,
+                "confidence": 0.0015081893783823862,
                 "availableQuantities": [
                     1000000,
                     3000000,
@@ -3746,7 +3962,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630637",
                 "name": "다발경화증 진단비",
                 "theme": "기타",
-                "confidence": 0.0047554468880664,
+                "confidence": 0.0028507082192836724,
                 "availableQuantities": [
                     10000000
                 ],
@@ -3762,7 +3978,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610921",
                 "name": "골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.20022209287931522,
+                "confidence": 0.09665894139001424,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -3798,7 +4014,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633331",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 9.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008281616781629727,
+                "confidence": 0.0075445675341323445,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -3829,7 +4045,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633335",
                 "name": "고혈압(원발성)대상질병진단비[중증 고혈압(원발성)]",
                 "theme": "기타",
-                "confidence": 0.006137800949577422,
+                "confidence": 0.005600734097378852,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -3850,7 +4066,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632532",
                 "name": "131대질병수술비(편도염)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17519121534397072,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -3881,7 +4097,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630710",
                 "name": "암진단비(유사암 및 소액암 제외)",
                 "theme": "3대진단",
-                "confidence": 0.004282522411435114,
+                "confidence": 0.0043659641175774035,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -3917,7 +4133,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611345",
                 "name": "2-3인실 상급종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.028178291885559478,
+                "confidence": 0.013603313324063195,
                 "availableQuantities": [
                     20000,
                     50000
@@ -3938,7 +4154,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630026",
                 "name": "질병입원일당",
                 "theme": "입원일당",
-                "confidence": 0.09028656079424469,
+                "confidence": 0.04358661555584226,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -3964,7 +4180,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610469",
                 "name": "상해중환자실 입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.011226066315445527,
+                "confidence": 0.005419480290215082,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -4000,7 +4216,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630228",
                 "name": "뇌혈관질환진단",
                 "theme": "3대진단",
-                "confidence": 0.29490880138506226,
+                "confidence": 0.14236976618589212,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -4026,7 +4242,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632512",
                 "name": "수면무호흡진단비",
                 "theme": "기타",
-                "confidence": 0.009216699484113215,
+                "confidence": 0.009560145719528127,
                 "availableQuantities": [
                     100000
                 ],
@@ -4042,7 +4258,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633550",
                 "name": "최대두배받는2대질환치료비(2점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.004012966485441071,
+                "confidence": 0.0036524969257120386,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -4073,7 +4289,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.22234661053514584,
+                "confidence": 0.10733974301696697,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4094,7 +4310,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633277",
                 "name": "종합병원 질병수술비(특정5대질병 제외)",
                 "theme": "수술",
-                "confidence": 0.0022348216300432434,
+                "confidence": 0.0021456838887547553,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -4130,7 +4346,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633517",
                 "name": "특정순환계질환 급여치료비(요양병원)(본인부담금 1백만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.03427112997259156,
+                "confidence": 0.03261372030358342,
                 "availableQuantities": [
                     1000000
                 ],
@@ -4146,7 +4362,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632136",
                 "name": "131대질병수술비(관절염,생식기질환)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     100000,
                     300000
@@ -4167,7 +4383,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640382",
                 "name": "아나필락시스진단비(응급, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.05720977686278635,
+                "confidence": 0.052952196714605146,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -4188,7 +4404,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631612",
                 "name": "뇌졸중통원일당(1일이상 30일한도)[뇌졸중상급종합병원통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.0034041686166732003,
+                "confidence": 0.0025592068815592102,
                 "availableQuantities": [
                     90000,
                     100000
@@ -4209,7 +4425,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631130",
                 "name": "암수술비(유사암제외)",
                 "theme": "3대진단",
-                "confidence": 0.07275805436495644,
+                "confidence": 0.07253310403714287,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -4245,7 +4461,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610777",
                 "name": "일반상해입원일당(1일이상30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.002968359672439264,
+                "confidence": 0.0014330012211775758,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -4271,7 +4487,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630717",
                 "name": "유사암진단비",
                 "theme": "3대진단",
-                "confidence": 0.012290540931201813,
+                "confidence": 0.010149880867644966,
                 "availableQuantities": [
                     100000,
                     2000000,
@@ -4307,7 +4523,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630951",
                 "name": "갑상선암(초기제외)진단비",
                 "theme": "3대진단",
-                "confidence": 0.018591288575068338,
+                "confidence": 0.0159419086859246,
                 "availableQuantities": [
                     1000000
                 ],
@@ -4323,7 +4539,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632504",
                 "name": "뇌혈관질환수술비(25%체증형)",
                 "theme": "수술",
-                "confidence": 0.16440174169295485,
+                "confidence": 0.20775206042115368,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -4359,7 +4575,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630638",
                 "name": "결핵 진단비",
                 "theme": "기타",
-                "confidence": 0.03286887875308841,
+                "confidence": 0.020002869270866943,
                 "availableQuantities": [
                     300000
                 ],
@@ -4375,7 +4591,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632651",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.06973308740478767,
+                "confidence": 0.07691964300427732,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -4406,7 +4622,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611261",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.05101860514638103,
+                "confidence": 0.02462967144997705,
                 "availableQuantities": [
                     30000,
                     100000,
@@ -4432,7 +4648,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631227",
                 "name": "수술비(1~5종)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.04137140439096099,
+                "confidence": 0.028795488529428835,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4453,7 +4669,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632652",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(뇌졸중)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.25647801105784107,
+                "confidence": 0.2338950112739782,
                 "availableQuantities": [
                     500000,
                     3000000,
@@ -4479,7 +4695,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630963",
                 "name": "질병입원일당(1일이상30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.007914323690246585,
+                "confidence": 0.006080449251172184,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -4505,7 +4721,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610939",
                 "name": "상해사고부상치료비[5등급]",
                 "theme": "수술",
-                "confidence": 0.0024161756106719856,
+                "confidence": 0.001166429605151993,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -4531,7 +4747,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630019",
                 "name": "질병 중환자실입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.08012954128104803,
+                "confidence": 0.03868322682533353,
                 "availableQuantities": [
                     20000,
                     50000,
@@ -4557,7 +4773,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633515",
                 "name": "특정순환계질환진단비",
                 "theme": "기타",
-                "confidence": 0.003733440270193592,
+                "confidence": 0.003341600800022949,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -4588,7 +4804,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632513",
                 "name": "편마비진단비",
                 "theme": "기타",
-                "confidence": 0.007711074255925686,
+                "confidence": 0.007934877287870094,
                 "availableQuantities": [
                     500000
                 ],
@@ -4604,7 +4820,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633330",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 7.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008281616781629727,
+                "confidence": 0.0075445675341323445,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -4630,7 +4846,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632650",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.06973308740478767,
+                "confidence": 0.07691964300427732,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -4661,7 +4877,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633333",
                 "name": "고혈압(원발성)대상질병진단비[고혈압(원발성)]",
                 "theme": "기타",
-                "confidence": 0.006137800949577422,
+                "confidence": 0.005600734097378852,
                 "availableQuantities": [
                     300000,
                     500000
@@ -4682,7 +4898,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640045",
                 "name": "각막이식수술비",
                 "theme": "수술",
-                "confidence": 0.14715273510878107,
+                "confidence": 0.14209283407001128,
                 "availableQuantities": [
                     10000000
                 ],
@@ -4698,7 +4914,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640198",
                 "name": "중등도이상치매간병비",
                 "theme": "기타",
-                "confidence": 0.0004218783590568,
+                "confidence": 0.0003746330553423345,
                 "availableQuantities": [
                     1000000,
                     4000000,
@@ -4734,7 +4950,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631807",
                 "name": "수술비(1~7종, 연간3회한)[질병6종]",
                 "theme": "수술",
-                "confidence": 0.250154851643883,
+                "confidence": 0.36789965817616654,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -4770,7 +4986,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633014",
                 "name": "상급병실(1인실) 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.160770166485449,
+                "confidence": 0.15339250256416678,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4791,7 +5007,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632140",
                 "name": "131대질병수술비(백내장)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4817,7 +5033,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630242",
                 "name": "말기간경화진단비",
                 "theme": "기타",
-                "confidence": 0.009899259827757467,
+                "confidence": 0.005919950755068517,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -4853,7 +5069,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631397",
                 "name": "상급병실(1인실) 상급종합병원 질병입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.13069192373740665,
+                "confidence": 0.0963249586816265,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4884,7 +5100,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631804",
                 "name": "수술비(1~7종, 연간3회한)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.250154851643883,
+                "confidence": 0.2644513823140976,
                 "availableQuantities": [
                     300000,
                     400000,
@@ -4910,7 +5126,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610909",
                 "name": "상급병실(1인실) 상급종합병원 일반상해입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.06288757099211166,
+                "confidence": 0.030359517030674597,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4941,7 +5157,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610936",
                 "name": "상해사고부상치료비[2등급]",
                 "theme": "수술",
-                "confidence": 0.0024161756106719856,
+                "confidence": 0.001166429605151993,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -4967,7 +5183,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610605",
                 "name": "일반상해고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.10452964105481466,
+                "confidence": 0.050462585336807086,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -4998,7 +5214,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610852",
                 "name": "종합병원 일반상해입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.039622723722619,
+                "confidence": 0.019128211452298826,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -5029,7 +5245,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610835",
                 "name": "수술비(1~5종)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.014781245831266328,
+                "confidence": 0.007135773849576848,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -5050,7 +5266,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632343",
                 "name": "통합암진단비(유사암제외)(4대고액암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.1431775748339291,
+                "confidence": 0.17400558949825323,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -5086,7 +5302,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632520",
                 "name": "131대질병수술비(다빈도62대질병)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17519121534397072,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -5122,7 +5338,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630639",
                 "name": "약제내성결핵(슈퍼결핵 포함) 진단비",
                 "theme": "기타",
-                "confidence": 0.0066295529001445,
+                "confidence": 0.004053052332232587,
                 "availableQuantities": [
                     10000000
                 ],
@@ -5138,7 +5354,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631381",
                 "name": "중대한재생불량성빈혈진단비",
                 "theme": "기타",
-                "confidence": 0.05079493814003044,
+                "confidence": 0.03824983631812775,
                 "availableQuantities": [
                     5000000
                 ],
@@ -5154,7 +5370,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630239",
                 "name": "말기폐질환진단비",
                 "theme": "기타",
-                "confidence": 0.004803485794516337,
+                "confidence": 0.0028215214158225587,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -5190,7 +5406,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611301",
                 "name": "일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0035090682943874707,
+                "confidence": 0.0016940329697042965,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -5216,7 +5432,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632480",
                 "name": "전이암진단비(림프절전이암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.057987227265640665,
+                "confidence": 0.070073736650355,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -5247,7 +5463,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631229",
                 "name": "수술비(1~5종)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.04137140439096099,
+                "confidence": 0.028795488529428835,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -5268,7 +5484,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633514",
                 "name": "특정중증질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0005427276995924501,
+                "confidence": 0.0005617232073211656,
                 "availableQuantities": [
                     20000,
                     50000,
@@ -5294,7 +5510,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610832",
                 "name": "수술비(1~5종)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.014781245831266328,
+                "confidence": 0.007135773849576848,
                 "availableQuantities": [
                     100000,
                     200000
@@ -5315,7 +5531,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611014",
                 "name": "수술비(1~7종, 연간3회한)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.21248482424138865,
+                "confidence": 0.10257888066825657,
                 "availableQuantities": [
                     300000,
                     400000,
@@ -5341,7 +5557,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631712",
                 "name": "급성심근경색증진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.0011056495076032357,
+                "confidence": 0.0009463427151271346,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -5377,7 +5593,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633336",
                 "name": "이상지질혈증(고지혈증포함)대상질병진단비[이상지질혈증(고지혈증포함)]",
                 "theme": "기타",
-                "confidence": 0.005113179916097071,
+                "confidence": 0.0046309523726661105,
                 "availableQuantities": [
                     100000,
                     300000,
@@ -5403,7 +5619,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633337",
                 "name": "이상지질혈증(고지혈증포함)대상질병진단비[중등증이상 이상지질혈증(고지혈증포함)]",
                 "theme": "기타",
-                "confidence": 0.005113179916097071,
+                "confidence": 0.0046309523726661105,
                 "availableQuantities": [
                     100000,
                     500000,
@@ -5429,7 +5645,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632134",
                 "name": "131대질병수술비(특정31대질병)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -5460,7 +5676,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633525",
                 "name": "뇌혈관질환통원일당(연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0014308395463275355,
+                "confidence": 0.0012757137177591758,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -5486,7 +5702,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610470",
                 "name": "상해수술위로금",
                 "theme": "수술",
-                "confidence": 0.022306144450584965,
+                "confidence": 0.010768483527868604,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -5522,7 +5738,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633334",
                 "name": "고혈압(원발성)대상질병진단비[중등증이상 고혈압(원발성)]",
                 "theme": "기타",
-                "confidence": 0.006137800949577422,
+                "confidence": 0.005600734097378852,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -5543,7 +5759,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632526",
                 "name": "131대질병수술비(유방의장애)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17519121534397072,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -5579,7 +5795,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631622",
                 "name": "급성심근경색증통원일당(1일이상 30일한도)[급성심근경색증상급종합병원통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.003310372243010129,
+                "confidence": 0.002471331035150586,
                 "availableQuantities": [
                     50000,
                     90000,
@@ -5605,7 +5821,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632137",
                 "name": "131대질병수술비(치핵)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     100000,
                     200000
@@ -5626,7 +5842,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610938",
                 "name": "상해사고부상치료비[4등급]",
                 "theme": "수술",
-                "confidence": 0.0024161756106719856,
+                "confidence": 0.001166429605151993,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -5657,7 +5873,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610935",
                 "name": "상해사고부상치료비[1등급]",
                 "theme": "수술",
-                "confidence": 0.0024161756106719856,
+                "confidence": 0.001166429605151993,
                 "availableQuantities": [
                     3000000,
                     4000000,
@@ -5688,7 +5904,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630451",
                 "name": "2대질병입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.0038282568812055572,
+                "confidence": 0.0023512511878210312,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -5719,7 +5935,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633000",
                 "name": "암(유사암제외) 주요치료비(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.04482741955565796,
+                "confidence": 0.052995642940627335,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -5750,7 +5966,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631806",
                 "name": "수술비(1~7종, 연간3회한)[질병5종]",
                 "theme": "수술",
-                "confidence": 0.250154851643883,
+                "confidence": 0.3334168995554769,
                 "availableQuantities": [
                     800000,
                     1000000,
@@ -5786,7 +6002,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611325",
                 "name": "종합병원 상해수술비",
                 "theme": "수술",
-                "confidence": 0.0026637103633965,
+                "confidence": 0.0012859291409500345,
                 "availableQuantities": [
                     300000,
                     500000
@@ -5807,7 +6023,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640154",
                 "name": "응급실내원비(응급)",
                 "theme": "기타",
-                "confidence": 0.21314381927984766,
+                "confidence": 0.17442002010075108,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -5838,7 +6054,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631186",
                 "name": "암수술비(유사암제외)(최초1회한)",
                 "theme": "3대진단",
-                "confidence": 0.005770914420332908,
+                "confidence": 0.006493406917531365,
                 "availableQuantities": [
                     800000,
                     1000000,
@@ -5874,7 +6090,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632342",
                 "name": "통합암진단비(유사암제외)(10대특정암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.1431775748339291,
+                "confidence": 0.17400558949825323,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -5910,7 +6126,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633538",
                 "name": "허혈성심장질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0015018027795876143,
+                "confidence": 0.0013317388185470486,
                 "availableQuantities": [
                     30000,
                     50000
@@ -5931,7 +6147,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610933",
                 "name": "신화상치료비(중증화상및부식진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.29377518196371727,
+                "confidence": 0.1418225016376566,
                 "availableQuantities": [
                     20000000,
                     30000000,
@@ -5957,7 +6173,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630955",
                 "name": "상급종합병원질병입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.01639878942754797,
+                "confidence": 0.013006585419793437,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -5993,7 +6209,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632653",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(특정심장질환)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.25647801105784107,
+                "confidence": 0.2338950112739782,
                 "availableQuantities": [
                     500000,
                     3000000,
@@ -6019,7 +6235,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630092",
                 "name": "호흡기관련질병수술비",
                 "theme": "수술",
-                "confidence": 0.05911630647848824,
+                "confidence": 0.028538906575821914,
                 "availableQuantities": [
                     300000
                 ],
@@ -6035,7 +6251,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633537",
                 "name": "허혈성심장질환통원일당(연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0014241352522834719,
+                "confidence": 0.0012780869112768965,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -6061,7 +6277,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611262",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원)",
                 "theme": "입원일당",
-                "confidence": 0.05101896005282606,
+                "confidence": 0.024629842784122922,
                 "availableQuantities": [
                     20000,
                     50000
@@ -6082,7 +6298,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630229",
                 "name": "급성심근경색증진단비",
                 "theme": "3대진단",
-                "confidence": 0.07845880136656118,
+                "confidence": 0.04495975157781469,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -6118,7 +6334,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632649",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)",
                 "theme": "기타",
-                "confidence": 0.18706209111593727,
+                "confidence": 0.1879086837107572,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -6154,7 +6370,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611016",
                 "name": "수술비(1~7종, 연간3회한)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.21248482424138865,
+                "confidence": 0.10257888066825657,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -6185,7 +6401,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640071",
                 "name": "장기요양급여금(Ⅲ)",
                 "theme": "기타",
-                "confidence": 0.0005298371109852642,
+                "confidence": 0.0004366354596991931,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -6221,7 +6437,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611265",
                 "name": "상급병실(1인실) 종합병원 일반상해수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.034546531363179124,
+                "confidence": 0.016677635830500265,
                 "availableQuantities": [
                     100000
                 ],
@@ -6237,7 +6453,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633341",
                 "name": "2-3인실 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.05504204208275064,
+                "confidence": 0.05105025186324093,
                 "availableQuantities": [
                     20000,
                     50000
@@ -6258,7 +6474,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632279",
                 "name": "표적항암약물허가치료비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.23022887933927108,
+                "confidence": 0.2852271624825971,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -6294,7 +6510,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610487",
                 "name": "5대골절진단비",
                 "theme": "골절/화상",
-                "confidence": 0.023004174922590524,
+                "confidence": 0.011105463755733357,
                 "availableQuantities": [
                     200000,
                     500000,
@@ -6325,7 +6541,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610836",
                 "name": "수술비(1~5종)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.014781245831266328,
+                "confidence": 0.007135773849576848,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -6351,7 +6567,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610439",
                 "name": "임시생활비담보",
                 "theme": "입원일당",
-                "confidence": 0.00953917918460252,
+                "confidence": 0.0046051209856701825,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -6377,7 +6593,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611322",
                 "name": "상급종합병원 상해수술비",
                 "theme": "수술",
-                "confidence": 0.0027743830195848217,
+                "confidence": 0.0013393573197995688,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -6398,7 +6614,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611015",
                 "name": "수술비(1~7종, 연간3회한)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.21248482424138865,
+                "confidence": 0.10257888066825657,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -6419,7 +6635,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610488",
                 "name": "5대골절수술비",
                 "theme": "골절/화상",
-                "confidence": 0.07057221218652589,
+                "confidence": 0.03406934381418491,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -6455,7 +6671,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631560",
                 "name": "양성뇌종양진단비Ⅱ",
                 "theme": "기타",
-                "confidence": 0.1514755549587871,
+                "confidence": 0.11518652604050394,
                 "availableQuantities": [
                     4000000,
                     5000000,
@@ -6481,7 +6697,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610929",
                 "name": "신화상치료비(화상수술비)",
                 "theme": "골절/화상",
-                "confidence": 0.1509180391065744,
+                "confidence": 0.07285698439627732,
                 "availableQuantities": [
                     100000,
                     200000
@@ -6502,7 +6718,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611012",
                 "name": "수술비(1~7종, 연간3회한)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.21248482424138865,
+                "confidence": 0.10257888066825657,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -6528,7 +6744,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633527",
                 "name": "뇌혈관질환통원일당(상급종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0017552538333040425,
+                "confidence": 0.0016184151063582172,
                 "availableQuantities": [
                     50000,
                     90000,
@@ -6559,7 +6775,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631808",
                 "name": "수술비(1~7종, 연간3회한)[질병7종]",
                 "theme": "수술",
-                "confidence": 0.250154851643883,
+                "confidence": 0.4023824167968561,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -6595,7 +6811,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633259",
                 "name": "상급종합병원 질병수술비",
                 "theme": "수술",
-                "confidence": 0.004664095591982843,
+                "confidence": 0.004687374892730778,
                 "availableQuantities": [
                     100000,
                     300000,
@@ -6626,7 +6842,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611017",
                 "name": "수술비(1~7종, 연간3회한)[상해6종]",
                 "theme": "수술",
-                "confidence": 0.21248482424138865,
+                "confidence": 0.10257888066825657,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -6662,7 +6878,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632986",
                 "name": "간호·간병통합서비스 사용 질병입원일당(1일이상180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.08549737903450423,
+                "confidence": 0.08204389522174983,
                 "availableQuantities": [
                     50000,
                     70000
@@ -6683,7 +6899,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610918",
                 "name": "골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.15812958318795986,
+                "confidence": 0.07633841947004959,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -6719,7 +6935,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633332",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 11.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008281616781629727,
+                "confidence": 0.0075445675341323445,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -6750,7 +6966,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633549",
                 "name": "최대두배받는2대질환치료비(1점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.004012966485441071,
+                "confidence": 0.0036524969257120386,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -6781,7 +6997,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631228",
                 "name": "수술비(1~5종)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.04137140439096099,
+                "confidence": 0.028795488529428835,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -6802,7 +7018,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611302",
                 "name": "간병인사용 일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.02872332314535866,
+                "confidence": 0.013866431863276595,
                 "availableQuantities": [
                     50000,
                     150000
@@ -6823,7 +7039,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632484",
                 "name": "유사암수술비(25%체증형)",
                 "theme": "수술",
-                "confidence": 0.12680328942264008,
+                "confidence": 0.14925000268018598,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -6859,7 +7075,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633552",
                 "name": "최대두배받는2대질환치료비(4점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.004012966485441071,
+                "confidence": 0.0036524969257120386,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -6890,7 +7106,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630094",
                 "name": "충수염수술비",
                 "theme": "수술",
-                "confidence": 0.12656712161988776,
+                "confidence": 0.061101369057876845,
                 "availableQuantities": [
                     200000
                 ],
@@ -6906,7 +7122,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611264",
                 "name": "상급병실(1인실) 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.09001172572152313,
+                "confidence": 0.04345393655521806,
                 "availableQuantities": [
                     100000,
                     200000
@@ -6927,7 +7143,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640046",
                 "name": "깁스치료비",
                 "theme": "골절/화상",
-                "confidence": 0.46315363928483333,
+                "confidence": 0.39519841065858036,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -6953,7 +7169,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610834",
                 "name": "수술비(1~5종)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.014781245831266328,
+                "confidence": 0.007135773849576848,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -6974,7 +7190,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611018",
                 "name": "수술비(1~7종, 연간3회한)[상해7종]",
                 "theme": "수술",
-                "confidence": 0.21248482424138865,
+                "confidence": 0.10257888066825657,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -7046,7 +7262,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630519",
                 "name": "특정희귀난치성질환수술비",
                 "theme": "수술",
-                "confidence": 0.055194013137847796,
+                "confidence": 0.032614560778849326,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -7072,7 +7288,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632340",
                 "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.1431775748339291,
+                "confidence": 0.17400558949825323,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -7108,7 +7324,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630235",
                 "name": "허혈성심질환진단",
                 "theme": "3대진단",
-                "confidence": 0.30417448506462114,
+                "confidence": 0.1804573093211286,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -7134,7 +7350,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632481",
                 "name": "전이암진단비(특정전이암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.057987227265640665,
+                "confidence": 0.070073736650355,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -7165,7 +7381,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611013",
                 "name": "수술비(1~7종, 연간3회한)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.21248482424138865,
+                "confidence": 0.10257888066825657,
                 "availableQuantities": [
                     200000,
                     300000
@@ -7186,7 +7402,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632349",
                 "name": "암수술비(유사암제외)(25%체증형)",
                 "theme": "3대진단",
-                "confidence": 0.13515839274781785,
+                "confidence": 0.1582137359346234,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -7222,7 +7438,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630763",
                 "name": "뇌혈관질환 수술비",
                 "theme": "3대진단",
-                "confidence": 0.11035501608817996,
+                "confidence": 0.08727498092722705,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -7258,7 +7474,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610766",
                 "name": "상급종합병원일반상해입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.00952137205886995,
+                "confidence": 0.00459652444221308,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -7294,7 +7510,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640089",
                 "name": "중증치매간병비(90일이상)",
                 "theme": "기타",
-                "confidence": 0.0005360172157776285,
+                "confidence": 0.0004757376700707448,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -7330,7 +7546,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632141",
                 "name": "131대질병수술비(특정다빈도29대질병)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     100000,
                     200000
@@ -7351,7 +7567,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633001",
                 "name": "기타피부암 및 갑상선암 주요치료비(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.04482741955565796,
+                "confidence": 0.052995642940627335,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -7377,7 +7593,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631621",
                 "name": "급성심근경색증통원일당(1일이상 30일한도)[급성심근경색증통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.003310372243010129,
+                "confidence": 0.002471331035150586,
                 "availableQuantities": [
                     10000
                 ],
@@ -7393,7 +7609,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630430",
                 "name": "뇌출혈진단비_1년미만50%",
                 "theme": "3대진단",
-                "confidence": 0.01965797064337427,
+                "confidence": 0.013273086106889345,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -7429,7 +7645,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632502",
                 "name": "6대심장질환진단비",
                 "theme": "3대진단",
-                "confidence": 0.041080182854875094,
+                "confidence": 0.046372032264062925,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -7465,7 +7681,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "660052",
                 "name": "가족일상생활중배상책임(Ⅲ)",
                 "theme": "재물/배상",
-                "confidence": 0.2856709335748838,
+                "confidence": 0.2422893926937878,
                 "availableQuantities": [
                     100000000
                 ],
@@ -7481,7 +7697,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633539",
                 "name": "허혈성심장질환통원일당(상급종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0017320725168396788,
+                "confidence": 0.001611976167698483,
                 "availableQuantities": [
                     50000,
                     90000,
@@ -7512,7 +7728,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633516",
                 "name": "특정순환계질환 급여치료비(요양병원 제외)(본인부담금 1백만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.03427112997259156,
+                "confidence": 0.03261372030358342,
                 "availableQuantities": [
                     1000000
                 ],
@@ -7528,7 +7744,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632138",
                 "name": "131대질병수술비(뇌혈관질환)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -7564,7 +7780,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630022",
                 "name": "질병수술위로금",
                 "theme": "수술",
-                "confidence": 0.22855383347995636,
+                "confidence": 0.11033633340411686,
                 "availableQuantities": [
                     100000,
                     200000
@@ -7585,7 +7801,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631226",
                 "name": "수술비(1~5종)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.04137140439096099,
+                "confidence": 0.028795488529428835,
                 "availableQuantities": [
                     100000,
                     200000
@@ -7606,7 +7822,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640070",
                 "name": "장기요양급여금(Ⅱ)",
                 "theme": "기타",
-                "confidence": 0.0005571317690732999,
+                "confidence": 0.00045532293774532754,
                 "availableQuantities": [
                     10000000,
                     15000000,
@@ -7632,7 +7848,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633015",
                 "name": "상급병실(1인실) 종합병원 질병수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.06036439842767002,
+                "confidence": 0.05630920613679541,
                 "availableQuantities": [
                     100000
                 ],
@@ -7648,7 +7864,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632648",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)",
                 "theme": "기타",
-                "confidence": 0.11563351968736581,
+                "confidence": 0.15342592509006756,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -7684,7 +7900,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631803",
                 "name": "수술비(1~7종, 연간3회한)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.250154851643883,
+                "confidence": 0.22996862369340793,
                 "availableQuantities": [
                     200000,
                     300000
@@ -7705,7 +7921,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630527",
                 "name": "유사암진단비",
                 "theme": "3대진단",
-                "confidence": 0.3010506258084898,
+                "confidence": 0.1909699980255863,
                 "availableQuantities": [
                     200000,
                     2000000,
@@ -7741,7 +7957,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631611",
                 "name": "뇌졸중통원일당(1일이상 30일한도)[뇌졸중통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.0034041686166732003,
+                "confidence": 0.0025592068815592102,
                 "availableQuantities": [
                     10000
                 ],
@@ -7757,7 +7973,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631263",
                 "name": "종합병원 질병입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.057595215484838654,
+                "confidence": 0.04423632048997849,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -7788,7 +8004,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610912",
                 "name": "골절(치아파절제외)진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.08653043767585866,
+                "confidence": 0.0417733147400697,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -7824,7 +8040,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610937",
                 "name": "상해사고부상치료비[3등급]",
                 "theme": "수술",
-                "confidence": 0.0024161756106719856,
+                "confidence": 0.001166429605151993,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -7855,7 +8071,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633339",
                 "name": "2-3인실 상급종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.05509781079840844,
+                "confidence": 0.05102345731071018,
                 "availableQuantities": [
                     20000,
                     50000
@@ -7876,7 +8092,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633526",
                 "name": "뇌혈관질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0015164867191138074,
+                "confidence": 0.001330394164294762,
                 "availableQuantities": [
                     30000,
                     50000
@@ -7897,7 +8113,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611347",
                 "name": "특정중증상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.00024413925815029998,
+                "confidence": 0.00011786033152083448,
                 "availableQuantities": [
                     20000,
                     50000,
@@ -7923,7 +8139,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631230",
                 "name": "수술비(1~5종)[질병5종]",
                 "theme": "수술",
-                "confidence": 0.04137140439096099,
+                "confidence": 0.028795488529428835,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -7949,7 +8165,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611346",
                 "name": "2-3인실 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.02815590950659112,
+                "confidence": 0.013592508037664678,
                 "availableQuantities": [
                     20000,
                     50000
@@ -7970,7 +8186,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630766",
                 "name": "허혈성심장질환수술비",
                 "theme": "3대진단",
-                "confidence": 0.1112707103717523,
+                "confidence": 0.12182779029312697,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -8006,7 +8222,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631805",
                 "name": "수술비(1~7종, 연간3회한)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.250154851643883,
+                "confidence": 0.2989341409347872,
                 "availableQuantities": [
                     400000,
                     500000,
@@ -8032,7 +8248,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632503",
                 "name": "6대심장질환진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.010655832773211457,
+                "confidence": 0.01641814662999436,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -8068,7 +8284,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630697",
                 "name": "암진단비(유사암 제외)",
                 "theme": "3대진단",
-                "confidence": 0.18992274689497174,
+                "confidence": 0.13974287365900623,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -8104,7 +8320,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632139",
                 "name": "131대질병수술비(후각특정질환)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -8135,7 +8351,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610833",
                 "name": "수술비(1~5종)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.014781245831266328,
+                "confidence": 0.007135773849576848,
                 "availableQuantities": [
                     10000,
                     100000,
@@ -8161,7 +8377,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633338",
                 "name": "이상지질혈증(고지혈증포함)대상질병진단비[중증 이상지질혈증(고지혈증포함)]",
                 "theme": "기타",
-                "confidence": 0.005113179916097071,
+                "confidence": 0.0046309523726661105,
                 "availableQuantities": [
                     100000,
                     1000000,
@@ -8187,7 +8403,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630144",
                 "name": "질병사망(Ⅱ)",
                 "theme": "사망후유",
-                "confidence": 0.02043983122365593,
+                "confidence": 0.009867504728661484,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -8223,7 +8439,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632339",
                 "name": "통합암진단비(유사암제외)(특정소액암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.1431775748339291,
+                "confidence": 0.17400558949825323,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -8259,7 +8475,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640175",
                 "name": "경증이상치매간병비",
                 "theme": "기타",
-                "confidence": 0.0005276949779996,
+                "confidence": 0.00047542638231768623,
                 "availableQuantities": [
                     2000000,
                     5000000
@@ -8280,7 +8496,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633265",
                 "name": "종합병원 질병수술비",
                 "theme": "수술",
-                "confidence": 0.006304729422569479,
+                "confidence": 0.0062835493422410665,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -8306,7 +8522,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633271",
                 "name": "상급종합병원 질병수술비(특정5대질병 제외)",
                 "theme": "수술",
-                "confidence": 0.0021357305779467644,
+                "confidence": 0.0021821997149724932,
                 "availableQuantities": [
                     300000,
                     400000,
@@ -8342,7 +8558,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630024",
                 "name": "항암방사선약물치료비",
                 "theme": "3대진단",
-                "confidence": 0.19674574257952177,
+                "confidence": 0.0949807033142519,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -8378,7 +8594,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632341",
                 "name": "통합암진단비(유사암제외)(15대특정암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.1431775748339291,
+                "confidence": 0.17400558949825323,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -8414,7 +8630,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632133",
                 "name": "131대질병수술비(심장질환)",
                 "theme": "수술",
-                "confidence": 0.15598058970549217,
+                "confidence": 0.17046058849080656,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -8450,7 +8666,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633551",
                 "name": "최대두배받는2대질환치료비(3점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.004012966485441071,
+                "confidence": 0.0036524969257120386,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -8481,7 +8697,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640143",
                 "name": "장기요양급여금(1~4등급)",
                 "theme": "기타",
-                "confidence": 0.0008624067850647786,
+                "confidence": 0.0006933953299233691,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -8507,7 +8723,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631802",
                 "name": "수술비(1~7종, 연간3회한)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.250154851643883,
+                "confidence": 0.19548586507271828,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -8557,6 +8773,22 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "quantity": 10000000,
+                "theme": "3대진단",
+                "totalPrice": 15910.0,
+                "totalProfit": 327020.428235
+            },
+            {
+                "id": "632504",
+                "name": "뇌혈관질환수술비(25%체증형)",
+                "quantity": 10000000,
+                "theme": "수술",
+                "totalPrice": 3000.0,
+                "totalProfit": 72295.540486
+            },
+            {
                 "id": "610605",
                 "name": "일반상해고도후유장해",
                 "quantity": 10000000,
@@ -8565,12 +8797,44 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 4251.426155
             },
             {
+                "id": "632505",
+                "name": "허혈성심장질환수술비(25%체증형)",
+                "quantity": 10000000,
+                "theme": "수술",
+                "totalPrice": 4150.0,
+                "totalProfit": -141719.26132
+            },
+            {
                 "id": "610015",
                 "name": "일반상해사망",
                 "quantity": 50000000,
                 "theme": "사망후유",
                 "totalPrice": 3795.0,
                 "totalProfit": 162343.232451
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "quantity": 10000000,
+                "theme": "3대진단",
+                "totalPrice": 9200.0,
+                "totalProfit": -580.282638
+            },
+            {
+                "id": "630527",
+                "name": "유사암진단비",
+                "quantity": 3000000,
+                "theme": "3대진단",
+                "totalPrice": 507.0,
+                "totalProfit": -21552.075702
+            },
+            {
+                "id": "630697",
+                "name": "암진단비(유사암 제외)",
+                "quantity": 30000000,
+                "theme": "3대진단",
+                "totalPrice": 53880.0,
+                "totalProfit": 505556.170632
             }
         ],
         "availableItems": [
@@ -8578,7 +8842,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611263",
                 "name": "간호·간병통합서비스 사용 일반상해입원일당(1일이상180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.21395522892736496,
+                "confidence": 0.05348880723184124,
                 "availableQuantities": [
                     50000,
                     70000
@@ -8599,7 +8863,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633319",
                 "name": "질병입원 간병인비용지원(간병인비용 2,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00022455129570245,
+                "confidence": 0.00014116841880981582,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -8620,7 +8884,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633120",
                 "name": "질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0064128723783497005,
+                "confidence": 0.006569492747274988,
                 "availableQuantities": [
                     20000,
                     30000
@@ -8641,7 +8905,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630515",
                 "name": "간질환수술비",
                 "theme": "수술",
-                "confidence": 0.016358289863248998,
+                "confidence": 0.011190878693217013,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -8662,7 +8926,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631744",
                 "name": "뇌전증진단비",
                 "theme": "3대진단",
-                "confidence": 0.0019266627267221,
+                "confidence": 0.0016804175967644877,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -8698,7 +8962,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632314",
                 "name": "만성신부전 동정맥루조성술치료비(급여, 연간1회한)",
                 "theme": "3대진단",
-                "confidence": 0.0019079770484695,
+                "confidence": 0.00163289022956755,
                 "availableQuantities": [
                     500000
                 ],
@@ -8714,7 +8978,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610921",
                 "name": "골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.22045735539405886,
+                "confidence": 0.055114338848514716,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -8745,7 +9009,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633117",
                 "name": "질병입원 간병인비용지원(간병인비용 1,000만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.006599961223516949,
+                "confidence": 0.003639269482274987,
                 "availableQuantities": [
                     600000,
                     900000,
@@ -8781,7 +9045,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640056",
                 "name": "5대장기이식수술비",
                 "theme": "수술",
-                "confidence": 0.05123846686676985,
+                "confidence": 0.13469106067949677,
                 "availableQuantities": [
                     10000000,
                     20000000
@@ -8802,7 +9066,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632310",
                 "name": "갑상선기능저하증진단비",
                 "theme": "3대진단",
-                "confidence": 0.024483864301951548,
+                "confidence": 0.0369001993371081,
                 "availableQuantities": [
                     200000,
                     500000,
@@ -8833,7 +9097,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632532",
                 "name": "131대질병수술비(편도염)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.15899254201830176,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -8864,7 +9128,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611345",
                 "name": "2-3인실 상급종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.08243220624030084,
+                "confidence": 0.02060805156007521,
                 "availableQuantities": [
                     50000
                 ],
@@ -8880,7 +9144,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630026",
                 "name": "질병입원일당",
                 "theme": "입원일당",
-                "confidence": 0.0525418490570186,
+                "confidence": 0.01313546226425465,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -8906,7 +9170,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610469",
                 "name": "상해중환자실 입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.0785824642081187,
+                "confidence": 0.019645616052029673,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -8937,7 +9201,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630228",
                 "name": "뇌혈관질환진단",
                 "theme": "3대진단",
-                "confidence": 0.31014093350120175,
+                "confidence": 0.07753523337530044,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -8968,7 +9232,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633550",
                 "name": "최대두배받는2대질환치료비(2점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.00553469801081985,
+                "confidence": 0.0048953162733971125,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -8999,7 +9263,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.16049952364032471,
+                "confidence": 0.04012488091008118,
                 "availableQuantities": [
                     100000,
                     200000
@@ -9020,7 +9284,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631422",
                 "name": "32대질병관혈수술비(연간1회한)[14대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.053804802870445215,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -9046,7 +9310,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633119",
                 "name": "질병입원 간병인비용지원(간병인비용 2,000만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0048742402700131995,
+                "confidence": 0.002788309445280762,
                 "availableQuantities": [
                     100000,
                     1000000,
@@ -9082,7 +9346,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633517",
                 "name": "특정순환계질환 급여치료비(요양병원)(본인부담금 1백만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.048929581237297,
+                "confidence": 0.04607643369139976,
                 "availableQuantities": [
                     1000000
                 ],
@@ -9098,7 +9362,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632136",
                 "name": "131대질병수술비(관절염,생식기질환)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -9124,7 +9388,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630388",
                 "name": "희귀난치성 7대질환진단비",
                 "theme": "기타",
-                "confidence": 0.03200557229806455,
+                "confidence": 0.03244904267033748,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -9160,7 +9424,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633313",
                 "name": "질병입원 간병인비용지원(간병인비용 200만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0037693900204462,
+                "confidence": 0.0023794906179596875,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -9191,7 +9455,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633315",
                 "name": "질병입원 간병인비용지원(간병인비용 500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0012048941083972501,
+                "confidence": 0.0007675523030762001,
                 "availableQuantities": [
                     400000,
                     1000000
@@ -9212,7 +9476,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631612",
                 "name": "뇌졸중통원일당(1일이상 30일한도)[뇌졸중상급종합병원통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.001748940545713,
+                "confidence": 0.00235660355452245,
                 "availableQuantities": [
                     50000,
                     70000,
@@ -9238,7 +9502,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632321",
                 "name": "지방간대상질병관리지원비(간효소수치200IU/L 이상)",
                 "theme": "기타",
-                "confidence": 0.00367924331341765,
+                "confidence": 0.004114284124082537,
                 "availableQuantities": [
                     300000
                 ],
@@ -9254,7 +9518,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630717",
                 "name": "유사암진단비",
                 "theme": "3대진단",
-                "confidence": 0.018255431788795948,
+                "confidence": 0.019848729462808815,
                 "availableQuantities": [
                     200000,
                     2000000,
@@ -9290,7 +9554,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630331",
                 "name": "질병고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.0289599776210232,
+                "confidence": 0.015992778911732314,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -9321,7 +9585,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632504",
                 "name": "뇌혈관질환수술비(25%체증형)",
                 "theme": "수술",
-                "confidence": 0.14948308459523704,
+                "confidence": 0.1737407444045115,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -9357,7 +9621,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631196",
                 "name": "5대기관질병수술비(연간1회한)[관혈]",
                 "theme": "3대진단",
-                "confidence": 0.11605658329652785,
+                "confidence": 0.12345947762432277,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -9393,7 +9657,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632319",
                 "name": "지방간대상질병관리지원비(간효소수치80IU/L 이상)",
                 "theme": "기타",
-                "confidence": 0.00367924331341765,
+                "confidence": 0.004114284124082537,
                 "availableQuantities": [
                     200000
                 ],
@@ -9409,7 +9673,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631430",
                 "name": "32대질병관혈수술비(연간1회한)[4대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.053804802870445215,
                 "availableQuantities": [
                     200000,
                     300000
@@ -9430,7 +9694,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632651",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.06024672201314675,
+                "confidence": 0.10277062210497327,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -9461,7 +9725,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610468",
                 "name": "중대상해수술비",
                 "theme": "수술",
-                "confidence": 0.0499572182266872,
+                "confidence": 0.0124893045566718,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -9492,7 +9756,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633116",
                 "name": "질병입원 간병인비용지원(간병인비용 500만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0322244418912232,
+                "confidence": 0.017351060515703134,
                 "availableQuantities": [
                     100000,
                     500000,
@@ -9523,7 +9787,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611261",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.22192040736934965,
+                "confidence": 0.05548010184233741,
                 "availableQuantities": [
                     10000,
                     30000,
@@ -9559,7 +9823,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632652",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(뇌졸중)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.15770450348197101,
+                "confidence": 0.2666891868543302,
                 "availableQuantities": [
                     3000000,
                     5000000
@@ -9580,7 +9844,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610939",
                 "name": "상해사고부상치료비[5등급]",
                 "theme": "수술",
-                "confidence": 0.00261683063523115,
+                "confidence": 0.0006542076588077875,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -9606,7 +9870,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630019",
                 "name": "질병 중환자실입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.0848751779937488,
+                "confidence": 0.0212187944984372,
                 "availableQuantities": [
                     20000,
                     50000,
@@ -9632,7 +9896,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633515",
                 "name": "특정순환계질환진단비",
                 "theme": "기타",
-                "confidence": 0.0061375297610897,
+                "confidence": 0.0048119566857157,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -9668,7 +9932,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632323",
                 "name": "특정담낭·담관염진단비",
                 "theme": "기타",
-                "confidence": 0.00368034451736395,
+                "confidence": 0.004115296567838074,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -9689,7 +9953,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632650",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.06024672201314675,
+                "confidence": 0.10277062210497327,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -9720,7 +9984,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632312",
                 "name": "만성신부전 투석치료비(급여, 연간1회한)(혈액투석치료비)",
                 "theme": "3대진단",
-                "confidence": 0.0019079770484695,
+                "confidence": 0.00163289022956755,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -9741,7 +10005,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611340",
                 "name": "일반상해입원 간병인비용지원(간병인비용 500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0011637614453852,
+                "confidence": 0.0002909403613463,
                 "availableQuantities": [
                     400000,
                     1000000
@@ -9762,7 +10026,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630930",
                 "name": "통풍진단비보장 특약",
                 "theme": "기타",
-                "confidence": 0.0361377595554696,
+                "confidence": 0.03756786429872915,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -9783,7 +10047,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631807",
                 "name": "수술비(1~7종, 연간3회한)[질병6종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.21713615421080557,
                 "availableQuantities": [
                     1500000,
                     2000000,
@@ -9819,7 +10083,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633014",
                 "name": "상급병실(1인실) 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.22921333839503272,
+                "confidence": 0.18468709555089538,
                 "availableQuantities": [
                     100000,
                     200000
@@ -9840,7 +10104,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632140",
                 "name": "131대질병수술비(백내장)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -9866,7 +10130,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611343",
                 "name": "일반상해입원 간병인비용지원(간병인비용 1,500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.000169345101195,
+                "confidence": 4.233627529875e-05,
                 "availableQuantities": [
                     1000000
                 ],
@@ -9882,7 +10146,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631397",
                 "name": "상급병실(1인실) 상급종합병원 질병입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.24446770519385774,
+                "confidence": 0.14831816358224703,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -9908,7 +10172,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631741",
                 "name": "2대질병특정재활치료비(급여, 1일1회한, 연간90회한)",
                 "theme": "3대진단",
-                "confidence": 0.0004449929853146,
+                "confidence": 0.00035841557051188746,
                 "availableQuantities": [
                     20000
                 ],
@@ -9924,7 +10188,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631804",
                 "name": "수술비(1~7종, 연간3회한)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.21713615421080557,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -9955,7 +10219,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610909",
                 "name": "상급병실(1인실) 상급종합병원 일반상해입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.2462011164422357,
+                "confidence": 0.06155027911055892,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -9981,7 +10245,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610936",
                 "name": "상해사고부상치료비[2등급]",
                 "theme": "수술",
-                "confidence": 0.00261683063523115,
+                "confidence": 0.0006542076588077875,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -10007,7 +10271,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610605",
                 "name": "일반상해고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.37899145135376505,
+                "confidence": 0.09474786283844126,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -10038,7 +10302,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632505",
                 "name": "허혈성심장질환수술비(25%체증형)",
                 "theme": "수술",
-                "confidence": 0.14951246880220304,
+                "confidence": 0.2970282895355622,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -10074,7 +10338,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631706",
                 "name": "뇌졸중진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.00111003772996655,
+                "confidence": 0.0011255411673297625,
                 "availableQuantities": [
                     5000000,
                     9000000,
@@ -10110,7 +10374,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632520",
                 "name": "131대질병수술비(다빈도62대질병)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.15899254201830176,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -10146,7 +10410,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631381",
                 "name": "중대한재생불량성빈혈진단비",
                 "theme": "기타",
-                "confidence": 0.018782365298492948,
+                "confidence": 0.03756164322445561,
                 "availableQuantities": [
                     1000000,
                     5000000
@@ -10167,7 +10431,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611301",
                 "name": "일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0070627574733072,
+                "confidence": 0.0017656893683268,
                 "availableQuantities": [
                     20000,
                     30000
@@ -10188,7 +10452,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631406",
                 "name": "32대질병관혈수술비(연간1회한)[5대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.053804802870445215,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -10224,7 +10488,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632328",
                 "name": "특정6대소화계질환(궤양,게실염)진단비",
                 "theme": "3대진단",
-                "confidence": 0.0042095878484584,
+                "confidence": 0.005582115380984175,
                 "availableQuantities": [
                     200000,
                     500000,
@@ -10250,7 +10514,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640047",
                 "name": "인공관절수술비",
                 "theme": "수술",
-                "confidence": 0.0619795743791069,
+                "confidence": 0.09433340957811338,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -10271,7 +10535,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611014",
                 "name": "수술비(1~7종, 연간3회한)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.04280782095422575,
                 "availableQuantities": [
                     300000,
                     400000,
@@ -10297,7 +10561,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631712",
                 "name": "급성심근경색증진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.0007979091470086,
+                "confidence": 0.00082130308595305,
                 "availableQuantities": [
                     5000000,
                     9000000,
@@ -10333,7 +10597,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630222",
                 "name": "뇌졸중진단비",
                 "theme": "3대진단",
-                "confidence": 0.08911809840401785,
+                "confidence": 0.022279524601004463,
                 "availableQuantities": [
                     5000000,
                     9000000,
@@ -10369,7 +10633,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632134",
                 "name": "131대질병수술비(특정31대질병)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -10400,7 +10664,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633525",
                 "name": "뇌혈관질환통원일당(연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.00227665514968735,
+                "confidence": 0.0018263219833482124,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -10426,7 +10690,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632526",
                 "name": "131대질병수술비(유방의장애)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.15899254201830176,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -10462,7 +10726,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631622",
                 "name": "급성심근경색증통원일당(1일이상 30일한도)[급성심근경색증상급종합병원통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.0016711463978348,
+                "confidence": 0.0022656429053690497,
                 "availableQuantities": [
                     50000,
                     100000
@@ -10483,7 +10747,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633314",
                 "name": "질병입원 간병인비용지원(간병인비용 300만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0007142492206184501,
+                "confidence": 0.00043921310020827504,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -10519,7 +10783,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632137",
                 "name": "131대질병수술비(치핵)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     100000,
                     200000
@@ -10540,7 +10804,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610938",
                 "name": "상해사고부상치료비[4등급]",
                 "theme": "수술",
-                "confidence": 0.00261683063523115,
+                "confidence": 0.0006542076588077875,
                 "availableQuantities": [
                     100000,
                     300000,
@@ -10571,7 +10835,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610935",
                 "name": "상해사고부상치료비[1등급]",
                 "theme": "수술",
-                "confidence": 0.00261683063523115,
+                "confidence": 0.0006542076588077875,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -10597,7 +10861,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633312",
                 "name": "질병입원 간병인비용지원(간병인비용 700만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.00037706985553640003,
+                "confidence": 0.000217576696228375,
                 "availableQuantities": [
                     500000,
                     600000,
@@ -10623,7 +10887,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611339",
                 "name": "일반상해입원 간병인비용지원(간병인비용 300만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0006727069242445499,
+                "confidence": 0.00016817673106113749,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -10659,7 +10923,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630451",
                 "name": "2대질병입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.0030933378536713,
+                "confidence": 0.0025971704771593374,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -10690,7 +10954,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633000",
                 "name": "암(유사암제외) 주요치료비(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.05399713588977,
+                "confidence": 0.08231013114881977,
                 "availableQuantities": [
                     1000000,
                     4000000,
@@ -10726,7 +10990,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631806",
                 "name": "수술비(1~7종, 연간3회한)[질병5종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.21713615421080557,
                 "availableQuantities": [
                     800000,
                     1000000,
@@ -10762,7 +11026,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633118",
                 "name": "질병입원 간병인비용지원(간병인비용 1,500만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0046150491113093,
+                "confidence": 0.0025653282064694873,
                 "availableQuantities": [
                     700000,
                     1500000,
@@ -10793,7 +11057,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631784",
                 "name": "4대양성종양진단비(대장 양성종양및특정폴립)",
                 "theme": "3대진단",
-                "confidence": 0.018244744065099502,
+                "confidence": 0.029324557118834187,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -10819,7 +11083,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630971",
                 "name": "질병후유장해(3~100%)",
                 "theme": "사망후유",
-                "confidence": 0.0269598007638056,
+                "confidence": 0.05468309279705865,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -10845,7 +11109,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633538",
                 "name": "허혈성심장질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.00250769924540045,
+                "confidence": 0.001971742542501175,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -10876,7 +11140,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610933",
                 "name": "신화상치료비(중증화상및부식진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.16049952364032471,
+                "confidence": 0.04012488091008118,
                 "availableQuantities": [
                     20000000,
                     30000000,
@@ -10902,7 +11166,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633317",
                 "name": "질병입원 간병인비용지원(간병인비용 1,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0002402899055894,
+                "confidence": 0.000150581699416501,
                 "availableQuantities": [
                     600000,
                     1000000
@@ -10923,7 +11187,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633311",
                 "name": "질병입원 간병인비용지원(간병인비용 300만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0019711736078235,
+                "confidence": 0.0010374994213601125,
                 "availableQuantities": [
                     300000,
                     500000,
@@ -10954,7 +11218,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632653",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(특정심장질환)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.15770450348197101,
+                "confidence": 0.2666891868543302,
                 "availableQuantities": [
                     3000000,
                     5000000
@@ -10975,7 +11239,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611344",
                 "name": "일반상해입원 간병인비용지원(간병인비용 2,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0001934969817625,
+                "confidence": 4.8374245440625e-05,
                 "availableQuantities": [
                     400000,
                     1000000,
@@ -11001,7 +11265,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630092",
                 "name": "호흡기관련질병수술비",
                 "theme": "수술",
-                "confidence": 0.027871577759929052,
+                "confidence": 0.006967894439982263,
                 "availableQuantities": [
                     300000
                 ],
@@ -11017,7 +11281,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633537",
                 "name": "허혈성심장질환통원일당(연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.00227456716546185,
+                "confidence": 0.0018240845607782874,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -11043,7 +11307,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611262",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원)",
                 "theme": "입원일당",
-                "confidence": 0.2219228917144648,
+                "confidence": 0.0554807229286162,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -11069,7 +11333,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630229",
                 "name": "급성심근경색증진단비",
                 "theme": "3대진단",
-                "confidence": 0.08149205722237926,
+                "confidence": 0.04604921138369099,
                 "availableQuantities": [
                     5000000,
                     9000000,
@@ -11105,7 +11369,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632649",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)",
                 "theme": "기타",
-                "confidence": 0.141099331575202,
+                "confidence": 0.23306712640420102,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -11141,7 +11405,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611016",
                 "name": "수술비(1~7종, 연간3회한)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.04280782095422575,
                 "availableQuantities": [
                     800000,
                     1000000,
@@ -11177,7 +11441,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632327",
                 "name": "특정4대소화계질환(충수·복막·기타장질환)진단비",
                 "theme": "3대진단",
-                "confidence": 0.0042095878484584,
+                "confidence": 0.005582115380984175,
                 "availableQuantities": [
                     100000,
                     500000,
@@ -11203,7 +11467,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611265",
                 "name": "상급병실(1인실) 종합병원 일반상해수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0888102301909495,
+                "confidence": 0.022202557547737374,
                 "availableQuantities": [
                     100000,
                     200000
@@ -11224,7 +11488,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633341",
                 "name": "2-3인실 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0824839413094138,
+                "confidence": 0.06390840203471321,
                 "availableQuantities": [
                     20000,
                     50000
@@ -11245,7 +11509,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610487",
                 "name": "5대골절진단비",
                 "theme": "골절/화상",
-                "confidence": 0.03908778467498515,
+                "confidence": 0.009771946168746288,
                 "availableQuantities": [
                     200000,
                     500000,
@@ -11276,7 +11540,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611015",
                 "name": "수술비(1~7종, 연간3회한)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.04280782095422575,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -11297,7 +11561,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611341",
                 "name": "일반상해입원 간병인비용지원(간병인비용 700만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00020164158769255,
+                "confidence": 5.04103969231375e-05,
                 "availableQuantities": [
                     400000
                 ],
@@ -11313,7 +11577,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610488",
                 "name": "5대골절수술비",
                 "theme": "골절/화상",
-                "confidence": 0.03213588416215445,
+                "confidence": 0.008033971040538613,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -11349,7 +11613,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631560",
                 "name": "양성뇌종양진단비Ⅱ",
                 "theme": "기타",
-                "confidence": 0.0773980085081433,
+                "confidence": 0.1231665251289495,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -11375,7 +11639,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610929",
                 "name": "신화상치료비(화상수술비)",
                 "theme": "골절/화상",
-                "confidence": 0.16049952364032471,
+                "confidence": 0.04012488091008118,
                 "availableQuantities": [
                     100000,
                     200000
@@ -11396,7 +11660,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611012",
                 "name": "수술비(1~7종, 연간3회한)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.04280782095422575,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -11422,7 +11686,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630929",
                 "name": "대상포진눈병진단비보장 특약",
                 "theme": "기타",
-                "confidence": 0.008672939648237149,
+                "confidence": 0.0100576012882545,
                 "availableQuantities": [
                     1000000,
                     3000000
@@ -11443,7 +11707,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633527",
                 "name": "뇌혈관질환통원일당(상급종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0028586569322831,
+                "confidence": 0.0023173934503163754,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -11474,7 +11738,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631808",
                 "name": "수술비(1~7종, 연간3회한)[질병7종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.21713615421080557,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -11510,7 +11774,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631785",
                 "name": "4대양성종양진단비(위·십이지장·소화계통 양성종양및특정폴립)",
                 "theme": "3대진단",
-                "confidence": 0.018244744065099502,
+                "confidence": 0.029324557118834187,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -11536,7 +11800,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611017",
                 "name": "수술비(1~7종, 연간3회한)[상해6종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.04280782095422575,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -11572,7 +11836,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610918",
                 "name": "골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.16168529852792335,
+                "confidence": 0.04042132463198084,
                 "availableQuantities": [
                     100000,
                     200000
@@ -11593,7 +11857,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631346",
                 "name": "갑상선기능항진증치료비",
                 "theme": "3대진단",
-                "confidence": 0.027279312804441,
+                "confidence": 0.042019377887146034,
                 "availableQuantities": [
                     1000000
                 ],
@@ -11609,7 +11873,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631787",
                 "name": "4대양성종양진단비(골·관절연골 양성종양)",
                 "theme": "3대진단",
-                "confidence": 0.018244744065099502,
+                "confidence": 0.029324557118834187,
                 "availableQuantities": [
                     1000000
                 ],
@@ -11625,7 +11889,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633549",
                 "name": "최대두배받는2대질환치료비(1점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.00553469801081985,
+                "confidence": 0.0048953162733971125,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -11656,7 +11920,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611302",
                 "name": "간병인사용 일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.11486000484049425,
+                "confidence": 0.02871500121012356,
                 "availableQuantities": [
                     50000,
                     150000
@@ -11677,7 +11941,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633552",
                 "name": "최대두배받는2대질환치료비(4점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.00553469801081985,
+                "confidence": 0.0048953162733971125,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -11708,7 +11972,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630094",
                 "name": "충수염수술비",
                 "theme": "수술",
-                "confidence": 0.0669294521131836,
+                "confidence": 0.0167323630282959,
                 "availableQuantities": [
                     200000
                 ],
@@ -11724,7 +11988,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611264",
                 "name": "상급병실(1인실) 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.22828381204680737,
+                "confidence": 0.05707095301170184,
                 "availableQuantities": [
                     100000,
                     200000
@@ -11745,7 +12009,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611303",
                 "name": "간호·간병통합서비스 사용 일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.11528989266803547,
+                "confidence": 0.028822473167008866,
                 "availableQuantities": [
                     50000,
                     70000
@@ -11766,7 +12030,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640046",
                 "name": "깁스치료비",
                 "theme": "골절/화상",
-                "confidence": 0.17389961312228158,
+                "confidence": 0.27478735826086303,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -11802,7 +12066,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611018",
                 "name": "수술비(1~7종, 연간3회한)[상해7종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.04280782095422575,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -11874,7 +12138,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630519",
                 "name": "특정희귀난치성질환수술비",
                 "theme": "수술",
-                "confidence": 0.03035135862136805,
+                "confidence": 0.029226099487437162,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -11900,7 +12164,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632313",
                 "name": "만성신부전 투석치료비(급여, 연간1회한)(복막투석치료비)",
                 "theme": "3대진단",
-                "confidence": 0.0019079770484695,
+                "confidence": 0.00163289022956755,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -11921,7 +12185,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632984",
                 "name": "간병인사용 질병입원일당(1일이상180일한도)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.22370180045591864,
+                "confidence": 0.12251503156634147,
                 "availableQuantities": [
                     10000,
                     30000,
@@ -11957,7 +12221,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630235",
                 "name": "허혈성심질환진단",
                 "theme": "3대진단",
-                "confidence": 0.313501231695432,
+                "confidence": 0.20022770534986215,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -11988,7 +12252,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630110",
                 "name": "조혈모세포이식수술비",
                 "theme": "수술",
-                "confidence": 0.05419478001492785,
+                "confidence": 0.013548695003731962,
                 "availableQuantities": [
                     10000000,
                     20000000
@@ -12009,7 +12273,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632985",
                 "name": "간병인사용 질병입원일당(1일이상180일한도)(요양병원)",
                 "theme": "입원일당",
-                "confidence": 0.22370180045591864,
+                "confidence": 0.12251503156634147,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -12035,7 +12299,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633318",
                 "name": "질병입원 간병인비용지원(간병인비용 1,500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00019791507001974999,
+                "confidence": 0.00012381621249965243,
                 "availableQuantities": [
                     1000000
                 ],
@@ -12051,7 +12315,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611013",
                 "name": "수술비(1~7종, 연간3회한)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.04280782095422575,
                 "availableQuantities": [
                     200000,
                     300000
@@ -12072,7 +12336,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631786",
                 "name": "4대양성종양진단비(중이·호흡계통·흉곽내기관 양성종양)",
                 "theme": "3대진단",
-                "confidence": 0.018244744065099502,
+                "confidence": 0.029324557118834187,
                 "availableQuantities": [
                     100000,
                     500000
@@ -12093,7 +12357,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630763",
                 "name": "뇌혈관질환 수술비",
                 "theme": "3대진단",
-                "confidence": 0.107669719770442,
+                "confidence": 0.15016795764949362,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -12129,7 +12393,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631414",
                 "name": "32대질병관혈수술비(연간1회한)[9대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.053804802870445215,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -12160,7 +12424,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632141",
                 "name": "131대질병수술비(특정다빈도29대질병)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     100000,
                     200000
@@ -12181,7 +12445,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633001",
                 "name": "기타피부암 및 갑상선암 주요치료비(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.05399713588977,
+                "confidence": 0.08231013114881977,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -12207,7 +12471,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631621",
                 "name": "급성심근경색증통원일당(1일이상 30일한도)[급성심근경색증통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.0016711463978348,
+                "confidence": 0.0022656429053690497,
                 "availableQuantities": [
                     10000
                 ],
@@ -12223,7 +12487,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630430",
                 "name": "뇌출혈진단비_1년미만50%",
                 "theme": "3대진단",
-                "confidence": 0.02533791299724865,
+                "confidence": 0.020047966760881063,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -12259,7 +12523,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632324",
                 "name": "급성췌장염진단비",
                 "theme": "기타",
-                "confidence": 0.00368034451736395,
+                "confidence": 0.0041160337106070375,
                 "availableQuantities": [
                     1000000
                 ],
@@ -12275,7 +12539,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632502",
                 "name": "6대심장질환진단비",
                 "theme": "3대진단",
-                "confidence": 0.019557386253853698,
+                "confidence": 0.028104934731728273,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -12311,7 +12575,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630928",
                 "name": "대상포진진단비보장 특약",
                 "theme": "기타",
-                "confidence": 0.038258322055458704,
+                "confidence": 0.038262140300605686,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -12332,7 +12596,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631200",
                 "name": "5대기관질병수술비(연간1회한)[비관혈]",
                 "theme": "3대진단",
-                "confidence": 0.1118532668967836,
+                "confidence": 0.11107663100271589,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -12368,7 +12632,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633539",
                 "name": "허혈성심장질환통원일당(상급종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0028371038204978,
+                "confidence": 0.0023055197436310376,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -12399,7 +12663,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633002",
                 "name": "종합병원 암 주요치료비(본인부담금 1천만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.0453798781888251,
+                "confidence": 0.0691264862874907,
                 "availableQuantities": [
                     10000000
                 ],
@@ -12415,7 +12679,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631735",
                 "name": "3대질환 MRI촬영검사비(급여, 연간1회한)",
                 "theme": "3대진단",
-                "confidence": 0.00057590031489235,
+                "confidence": 0.000242193725266025,
                 "availableQuantities": [
                     50000
                 ],
@@ -12431,7 +12695,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633316",
                 "name": "질병입원 간병인비용지원(간병인비용 700만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0002252428662869,
+                "confidence": 0.0001461515859183992,
                 "availableQuantities": [
                     400000,
                     500000
@@ -12452,7 +12716,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633516",
                 "name": "특정순환계질환 급여치료비(요양병원 제외)(본인부담금 1백만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.048929581237297,
+                "confidence": 0.04607643369139976,
                 "availableQuantities": [
                     1000000
                 ],
@@ -12468,7 +12732,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632138",
                 "name": "131대질병수술비(뇌혈관질환)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -12504,7 +12768,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630022",
                 "name": "질병수술위로금",
                 "theme": "수술",
-                "confidence": 0.28134347240639945,
+                "confidence": 0.07033586810159986,
                 "availableQuantities": [
                     100000,
                     200000
@@ -12525,7 +12789,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631584",
                 "name": "뇌혈관질환진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.031327669406592804,
+                "confidence": 0.0327120979297612,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -12561,7 +12825,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633015",
                 "name": "상급병실(1인실) 종합병원 질병수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.08930409905573425,
+                "confidence": 0.06968161809285314,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -12587,7 +12851,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632648",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)",
                 "theme": "기타",
-                "confidence": 0.141099331575202,
+                "confidence": 0.23306712640420102,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -12623,7 +12887,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631803",
                 "name": "수술비(1~7종, 연간3회한)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.21713615421080557,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -12649,7 +12913,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630527",
                 "name": "유사암진단비",
                 "theme": "3대진단",
-                "confidence": 0.32443007632882015,
+                "confidence": 0.2465351667600983,
                 "availableQuantities": [
                     200000,
                     2000000,
@@ -12685,7 +12949,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610886",
                 "name": "신골절치료비(치아파절포함)",
                 "theme": "골절/화상",
-                "confidence": 0.0410590206995257,
+                "confidence": 0.010264755174881426,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -12721,7 +12985,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640443",
                 "name": "7대장기이식대기등록",
                 "theme": "수술",
-                "confidence": 0.0153454618707487,
+                "confidence": 0.048131035561283994,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -12747,7 +13011,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631611",
                 "name": "뇌졸중통원일당(1일이상 30일한도)[뇌졸중통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.001748940545713,
+                "confidence": 0.00235660355452245,
                 "availableQuantities": [
                     10000
                 ],
@@ -12763,7 +13027,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610912",
                 "name": "골절(치아파절제외)진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.13907544096074792,
+                "confidence": 0.03476886024018698,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -12799,7 +13063,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610937",
                 "name": "상해사고부상치료비[3등급]",
                 "theme": "수술",
-                "confidence": 0.00261683063523115,
+                "confidence": 0.0006542076588077875,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -12830,7 +13094,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633339",
                 "name": "2-3인실 상급종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.08315386867884844,
+                "confidence": 0.06414276978921227,
                 "availableQuantities": [
                     20000,
                     50000
@@ -12851,7 +13115,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633526",
                 "name": "뇌혈관질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0025215173846175,
+                "confidence": 0.0019782515071349004,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -12882,7 +13146,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631588",
                 "name": "허혈성심장질환진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.03302831765036805,
+                "confidence": 0.03462640644385609,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -12918,7 +13182,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632325",
                 "name": "크론병및궤양성대장염진단비",
                 "theme": "기타",
-                "confidence": 0.00430138916547115,
+                "confidence": 0.006074423117748325,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -12944,7 +13208,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631737",
                 "name": "암특정재활치료비(급여, 1일1회한, 연간20회한)",
                 "theme": "3대진단",
-                "confidence": 0.0005539425983275999,
+                "confidence": 0.0006515695203658125,
                 "availableQuantities": [
                     20000
                 ],
@@ -12960,7 +13224,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632326",
                 "name": "특정천공진단비",
                 "theme": "기타",
-                "confidence": 0.0042680312924438,
+                "confidence": 0.005843482580502513,
                 "availableQuantities": [
                     1000000,
                     3000000
@@ -12981,7 +13245,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611346",
                 "name": "2-3인실 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0818177537301241,
+                "confidence": 0.020454438432531023,
                 "availableQuantities": [
                     50000
                 ],
@@ -12997,7 +13261,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630766",
                 "name": "허혈성심장질환수술비",
                 "theme": "3대진단",
-                "confidence": 0.10883907511428134,
+                "confidence": 0.15149867746632678,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -13033,7 +13297,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631805",
                 "name": "수술비(1~7종, 연간3회한)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.21713615421080557,
                 "availableQuantities": [
                     400000,
                     500000,
@@ -13059,7 +13323,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611342",
                 "name": "일반상해입원 간병인비용지원(간병인비용 1,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00020799341909185,
+                "confidence": 5.19983547729625e-05,
                 "availableQuantities": [
                     600000,
                     1000000
@@ -13080,7 +13344,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632503",
                 "name": "6대심장질환진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.01480904850695415,
+                "confidence": 0.013996826544455563,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -13116,7 +13380,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633310",
                 "name": "질병입원 간병인비용지원(간병인비용 200만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.01336111148310175,
+                "confidence": 0.008499079380850712,
                 "availableQuantities": [
                     500000,
                     600000,
@@ -13142,7 +13406,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632322",
                 "name": "간농양진단비",
                 "theme": "기타",
-                "confidence": 0.0036797939153908003,
+                "confidence": 0.004113684631806875,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -13163,7 +13427,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630697",
                 "name": "암진단비(유사암 제외)",
                 "theme": "3대진단",
-                "confidence": 0.2294431613867527,
+                "confidence": 0.23156390029438523,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -13199,7 +13463,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610781",
                 "name": "일반상해후유장해(3~100%)",
                 "theme": "사망후유",
-                "confidence": 0.09288472290901739,
+                "confidence": 0.023221180727254348,
                 "availableQuantities": [
                     10000000,
                     30000000,
@@ -13235,7 +13499,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632139",
                 "name": "131대질병수술비(후각특정질환)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -13266,7 +13530,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631738",
                 "name": "암특정통증완화치료비(급여, 연간1회한)",
                 "theme": "3대진단",
-                "confidence": 0.00067454776008155,
+                "confidence": 0.0007878103684626499,
                 "availableQuantities": [
                     300000,
                     500000
@@ -13287,7 +13551,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630144",
                 "name": "질병사망(Ⅱ)",
                 "theme": "사망후유",
-                "confidence": 0.024882369873236602,
+                "confidence": 0.006220592468309151,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -13323,7 +13587,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630024",
                 "name": "항암방사선약물치료비",
                 "theme": "3대진단",
-                "confidence": 0.23546023065588265,
+                "confidence": 0.05886505766397066,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -13359,7 +13623,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632133",
                 "name": "131대질병수술비(심장질환)",
                 "theme": "수술",
-                "confidence": 0.065462978380642,
+                "confidence": 0.10117422913066144,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -13395,7 +13659,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633551",
                 "name": "최대두배받는2대질환치료비(3점이상)(포인트적립형)",
                 "theme": "기타",
-                "confidence": 0.00553469801081985,
+                "confidence": 0.0048953162733971125,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -13426,7 +13690,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631802",
                 "name": "수술비(1~7종, 연간3회한)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.21713615421080557,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -13460,7 +13724,7 @@ export const SAMPLE_CONTRACTS = {
         "channel": "GA",
         "age": 34,
         "gndr": "여",
-        "unt_pd_nm": "내Mom같은 베이비",
+        "unt_pd_nm": "간편 3.10.5(세)",
         "silson_discount": [
             {
                 "tag": "노후",
@@ -13481,6 +13745,14 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "quantity": 20000000,
+                "theme": "3대진단",
+                "totalPrice": 18240.0,
+                "totalProfit": 142742.05094
+            },
+            {
                 "id": "610605",
                 "name": "일반상해고도후유장해",
                 "quantity": 1000000,
@@ -13495,6 +13767,14 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "totalPrice": 24.0,
                 "totalProfit": 1261.26562
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "quantity": 20000000,
+                "theme": "3대진단",
+                "totalPrice": 6960.0,
+                "totalProfit": 119313.198125
             }
         ],
         "availableItems": [
@@ -13502,7 +13782,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632546",
                 "name": "130대질병수술비(후각특정질환)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -13533,7 +13813,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632548",
                 "name": "130대질병수술비(치핵)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000
@@ -13554,7 +13834,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633120",
                 "name": "질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0064128723783497005,
+                "confidence": 0.006416503254864026,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -13580,7 +13860,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610921",
                 "name": "골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.22045735539405886,
+                "confidence": 0.11022867769702943,
                 "availableQuantities": [
                     100000,
                     200000
@@ -13601,7 +13881,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632550",
                 "name": "130대질병수술비(편도염)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -13632,7 +13912,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630710",
                 "name": "암진단비(유사암 및 소액암 제외)",
                 "theme": "3대진단",
-                "confidence": 0.004843100058930299,
+                "confidence": 0.00701029758035465,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -13668,7 +13948,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611345",
                 "name": "2-3인실 상급종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.08243220624030084,
+                "confidence": 0.04121610312015042,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -13694,7 +13974,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630653",
                 "name": "계속암치료비",
                 "theme": "3대진단",
-                "confidence": 0.00137042118664685,
+                "confidence": 0.00131802842527855,
                 "availableQuantities": [
                     100000,
                     300000,
@@ -13725,7 +14005,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630026",
                 "name": "질병입원일당",
                 "theme": "입원일당",
-                "confidence": 0.0525418490570186,
+                "confidence": 0.0262709245285093,
                 "availableQuantities": [
                     10000,
                     20000
@@ -13746,7 +14026,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630228",
                 "name": "뇌혈관질환진단",
                 "theme": "3대진단",
-                "confidence": 0.31014093350120175,
+                "confidence": 0.15507046675060088,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -13782,7 +14062,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.16049952364032471,
+                "confidence": 0.08024976182016236,
                 "availableQuantities": [
                     100000,
                     200000
@@ -13803,7 +14083,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631422",
                 "name": "32대질병관혈수술비(연간1회한)[14대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.07621164439748723,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -13829,7 +14109,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632541",
                 "name": "130대질병수술비(특정31대질병)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -13860,7 +14140,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630572",
                 "name": "갱신형 뇌출혈수술비",
                 "theme": "3대진단",
-                "confidence": 0.0012602742470751,
+                "confidence": 0.0019920272410770246,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -13881,7 +14161,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632543",
                 "name": "130대질병수술비(백내장)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -13907,7 +14187,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631130",
                 "name": "암수술비(유사암제외)",
                 "theme": "3대진단",
-                "confidence": 0.058427815872648045,
+                "confidence": 0.1023115074352405,
                 "availableQuantities": [
                     200000,
                     1000000,
@@ -13943,7 +14223,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630717",
                 "name": "유사암진단비",
                 "theme": "3대진단",
-                "confidence": 0.018255431788795948,
+                "confidence": 0.022830220819175875,
                 "availableQuantities": [
                     200000,
                     2000000,
@@ -13979,7 +14259,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630331",
                 "name": "질병고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.0289599776210232,
+                "confidence": 0.03198555782346463,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -14010,7 +14290,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630951",
                 "name": "갑상선암(초기제외)진단비",
                 "theme": "3대진단",
-                "confidence": 0.015966334219655702,
+                "confidence": 0.02647687078079085,
                 "availableQuantities": [
                     1000000
                 ],
@@ -14026,7 +14306,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631196",
                 "name": "5대기관질병수술비(연간1회한)[관혈]",
                 "theme": "3대진단",
-                "confidence": 0.11605658329652785,
+                "confidence": 0.16644891738381118,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -14062,7 +14342,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631430",
                 "name": "32대질병관혈수술비(연간1회한)[4대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.07621164439748723,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -14088,7 +14368,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632651",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.06024672201314675,
+                "confidence": 0.0869042177525353,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -14119,7 +14399,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611261",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.22192040736934965,
+                "confidence": 0.11096020368467482,
                 "availableQuantities": [
                     30000,
                     50000,
@@ -14155,7 +14435,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633515",
                 "name": "특정순환계질환진단비",
                 "theme": "기타",
-                "confidence": 0.0061375297610897,
+                "confidence": 0.005070796062470975,
                 "availableQuantities": [
                     100000,
                     1000000,
@@ -14191,7 +14471,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632650",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.06024672201314675,
+                "confidence": 0.0869042177525353,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -14222,7 +14502,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632544",
                 "name": "130대질병수술비(뇌혈관질환)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -14253,7 +14533,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630930",
                 "name": "통풍진단비보장 특약",
                 "theme": "기타",
-                "confidence": 0.0361377595554696,
+                "confidence": 0.05396807956645217,
                 "availableQuantities": [
                     100000,
                     300000,
@@ -14284,7 +14564,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640301",
                 "name": "보험료납입면제진단비(80%이상후유장해 및 3대질병진단)_뇌졸중",
                 "theme": "3대진단",
-                "confidence": 0.00301599496984635,
+                "confidence": 0.00305787624876555,
                 "availableQuantities": [
                     100000,
                     1000000
@@ -14305,7 +14585,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631807",
                 "name": "수술비(1~7종, 연간3회한)[질병6종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.3003245561771282,
                 "availableQuantities": [
                     750000,
                     1500000,
@@ -14341,7 +14621,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633014",
                 "name": "상급병실(1인실) 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.22921333839503272,
+                "confidence": 0.19820730464716763,
                 "availableQuantities": [
                     100000,
                     200000
@@ -14362,7 +14642,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631397",
                 "name": "상급병실(1인실) 상급종합병원 질병입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.24446770519385774,
+                "confidence": 0.2219275883211338,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -14388,7 +14668,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631804",
                 "name": "수술비(1~7종, 연간3회한)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.3003245561771282,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -14414,7 +14694,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610909",
                 "name": "상급병실(1인실) 상급종합병원 일반상해입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.2462011164422357,
+                "confidence": 0.12310055822111785,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -14440,7 +14720,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610605",
                 "name": "일반상해고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.37899145135376505,
+                "confidence": 0.18949572567688253,
                 "availableQuantities": [
                     1000000,
                     10000000
@@ -14461,7 +14741,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610852",
                 "name": "종합병원 일반상해입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.0693884171209447,
+                "confidence": 0.03469420856047235,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -14487,7 +14767,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640511",
                 "name": "중증질환자(심장질환) 산정특례대상 진단비(연간1회한)",
                 "theme": "3대진단",
-                "confidence": 0.00126657983044315,
+                "confidence": 0.002097507269655875,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -14523,7 +14803,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632505",
                 "name": "허혈성심장질환수술비(25%체증형)",
                 "theme": "수술",
-                "confidence": 0.14951246880220304,
+                "confidence": 0.26001312425622103,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -14559,7 +14839,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632343",
                 "name": "통합암진단비(유사암제외)(4대고액암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.11877127830109116,
+                "confidence": 0.19093339457832287,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -14595,7 +14875,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630571",
                 "name": "갱신형 급성심근경색증입원일당(4일이상)",
                 "theme": "3대진단",
-                "confidence": 0.0055123234077934,
+                "confidence": 0.008170229611099524,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -14621,7 +14901,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611301",
                 "name": "일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0070627574733072,
+                "confidence": 0.0035313787366536,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -14647,7 +14927,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631406",
                 "name": "32대질병관혈수술비(연간1회한)[5대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.07621164439748723,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -14678,7 +14958,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632480",
                 "name": "전이암진단비(림프절전이암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.045916186606570056,
+                "confidence": 0.07142859899812395,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -14714,7 +14994,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631443",
                 "name": "암직접치료통원일당(상급종합병원)",
                 "theme": "입원일당",
-                "confidence": 0.049700055511143246,
+                "confidence": 0.07811399870997368,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -14750,7 +15030,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611014",
                 "name": "수술비(1~7종, 연간3회한)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.0856156419084515,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -14776,7 +15056,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611310",
                 "name": "간병인지원 일반상해입원일당(Ⅰ)(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0369575524669727,
+                "confidence": 0.01847877623348635,
                 "availableQuantities": [
                     10000,
                     20000
@@ -14797,7 +15077,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630207",
                 "name": "고액암진단비",
                 "theme": "3대진단",
-                "confidence": 0.0185841109952646,
+                "confidence": 0.0092920554976323,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -14823,7 +15103,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633000",
                 "name": "암(유사암제외) 주요치료비(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.05399713588977,
+                "confidence": 0.055323756536748675,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -14854,7 +15134,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611155",
                 "name": "중증외상환자 산정특례대상 진단비(연간1회한)",
                 "theme": "기타",
-                "confidence": 7.297969873128988e-05,
+                "confidence": 3.648984936564494e-05,
                 "availableQuantities": [
                     1000000,
                     10000000
@@ -14875,7 +15155,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631806",
                 "name": "수술비(1~7종, 연간3회한)[질병5종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.3003245561771282,
                 "availableQuantities": [
                     300000,
                     800000,
@@ -14911,7 +15191,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631186",
                 "name": "암수술비(유사암제외)(최초1회한)",
                 "theme": "3대진단",
-                "confidence": 0.00702746223058785,
+                "confidence": 0.009196343819664676,
                 "availableQuantities": [
                     800000,
                     1000000,
@@ -14947,7 +15227,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632342",
                 "name": "통합암진단비(유사암제외)(10대특정암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.11877127830109116,
+                "confidence": 0.19093339457832287,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -14983,7 +15263,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630570",
                 "name": "갱신형 뇌출혈입원일당(4일이상)",
                 "theme": "3대진단",
-                "confidence": 0.005416104002523349,
+                "confidence": 0.00799816082110845,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -15009,7 +15289,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631723",
                 "name": "항암양성자방사선치료비",
                 "theme": "3대진단",
-                "confidence": 0.0010163557597003,
+                "confidence": 0.0014153744539786252,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -15040,7 +15320,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633538",
                 "name": "허혈성심장질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.00250769924540045,
+                "confidence": 0.0020213632751074,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -15066,7 +15346,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610933",
                 "name": "신화상치료비(중증화상및부식진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.16049952364032471,
+                "confidence": 0.08024976182016236,
                 "availableQuantities": [
                     20000000,
                     30000000,
@@ -15092,7 +15372,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633537",
                 "name": "허혈성심장질환통원일당(연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.00227456716546185,
+                "confidence": 0.00188155793997695,
                 "availableQuantities": [
                     10000
                 ],
@@ -15108,7 +15388,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611262",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원)",
                 "theme": "입원일당",
-                "confidence": 0.2219228917144648,
+                "confidence": 0.1109614458572324,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -15134,7 +15414,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632649",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)",
                 "theme": "기타",
-                "confidence": 0.141099331575202,
+                "confidence": 0.20471627282394428,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -15170,7 +15450,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611016",
                 "name": "수술비(1~7종, 연간3회한)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.0856156419084515,
                 "availableQuantities": [
                     300000,
                     800000,
@@ -15206,7 +15486,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633341",
                 "name": "2-3인실 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0824839413094138,
+                "confidence": 0.06833100681115682,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -15232,7 +15512,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611309",
                 "name": "간병인지원 일반상해입원일당(Ⅰ)(1일이상 180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0448974737866511,
+                "confidence": 0.02244873689332555,
                 "availableQuantities": [
                     10000,
                     20000
@@ -15253,7 +15533,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610439",
                 "name": "임시생활비담보",
                 "theme": "입원일당",
-                "confidence": 0.06677425429221764,
+                "confidence": 0.03338712714610882,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -15279,7 +15559,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611015",
                 "name": "수술비(1~7종, 연간3회한)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.0856156419084515,
                 "availableQuantities": [
                     250000,
                     400000,
@@ -15310,7 +15590,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610929",
                 "name": "신화상치료비(화상수술비)",
                 "theme": "골절/화상",
-                "confidence": 0.16049952364032471,
+                "confidence": 0.08024976182016236,
                 "availableQuantities": [
                     100000,
                     200000
@@ -15331,7 +15611,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611012",
                 "name": "수술비(1~7종, 연간3회한)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.0856156419084515,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -15357,7 +15637,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631808",
                 "name": "수술비(1~7종, 연간3회한)[질병7종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.3003245561771282,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -15393,7 +15673,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630464",
                 "name": "16대특정암진단비",
                 "theme": "3대진단",
-                "confidence": 0.011942958821959799,
+                "confidence": 0.018949169870861673,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -15419,7 +15699,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611017",
                 "name": "수술비(1~7종, 연간3회한)[상해6종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.0856156419084515,
                 "availableQuantities": [
                     750000,
                     1000000,
@@ -15455,7 +15735,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632986",
                 "name": "간호·간병통합서비스 사용 질병입원일당(1일이상180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.2164520255283874,
+                "confidence": 0.15195752359163278,
                 "availableQuantities": [
                     30000,
                     50000,
@@ -15481,7 +15761,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610918",
                 "name": "골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.16168529852792335,
+                "confidence": 0.08084264926396167,
                 "availableQuantities": [
                     100000,
                     200000
@@ -15502,7 +15782,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611302",
                 "name": "간병인사용 일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.11486000484049425,
+                "confidence": 0.05743000242024712,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -15528,7 +15808,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632545",
                 "name": "130대질병수술비(다빈도61대질병)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -15559,7 +15839,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630094",
                 "name": "충수염수술비",
                 "theme": "수술",
-                "confidence": 0.0669294521131836,
+                "confidence": 0.0334647260565918,
                 "availableQuantities": [
                     200000
                 ],
@@ -15575,7 +15855,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611264",
                 "name": "상급병실(1인실) 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.22828381204680737,
+                "confidence": 0.11414190602340368,
                 "availableQuantities": [
                     100000,
                     200000
@@ -15596,7 +15876,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611303",
                 "name": "간호·간병통합서비스 사용 일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.11528989266803547,
+                "confidence": 0.05764494633401773,
                 "availableQuantities": [
                     30000,
                     70000
@@ -15617,7 +15897,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611018",
                 "name": "수술비(1~7종, 연간3회한)[상해7종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.0856156419084515,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -15684,7 +15964,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632984",
                 "name": "간병인사용 질병입원일당(1일이상180일한도)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.22370180045591864,
+                "confidence": 0.15492708899764474,
                 "availableQuantities": [
                     30000,
                     50000,
@@ -15720,7 +16000,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632340",
                 "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.11877127830109116,
+                "confidence": 0.19093339457832287,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -15756,7 +16036,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630235",
                 "name": "허혈성심질환진단",
                 "theme": "3대진단",
-                "confidence": 0.313501231695432,
+                "confidence": 0.40045541069972423,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -15792,7 +16072,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632481",
                 "name": "전이암진단비(특정전이암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.045916186606570056,
+                "confidence": 0.07142859899812395,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -15828,7 +16108,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632985",
                 "name": "간병인사용 질병입원일당(1일이상180일한도)(요양병원)",
                 "theme": "입원일당",
-                "confidence": 0.22370180045591864,
+                "confidence": 0.15492708899764474,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -15854,7 +16134,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611013",
                 "name": "수술비(1~7종, 연간3회한)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.171231283816903,
+                "confidence": 0.0856156419084515,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -15880,7 +16160,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632349",
                 "name": "암수술비(유사암제외)(25%체증형)",
                 "theme": "3대진단",
-                "confidence": 0.0904551175258188,
+                "confidence": 0.15108926746572487,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -15916,7 +16196,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630763",
                 "name": "뇌혈관질환 수술비",
                 "theme": "3대진단",
-                "confidence": 0.107669719770442,
+                "confidence": 0.19974920701725452,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -15952,7 +16232,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633121",
                 "name": "간병인사용 질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.11588274400512065,
+                "confidence": 0.08329555702700003,
                 "availableQuantities": [
                     100000,
                     150000
@@ -15973,7 +16253,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631414",
                 "name": "32대질병관혈수술비(연간1회한)[9대질병]",
                 "theme": "수술",
-                "confidence": 0.04857871819636155,
+                "confidence": 0.07621164439748723,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -16004,7 +16284,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611154",
                 "name": "중증화상환자 산정특례대상 진단비(연간1회한)",
                 "theme": "골절/화상",
-                "confidence": 6.222305154688231e-05,
+                "confidence": 3.1111525773441156e-05,
                 "availableQuantities": [
                     1000000,
                     5000000,
@@ -16030,7 +16310,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633122",
                 "name": "간호·간병통합서비스 사용 질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.1164103803762945,
+                "confidence": 0.08469943796154106,
                 "availableQuantities": [
                     30000,
                     70000
@@ -16051,7 +16331,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633001",
                 "name": "기타피부암 및 갑상선암 주요치료비(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.05399713588977,
+                "confidence": 0.055323756536748675,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -16077,7 +16357,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630928",
                 "name": "대상포진진단비보장 특약",
                 "theme": "기타",
-                "confidence": 0.038258322055458704,
+                "confidence": 0.054918209662711576,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -16113,7 +16393,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631200",
                 "name": "5대기관질병수술비(연간1회한)[비관혈]",
                 "theme": "3대진단",
-                "confidence": 0.1118532668967836,
+                "confidence": 0.16186206729431746,
                 "availableQuantities": [
                     1000000,
                     1500000,
@@ -16149,7 +16429,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633539",
                 "name": "허혈성심장질환통원일당(상급종합병원, 연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0028371038204978,
+                "confidence": 0.0023306806632567498,
                 "availableQuantities": [
                     30000,
                     50000,
@@ -16175,7 +16455,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633002",
                 "name": "종합병원 암 주요치료비(본인부담금 1천만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.0453798781888251,
+                "confidence": 0.04615672219502748,
                 "availableQuantities": [
                     10000000
                 ],
@@ -16191,7 +16471,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632648",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)",
                 "theme": "기타",
-                "confidence": 0.141099331575202,
+                "confidence": 0.20471627282394428,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -16227,7 +16507,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631803",
                 "name": "수술비(1~7종, 연간3회한)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.3003245561771282,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -16253,7 +16533,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630527",
                 "name": "유사암진단비",
                 "theme": "3대진단",
-                "confidence": 0.32443007632882015,
+                "confidence": 0.4930703335201966,
                 "availableQuantities": [
                     200000,
                     2000000,
@@ -16289,7 +16569,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632547",
                 "name": "130대질병수술비(특정다빈도29대질병)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000
@@ -16310,7 +16590,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632542",
                 "name": "130대질병수술비(관절염,생식기질환)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -16336,7 +16616,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632540",
                 "name": "130대질병수술비(심장질환)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -16367,7 +16647,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631263",
                 "name": "종합병원 질병입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.0518000291724746,
+                "confidence": 0.07349934136436047,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -16393,7 +16673,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610912",
                 "name": "골절(치아파절제외)진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.13907544096074792,
+                "confidence": 0.06953772048037396,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -16419,7 +16699,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633339",
                 "name": "2-3인실 상급종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.08315386867884844,
+                "confidence": 0.06867166520531108,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -16445,7 +16725,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631146",
                 "name": "암직접치료입원일당(Ⅱ)(요양병원제외, 1일이상)",
                 "theme": "3대진단",
-                "confidence": 0.0343973869327631,
+                "confidence": 0.06168768065604352,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -16476,7 +16756,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611346",
                 "name": "2-3인실 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0818177537301241,
+                "confidence": 0.04090887686506205,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -16502,7 +16782,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630766",
                 "name": "허혈성심장질환수술비",
                 "theme": "3대진단",
-                "confidence": 0.10883907511428134,
+                "confidence": 0.20169267555087525,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -16538,7 +16818,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631805",
                 "name": "수술비(1~7종, 연간3회한)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.3003245561771282,
                 "availableQuantities": [
                     200000,
                     250000,
@@ -16574,7 +16854,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632503",
                 "name": "6대심장질환진단비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.01480904850695415,
+                "confidence": 0.0218000364551742,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -16610,7 +16890,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630697",
                 "name": "암진단비(유사암 제외)",
                 "theme": "3대진단",
-                "confidence": 0.2294431613867527,
+                "confidence": 0.3361082434260606,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -16646,7 +16926,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632549",
                 "name": "130대질병수술비(유방의장애)",
                 "theme": "수술",
-                "confidence": 0.10490829323142409,
+                "confidence": 0.1529472964000925,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -16677,7 +16957,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631138",
                 "name": "유사암수술비",
                 "theme": "3대진단",
-                "confidence": 0.0627568700860152,
+                "confidence": 0.11159303862521248,
                 "availableQuantities": [
                     400000,
                     1000000,
@@ -16713,7 +16993,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632339",
                 "name": "통합암진단비(유사암제외)(특정소액암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.11877127830109116,
+                "confidence": 0.19093339457832287,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -16749,7 +17029,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630024",
                 "name": "항암방사선약물치료비",
                 "theme": "3대진단",
-                "confidence": 0.23546023065588265,
+                "confidence": 0.11773011532794132,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -16785,7 +17065,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631160",
                 "name": "암요양병원입원일당(Ⅱ)(1일이상 90일한도)",
                 "theme": "입원일당",
-                "confidence": 0.02610200154797955,
+                "confidence": 0.04159388478940002,
                 "availableQuantities": [
                     10000,
                     20000
@@ -16806,7 +17086,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632341",
                 "name": "통합암진단비(유사암제외)(15대특정암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.11877127830109116,
+                "confidence": 0.19093339457832287,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -16842,7 +17122,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631802",
                 "name": "수술비(1~7종, 연간3회한)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.17643306010309856,
+                "confidence": 0.3003245561771282,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -16868,7 +17148,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631258",
                 "name": "특정전이암진단비",
                 "theme": "3대진단",
-                "confidence": 0.053949065686980796,
+                "confidence": 0.08145249801959696,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -16979,6 +17259,14 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -29920.270219
             },
             {
+                "id": "632279",
+                "name": "표적항암약물허가치료비Ⅱ",
+                "quantity": 50000000,
+                "theme": "3대진단",
+                "totalPrice": 500.0,
+                "totalProfit": 89704.70612
+            },
+            {
                 "id": "610015",
                 "name": "일반상해사망",
                 "quantity": 1000000,
@@ -17032,7 +17320,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631858",
                 "name": "질병수술비(특정5대질병 제외)",
                 "theme": "수술",
-                "confidence": 0.1128833232868374,
+                "confidence": 0.10482022876634901,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -17068,7 +17356,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611263",
                 "name": "간호·간병통합서비스 사용 일반상해입원일당(1일이상180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.032916189065748454,
+                "confidence": 0.03056503270390928,
                 "availableQuantities": [
                     50000,
                     70000
@@ -17089,7 +17377,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633319",
                 "name": "질병입원 간병인비용지원(간병인비용 2,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0001301958287813066,
+                "confidence": 0.0001257358798120515,
                 "availableQuantities": [
                     1000000
                 ],
@@ -17105,7 +17393,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633120",
                 "name": "질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0063265754638033534,
+                "confidence": 0.006171784280868857,
                 "availableQuantities": [
                     10000,
                     20000
@@ -17126,7 +17414,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631726",
                 "name": "항암세기조절방사선치료비",
                 "theme": "3대진단",
-                "confidence": 0.17110760037078698,
+                "confidence": 0.1588856289157308,
                 "availableQuantities": [
                     10000000,
                     20000000
@@ -17147,7 +17435,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610921",
                 "name": "골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.033916516214470595,
+                "confidence": 0.03149390791343698,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -17183,7 +17471,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633331",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 9.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008303904002401183,
+                "confidence": 0.008023469826655255,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -17219,7 +17507,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640056",
                 "name": "5대장기이식수술비",
                 "theme": "수술",
-                "confidence": 0.16501136638223796,
+                "confidence": 0.16212487726307676,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -17255,7 +17543,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632532",
                 "name": "131대질병수술비(편도염)",
                 "theme": "수술",
-                "confidence": 0.18945410658223477,
+                "confidence": 0.18572082602220089,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -17281,7 +17569,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611297",
                 "name": "일반상해입원 간병인비용지원(간병인비용 500만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.004926665286239908,
+                "confidence": 0.004574760622937058,
                 "availableQuantities": [
                     100000,
                     1000000
@@ -17302,7 +17590,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611345",
                 "name": "2-3인실 상급종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.012681877883123206,
+                "confidence": 0.01177602946290012,
                 "availableQuantities": [
                     20000,
                     50000
@@ -17323,7 +17611,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630026",
                 "name": "질병입원일당",
                 "theme": "입원일당",
-                "confidence": 0.008083361393387476,
+                "confidence": 0.007505978436716943,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -17359,7 +17647,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610469",
                 "name": "상해중환자실 입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.012089609878172107,
+                "confidence": 0.011226066315445527,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -17390,7 +17678,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630228",
                 "name": "뇌혈관질환진단",
                 "theme": "3대진단",
-                "confidence": 0.047713989769415655,
+                "confidence": 0.04430584764302882,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -17426,7 +17714,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.024692234406203804,
+                "confidence": 0.022928503377189244,
                 "availableQuantities": [
                     100000,
                     200000
@@ -17447,7 +17735,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632136",
                 "name": "131대질병수술비(관절염,생식기질환)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -17473,7 +17761,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631442",
                 "name": "계속받는 항암방사선약물치료비(급여)(연간1회한)",
                 "theme": "3대진단",
-                "confidence": 0.0996052372365144,
+                "confidence": 0.09249057743390623,
                 "availableQuantities": [
                     100000,
                     1000000,
@@ -17504,7 +17792,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633313",
                 "name": "질병입원 간병인비용지원(간병인비용 200만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.001957915093803469,
+                "confidence": 0.0018825940568286787,
                 "availableQuantities": [
                     400000
                 ],
@@ -17520,7 +17808,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633315",
                 "name": "질병입원 간병인비용지원(간병인비용 500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0006563624967611538,
+                "confidence": 0.0006285695984529427,
                 "availableQuantities": [
                     400000,
                     1000000
@@ -17541,7 +17829,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631130",
                 "name": "암수술비(유사암제외)",
                 "theme": "3대진단",
-                "confidence": 0.04086816957360479,
+                "confidence": 0.03794901460406158,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -17577,7 +17865,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630331",
                 "name": "질병고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.009841710099527577,
+                "confidence": 0.009138730806704179,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -17613,7 +17901,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632504",
                 "name": "뇌혈관질환수술비(25%체증형)",
                 "theme": "수술",
-                "confidence": 0.23683213328302297,
+                "confidence": 0.23514867517415963,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -17644,7 +17932,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610468",
                 "name": "중대상해수술비",
                 "theme": "수술",
-                "confidence": 0.0076857258810288,
+                "confidence": 0.007136745460955315,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -17675,7 +17963,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633116",
                 "name": "질병입원 간병인비용지원(간병인비용 500만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.013327008084249269,
+                "confidence": 0.01287088475157448,
                 "availableQuantities": [
                     1000000
                 ],
@@ -17691,7 +17979,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633715",
                 "name": "통합포인트 대상 질병진단비((A7) 다발경화증진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     2000000
                 ],
@@ -17707,7 +17995,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611261",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0341416011337461,
+                "confidence": 0.03170291533847852,
                 "availableQuantities": [
                     100000,
                     150000
@@ -17728,7 +18016,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631227",
                 "name": "수술비(1~5종)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.01765271291246353,
+                "confidence": 0.016391804847287562,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -17754,7 +18042,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632652",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(뇌졸중)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.25767447776167757,
+                "confidence": 0.2538817168657172,
                 "availableQuantities": [
                     3000000
                 ],
@@ -17770,7 +18058,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630019",
                 "name": "질병 중환자실입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.013057719691345969,
+                "confidence": 0.0121250254276784,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -17801,7 +18089,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633330",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 7.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008303904002401183,
+                "confidence": 0.008023469826655255,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -17827,7 +18115,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640045",
                 "name": "각막이식수술비",
                 "theme": "수술",
-                "confidence": 0.13684012597119272,
+                "confidence": 0.13438434455134654,
                 "availableQuantities": [
                     10000000,
                     20000000
@@ -17848,7 +18136,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633716",
                 "name": "통합포인트 대상 질병진단비((A8) 뇌전증진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -17864,7 +18152,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611340",
                 "name": "일반상해입원 간병인비용지원(간병인비용 500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00017904022236695384,
+                "confidence": 0.00016625163505502857,
                 "availableQuantities": [
                     400000,
                     1000000
@@ -17885,7 +18173,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631807",
                 "name": "수술비(1~7종, 연간3회한)[질병6종]",
                 "theme": "수술",
-                "confidence": 0.13256552663396273,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     2000000,
                     3000000,
@@ -17921,7 +18209,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633014",
                 "name": "상급병실(1인실) 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.17987728220269628,
+                "confidence": 0.17514543970382374,
                 "availableQuantities": [
                     100000,
                     200000
@@ -17942,7 +18230,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632140",
                 "name": "131대질병수술비(백내장)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -17968,7 +18256,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633712",
                 "name": "통합포인트 대상 질병진단비((A4) 특정전이암진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -17984,7 +18272,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611343",
                 "name": "일반상해입원 간병인비용지원(간병인비용 1,500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 2.6053092491538462e-05,
+                "confidence": 2.419215731357143e-05,
                 "availableQuantities": [
                     1000000
                 ],
@@ -18000,7 +18288,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631397",
                 "name": "상급병실(1인실) 상급종합병원 질병입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.07895925521114504,
+                "confidence": 0.07331930841034896,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -18031,7 +18319,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633719",
                 "name": "통합포인트 대상 질병진단비((B1) 림프절전이암진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -18047,7 +18335,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633709",
                 "name": "통합포인트 대상 질병진단비((A1) 특정패혈증진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -18063,7 +18351,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631804",
                 "name": "수술비(1~7종, 연간3회한)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.13256552663396273,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     300000,
                     400000,
@@ -18089,7 +18377,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610909",
                 "name": "상급병실(1인실) 상급종합병원 일반상해입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.03787709483726703,
+                "confidence": 0.03517158806317653,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -18120,7 +18408,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633725",
                 "name": "통합포인트 대상 질병진단비((B7) 간경변증진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -18136,7 +18424,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633714",
                 "name": "통합포인트 대상 질병진단비((A6) 경계성종양진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -18152,7 +18440,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610605",
                 "name": "일반상해고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.058306377131348466,
+                "confidence": 0.05414163590768072,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -18183,7 +18471,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632505",
                 "name": "허혈성심장질환수술비(25%체증형)",
                 "theme": "수술",
-                "confidence": 0.31300094797622485,
+                "confidence": 0.30588949737947785,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -18214,7 +18502,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610835",
                 "name": "수술비(1~5종)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.0036501528134709536,
+                "confidence": 0.0033894276125087425,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -18245,7 +18533,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632343",
                 "name": "통합암진단비(유사암제외)(4대고액암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.4057252476116441,
+                "confidence": 0.39335517425046057,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -18281,7 +18569,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632520",
                 "name": "131대질병수술비(다빈도62대질병)",
                 "theme": "수술",
-                "confidence": 0.18945410658223477,
+                "confidence": 0.18572082602220089,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -18307,7 +18595,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631381",
                 "name": "중대한재생불량성빈혈진단비",
                 "theme": "기타",
-                "confidence": 0.018907360926402286,
+                "confidence": 0.01755683514594498,
                 "availableQuantities": [
                     5000000
                 ],
@@ -18323,7 +18611,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630239",
                 "name": "말기폐질환진단비",
                 "theme": "기타",
-                "confidence": 0.001727471275086123,
+                "confidence": 0.0016040804697228287,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -18354,7 +18642,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611301",
                 "name": "일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0010865780728164924,
+                "confidence": 0.0010089653533296,
                 "availableQuantities": [
                     20000
                 ],
@@ -18370,7 +18658,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632480",
                 "name": "전이암진단비(림프절전이암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.1269091658954174,
+                "confidence": 0.12426227581742778,
                 "availableQuantities": [
                     5000000,
                     10000000
@@ -18391,7 +18679,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631229",
                 "name": "수술비(1~5종)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.01765271291246353,
+                "confidence": 0.016391804847287562,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -18422,7 +18710,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631443",
                 "name": "암직접치료통원일당(상급종합병원)",
                 "theme": "입원일당",
-                "confidence": 0.05103771099569962,
+                "confidence": 0.04739216021029251,
                 "availableQuantities": [
                     50000,
                     100000
@@ -18443,7 +18731,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611336",
                 "name": "일반상해입원 간병인비용지원(간병인비용 300만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0003095422051712154,
+                "confidence": 0.00028743204765898576,
                 "availableQuantities": [
                     500000
                 ],
@@ -18459,7 +18747,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633720",
                 "name": "통합포인트 대상 질병진단비((B2) 통합포인트 대상 순환계질환(2종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -18475,7 +18763,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631724",
                 "name": "항암양성자방사선치료비",
                 "theme": "3대진단",
-                "confidence": 0.1750307680924429,
+                "confidence": 0.16252857037155416,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -18501,7 +18789,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640047",
                 "name": "인공관절수술비",
                 "theme": "수술",
-                "confidence": 0.10593279205394791,
+                "confidence": 0.10405798255505175,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -18522,7 +18810,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610832",
                 "name": "수술비(1~5종)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.0036501528134709536,
+                "confidence": 0.0033894276125087425,
                 "availableQuantities": [
                     100000,
                     200000
@@ -18543,7 +18831,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611014",
                 "name": "수술비(1~7종, 연간3회한)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.026343274433369694,
+                "confidence": 0.024461611973843285,
                 "availableQuantities": [
                     300000,
                     400000,
@@ -18569,7 +18857,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630222",
                 "name": "뇌졸중진단비",
                 "theme": "3대진단",
-                "confidence": 0.013710476677541208,
+                "confidence": 0.012731156914859694,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -18605,7 +18893,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632134",
                 "name": "131대질병수술비(특정31대질병)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -18636,7 +18924,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610470",
                 "name": "상해수술위로금",
                 "theme": "수술",
-                "confidence": 0.02402200171601458,
+                "confidence": 0.022306144450584965,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -18672,7 +18960,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633713",
                 "name": "통합포인트 대상 질병진단비((A5) 제자리암진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -18688,7 +18976,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632526",
                 "name": "131대질병수술비(유방의장애)",
                 "theme": "수술",
-                "confidence": 0.18945410658223477,
+                "confidence": 0.18572082602220089,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -18714,7 +19002,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633314",
                 "name": "질병입원 간병인비용지원(간병인비용 300만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00037026699761874614,
+                "confidence": 0.00035376773627627145,
                 "availableQuantities": [
                     200000
                 ],
@@ -18730,7 +19018,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632137",
                 "name": "131대질병수술비(치핵)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     100000,
                     200000
@@ -18751,7 +19039,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611339",
                 "name": "일반상해입원 간병인비용지원(간병인비용 300만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0001034933729607,
+                "confidence": 9.610098917779285e-05,
                 "availableQuantities": [
                     200000
                 ],
@@ -18767,7 +19055,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631806",
                 "name": "수술비(1~7종, 연간3회한)[질병5종]",
                 "theme": "수술",
-                "confidence": 0.13256552663396273,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -18803,7 +19091,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632342",
                 "name": "통합암진단비(유사암제외)(10대특정암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.3288021706885671,
+                "confidence": 0.3219266028218892,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -18839,7 +19127,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630971",
                 "name": "질병후유장해(3~100%)",
                 "theme": "사망후유",
-                "confidence": 0.0274323035987768,
+                "confidence": 0.02547285334172131,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -18875,7 +19163,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632995",
                 "name": "계속받는 표적항암약물허가치료비Ⅱ(연간1회한)(비급여)",
                 "theme": "기타",
-                "confidence": 0.0210087266405311,
+                "confidence": 0.021415234900337757,
                 "availableQuantities": [
                     10000000,
                     30000000,
@@ -18911,7 +19199,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630670",
                 "name": "추간판장애(디스크질환)수술비",
                 "theme": "수술",
-                "confidence": 0.031810490879229165,
+                "confidence": 0.029538312959284222,
                 "availableQuantities": [
                     1000000
                 ],
@@ -18927,7 +19215,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632277",
                 "name": "계속받는 표적항암약물허가치료비Ⅱ(연간1회한)",
                 "theme": "3대진단",
-                "confidence": 0.028343279797022176,
+                "confidence": 0.02631875981152059,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -18963,7 +19251,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610933",
                 "name": "신화상치료비(중증화상및부식진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.024692234406203804,
+                "confidence": 0.022928503377189244,
                 "availableQuantities": [
                     20000000,
                     30000000,
@@ -18989,7 +19277,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633710",
                 "name": "통합포인트 대상 질병진단비((A2) 기타피부암진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     200000
                 ],
@@ -19005,7 +19293,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633317",
                 "name": "질병입원 간병인비용지원(간병인비용 1,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00014164832733002032,
+                "confidence": 0.00013637034275014283,
                 "availableQuantities": [
                     600000
                 ],
@@ -19021,7 +19309,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632653",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(특정심장질환)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.25767447776167757,
+                "confidence": 0.2538817168657172,
                 "availableQuantities": [
                     3000000
                 ],
@@ -19037,7 +19325,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633234",
                 "name": "간병인지원 질병입원일당(Ⅰ)(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.03632069138374294,
+                "confidence": 0.03559880297905704,
                 "availableQuantities": [
                     10000,
                     20000
@@ -19058,7 +19346,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611344",
                 "name": "일반상해입원 간병인비용지원(간병인비용 2,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 2.9768766425e-05,
+                "confidence": 2.7642425966071427e-05,
                 "availableQuantities": [
                     1000000
                 ],
@@ -19074,7 +19362,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611262",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원)",
                 "theme": "입원일당",
-                "confidence": 0.034141983340686896,
+                "confidence": 0.031703270244923545,
                 "availableQuantities": [
                     50000
                 ],
@@ -19090,7 +19378,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632649",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)",
                 "theme": "기타",
-                "confidence": 0.2246105109007388,
+                "confidence": 0.22149307684792482,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -19116,7 +19404,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611016",
                 "name": "수술비(1~7종, 연간3회한)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.026343274433369694,
+                "confidence": 0.024461611973843285,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -19152,7 +19440,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611265",
                 "name": "상급병실(1인실) 종합병원 일반상해수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.013663112337069154,
+                "confidence": 0.012687175741564213,
                 "availableQuantities": [
                     20000,
                     100000,
@@ -19183,7 +19471,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633341",
                 "name": "2-3인실 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.059189565073474316,
+                "confidence": 0.05713586363334556,
                 "availableQuantities": [
                     20000,
                     50000
@@ -19204,7 +19492,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611309",
                 "name": "간병인지원 일반상해입원일당(Ⅰ)(1일이상 180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0069073036594847845,
+                "confidence": 0.006413924826664442,
                 "availableQuantities": [
                     10000,
                     20000
@@ -19225,7 +19513,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632279",
                 "name": "표적항암약물허가치료비Ⅱ",
                 "theme": "3대진단",
-                "confidence": 0.17688290346132796,
+                "confidence": 0.1642484103569474,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -19261,7 +19549,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610487",
                 "name": "5대골절진단비",
                 "theme": "골절/화상",
-                "confidence": 0.0060135053346131,
+                "confidence": 0.005583969239283593,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -19292,7 +19580,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610836",
                 "name": "수술비(1~5종)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.0036501528134709536,
+                "confidence": 0.0033894276125087425,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -19323,7 +19611,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610439",
                 "name": "임시생활비담보",
                 "theme": "입원일당",
-                "confidence": 0.010272962198802714,
+                "confidence": 0.00953917918460252,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -19359,7 +19647,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611015",
                 "name": "수술비(1~7종, 연간3회한)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.026343274433369694,
+                "confidence": 0.024461611973843285,
                 "availableQuantities": [
                     400000,
                     500000,
@@ -19390,7 +19678,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611341",
                 "name": "일반상해입원 간병인비용지원(간병인비용 700만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 3.102178272193077e-05,
+                "confidence": 2.8805941098935715e-05,
                 "availableQuantities": [
                     400000
                 ],
@@ -19406,7 +19694,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610488",
                 "name": "5대골절수술비",
                 "theme": "골절/화상",
-                "confidence": 0.004943982178792993,
+                "confidence": 0.004590840594593493,
                 "availableQuantities": [
                     300000,
                     500000,
@@ -19437,7 +19725,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611357",
                 "name": "통합포인트 대상 질병진단비((B8) 외상성뇌출혈진단비)",
                 "theme": "기타",
-                "confidence": 0.0008639203735526692,
+                "confidence": 0.0008022117754417642,
                 "availableQuantities": [
                     100000
                 ],
@@ -19453,7 +19741,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633721",
                 "name": "통합포인트 대상 질병진단비((B3) 통합포인트 대상 순환계질환(3종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -19469,7 +19757,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631560",
                 "name": "양성뇌종양진단비Ⅱ",
                 "theme": "기타",
-                "confidence": 0.08399921308172532,
+                "confidence": 0.07799926929017352,
                 "availableQuantities": [
                     2000000,
                     5000000
@@ -19490,7 +19778,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610929",
                 "name": "신화상치료비(화상수술비)",
                 "theme": "골절/화상",
-                "confidence": 0.024692234406203804,
+                "confidence": 0.022928503377189244,
                 "availableQuantities": [
                     100000,
                     200000
@@ -19511,7 +19799,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611012",
                 "name": "수술비(1~7종, 연간3회한)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.026343274433369694,
+                "confidence": 0.024461611973843285,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -19537,7 +19825,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631808",
                 "name": "수술비(1~7종, 연간3회한)[질병7종]",
                 "theme": "수술",
-                "confidence": 0.13256552663396273,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     5000000,
                     6000000,
@@ -19568,7 +19856,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633717",
                 "name": "통합포인트 대상 질병진단비((A9) 통합포인트 대상 순환계질환(1종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -19584,7 +19872,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611017",
                 "name": "수술비(1~7종, 연간3회한)[상해6종]",
                 "theme": "수술",
-                "confidence": 0.026343274433369694,
+                "confidence": 0.024461611973843285,
                 "availableQuantities": [
                     3000000,
                     4000000,
@@ -19620,7 +19908,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632986",
                 "name": "간호·간병통합서비스 사용 질병입원일당(1일이상180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.09447647380806426,
+                "confidence": 0.09165265625319653,
                 "availableQuantities": [
                     50000,
                     70000
@@ -19641,7 +19929,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610918",
                 "name": "골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.02487466131198821,
+                "confidence": 0.023097899789703336,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -19677,7 +19965,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633332",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 11.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008303904002401183,
+                "confidence": 0.008023469826655255,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -19713,7 +20001,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631228",
                 "name": "수술비(1~5종)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.01765271291246353,
+                "confidence": 0.016391804847287562,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -19734,7 +20022,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633711",
                 "name": "통합포인트 대상 질병진단비((A3) 갑상선암진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -19750,7 +20038,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611302",
                 "name": "간병인사용 일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.017670769975460653,
+                "confidence": 0.016408572120070606,
                 "availableQuantities": [
                     150000
                 ],
@@ -19766,7 +20054,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611264",
                 "name": "상급병실(1인실) 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0351205864687396,
+                "confidence": 0.03261197314954391,
                 "availableQuantities": [
                     100000,
                     200000
@@ -19787,7 +20075,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640046",
                 "name": "깁스치료비",
                 "theme": "골절/화상",
-                "confidence": 0.2968160671346183,
+                "confidence": 0.29310175400937416,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -19818,7 +20106,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610834",
                 "name": "수술비(1~5종)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.0036501528134709536,
+                "confidence": 0.0033894276125087425,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -19839,7 +20127,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611018",
                 "name": "수술비(1~7종, 연간3회한)[상해7종]",
                 "theme": "수술",
-                "confidence": 0.026343274433369694,
+                "confidence": 0.024461611973843285,
                 "availableQuantities": [
                     5000000,
                     6000000,
@@ -19901,7 +20189,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632340",
                 "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.17495601684241324,
+                "confidence": 0.1790694599647463,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -19937,7 +20225,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630235",
                 "name": "허혈성심질환진단",
                 "theme": "3대진단",
-                "confidence": 0.123217049446069,
+                "confidence": 0.11441583162849264,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -19973,7 +20261,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633723",
                 "name": "통합포인트 대상 질병진단비((B5) 통합포인트 대상 순환계질환(5종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -19989,7 +20277,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630110",
                 "name": "조혈모세포이식수술비",
                 "theme": "수술",
-                "confidence": 0.008337658463835053,
+                "confidence": 0.007742111430703978,
                 "availableQuantities": [
                     10000000,
                     20000000
@@ -20010,7 +20298,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632481",
                 "name": "전이암진단비(특정전이암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.1269091658954174,
+                "confidence": 0.12426227581742778,
                 "availableQuantities": [
                     5000000,
                     10000000
@@ -20031,7 +20319,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633318",
                 "name": "질병입원 간병인비용지원(간병인비용 1,500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0001111575617194834,
+                "confidence": 0.00010698198828302943,
                 "availableQuantities": [
                     1000000
                 ],
@@ -20047,7 +20335,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611013",
                 "name": "수술비(1~7종, 연간3회한)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.026343274433369694,
+                "confidence": 0.024461611973843285,
                 "availableQuantities": [
                     200000,
                     300000
@@ -20068,7 +20356,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632349",
                 "name": "암수술비(유사암제외)(25%체증형)",
                 "theme": "3대진단",
-                "confidence": 0.22433661233618943,
+                "confidence": 0.22832575423629933,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -20104,7 +20392,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630763",
                 "name": "뇌혈관질환 수술비",
                 "theme": "3대진단",
-                "confidence": 0.07349615289213264,
+                "confidence": 0.06824642768555174,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -20130,7 +20418,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633122",
                 "name": "간호·간병통합서비스 사용 질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.05601478846658385,
+                "confidence": 0.05418570578271833,
                 "availableQuantities": [
                     50000,
                     70000
@@ -20151,7 +20439,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632141",
                 "name": "131대질병수술비(특정다빈도29대질병)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     100000,
                     150000,
@@ -20177,7 +20465,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632997",
                 "name": "표적항암약물허가치료비Ⅱ(비급여)",
                 "theme": "기타",
-                "confidence": 0.1411629659246328,
+                "confidence": 0.15279291140249113,
                 "availableQuantities": [
                     30000000,
                     50000000,
@@ -20213,7 +20501,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611335",
                 "name": "일반상해입원 간병인비용지원(간병인비용 200만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.002044237133073977,
+                "confidence": 0.0018982201949972644,
                 "availableQuantities": [
                     1000000
                 ],
@@ -20229,7 +20517,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633316",
                 "name": "질병입원 간병인비용지원(간병인비용 700만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00014224761251994348,
+                "confidence": 0.00013746457219802178,
                 "availableQuantities": [
                     400000
                 ],
@@ -20245,7 +20533,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632138",
                 "name": "131대질병수술비(뇌혈관질환)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -20276,7 +20564,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631226",
                 "name": "수술비(1~5종)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.01765271291246353,
+                "confidence": 0.016391804847287562,
                 "availableQuantities": [
                     100000,
                     200000
@@ -20297,7 +20585,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633015",
                 "name": "상급병실(1인실) 종합병원 질병수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.06920722878505807,
+                "confidence": 0.06735134889446011,
                 "availableQuantities": [
                     20000,
                     100000,
@@ -20328,7 +20616,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632648",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)",
                 "theme": "기타",
-                "confidence": 0.2246105109007388,
+                "confidence": 0.22149307684792482,
                 "availableQuantities": [
                     2000000,
                     5000000,
@@ -20354,7 +20642,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633718",
                 "name": "통합포인트 대상 질병진단비((A10) 심근병증진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -20370,7 +20658,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631803",
                 "name": "수술비(1~7종, 연간3회한)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.13256552663396273,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     200000,
                     300000
@@ -20391,7 +20679,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630527",
                 "name": "유사암진단비",
                 "theme": "3대진단",
-                "confidence": 0.1517139487754451,
+                "confidence": 0.1408772381486276,
                 "availableQuantities": [
                     100000,
                     2000000,
@@ -20427,7 +20715,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633724",
                 "name": "통합포인트 대상 질병진단비((B6) 크론병진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -20443,7 +20731,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630246",
                 "name": "만성당뇨합병증진단비",
                 "theme": "기타",
-                "confidence": 0.014332636668124562,
+                "confidence": 0.013308876906115664,
                 "availableQuantities": [
                     1000000,
                     3000000,
@@ -20469,7 +20757,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631263",
                 "name": "종합병원 질병입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.027165971332629595,
+                "confidence": 0.02522554480887033,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -20505,7 +20793,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610912",
                 "name": "골절(치아파절제외)진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.02139622168626891,
+                "confidence": 0.019867920137249702,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -20536,7 +20824,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633339",
                 "name": "2-3인실 상급종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.059311857487251145,
+                "confidence": 0.05724081686922257,
                 "availableQuantities": [
                     20000,
                     50000
@@ -20557,7 +20845,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631230",
                 "name": "수술비(1~5종)[질병5종]",
                 "theme": "수술",
-                "confidence": 0.01765271291246353,
+                "confidence": 0.016391804847287562,
                 "availableQuantities": [
                     3000000,
                     5000000,
@@ -20588,7 +20876,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611346",
                 "name": "2-3인실 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.012587346727711399,
+                "confidence": 0.01168825053287487,
                 "availableQuantities": [
                     20000,
                     50000
@@ -20609,7 +20897,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630766",
                 "name": "허혈성심장질환수술비",
                 "theme": "3대진단",
-                "confidence": 0.07419291756382307,
+                "confidence": 0.06889342345212142,
                 "availableQuantities": [
                     5000000,
                     10000000,
@@ -20635,7 +20923,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631805",
                 "name": "수술비(1~7종, 연간3회한)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.13256552663396273,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     400000,
                     500000,
@@ -20671,7 +20959,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611342",
                 "name": "일반상해입원 간병인비용지원(간병인비용 1,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 3.199898755259231e-05,
+                "confidence": 2.971334558455e-05,
                 "availableQuantities": [
                     600000
                 ],
@@ -20687,7 +20975,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633310",
                 "name": "질병입원 간병인비용지원(간병인비용 200만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.007162351760096099,
+                "confidence": 0.006890860733930822,
                 "availableQuantities": [
                     1000000
                 ],
@@ -20703,7 +20991,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633233",
                 "name": "간병인지원 질병입원일당(Ⅰ)(1일이상 180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.04840678136747548,
+                "confidence": 0.04751610538901468,
                 "availableQuantities": [
                     10000,
                     20000
@@ -20724,7 +21012,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630697",
                 "name": "암진단비(유사암 제외)",
                 "theme": "3대진단",
-                "confidence": 0.1425008617196217,
+                "confidence": 0.13232222873964872,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -20760,7 +21048,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610781",
                 "name": "일반상해후유장해(3~100%)",
                 "theme": "사망후유",
-                "confidence": 0.01428995737061806,
+                "confidence": 0.013269246129859627,
                 "availableQuantities": [
                     10000000,
                     20000000,
@@ -20796,7 +21084,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633722",
                 "name": "통합포인트 대상 질병진단비((B4) 통합포인트 대상 순환계질환(4종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010801661241414238,
+                "confidence": 0.010431006890554078,
                 "availableQuantities": [
                     100000
                 ],
@@ -20812,7 +21100,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632139",
                 "name": "131대질병수술비(후각특정질환)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     200000,
                     300000
@@ -20833,7 +21121,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610833",
                 "name": "수술비(1~5종)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.0036501528134709536,
+                "confidence": 0.0033894276125087425,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -20859,7 +21147,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631138",
                 "name": "유사암수술비",
                 "theme": "3대진단",
-                "confidence": 0.04502051837280164,
+                "confidence": 0.041804767060458665,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -20895,7 +21183,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632339",
                 "name": "통합암진단비(유사암제외)(특정소액암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.09803293991933629,
+                "confidence": 0.10764088853617489,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -20931,7 +21219,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611338",
                 "name": "일반상해입원 간병인비용지원(간병인비용 200만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0005745552598205385,
+                "confidence": 0.0005335155984047857,
                 "availableQuantities": [
                     400000
                 ],
@@ -20947,7 +21235,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632341",
                 "name": "통합암진단비(유사암제외)(15대특정암진단비)",
                 "theme": "3대진단",
-                "confidence": 0.25187909376549017,
+                "confidence": 0.2504980313933178,
                 "availableQuantities": [
                     1000000,
                     10000000,
@@ -20983,7 +21271,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632133",
                 "name": "131대질병수술비(심장질환)",
                 "theme": "수술",
-                "confidence": 0.06741204509687684,
+                "confidence": 0.0625968990185285,
                 "availableQuantities": [
                     1000000,
                     3000000,
@@ -21009,7 +21297,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631802",
                 "name": "수술비(1~7종, 연간3회한)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.13256552663396273,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     100000,
                     200000,
