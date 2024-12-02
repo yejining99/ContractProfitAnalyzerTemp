@@ -244,11 +244,13 @@ const ContractProfitabilityAnalyzer = () => {
           
           // 처리된 아이템들 표시
           setInfo.ids.forEach(id => processedItems.add(id));
+          // 모든 그룹 아이템을 추가
+          groups.push(...groupItems);
           
           // 세트의 첫 번째 아이템이 해당 세트의 대표 아이템인 경우에만 추가
-          if (setInfo.ids[0] === item.id) {
-            groups.push(...groupItems);
-          }
+          // if (setInfo.ids[0] === item.id) {
+          //   groups.push(...groupItems);
+          // }
         } else if (!processedItems.has(item.id)) {
           // 일반 아이템인 경우
           groups.push(item);
@@ -851,48 +853,73 @@ const ContractProfitabilityAnalyzer = () => {
     };
   }, [contract]);
 
-  // 수정된 아이템 목록을 가져오는 함수 수정
-  const getModifiedItems = useCallback(() => {
-    if (!contract) return [];
-    
-    let items = [...contract.items];
-    
-    // 수정사항 적용
-    modifications.forEach(mod => {
+  // 수정된 getModifiedItems 함수
+// 수정된 getModifiedItems 함수
+const getModifiedItems = useCallback(() => {
+  if (!contract) return [];
+  
+  let items = [...contract.items];
+  
+  // 수정사항 적용
+  modifications.forEach(mod => {
       const existingIndex = items.findIndex(item => item.id === mod.id);
       
       if (mod.action === 'remove') {
-        // 아이템 제거
-        if (existingIndex !== -1) {
-          items.splice(existingIndex, 1);
-        }
+          // 아이템 제거
+          if (existingIndex !== -1) {
+              items.splice(existingIndex, 1);
+          }
       } else {
-        // 추가 또는 수정
-        const itemDetails = contract.availableItems.find(i => i.id === mod.id);
-        const metrics = itemDetails?.priceAndProfitByQuantity[mod.quantity] || { totalPrice: 0, totalProfit: 0 };
-        
-        if (existingIndex !== -1) {
-          // 기존 아이템 수정
-          items[existingIndex] = {
-            id: mod.id,
-            quantity: mod.quantity,
-            totalPrice: metrics.totalPrice,
-            totalProfit: metrics.totalProfit
-          };
-        } else {
-          // 새 아이템 추가
-          items.push({
-            id: mod.id,
-            quantity: mod.quantity,
-            totalPrice: metrics.totalPrice,
-            totalProfit: metrics.totalProfit
-          });
-        }
+          // 추가 또는 수정
+          const itemDetails = contract.availableItems.find(i => i.id === mod.id);
+          const metrics = itemDetails?.priceAndProfitByQuantity[mod.quantity] || { totalPrice: 0, totalProfit: 0 };
+          
+          if (existingIndex !== -1) {
+              // 기존 아이템 수정
+              items[existingIndex] = {
+                  id: mod.id,
+                  quantity: mod.quantity,
+                  totalPrice: metrics.totalPrice,
+                  totalProfit: metrics.totalProfit
+              };
+          } else {
+              // 새 아이템 추가
+              items.push({
+                  id: mod.id,
+                  quantity: mod.quantity,
+                  totalPrice: metrics.totalPrice,
+                  totalProfit: metrics.totalProfit
+              });
+          }
       }
-    });
+  });
 
-    return items;
-  }, [contract, modifications]);
+  // 세트 아이템 처리 추가
+  const setItems = new Set();
+  items.forEach(item => {
+      const setInfo = getSetInfo(contract.id, item.id);
+      if (setInfo) {
+          setInfo.ids.forEach(id => setItems.add(id));
+      }
+  });
+
+  // 세트 아이템을 전체 아이템 목록에 추가
+  setItems.forEach(id => {
+      const itemDetails = contract.availableItems.find(i => i.id === id);
+      if (itemDetails && !items.some(item => item.id === id)) {
+          items.push({
+              id: itemDetails.id,
+              quantity: itemDetails.recommendedQuantity, // 기본 수량으로 추가
+              totalPrice: itemDetails.priceAndProfitByQuantity[itemDetails.recommendedQuantity]?.totalPrice || 0,
+              totalProfit: itemDetails.priceAndProfitByQuantity[itemDetails.recommendedQuantity]?.totalProfit || 0
+          });
+      }
+  });
+
+  return items;
+}, [contract, modifications]);
+
+
 
   // 수정된 계약의 메트릭 계산
   const modifiedMetrics = useMemo(() => {
@@ -1608,7 +1635,12 @@ const ContractProfitabilityAnalyzer = () => {
                       : ''
                   }`}>
                     <div className="text-sm text-gray-500">월납P</div>
-                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}</div>
+                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}
+                    {/* 수정 후 월납P와 현재 계약 월납P의 차이 표시 추가 */}
+                    <div className="text-sm text-blue-600 mt-1">
+                     변화 월납P ₩{(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)).toLocaleString()}
+                    </div>
+                    </div>
                   </div>
                   <div className={`bg-white p-2 rounded-lg ${
                     modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
