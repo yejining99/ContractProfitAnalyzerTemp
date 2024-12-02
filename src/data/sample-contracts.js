@@ -3462,7 +3462,7 @@ export const SAMPLE_CONTRACTS = {
         "id": "1",
         "channel": "GA",
         "age": 45,
-        "gndr": "여",
+        "gndr": "남",
         "unt_pd_nm": "올인원라이프(운전자)",
         "silson_discount": [
             {
@@ -11742,7 +11742,7 @@ export const SAMPLE_CONTRACTS = {
         "id": "3",
         "channel": "GA",
         "age": 53,
-        "gndr": "여",
+        "gndr": "남",
         "unt_pd_nm": "The좋은 알뜰",
         "silson_discount": [
             {
@@ -16714,7 +16714,7 @@ export const SAMPLE_CONTRACTS = {
         "id": "4",
         "channel": "GA",
         "age": 47,
-        "gndr": "여",
+        "gndr": "남",
         "unt_pd_nm": "이목구비",
         "silson_discount": [
             {
@@ -17531,7 +17531,7 @@ export const SAMPLE_CONTRACTS = {
         "id": "5",
         "channel": "TA",
         "age": 24,
-        "gndr": "여",
+        "gndr": "남",
         "unt_pd_nm": "내Mom대로 5.10.5",
         "silson_discount": [
             {
