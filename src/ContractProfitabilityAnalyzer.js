@@ -280,9 +280,9 @@ const ContractProfitabilityAnalyzer = () => {
             
             // 원래 있던 아이템이고 수량이 같으면 변 없음
             if (originalSetItem) {
-                if (modSetItem?.action === 'add' && 
-                    modSetItem.quantity === originalSetItem.quantity) {
-                    return true;
+                // 원래 아이템이 추가된 경우도 true 반환
+                if (modSetItem?.action === 'add') {
+                    return true; // 수량 체크를 제거하여 추가된 경우도 포함
                 }
             }
             return false;
@@ -728,7 +728,7 @@ const ContractProfitabilityAnalyzer = () => {
         {/* 아이템 카드 - 세트 아이템인 경우 들여쓰기 적용 */}
         <div className={`flex items-center p-1 rounded-lg border ${statusInfo.style} ${setInfo ? 'ml-2' : ''}`}>
           <div className="flex-1">
-            {/* 한 줄로 표시되는 정보를 justify-between으로 분리 */}
+            {/* 한 줄로 표시되는 정보를 justify-between으로 ���리 */}
             <div className="flex items-center justify-between text-sm">
               {/* 왼쪽: 이름과 수량 */}
               <div className="flex items-center gap-1">
@@ -1141,7 +1141,7 @@ const ContractProfitabilityAnalyzer = () => {
                         <div className="flex items-center justify-between text-sm">
                           {/* 왼쪽: 이름과 수량 */}
                           <div className="flex items-center gap-1">
-                            <span className="font-medium text-sm">{itemDetails?.name}</span>
+                            <span className="font-medium text-sm">{item.name}</span>
                             <span className="border rounded px-1.5 py-0.5 text-xs bg-gray-50">
                               {item.quantity}원
                             </span>
@@ -1211,7 +1211,7 @@ const ContractProfitabilityAnalyzer = () => {
                       // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
                       
-                      // 1. 든 아이템을 그룹화 (세트 또는 단일 ���이템)
+                      // 1. 든 아이템을 그룹화 (세트 또는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
