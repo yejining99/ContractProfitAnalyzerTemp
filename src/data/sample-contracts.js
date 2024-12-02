@@ -26,14 +26,6 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
-                "id": "610015",
-                "name": "일반상해사망",
-                "quantity": 1000000,
-                "theme": "사망후유",
-                "totalPrice": 24.0,
-                "totalProfit": 1156.578206
-            },
-            {
                 "id": "630235",
                 "name": "허혈성심질환진단",
                 "quantity": 20000000,
@@ -48,6 +40,14 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "totalPrice": 5.0,
                 "totalProfit": 253.266407
+            },
+            {
+                "id": "610015",
+                "name": "일반상해사망",
+                "quantity": 1000000,
+                "theme": "사망후유",
+                "totalPrice": 24.0,
+                "totalProfit": 1156.578206
             },
             {
                 "id": "630228",
@@ -190,6 +190,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630710",
+                "name": "암진단비(유사암 및 소액암 제외)",
+                "theme": "3대진단",
+                "confidence": 0.00701029758035465,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 1440.0,
+                        "totalProfit": 36291.121247
+                    },
+                    "5000000": {
+                        "totalPrice": 3600.0,
+                        "totalProfit": 90801.440042
+                    },
+                    "10000000": {
+                        "totalPrice": 7200.0,
+                        "totalProfit": 181651.93825
+                    },
+                    "20000000": {
+                        "totalPrice": 14400.0,
+                        "totalProfit": 363352.96829
+                    },
+                    "30000000": {
+                        "totalPrice": 21600.0,
+                        "totalProfit": 545053.99833
+                    }
+                }
+            },
+            {
                 "id": "611345",
                 "name": "2-3인실 상급종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
@@ -264,6 +300,42 @@ export const SAMPLE_CONTRACTS = {
                     "20000": {
                         "totalPrice": 12064.0,
                         "totalProfit": 701966.998488
+                    }
+                }
+            },
+            {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "theme": "3대진단",
+                "confidence": 0.15507046675060088,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 912.0,
+                        "totalProfit": 7090.490391
+                    },
+                    "2000000": {
+                        "totalPrice": 1824.0,
+                        "totalProfit": 14230.034439
+                    },
+                    "5000000": {
+                        "totalPrice": 4560.0,
+                        "totalProfit": 35648.714328
+                    },
+                    "10000000": {
+                        "totalPrice": 9120.0,
+                        "totalProfit": 71346.482313
+                    },
+                    "20000000": {
+                        "totalPrice": 18240.0,
+                        "totalProfit": 142742.05094
                     }
                 }
             },
@@ -437,7 +509,8 @@ export const SAMPLE_CONTRACTS = {
                     200000,
                     2000000,
                     4000000,
-                    6000000
+                    6000000,
+                    10000000
                 ],
                 "recommendedQuantity": 6000000,
                 "priceAndProfitByQuantity": {
@@ -456,6 +529,10 @@ export const SAMPLE_CONTRACTS = {
                     "6000000": {
                         "totalPrice": 3906.0,
                         "totalProfit": 4195.070007
+                    },
+                    "10000000": {
+                        "totalPrice": 6510.0,
+                        "totalProfit": 7024.528775
                     }
                 }
             },
@@ -465,13 +542,28 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "confidence": 0.03198555782346463,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 130.0,
                         "totalProfit": 5322.870212
+                    },
+                    "10000000": {
+                        "totalPrice": 1300.0,
+                        "totalProfit": 53670.527797
+                    },
+                    "20000000": {
+                        "totalPrice": 2600.0,
+                        "totalProfit": 107390.173339
+                    },
+                    "30000000": {
+                        "totalPrice": 3900.0,
+                        "totalProfit": 161109.807486
                     }
                 }
             },
@@ -500,7 +592,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -519,6 +612,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 3755.0,
                         "totalProfit": 278122.468062
+                    },
+                    "10000000": {
+                        "totalPrice": 7510.0,
+                        "totalProfit": 556294.017143
                     }
                 }
             },
@@ -556,7 +653,8 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     1000000,
                     2000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 2000000,
                 "priceAndProfitByQuantity": {
@@ -571,6 +669,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 310.0,
                         "totalProfit": -2675.584305
+                    },
+                    "10000000": {
+                        "totalPrice": 620.0,
+                        "totalProfit": -5302.084254
                     }
                 }
             },
@@ -654,7 +756,8 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     1000000,
                     2000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 2000000,
                 "priceAndProfitByQuantity": {
@@ -669,6 +772,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 785.0,
                         "totalProfit": 9379.529266
+                    },
+                    "10000000": {
+                        "totalPrice": 1570.0,
+                        "totalProfit": 18808.15115
                     }
                 }
             },
@@ -896,13 +1003,18 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "confidence": 0.18949572567688253,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 5.0,
                         "totalProfit": 282.45302
+                    },
+                    "10000000": {
+                        "totalPrice": 51.0,
+                        "totalProfit": 3362.179925
                     }
                 }
             },
@@ -940,7 +1052,9 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    20000000
                 ],
                 "recommendedQuantity": 3000000,
                 "priceAndProfitByQuantity": {
@@ -955,6 +1069,86 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 265.0,
                         "totalProfit": 59455.355995
+                    },
+                    "10000000": {
+                        "totalPrice": 530.0,
+                        "totalProfit": 118960.026839
+                    },
+                    "20000000": {
+                        "totalPrice": 1060.0,
+                        "totalProfit": 237969.523654
+                    }
+                }
+            },
+            {
+                "id": "632505",
+                "name": "허혈성심장질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.26001312425622103,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 686.0,
+                        "totalProfit": 38798.890108
+                    },
+                    "5000000": {
+                        "totalPrice": 1715.0,
+                        "totalProfit": 97070.902284
+                    },
+                    "10000000": {
+                        "totalPrice": 3430.0,
+                        "totalProfit": 194190.885755
+                    },
+                    "15000000": {
+                        "totalPrice": 5145.0,
+                        "totalProfit": 291310.893765
+                    },
+                    "20000000": {
+                        "totalPrice": 6860.0,
+                        "totalProfit": 388430.877236
+                    }
+                }
+            },
+            {
+                "id": "632343",
+                "name": "통합암진단비(유사암제외)(4대고액암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.19093339457832287,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 105.0,
+                        "totalProfit": 3000.78476
+                    },
+                    "10000000": {
+                        "totalPrice": 1050.0,
+                        "totalProfit": 30449.743638
+                    },
+                    "20000000": {
+                        "totalPrice": 2100.0,
+                        "totalProfit": 60948.604295
+                    },
+                    "30000000": {
+                        "totalPrice": 3150.0,
+                        "totalProfit": 91447.456156
+                    },
+                    "50000000": {
+                        "totalPrice": 5250.0,
+                        "totalProfit": 152445.168675
                     }
                 }
             },
@@ -1042,6 +1236,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632480",
+                "name": "전이암진단비(림프절전이암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.07142859899812395,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 840.0,
+                        "totalProfit": -12639.460879
+                    },
+                    "3000000": {
+                        "totalPrice": 1260.0,
+                        "totalProfit": -18934.185654
+                    },
+                    "5000000": {
+                        "totalPrice": 2100.0,
+                        "totalProfit": -31525.607505
+                    },
+                    "10000000": {
+                        "totalPrice": 4200.0,
+                        "totalProfit": -63002.223311
+                    },
+                    "20000000": {
+                        "totalPrice": 8400.0,
+                        "totalProfit": -125955.432603
+                    }
+                }
+            },
+            {
                 "id": "631443",
                 "name": "암직접치료통원일당(상급종합병원)",
                 "theme": "입원일당",
@@ -1125,6 +1355,84 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630207",
+                "name": "고액암진단비",
+                "theme": "3대진단",
+                "confidence": 0.0092920554976323,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 152.0,
+                        "totalProfit": 4956.571762
+                    },
+                    "5000000": {
+                        "totalPrice": 760.0,
+                        "totalProfit": 24979.226402
+                    },
+                    "10000000": {
+                        "totalPrice": 1520.0,
+                        "totalProfit": 50007.532702
+                    }
+                }
+            },
+            {
+                "id": "633000",
+                "name": "암(유사암제외) 주요치료비(연간1회한, 5년간)",
+                "theme": "기타",
+                "confidence": 0.055323756536748675,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 1598.0,
+                        "totalProfit": 45285.629184
+                    },
+                    "5000000": {
+                        "totalPrice": 7990.0,
+                        "totalProfit": 226624.338262
+                    },
+                    "10000000": {
+                        "totalPrice": 15980.0,
+                        "totalProfit": 453297.714899
+                    },
+                    "20000000": {
+                        "totalPrice": 31960.0,
+                        "totalProfit": 906644.491575
+                    }
+                }
+            },
+            {
+                "id": "611155",
+                "name": "중증외상환자 산정특례대상 진단비(연간1회한)",
+                "theme": "기타",
+                "confidence": 3.648984936564494e-05,
+                "availableQuantities": [
+                    1000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 4.0,
+                        "totalProfit": 309.333913
+                    },
+                    "10000000": {
+                        "totalPrice": 40.0,
+                        "totalProfit": 3535.589878
+                    }
+                }
+            },
+            {
                 "id": "631806",
                 "name": "수술비(1~7종, 연간3회한)[질병5종]",
                 "theme": "수술",
@@ -1197,6 +1505,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632342",
+                "name": "통합암진단비(유사암제외)(10대특정암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.19093339457832287,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 95.0,
+                        "totalProfit": 2434.008746
+                    },
+                    "10000000": {
+                        "totalPrice": 950.0,
+                        "totalProfit": 24781.926765
+                    },
+                    "20000000": {
+                        "totalPrice": 1900.0,
+                        "totalProfit": 49612.965935
+                    },
+                    "30000000": {
+                        "totalPrice": 2850.0,
+                        "totalProfit": 74444.005104
+                    },
+                    "50000000": {
+                        "totalPrice": 4750.0,
+                        "totalProfit": 124106.075467
+                    }
+                }
+            },
+            {
                 "id": "630570",
                 "name": "갱신형 뇌출혈입원일당(4일이상)",
                 "theme": "3대진단",
@@ -1223,6 +1567,37 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631723",
+                "name": "항암양성자방사선치료비",
+                "theme": "3대진단",
+                "confidence": 0.001415374453978625,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 90.0,
+                        "totalProfit": 16702.60639
+                    },
+                    "10000000": {
+                        "totalPrice": 180.0,
+                        "totalProfit": 33454.513509
+                    },
+                    "20000000": {
+                        "totalPrice": 360.0,
+                        "totalProfit": 66958.48628
+                    },
+                    "30000000": {
+                        "totalPrice": 540.0,
+                        "totalProfit": 100462.474147
+                    }
+                }
+            },
+            {
                 "id": "633538",
                 "name": "허혈성심장질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
@@ -1245,6 +1620,32 @@ export const SAMPLE_CONTRACTS = {
                     "30000": {
                         "totalPrice": 1005.0,
                         "totalProfit": 78914.24016
+                    }
+                }
+            },
+            {
+                "id": "610933",
+                "name": "신화상치료비(중증화상및부식진단비)",
+                "theme": "골절/화상",
+                "confidence": 0.08024976182016236,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 44.0,
+                        "totalProfit": 3477.657238
+                    },
+                    "30000000": {
+                        "totalPrice": 66.0,
+                        "totalProfit": 5241.060305
+                    },
+                    "50000000": {
+                        "totalPrice": 110.0,
+                        "totalProfit": 8767.840324
                     }
                 }
             },
@@ -1287,6 +1688,42 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 400.0,
                         "totalProfit": 9698.901045
+                    }
+                }
+            },
+            {
+                "id": "632649",
+                "name": "혈전용해치료비Ⅱ(특정심장질환)",
+                "theme": "기타",
+                "confidence": 0.20471627282394425,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    8000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 22.0,
+                        "totalProfit": -368.657518
+                    },
+                    "2000000": {
+                        "totalPrice": 44.0,
+                        "totalProfit": -688.220678
+                    },
+                    "5000000": {
+                        "totalPrice": 110.0,
+                        "totalProfit": -1646.881291
+                    },
+                    "8000000": {
+                        "totalPrice": 176.0,
+                        "totalProfit": -2605.556337
+                    },
+                    "10000000": {
+                        "totalPrice": 220.0,
+                        "totalProfit": -3244.668223
                     }
                 }
             },
@@ -1486,7 +1923,8 @@ export const SAMPLE_CONTRACTS = {
                     2000000,
                     3000000,
                     5000000,
-                    6000000
+                    6000000,
+                    10000000
                 ],
                 "recommendedQuantity": 6000000,
                 "priceAndProfitByQuantity": {
@@ -1505,6 +1943,36 @@ export const SAMPLE_CONTRACTS = {
                     "6000000": {
                         "totalPrice": 1500.0,
                         "totalProfit": 80713.834931
+                    },
+                    "10000000": {
+                        "totalPrice": 2500.0,
+                        "totalProfit": 134555.803577
+                    }
+                }
+            },
+            {
+                "id": "630464",
+                "name": "16대특정암진단비",
+                "theme": "3대진단",
+                "confidence": 0.018949169870861673,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 384.0,
+                        "totalProfit": 7987.351742
+                    },
+                    "5000000": {
+                        "totalPrice": 1920.0,
+                        "totalProfit": 40133.120331
+                    },
+                    "10000000": {
+                        "totalPrice": 3840.0,
+                        "totalProfit": 80315.313852
                     }
                 }
             },
@@ -1707,18 +2175,69 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611018",
+                "name": "수술비(1~7종, 연간3회한)[상해7종]",
+                "theme": "수술",
+                "confidence": 0.0856156419084515,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 8.0,
+                        "totalProfit": 408.42981
+                    },
+                    "3000000": {
+                        "totalPrice": 12.0,
+                        "totalProfit": 637.216048
+                    },
+                    "5000000": {
+                        "totalPrice": 20.0,
+                        "totalProfit": 1094.763895
+                    },
+                    "6000000": {
+                        "totalPrice": 24.0,
+                        "totalProfit": 1323.513192
+                    },
+                    "10000000": {
+                        "totalPrice": 40.0,
+                        "totalProfit": 2238.608887
+                    }
+                }
+            },
+            {
                 "id": "610015",
                 "name": "일반상해사망",
                 "theme": "사망후유",
                 "confidence": 0.0,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    50000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 24.0,
                         "totalProfit": 1261.26562
+                    },
+                    "10000000": {
+                        "totalPrice": 240.0,
+                        "totalProfit": 13054.612544
+                    },
+                    "50000000": {
+                        "totalPrice": 1200.0,
+                        "totalProfit": 65469.502873
+                    },
+                    "100000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 130988.115786
                     }
                 }
             },
@@ -1755,6 +2274,114 @@ export const SAMPLE_CONTRACTS = {
                     "200000": {
                         "totalPrice": 14780.0,
                         "totalProfit": 821870.419781
+                    }
+                }
+            },
+            {
+                "id": "632340",
+                "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.19093339457832287,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 344.0,
+                        "totalProfit": 9993.467739
+                    },
+                    "10000000": {
+                        "totalPrice": 3440.0,
+                        "totalProfit": 100376.455127
+                    },
+                    "20000000": {
+                        "totalPrice": 6880.0,
+                        "totalProfit": 200802.01101
+                    },
+                    "30000000": {
+                        "totalPrice": 10320.0,
+                        "totalProfit": 301227.566893
+                    },
+                    "50000000": {
+                        "totalPrice": 17200.0,
+                        "totalProfit": 502078.678659
+                    }
+                }
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "theme": "3대진단",
+                "confidence": 0.40045541069972423,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 348.0,
+                        "totalProfit": 5919.015463
+                    },
+                    "2000000": {
+                        "totalPrice": 696.0,
+                        "totalProfit": 11887.120828
+                    },
+                    "5000000": {
+                        "totalPrice": 1740.0,
+                        "totalProfit": 29791.482948
+                    },
+                    "10000000": {
+                        "totalPrice": 3480.0,
+                        "totalProfit": 59632.047003
+                    },
+                    "20000000": {
+                        "totalPrice": 6960.0,
+                        "totalProfit": 119313.198125
+                    }
+                }
+            },
+            {
+                "id": "632481",
+                "name": "전이암진단비(특정전이암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.07142859899812395,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 876.0,
+                        "totalProfit": 8476.401236
+                    },
+                    "3000000": {
+                        "totalPrice": 1314.0,
+                        "totalProfit": 12738.186324
+                    },
+                    "5000000": {
+                        "totalPrice": 2190.0,
+                        "totalProfit": 21262.705998
+                    },
+                    "10000000": {
+                        "totalPrice": 4380.0,
+                        "totalProfit": 42574.479933
+                    },
+                    "20000000": {
+                        "totalPrice": 8760.0,
+                        "totalProfit": 85198.05333
                     }
                 }
             },
@@ -1819,7 +2446,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 2000000,
                 "priceAndProfitByQuantity": {
@@ -1838,6 +2466,46 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5325.0,
                         "totalProfit": 155677.927363
+                    },
+                    "10000000": {
+                        "totalPrice": 10650.0,
+                        "totalProfit": 311404.949527
+                    }
+                }
+            },
+            {
+                "id": "630763",
+                "name": "뇌혈관질환 수술비",
+                "theme": "3대진단",
+                "confidence": 0.19974920701725454,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 20506.685101
+                    },
+                    "5000000": {
+                        "totalPrice": 1500.0,
+                        "totalProfit": 51340.410162
+                    },
+                    "10000000": {
+                        "totalPrice": 3000.0,
+                        "totalProfit": 102729.897655
+                    },
+                    "15000000": {
+                        "totalPrice": 4500.0,
+                        "totalProfit": 154119.425854
+                    },
+                    "20000000": {
+                        "totalPrice": 6000.0,
+                        "totalProfit": 205508.913348
                     }
                 }
             },
@@ -1900,7 +2568,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 3.1111525773441156e-05,
                 "availableQuantities": [
                     1000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
@@ -1911,6 +2580,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 25.0,
                         "totalProfit": 1978.582015
+                    },
+                    "10000000": {
+                        "totalPrice": 50.0,
+                        "totalProfit": 4006.309905
                     }
                 }
             },
@@ -2060,6 +2733,58 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "633002",
+                "name": "종합병원 암 주요치료비(본인부담금 1천만원이상)(연간1회한, 5년간)",
+                "theme": "기타",
+                "confidence": 0.04615672219502748,
+                "availableQuantities": [
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 12800.0,
+                        "totalProfit": -630565.398137
+                    }
+                }
+            },
+            {
+                "id": "632648",
+                "name": "혈전용해치료비Ⅱ(뇌졸중)",
+                "theme": "기타",
+                "confidence": 0.20471627282394425,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    8000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 64.0,
+                        "totalProfit": 536.446041
+                    },
+                    "2000000": {
+                        "totalPrice": 128.0,
+                        "totalProfit": 1121.98228
+                    },
+                    "5000000": {
+                        "totalPrice": 320.0,
+                        "totalProfit": 2878.643904
+                    },
+                    "8000000": {
+                        "totalPrice": 512.0,
+                        "totalProfit": 4635.270278
+                    },
+                    "10000000": {
+                        "totalPrice": 640.0,
+                        "totalProfit": 5806.369209
+                    }
+                }
+            },
+            {
                 "id": "631803",
                 "name": "수술비(1~7종, 연간3회한)[질병2종]",
                 "theme": "수술",
@@ -2094,7 +2819,8 @@ export const SAMPLE_CONTRACTS = {
                     200000,
                     2000000,
                     4000000,
-                    6000000
+                    6000000,
+                    10000000
                 ],
                 "recommendedQuantity": 6000000,
                 "priceAndProfitByQuantity": {
@@ -2113,6 +2839,10 @@ export const SAMPLE_CONTRACTS = {
                     "6000000": {
                         "totalPrice": 3942.0,
                         "totalProfit": 7523.804277
+                    },
+                    "10000000": {
+                        "totalPrice": 6570.0,
+                        "totalProfit": 12572.414781
                     }
                 }
             },
@@ -2330,6 +3060,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630766",
+                "name": "허혈성심장질환수술비",
+                "theme": "3대진단",
+                "confidence": 0.20169267555087528,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 672.0,
+                        "totalProfit": 38007.374728
+                    },
+                    "5000000": {
+                        "totalPrice": 1680.0,
+                        "totalProfit": 95092.119831
+                    },
+                    "10000000": {
+                        "totalPrice": 3360.0,
+                        "totalProfit": 190233.321169
+                    },
+                    "15000000": {
+                        "totalPrice": 5040.0,
+                        "totalProfit": 285374.559037
+                    },
+                    "20000000": {
+                        "totalPrice": 6720.0,
+                        "totalProfit": 380515.760374
+                    }
+                }
+            },
+            {
                 "id": "631805",
                 "name": "수술비(1~7종, 연간3회한)[질병4종]",
                 "theme": "수술",
@@ -2374,7 +3140,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
@@ -2393,6 +3160,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 6890.0,
                         "totalProfit": 442677.198785
+                    },
+                    "10000000": {
+                        "totalPrice": 13780.0,
+                        "totalProfit": 885403.503323
                     }
                 }
             },
@@ -2402,13 +3173,33 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "3대진단",
                 "confidence": 0.3361082434260606,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 990.0,
                         "totalProfit": 17611.216975
+                    },
+                    "10000000": {
+                        "totalPrice": 9900.0,
+                        "totalProfit": 176553.526954
+                    },
+                    "20000000": {
+                        "totalPrice": 19800.0,
+                        "totalProfit": 353156.116975
+                    },
+                    "30000000": {
+                        "totalPrice": 29700.0,
+                        "totalProfit": 529758.698222
+                    },
+                    "50000000": {
+                        "totalPrice": 49500.0,
+                        "totalProfit": 882963.86949
                     }
                 }
             },
@@ -2480,6 +3271,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632339",
+                "name": "통합암진단비(유사암제외)(특정소액암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.19093339457832287,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 378.0,
+                        "totalProfit": -3037.241066
+                    },
+                    "10000000": {
+                        "totalPrice": 3780.0,
+                        "totalProfit": -29930.696197
+                    },
+                    "20000000": {
+                        "totalPrice": 7560.0,
+                        "totalProfit": -59812.310531
+                    },
+                    "30000000": {
+                        "totalPrice": 11340.0,
+                        "totalProfit": -89693.91608
+                    },
+                    "50000000": {
+                        "totalPrice": 18900.0,
+                        "totalProfit": -149457.135962
+                    }
+                }
+            },
+            {
                 "id": "630024",
                 "name": "항암방사선약물치료비",
                 "theme": "3대진단",
@@ -2488,7 +3315,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -2507,6 +3335,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 3575.0,
                         "totalProfit": 113591.808946
+                    },
+                    "10000000": {
+                        "totalPrice": 7150.0,
+                        "totalProfit": 227232.680133
                     }
                 }
             },
@@ -2528,6 +3360,42 @@ export const SAMPLE_CONTRACTS = {
                     "20000": {
                         "totalPrice": 622.0,
                         "totalProfit": 22323.422407
+                    }
+                }
+            },
+            {
+                "id": "632341",
+                "name": "통합암진단비(유사암제외)(15대특정암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.19093339457832287,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 230.0,
+                        "totalProfit": 6611.617511
+                    },
+                    "10000000": {
+                        "totalPrice": 2300.0,
+                        "totalProfit": 66557.997755
+                    },
+                    "20000000": {
+                        "totalPrice": 4600.0,
+                        "totalProfit": 133165.105209
+                    },
+                    "30000000": {
+                        "totalPrice": 6900.0,
+                        "totalProfit": 199772.212663
+                    },
+                    "50000000": {
+                        "totalPrice": 11500.0,
+                        "totalProfit": 332986.42757
                     }
                 }
             },
@@ -2554,6 +3422,37 @@ export const SAMPLE_CONTRACTS = {
                     "200000": {
                         "totalPrice": 7060.0,
                         "totalProfit": 420599.485856
+                    }
+                }
+            },
+            {
+                "id": "631258",
+                "name": "특정전이암진단비",
+                "theme": "3대진단",
+                "confidence": 0.08145249801959697,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 64.0,
+                        "totalProfit": 3644.818355
+                    },
+                    "10000000": {
+                        "totalPrice": 128.0,
+                        "totalProfit": 7338.717509
+                    },
+                    "20000000": {
+                        "totalPrice": 256.0,
+                        "totalProfit": 14726.53606
+                    },
+                    "30000000": {
+                        "totalPrice": 384.0,
+                        "totalProfit": 22114.359953
                     }
                 }
             }
@@ -2585,156 +3484,12 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
-                "id": "611250",
-                "name": "운전자용 자동차사고부상치료비(4급)",
-                "quantity": 9000000,
-                "theme": "운전/비용",
-                "totalPrice": 126.0,
-                "totalProfit": 912.74223
-            },
-            {
-                "id": "620966",
-                "name": "교통사고 처리지원금(Ⅲ)(중대법규위반,6주미만)",
-                "quantity": 10000000,
-                "theme": "운전/비용",
-                "totalPrice": 1276.0,
-                "totalProfit": 48558.735441
-            },
-            {
-                "id": "620951",
-                "name": "운전자용 벌금(대물)",
-                "quantity": 5000000,
-                "theme": "운전/비용",
-                "totalPrice": 42.0,
-                "totalProfit": 417.938179
-            },
-            {
-                "id": "611252",
-                "name": "운전자용 자동차사고부상치료비(6급)",
-                "quantity": 2400000,
-                "theme": "운전/비용",
-                "totalPrice": 72.0,
-                "totalProfit": 1362.968273
-            },
-            {
-                "id": "660052",
-                "name": "가족일상생활중배상책임(Ⅲ)",
-                "quantity": 100000000,
-                "theme": "재물/배상",
-                "totalPrice": 2182.0,
-                "totalProfit": -27137.58584
-            },
-            {
-                "id": "620952",
-                "name": "운전자용 벌금(Ⅱ)",
-                "quantity": 30000000,
-                "theme": "운전/비용",
-                "totalPrice": 259.0,
-                "totalProfit": 2578.611004
-            },
-            {
                 "id": "611255",
                 "name": "운전자용 자동차사고부상치료비(9급)",
                 "quantity": 600000,
                 "theme": "운전/비용",
                 "totalPrice": 72.0,
                 "totalProfit": 291.015414
-            },
-            {
-                "id": "620973",
-                "name": "교통사고 처리지원금(Ⅶ)",
-                "quantity": 200000000,
-                "theme": "운전/비용",
-                "totalPrice": 2999.0,
-                "totalProfit": 22855.977318
-            },
-            {
-                "id": "611260",
-                "name": "운전자용 자동차사고부상치료비(14급)",
-                "quantity": 300000,
-                "theme": "운전/비용",
-                "totalPrice": 1578.0,
-                "totalProfit": -9060.139203
-            },
-            {
-                "id": "611257",
-                "name": "운전자용 자동차사고부상치료비(11급)",
-                "quantity": 600000,
-                "theme": "운전/비용",
-                "totalPrice": 456.0,
-                "totalProfit": -2106.729357
-            },
-            {
-                "id": "611251",
-                "name": "운전자용 자동차사고부상치료비(5급)",
-                "quantity": 4500000,
-                "theme": "운전/비용",
-                "totalPrice": 153.0,
-                "totalProfit": 1504.656744
-            },
-            {
-                "id": "610470",
-                "name": "상해수술위로금",
-                "quantity": 1000000,
-                "theme": "수술",
-                "totalPrice": 4190.0,
-                "totalProfit": -2646.633908
-            },
-            {
-                "id": "610789",
-                "name": "일반상해후유장해(3~100%)",
-                "quantity": 50000000,
-                "theme": "사망후유",
-                "totalPrice": 4600.0,
-                "totalProfit": 23612.966481
-            },
-            {
-                "id": "611249",
-                "name": "운전자용 자동차사고부상치료비(1-14급)[3급]",
-                "quantity": 9000000,
-                "theme": "운전/비용",
-                "totalPrice": 108.0,
-                "totalProfit": 1771.536785
-            },
-            {
-                "id": "611254",
-                "name": "운전자용 자동차사고부상치료비(8급)",
-                "quantity": 600000,
-                "theme": "운전/비용",
-                "totalPrice": 36.0,
-                "totalProfit": 225.974481
-            },
-            {
-                "id": "611164",
-                "name": "운전자용 교통상해사망",
-                "quantity": 50000000,
-                "theme": "사망후유",
-                "totalPrice": 1300.0,
-                "totalProfit": 34949.558729
-            },
-            {
-                "id": "610663",
-                "name": "외모특정상해수술비",
-                "quantity": 100000,
-                "theme": "수술",
-                "totalPrice": 81.0,
-                "totalProfit": 2556.551034
-            },
-            {
-                "id": "611247",
-                "name": "운전자용 자동차사고부상치료비(1-14급)[1급]",
-                "quantity": 30000000,
-                "theme": "운전/비용",
-                "totalPrice": 2400.0,
-                "totalProfit": 83730.183205
-            },
-            {
-                "id": "611258",
-                "name": "운전자용 자동차사고부상치료비(12급)",
-                "quantity": 300000,
-                "theme": "운전/비용",
-                "totalPrice": 942.0,
-                "totalProfit": -4101.319421
             },
             {
                 "id": "611253",
@@ -2745,20 +3500,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 827.635709
             },
             {
-                "id": "620962",
-                "name": "자동차사고 변호사선임비용(타인사망,중대법규위반및중상해경찰조사포함)_자가용운전자용",
-                "quantity": 50000000,
+                "id": "611249",
+                "name": "운전자용 자동차사고부상치료비(1-14급)[3급]",
+                "quantity": 9000000,
                 "theme": "운전/비용",
-                "totalPrice": 578.0,
-                "totalProfit": -1007.16672
+                "totalPrice": 108.0,
+                "totalProfit": 1771.536785
             },
             {
-                "id": "611259",
-                "name": "운전자용 자동차사고부상치료비(13급)",
-                "quantity": 300000,
+                "id": "611251",
+                "name": "운전자용 자동차사고부상치료비(5급)",
+                "quantity": 4500000,
                 "theme": "운전/비용",
-                "totalPrice": 18.0,
-                "totalProfit": 83.664872
+                "totalPrice": 153.0,
+                "totalProfit": 1504.656744
             },
             {
                 "id": "611256",
@@ -2769,12 +3524,140 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 215.99161
             },
             {
+                "id": "620952",
+                "name": "운전자용 벌금(Ⅱ)",
+                "quantity": 30000000,
+                "theme": "운전/비용",
+                "totalPrice": 259.0,
+                "totalProfit": 2578.611004
+            },
+            {
+                "id": "611260",
+                "name": "운전자용 자동차사고부상치료비(14급)",
+                "quantity": 300000,
+                "theme": "운전/비용",
+                "totalPrice": 1578.0,
+                "totalProfit": -9060.139203
+            },
+            {
+                "id": "611258",
+                "name": "운전자용 자동차사고부상치료비(12급)",
+                "quantity": 300000,
+                "theme": "운전/비용",
+                "totalPrice": 942.0,
+                "totalProfit": -4101.319421
+            },
+            {
+                "id": "620966",
+                "name": "교통사고 처리지원금(Ⅲ)(중대법규위반,6주미만)",
+                "quantity": 10000000,
+                "theme": "운전/비용",
+                "totalPrice": 1276.0,
+                "totalProfit": 48558.735441
+            },
+            {
                 "id": "611248",
                 "name": "운전자용 자동차사고부상치료비(1-14급)[2급]",
                 "quantity": 12000000,
                 "theme": "운전/비용",
                 "totalPrice": 204.0,
                 "totalProfit": 4702.758884
+            },
+            {
+                "id": "620962",
+                "name": "자동차사고 변호사선임비용(타인사망,중대법규위반및중상해경찰조사포함)_자가용운전자용",
+                "quantity": 50000000,
+                "theme": "운전/비용",
+                "totalPrice": 578.0,
+                "totalProfit": -1007.16672
+            },
+            {
+                "id": "610470",
+                "name": "상해수술위로금",
+                "quantity": 1000000,
+                "theme": "수술",
+                "totalPrice": 4190.0,
+                "totalProfit": -2646.633908
+            },
+            {
+                "id": "620973",
+                "name": "교통사고 처리지원금(Ⅶ)",
+                "quantity": 200000000,
+                "theme": "운전/비용",
+                "totalPrice": 2999.0,
+                "totalProfit": 22855.977318
+            },
+            {
+                "id": "611164",
+                "name": "운전자용 교통상해사망",
+                "quantity": 50000000,
+                "theme": "사망후유",
+                "totalPrice": 1300.0,
+                "totalProfit": 34949.558729
+            },
+            {
+                "id": "611254",
+                "name": "운전자용 자동차사고부상치료비(8급)",
+                "quantity": 600000,
+                "theme": "운전/비용",
+                "totalPrice": 36.0,
+                "totalProfit": 225.974481
+            },
+            {
+                "id": "611247",
+                "name": "운전자용 자동차사고부상치료비(1-14급)[1급]",
+                "quantity": 30000000,
+                "theme": "운전/비용",
+                "totalPrice": 2400.0,
+                "totalProfit": 83730.183205
+            },
+            {
+                "id": "620951",
+                "name": "운전자용 벌금(대물)",
+                "quantity": 5000000,
+                "theme": "운전/비용",
+                "totalPrice": 42.0,
+                "totalProfit": 417.938179
+            },
+            {
+                "id": "611257",
+                "name": "운전자용 자동차사고부상치료비(11급)",
+                "quantity": 600000,
+                "theme": "운전/비용",
+                "totalPrice": 456.0,
+                "totalProfit": -2106.729357
+            },
+            {
+                "id": "610663",
+                "name": "외모특정상해수술비",
+                "quantity": 100000,
+                "theme": "수술",
+                "totalPrice": 81.0,
+                "totalProfit": 2556.551034
+            },
+            {
+                "id": "611252",
+                "name": "운전자용 자동차사고부상치료비(6급)",
+                "quantity": 2400000,
+                "theme": "운전/비용",
+                "totalPrice": 72.0,
+                "totalProfit": 1362.968273
+            },
+            {
+                "id": "611250",
+                "name": "운전자용 자동차사고부상치료비(4급)",
+                "quantity": 9000000,
+                "theme": "운전/비용",
+                "totalPrice": 126.0,
+                "totalProfit": 912.74223
+            },
+            {
+                "id": "611259",
+                "name": "운전자용 자동차사고부상치료비(13급)",
+                "quantity": 300000,
+                "theme": "운전/비용",
+                "totalPrice": 18.0,
+                "totalProfit": 83.664872
             }
         ],
         "availableItems": [
@@ -2782,7 +3665,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611193",
                 "name": "10대골절수술비",
                 "theme": "골절/화상",
-                "confidence": 0.025283460458982377,
+                "confidence": 0.017577306158632688,
                 "availableQuantities": [
                     200000,
                     500000,
@@ -2818,7 +3701,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611250",
                 "name": "운전자용 자동차사고부상치료비(4급)",
                 "theme": "운전/비용",
-                "confidence": 0.19513150218698241,
+                "confidence": 0.1891709086136761,
                 "availableQuantities": [
                     3000000,
                     6000000,
@@ -2844,7 +3727,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620951",
                 "name": "운전자용 벌금(대물)",
                 "theme": "운전/비용",
-                "confidence": 0.6631841531345394,
+                "confidence": 0.6876866602272105,
                 "availableQuantities": [
                     5000000
                 ],
@@ -2860,7 +3743,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611182",
                 "name": "통합상해진단비(엉덩이 및 다리의 경증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -2886,7 +3769,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610921",
                 "name": "골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.06873311972248448,
+                "confidence": 0.04494854198160983,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -2922,7 +3805,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640545",
                 "name": "창상봉합술치료비(안면부 이외)(B)(급여,1일1회,연간3회한)",
                 "theme": "기타",
-                "confidence": 0.08531562906333028,
+                "confidence": 0.08708013436298837,
                 "availableQuantities": [
                     300000,
                     500000,
@@ -2979,7 +3862,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611255",
                 "name": "운전자용 자동차사고부상치료비(9급)",
                 "theme": "운전/비용",
-                "confidence": 0.4034648355203157,
+                "confidence": 0.4164436358864034,
                 "availableQuantities": [
                     200000,
                     400000,
@@ -3005,7 +3888,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611128",
                 "name": "외상성뇌출혈진단비",
                 "theme": "3대진단",
-                "confidence": 0.01805259234754597,
+                "confidence": 0.008932016608193637,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -3047,7 +3930,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.05040299293375944,
+                "confidence": 0.03224388339350356,
                 "availableQuantities": [
                     100000,
                     200000
@@ -3065,10 +3948,36 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "620973",
+                "name": "교통사고 처리지원금(Ⅶ)",
+                "theme": "운전/비용",
+                "confidence": 0.2471463373001723,
+                "availableQuantities": [
+                    100000000,
+                    150000000,
+                    200000000
+                ],
+                "recommendedQuantity": 200000000,
+                "priceAndProfitByQuantity": {
+                    "100000000": {
+                        "totalPrice": 1500.0,
+                        "totalProfit": 11790.499434
+                    },
+                    "150000000": {
+                        "totalPrice": 2249.0,
+                        "totalProfit": 17668.736801
+                    },
+                    "200000000": {
+                        "totalPrice": 2999.0,
+                        "totalProfit": 23587.304172
+                    }
+                }
+            },
+            {
                 "id": "611180",
                 "name": "통합상해진단비(손목 및 손의 중등증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -3099,7 +4008,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640530",
                 "name": "응급실내원비(1~3등급)(응급실내원비(3등급))",
                 "theme": "기타",
-                "confidence": 0.006533312349783237,
+                "confidence": 0.006465009372734109,
                 "availableQuantities": [
                     30000,
                     50000,
@@ -3127,10 +4036,41 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "610648",
+                "name": "화재상해사망",
+                "theme": "사망후유",
+                "confidence": 0.00036025381480011816,
+                "availableQuantities": [
+                    10000000,
+                    50000000,
+                    100000000,
+                    200000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 7.0,
+                        "totalProfit": 133.6668
+                    },
+                    "50000000": {
+                        "totalPrice": 35.0,
+                        "totalProfit": 855.494461
+                    },
+                    "100000000": {
+                        "totalPrice": 70.0,
+                        "totalProfit": 1757.77842
+                    },
+                    "200000000": {
+                        "totalPrice": 140.0,
+                        "totalProfit": 3562.346285
+                    }
+                }
+            },
+            {
                 "id": "611185",
                 "name": "통합상해진단비(발목 및 발의 경증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -3156,7 +4096,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611198",
                 "name": "보행자 자동차사고부상치료비",
                 "theme": "기타",
-                "confidence": 0.0016860568466478415,
+                "confidence": 0.0012155893525999271,
                 "availableQuantities": [
                     3000000,
                     6000000
@@ -3177,7 +4117,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611183",
                 "name": "통합상해진단비(엉덩이 및 다리의 중등증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -3208,7 +4148,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611257",
                 "name": "운전자용 자동차사고부상치료비(11급)",
                 "theme": "운전/비용",
-                "confidence": 0.48679816885364907,
+                "confidence": 0.5073527267954943,
                 "availableQuantities": [
                     200000,
                     400000,
@@ -3231,10 +4171,46 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "610468",
+                "name": "중대상해수술비",
+                "theme": "수술",
+                "confidence": 0.0,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 66.0,
+                        "totalProfit": 2289.918145
+                    },
+                    "5000000": {
+                        "totalPrice": 330.0,
+                        "totalProfit": 11636.720191
+                    },
+                    "10000000": {
+                        "totalPrice": 660.0,
+                        "totalProfit": 23320.256543
+                    },
+                    "20000000": {
+                        "totalPrice": 1320.0,
+                        "totalProfit": 46687.384131
+                    },
+                    "30000000": {
+                        "totalPrice": 1980.0,
+                        "totalProfit": 70054.472973
+                    }
+                }
+            },
+            {
                 "id": "640528",
                 "name": "응급실내원비(1~3등급)(응급실내원비(1등급))",
                 "theme": "기타",
-                "confidence": 0.006533312349783237,
+                "confidence": 0.006465009372734109,
                 "availableQuantities": [
                     200000,
                     500000,
@@ -3265,7 +4241,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610926",
                 "name": "운전자용 교통상해골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.004234537003122963,
+                "confidence": 0.001927656431569741,
                 "availableQuantities": [
                     100000,
                     200000
@@ -3286,7 +4262,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611260",
                 "name": "운전자용 자동차사고부상치료비(14급)",
                 "theme": "운전/비용",
-                "confidence": 0.611798168853649,
+                "confidence": 0.6437163631591306,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -3312,7 +4288,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611254",
                 "name": "운전자용 자동차사고부상치료비(8급)",
                 "theme": "운전/비용",
-                "confidence": 0.36179816885364907,
+                "confidence": 0.3709890904318579,
                 "availableQuantities": [
                     200000,
                     400000,
@@ -3338,7 +4314,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610939",
                 "name": "상해사고부상치료비[5등급]",
                 "theme": "수술",
-                "confidence": 0.000615041689322975,
+                "confidence": 0.00045375472064557274,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -3361,10 +4337,26 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "620952",
+                "name": "운전자용 벌금(Ⅱ)",
+                "theme": "운전/비용",
+                "confidence": 0.688533386205412,
+                "availableQuantities": [
+                    30000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "30000000": {
+                        "totalPrice": 259.0,
+                        "totalProfit": 6016.134914
+                    }
+                }
+            },
+            {
                 "id": "611170",
                 "name": "통합상해진단비(머리 및 목의 경증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -3390,7 +4382,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610909",
                 "name": "상급병실(1인실) 상급종합병원 일반상해입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.009307449695193962,
+                "confidence": 0.008190332701703627,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -3416,10 +4408,11 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610936",
                 "name": "상해사고부상치료비[2등급]",
                 "theme": "수술",
-                "confidence": 0.000615041689322975,
+                "confidence": 0.00045375472064557274,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 3000000,
                 "priceAndProfitByQuantity": {
@@ -3430,6 +4423,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5390.0,
                         "totalProfit": 153712.935425
+                    },
+                    "10000000": {
+                        "totalPrice": 10780.0,
+                        "totalProfit": 307472.843227
                     }
                 }
             },
@@ -3437,7 +4434,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640543",
                 "name": "창상봉합술치료비(안면부)(B)(급여,1일1회,연간3회한)",
                 "theme": "기타",
-                "confidence": 0.08531562906333028,
+                "confidence": 0.08708013436298837,
                 "availableQuantities": [
                     300000,
                     500000,
@@ -3468,7 +4465,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610852",
                 "name": "종합병원 일반상해입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.02071387886751498,
+                "confidence": 0.012143511827987286,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -3491,10 +4488,46 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611166",
+                "name": "운전자용 교통상해후유장해(3~100%)",
+                "theme": "사망후유",
+                "confidence": 0.010000982967527505,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    40000000,
+                    50000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 160.0,
+                        "totalProfit": 4948.874062
+                    },
+                    "20000000": {
+                        "totalPrice": 320.0,
+                        "totalProfit": 9944.636913
+                    },
+                    "30000000": {
+                        "totalPrice": 480.0,
+                        "totalProfit": 14940.484531
+                    },
+                    "40000000": {
+                        "totalPrice": 640.0,
+                        "totalProfit": 19936.238179
+                    },
+                    "50000000": {
+                        "totalPrice": 800.0,
+                        "totalProfit": 24932.002514
+                    }
+                }
+            },
+            {
                 "id": "611199",
                 "name": "상해MRI/CT검사비(급여,연간1회한)",
                 "theme": "기타",
-                "confidence": 0.01149590926237184,
+                "confidence": 0.008299961431359023,
                 "availableQuantities": [
                     100000
                 ],
@@ -3510,7 +4543,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610728",
                 "name": "외상성척추손상 수술비",
                 "theme": "수술",
-                "confidence": 0.01283387603177163,
+                "confidence": 0.01400059203465996,
                 "availableQuantities": [
                     100000,
                     300000,
@@ -3536,7 +4569,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620016",
                 "name": "가족과실치사상벌금",
                 "theme": "재물/배상",
-                "confidence": 0.08895719573154597,
+                "confidence": 0.08938964015402441,
                 "availableQuantities": [
                     7000000
                 ],
@@ -3552,7 +4585,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611251",
                 "name": "운전자용 자동차사고부상치료비(5급)",
                 "theme": "운전/비용",
-                "confidence": 0.23679816885364904,
+                "confidence": 0.23462545406822155,
                 "availableQuantities": [
                     1500000,
                     3000000,
@@ -3578,7 +4611,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611173",
                 "name": "통합상해진단비(복부 및 등의 경증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -3604,7 +4637,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611177",
                 "name": "통합상해진단비(어깨 및 팔의 중등증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -3635,7 +4668,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611191",
                 "name": "일반상해입원후통원비(3일이상연속입원,4회한)",
                 "theme": "기타",
-                "confidence": 0.003163718128318366,
+                "confidence": 0.002209471514352968,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -3661,7 +4694,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640047",
                 "name": "인공관절수술비",
                 "theme": "수술",
-                "confidence": 0.12023222380299987,
+                "confidence": 0.12001794550331558,
                 "availableQuantities": [
                     300000,
                     500000,
@@ -3687,7 +4720,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620274",
                 "name": "보복운전피해",
                 "theme": "기타",
-                "confidence": 0.2973182449544935,
+                "confidence": 0.303890956480204,
                 "availableQuantities": [
                     1000000
                 ],
@@ -3703,7 +4736,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611014",
                 "name": "수술비(1~7종, 연간3회한)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.0328276636251249,
+                "confidence": 0.02445031636883613,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -3734,7 +4767,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611310",
                 "name": "간병인지원 일반상해입원일당(Ⅰ)(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0054601502432991495,
+                "confidence": 0.005631666668105778,
                 "availableQuantities": [
                     10000,
                     20000
@@ -3755,7 +4788,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611256",
                 "name": "운전자용 자동차사고부상치료비(10급)",
                 "theme": "운전/비용",
-                "confidence": 0.4451315021869824,
+                "confidence": 0.46189818134094884,
                 "availableQuantities": [
                     200000,
                     400000,
@@ -3781,7 +4814,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611252",
                 "name": "운전자용 자동차사고부상치료비(6급)",
                 "theme": "운전/비용",
-                "confidence": 0.2784648355203157,
+                "confidence": 0.280079999522767,
                 "availableQuantities": [
                     800000,
                     1600000,
@@ -3843,7 +4876,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611010",
                 "name": "특정외상성손상진단비",
                 "theme": "기타",
-                "confidence": 0.018008198508637045,
+                "confidence": 0.009354916898578326,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -3869,7 +4902,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610938",
                 "name": "상해사고부상치료비[4등급]",
                 "theme": "수술",
-                "confidence": 0.000615041689322975,
+                "confidence": 0.00045375472064557274,
                 "availableQuantities": [
                     300000,
                     500000,
@@ -3895,10 +4928,11 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610935",
                 "name": "상해사고부상치료비[1등급]",
                 "theme": "수술",
-                "confidence": 0.000615041689322975,
+                "confidence": 0.00045375472064557274,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 3000000,
                 "priceAndProfitByQuantity": {
@@ -3909,6 +4943,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1200.0,
                         "totalProfit": 32270.072082
+                    },
+                    "10000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 64587.204015
                     }
                 }
             },
@@ -3916,7 +4954,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611187",
                 "name": "통합상해진단비(발목 및 발의 중증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -3947,7 +4985,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640540",
                 "name": "통합골절치료비(깁스치료비)",
                 "theme": "골절/화상",
-                "confidence": 0.06768094047938268,
+                "confidence": 0.06894393992317838,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -3978,7 +5016,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640154",
                 "name": "응급실내원비(응급)",
                 "theme": "기타",
-                "confidence": 0.17849274357966705,
+                "confidence": 0.18125234002565171,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -4009,7 +5047,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640529",
                 "name": "응급실내원비(1~3등급)(응급실내원비(2등급))",
                 "theme": "기타",
-                "confidence": 0.006533312349783237,
+                "confidence": 0.006465009372734109,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4040,7 +5078,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611194",
                 "name": "상해재활치료비(급여,1일1회한,연간15회한)",
                 "theme": "기타",
-                "confidence": 0.007754841002029038,
+                "confidence": 0.005699135088504431,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -4063,10 +5101,72 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611248",
+                "name": "운전자용 자동차사고부상치료비(1-14급)[2급]",
+                "theme": "운전/비용",
+                "confidence": 0.09826181770458517,
+                "availableQuantities": [
+                    10000000,
+                    12000000,
+                    15000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 12000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 170.0,
+                        "totalProfit": 5727.427736
+                    },
+                    "12000000": {
+                        "totalPrice": 204.0,
+                        "totalProfit": 6882.266702
+                    },
+                    "15000000": {
+                        "totalPrice": 255.0,
+                        "totalProfit": 8614.530797
+                    },
+                    "20000000": {
+                        "totalPrice": 340.0,
+                        "totalProfit": 11501.639449
+                    },
+                    "30000000": {
+                        "totalPrice": 510.0,
+                        "totalProfit": 17275.851163
+                    }
+                }
+            },
+            {
+                "id": "610933",
+                "name": "신화상치료비(중증화상및부식진단비)",
+                "theme": "골절/화상",
+                "confidence": 0.03224388339350356,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 52.0,
+                        "totalProfit": 1639.805786
+                    },
+                    "30000000": {
+                        "totalPrice": 78.0,
+                        "totalProfit": 2483.139067
+                    },
+                    "50000000": {
+                        "totalPrice": 130.0,
+                        "totalProfit": 4169.814097
+                    }
+                }
+            },
+            {
                 "id": "640181",
                 "name": "신깁스치료비",
                 "theme": "골절/화상",
-                "confidence": 0.04793021759394248,
+                "confidence": 0.047871843421002216,
                 "availableQuantities": [
                     100000,
                     300000,
@@ -4102,7 +5202,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610726",
                 "name": "무릎인대파열·연골손상 수술비",
                 "theme": "수술",
-                "confidence": 0.00926382531187648,
+                "confidence": 0.010105991249319796,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4128,7 +5228,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611259",
                 "name": "운전자용 자동차사고부상치료비(13급)",
                 "theme": "운전/비용",
-                "confidence": 0.5701315021869824,
+                "confidence": 0.5982618177045851,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4154,7 +5254,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610928",
                 "name": "한방치료비Ⅱ[골절(치아파절제외)]",
                 "theme": "골절/화상",
-                "confidence": 0.005216086924027612,
+                "confidence": 0.0034253266285262773,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4175,7 +5275,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610757",
                 "name": "상해수술 한방치료비",
                 "theme": "기타",
-                "confidence": 0.0011869750844676124,
+                "confidence": 0.0012948819103283044,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4196,7 +5296,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611016",
                 "name": "수술비(1~7종, 연간3회한)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.0328276636251249,
+                "confidence": 0.02445031636883613,
                 "availableQuantities": [
                     200000,
                     1000000,
@@ -4227,7 +5327,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611258",
                 "name": "운전자용 자동차사고부상치료비(12급)",
                 "theme": "운전/비용",
-                "confidence": 0.5284648355203158,
+                "confidence": 0.5528072722500397,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4253,7 +5353,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611309",
                 "name": "간병인지원 일반상해입원일당(Ⅰ)(1일이상 180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.007731349841464762,
+                "confidence": 0.007985716564272575,
                 "availableQuantities": [
                     10000,
                     20000
@@ -4300,7 +5400,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611061",
                 "name": "특정이물제거치료비Ⅰ(급여,연간1회한)",
                 "theme": "기타",
-                "confidence": 0.0038896574375531455,
+                "confidence": 0.0025801502666768956,
                 "availableQuantities": [
                     100000
                 ],
@@ -4316,7 +5416,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611015",
                 "name": "수술비(1~7종, 연간3회한)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.0328276636251249,
+                "confidence": 0.02445031636883613,
                 "availableQuantities": [
                     150000,
                     400000,
@@ -4347,7 +5447,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610663",
                 "name": "외모특정상해수술비",
                 "theme": "수술",
-                "confidence": 0.008482094355092734,
+                "confidence": 0.009253193841919345,
                 "availableQuantities": [
                     100000
                 ],
@@ -4363,7 +5463,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610929",
                 "name": "신화상치료비(화상수술비)",
                 "theme": "골절/화상",
-                "confidence": 0.05040299293375944,
+                "confidence": 0.03224388339350356,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4384,7 +5484,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611012",
                 "name": "수술비(1~7종, 연간3회한)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.0328276636251249,
+                "confidence": 0.02445031636883613,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -4410,7 +5510,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611253",
                 "name": "운전자용 자동차사고부상치료비(7급)",
                 "theme": "운전/비용",
-                "confidence": 0.3201315021869824,
+                "confidence": 0.32553454497731243,
                 "availableQuantities": [
                     400000,
                     800000,
@@ -4433,18 +5533,59 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "620962",
+                "name": "자동차사고 변호사선임비용(타인사망,중대법규위반및중상해경찰조사포함)_자가용운전자용",
+                "theme": "운전/비용",
+                "confidence": 0.16313342168179143,
+                "availableQuantities": [
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "30000000": {
+                        "totalPrice": 347.0,
+                        "totalProfit": 5716.345625
+                    },
+                    "50000000": {
+                        "totalPrice": 578.0,
+                        "totalProfit": 9544.92233
+                    }
+                }
+            },
+            {
                 "id": "611164",
                 "name": "운전자용 교통상해사망",
                 "theme": "사망후유",
-                "confidence": 0.08253684067038956,
+                "confidence": 0.04753630745317492,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 26.0,
                         "totalProfit": 669.888488
+                    },
+                    "10000000": {
+                        "totalPrice": 260.0,
+                        "totalProfit": 7120.754559
+                    },
+                    "20000000": {
+                        "totalPrice": 520.0,
+                        "totalProfit": 14288.380893
+                    },
+                    "30000000": {
+                        "totalPrice": 780.0,
+                        "totalProfit": 21455.978935
+                    },
+                    "50000000": {
+                        "totalPrice": 1300.0,
+                        "totalProfit": 35810.711331
                     }
                 }
             },
@@ -4452,7 +5593,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611172",
                 "name": "통합상해진단비(머리 및 목의 중증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -4480,10 +5621,46 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611017",
+                "name": "수술비(1~7종, 연간3회한)[상해6종]",
+                "theme": "수술",
+                "confidence": 0.02445031636883613,
+                "availableQuantities": [
+                    500000,
+                    1500000,
+                    2000000,
+                    3000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "500000": {
+                        "totalPrice": 8.0,
+                        "totalProfit": 151.911689
+                    },
+                    "1500000": {
+                        "totalPrice": 24.0,
+                        "totalProfit": 558.302018
+                    },
+                    "2000000": {
+                        "totalPrice": 32.0,
+                        "totalProfit": 765.59284
+                    },
+                    "3000000": {
+                        "totalPrice": 48.0,
+                        "totalProfit": 1171.983169
+                    },
+                    "10000000": {
+                        "totalPrice": 160.0,
+                        "totalProfit": 4015.661599
+                    }
+                }
+            },
+            {
                 "id": "610918",
                 "name": "골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.04983052575211431,
+                "confidence": 0.03188445770700674,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4504,7 +5681,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610755",
                 "name": "운전자용 자동차사고부상(1~11급) 한방치료비",
                 "theme": "기타",
-                "confidence": 0.0006846922896576375,
+                "confidence": 0.0007469370432628773,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4522,10 +5699,31 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "620966",
+                "name": "교통사고 처리지원금(Ⅲ)(중대법규위반,6주미만)",
+                "theme": "운전/비용",
+                "confidence": 0.20816228055784836,
+                "availableQuantities": [
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 638.0,
+                        "totalProfit": 24865.226529
+                    },
+                    "10000000": {
+                        "totalPrice": 1276.0,
+                        "totalProfit": 49777.192802
+                    }
+                }
+            },
+            {
                 "id": "640046",
                 "name": "깁스치료비",
                 "theme": "골절/화상",
-                "confidence": 0.3793940620745165,
+                "confidence": 0.3876699117631549,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4558,10 +5756,46 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611018",
+                "name": "수술비(1~7종, 연간3회한)[상해7종]",
+                "theme": "수술",
+                "confidence": 0.02445031636883613,
+                "availableQuantities": [
+                    2000000,
+                    4000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 28.0,
+                        "totalProfit": 602.803111
+                    },
+                    "4000000": {
+                        "totalPrice": 56.0,
+                        "totalProfit": 1252.850676
+                    },
+                    "6000000": {
+                        "totalPrice": 84.0,
+                        "totalProfit": 1902.927646
+                    },
+                    "10000000": {
+                        "totalPrice": 140.0,
+                        "totalProfit": 3203.086783
+                    },
+                    "20000000": {
+                        "totalPrice": 280.0,
+                        "totalProfit": 6453.173635
+                    }
+                }
+            },
+            {
                 "id": "611195",
                 "name": "통합골절치료비(골절(치아파절제외) 철심제거수술비(급여,연간1회한))",
                 "theme": "골절/화상",
-                "confidence": 0.013218060511262578,
+                "confidence": 0.009529889048865536,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -4587,7 +5821,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640541",
                 "name": "통합골절치료비(골절탈구 도수정복술치료비(급여,연간1회한))",
                 "theme": "골절/화상",
-                "confidence": 0.06768094047938268,
+                "confidence": 0.06894393992317838,
                 "availableQuantities": [
                     100000
                 ],
@@ -4603,7 +5837,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611175",
                 "name": "통합상해진단비(복부 및 등의 중증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -4634,7 +5868,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611013",
                 "name": "수술비(1~7종, 연간3회한)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.0328276636251249,
+                "confidence": 0.02445031636883613,
                 "availableQuantities": [
                     50000,
                     100000,
@@ -4660,7 +5894,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610766",
                 "name": "상급종합병원일반상해입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.0023915712412754457,
+                "confidence": 0.0026089868086641224,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -4686,7 +5920,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611189",
                 "name": "통합상해진단비(기타의 중등증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4717,7 +5951,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611196",
                 "name": "통합골절치료비(골절(치아파절제외) 부목치료비(급여,연간1회한))",
                 "theme": "골절/화상",
-                "confidence": 0.013218060511262578,
+                "confidence": 0.009529889048865536,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4738,7 +5972,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640542",
                 "name": "창상봉합술치료비(안면부)(A)(급여,1일1회,연간3회한)",
                 "theme": "기타",
-                "confidence": 0.08531562906333028,
+                "confidence": 0.08708013436298837,
                 "availableQuantities": [
                     50000,
                     100000
@@ -4756,10 +5990,41 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611247",
+                "name": "운전자용 자동차사고부상치료비(1-14급)[1급]",
+                "theme": "운전/비용",
+                "confidence": 0.052807272250039713,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    45000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 800.0,
+                        "totalProfit": 30771.181313
+                    },
+                    "20000000": {
+                        "totalPrice": 1600.0,
+                        "totalProfit": 61589.157898
+                    },
+                    "30000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 92407.134483
+                    },
+                    "45000000": {
+                        "totalPrice": 3600.0,
+                        "totalProfit": 138634.102157
+                    }
+                }
+            },
+            {
                 "id": "611197",
                 "name": "통합골절치료비(골절수술비Ⅱ)",
                 "theme": "골절/화상",
-                "confidence": 0.013218060511262578,
+                "confidence": 0.009529889048865536,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4780,7 +6045,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610880",
                 "name": "일반상해수술입원일당(1일이상 20일한도)",
                 "theme": "입원일당",
-                "confidence": 0.009134478820554291,
+                "confidence": 0.006265290278228705,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -4811,7 +6076,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611178",
                 "name": "통합상해진단비(어깨 및 팔의 중증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -4842,7 +6107,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611188",
                 "name": "통합상해진단비(기타의 상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -4868,7 +6133,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640544",
                 "name": "창상봉합술치료비(안면부 이외)(A)(급여,1일1회,연간3회한)",
                 "theme": "기타",
-                "confidence": 0.08531562906333028,
+                "confidence": 0.08708013436298837,
                 "availableQuantities": [
                     50000,
                     100000
@@ -4889,7 +6154,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610912",
                 "name": "골절(치아파절제외)진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.03836594813725716,
+                "confidence": 0.026373734288426265,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4920,7 +6185,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610937",
                 "name": "상해사고부상치료비[3등급]",
                 "theme": "수술",
-                "confidence": 0.000615041689322975,
+                "confidence": 0.00045375472064557274,
                 "availableQuantities": [
                     300000,
                     1000000
@@ -4941,7 +6206,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610927",
                 "name": "운전자용 교통상해골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.004895109337730779,
+                "confidence": 0.0022589485014825727,
                 "availableQuantities": [
                     100000,
                     200000
@@ -4962,7 +6227,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611171",
                 "name": "통합상해진단비(머리 및 목의 중등증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -4993,7 +6258,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611181",
                 "name": "통합상해진단비(손목 및 손의 중증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -5024,7 +6289,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611174",
                 "name": "통합상해진단비(복부 및 등의 중등증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -5055,7 +6320,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611192",
                 "name": "10대골절진단비",
                 "theme": "골절/화상",
-                "confidence": 0.030445029528485212,
+                "confidence": 0.02134125416547579,
                 "availableQuantities": [
                     300000,
                     500000,
@@ -5091,7 +6356,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611176",
                 "name": "통합상해진단비(어깨 및 팔의 경증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -5117,15 +6382,30 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611249",
                 "name": "운전자용 자동차사고부상치료비(1-14급)[3급]",
                 "theme": "운전/비용",
-                "confidence": 0.15346483552031576,
+                "confidence": 0.1437163631591306,
                 "availableQuantities": [
-                    9000000
+                    9000000,
+                    10000000,
+                    15000000,
+                    30000000
                 ],
                 "recommendedQuantity": 9000000,
                 "priceAndProfitByQuantity": {
                     "9000000": {
                         "totalPrice": 108.0,
                         "totalProfit": 3348.615355
+                    },
+                    "10000000": {
+                        "totalPrice": 120.0,
+                        "totalProfit": 3725.883586
+                    },
+                    "15000000": {
+                        "totalPrice": 180.0,
+                        "totalProfit": 5612.224414
+                    },
+                    "30000000": {
+                        "totalPrice": 360.0,
+                        "totalProfit": 11271.232806
                     }
                 }
             },
@@ -5133,7 +6413,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611179",
                 "name": "통합상해진단비(손목 및 손의 경증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     20000,
                     30000,
@@ -5159,7 +6439,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610744",
                 "name": "척추골절진단비",
                 "theme": "골절/화상",
-                "confidence": 0.003452567501300829,
+                "confidence": 0.003766437274146359,
                 "availableQuantities": [
                     200000,
                     500000,
@@ -5185,7 +6465,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610708",
                 "name": "관절(무릎·고관절) 수술비",
                 "theme": "수술",
-                "confidence": 0.014138753511312179,
+                "confidence": 0.015424094739613287,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -5211,7 +6491,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611186",
                 "name": "통합상해진단비(발목 및 발의 중등증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -5242,12 +6522,13 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610884",
                 "name": "신골절치료비(치아파절포함)",
                 "theme": "골절/화상",
-                "confidence": 0.008040612578270072,
+                "confidence": 0.005327989542085459,
                 "availableQuantities": [
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
@@ -5266,6 +6547,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5445.0,
                         "totalProfit": 133530.305306
+                    },
+                    "10000000": {
+                        "totalPrice": 10890.0,
+                        "totalProfit": 267107.663179
                     }
                 }
             },
@@ -5273,7 +6558,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611190",
                 "name": "통합상해진단비(기타의 중증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -5304,7 +6589,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611184",
                 "name": "통합상해진단비(엉덩이 및 다리의 중증상해진단비(연간1회한))",
                 "theme": "기타",
-                "confidence": 0.009288345074984933,
+                "confidence": 0.007203358825960982,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -5359,68 +6644,12 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
-                "id": "630377",
-                "name": "[특별조건부]질병수술비",
-                "quantity": 0,
-                "theme": "할증/제도성",
-                "totalPrice": 1165.0,
-                "totalProfit": -1815.512584
-            },
-            {
-                "id": "632279",
-                "name": "표적항암약물허가치료비Ⅱ",
-                "quantity": 10000000,
+                "id": "630763",
+                "name": "뇌혈관질환 수술비",
+                "quantity": 5000000,
                 "theme": "3대진단",
-                "totalPrice": 2400.0,
-                "totalProfit": 33811.03391
-            },
-            {
-                "id": "631837",
-                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병1종]",
-                "quantity": 0,
-                "theme": "수술",
-                "totalPrice": 415.0,
-                "totalProfit": 13122.191751
-            },
-            {
-                "id": "631807",
-                "name": "수술비(1~7종, 연간3회한)[질병6종]",
-                "quantity": 4000000,
-                "theme": "수술",
-                "totalPrice": 3960.0,
-                "totalProfit": 78706.641319
-            },
-            {
-                "id": "631804",
-                "name": "수술비(1~7종, 연간3회한)[질병3종]",
-                "quantity": 300000,
-                "theme": "수술",
-                "totalPrice": 573.0,
-                "totalProfit": 7919.315256
-            },
-            {
-                "id": "610487",
-                "name": "5대골절진단비",
-                "quantity": 1000000,
-                "theme": "골절/화상",
-                "totalPrice": 1000.0,
-                "totalProfit": 4240.083828
-            },
-            {
-                "id": "610470",
-                "name": "상해수술위로금",
-                "quantity": 500000,
-                "theme": "수술",
-                "totalPrice": 1855.0,
-                "totalProfit": 27730.536857
-            },
-            {
-                "id": "660052",
-                "name": "가족일상생활중배상책임(Ⅲ)",
-                "quantity": 100000000,
-                "theme": "재물/배상",
-                "totalPrice": 2078.0,
-                "totalProfit": -15069.158747
+                "totalPrice": 1370.0,
+                "totalProfit": 25590.335128
             },
             {
                 "id": "610933",
@@ -5431,12 +6660,12 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 1399.334694
             },
             {
-                "id": "631802",
-                "name": "수술비(1~7종, 연간3회한)[질병1종]",
-                "quantity": 100000,
+                "id": "631803",
+                "name": "수술비(1~7종, 연간3회한)[질병2종]",
+                "quantity": 200000,
                 "theme": "수술",
-                "totalPrice": 2540.0,
-                "totalProfit": 48283.158237
+                "totalPrice": 720.0,
+                "totalProfit": 11361.710381
             },
             {
                 "id": "630228",
@@ -5447,52 +6676,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 179254.665941
             },
             {
-                "id": "631839",
-                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병3종]",
-                "quantity": 0,
+                "id": "631808",
+                "name": "수술비(1~7종, 연간3회한)[질병7종]",
+                "quantity": 10000000,
                 "theme": "수술",
-                "totalPrice": 94.0,
-                "totalProfit": 2509.591014
+                "totalPrice": 2600.0,
+                "totalProfit": 51847.509528
             },
             {
-                "id": "640046",
-                "name": "깁스치료비",
-                "quantity": 300000,
-                "theme": "골절/화상",
-                "totalPrice": 345.0,
-                "totalProfit": 1506.373997
-            },
-            {
-                "id": "610931",
-                "name": "신화상치료비(화상진단비)",
-                "quantity": 200000,
-                "theme": "골절/화상",
-                "totalPrice": 158.0,
-                "totalProfit": -1486.723209
-            },
-            {
-                "id": "631841",
-                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병5종]",
-                "quantity": 0,
-                "theme": "수술",
-                "totalPrice": 338.0,
-                "totalProfit": 10794.768816
-            },
-            {
-                "id": "610929",
-                "name": "신화상치료비(화상수술비)",
-                "quantity": 200000,
-                "theme": "골절/화상",
-                "totalPrice": 15.0,
-                "totalProfit": 175.758479
-            },
-            {
-                "id": "630527",
-                "name": "유사암진단비",
-                "quantity": 4000000,
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "quantity": 10000000,
                 "theme": "3대진단",
-                "totalPrice": 1192.0,
-                "totalProfit": 8595.038969
+                "totalPrice": 3150.0,
+                "totalProfit": 35522.602884
             },
             {
                 "id": "632649",
@@ -5503,20 +6700,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -1243.875941
             },
             {
-                "id": "631842",
-                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병6종]",
-                "quantity": 0,
+                "id": "631807",
+                "name": "수술비(1~7종, 연간3회한)[질병6종]",
+                "quantity": 4000000,
                 "theme": "수술",
-                "totalPrice": 660.0,
-                "totalProfit": 21634.282437
+                "totalPrice": 3960.0,
+                "totalProfit": 78706.641319
             },
             {
-                "id": "632285",
-                "name": "[특별조건부]표적항암약물허가치료비Ⅱ",
-                "quantity": 0,
-                "theme": "할증/제도성",
-                "totalPrice": 368.0,
-                "totalProfit": 12963.829363
+                "id": "610912",
+                "name": "골절(치아파절제외)진단비Ⅱ",
+                "quantity": 200000,
+                "theme": "골절/화상",
+                "totalPrice": 1068.0,
+                "totalProfit": -6175.325874
             },
             {
                 "id": "610015",
@@ -5527,36 +6724,12 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 546.197302
             },
             {
-                "id": "630701",
-                "name": "[특별조건부]암진단비(유사암 제외)",
-                "quantity": 0,
-                "theme": "3대진단",
-                "totalPrice": 3235.0,
-                "totalProfit": 105795.326804
-            },
-            {
-                "id": "630718",
-                "name": "[특별조건부]유사암진단비",
-                "quantity": 0,
-                "theme": "3대진단",
-                "totalPrice": 223.0,
-                "totalProfit": 7948.925215
-            },
-            {
-                "id": "630697",
-                "name": "암진단비(유사암 제외)",
-                "quantity": 20000000,
-                "theme": "3대진단",
-                "totalPrice": 18540.0,
-                "totalProfit": 198248.449025
-            },
-            {
-                "id": "630680",
-                "name": "[특별조건부]항암방사선약물치료비",
-                "quantity": 0,
-                "theme": "할증/제도성",
-                "totalPrice": 293.0,
-                "totalProfit": 9933.005809
+                "id": "610931",
+                "name": "신화상치료비(화상진단비)",
+                "quantity": 200000,
+                "theme": "골절/화상",
+                "totalPrice": 158.0,
+                "totalProfit": -1486.723209
             },
             {
                 "id": "631560",
@@ -5575,36 +6748,44 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 574.074797
             },
             {
-                "id": "631840",
-                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병4종]",
-                "quantity": 0,
-                "theme": "수술",
-                "totalPrice": 493.0,
-                "totalProfit": 14138.929671
-            },
-            {
-                "id": "630024",
-                "name": "항암방사선약물치료비",
-                "quantity": 3000000,
-                "theme": "3대진단",
-                "totalPrice": 1830.0,
-                "totalProfit": 17448.892857
-            },
-            {
-                "id": "610912",
-                "name": "골절(치아파절제외)진단비Ⅱ",
-                "quantity": 200000,
+                "id": "610487",
+                "name": "5대골절진단비",
+                "quantity": 1000000,
                 "theme": "골절/화상",
-                "totalPrice": 1068.0,
-                "totalProfit": -6175.325874
+                "totalPrice": 1000.0,
+                "totalProfit": 4240.083828
             },
             {
-                "id": "630235",
-                "name": "허혈성심질환진단",
+                "id": "632279",
+                "name": "표적항암약물허가치료비Ⅱ",
                 "quantity": 10000000,
                 "theme": "3대진단",
-                "totalPrice": 3150.0,
-                "totalProfit": 35522.602884
+                "totalPrice": 2400.0,
+                "totalProfit": 33811.03391
+            },
+            {
+                "id": "630022",
+                "name": "질병수술위로금",
+                "quantity": 200000,
+                "theme": "수술",
+                "totalPrice": 3448.0,
+                "totalProfit": -71000.582041
+            },
+            {
+                "id": "640046",
+                "name": "깁스치료비",
+                "quantity": 300000,
+                "theme": "골절/화상",
+                "totalPrice": 345.0,
+                "totalProfit": 1506.373997
+            },
+            {
+                "id": "610470",
+                "name": "상해수술위로금",
+                "quantity": 500000,
+                "theme": "수술",
+                "totalPrice": 1855.0,
+                "totalProfit": 27730.536857
             },
             {
                 "id": "610605",
@@ -5613,22 +6794,6 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "totalPrice": 7.0,
                 "totalProfit": 122.943714
-            },
-            {
-                "id": "631803",
-                "name": "수술비(1~7종, 연간3회한)[질병2종]",
-                "quantity": 200000,
-                "theme": "수술",
-                "totalPrice": 720.0,
-                "totalProfit": 11361.710381
-            },
-            {
-                "id": "631808",
-                "name": "수술비(1~7종, 연간3회한)[질병7종]",
-                "quantity": 10000000,
-                "theme": "수술",
-                "totalPrice": 2600.0,
-                "totalProfit": 51847.509528
             },
             {
                 "id": "630766",
@@ -5647,12 +6812,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 54960.432593
             },
             {
-                "id": "630022",
-                "name": "질병수술위로금",
-                "quantity": 200000,
+                "id": "631802",
+                "name": "수술비(1~7종, 연간3회한)[질병1종]",
+                "quantity": 100000,
                 "theme": "수술",
-                "totalPrice": 3448.0,
-                "totalProfit": -71000.582041
+                "totalPrice": 2540.0,
+                "totalProfit": 48283.158237
+            },
+            {
+                "id": "660052",
+                "name": "가족일상생활중배상책임(Ⅲ)",
+                "quantity": 100000000,
+                "theme": "재물/배상",
+                "totalPrice": 2078.0,
+                "totalProfit": -15069.158747
             },
             {
                 "id": "631806",
@@ -5663,28 +6836,44 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 42504.107093
             },
             {
-                "id": "631843",
-                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병7종]",
-                "quantity": 0,
-                "theme": "수술",
-                "totalPrice": 425.0,
-                "totalProfit": 13458.701592
+                "id": "610929",
+                "name": "신화상치료비(화상수술비)",
+                "quantity": 200000,
+                "theme": "골절/화상",
+                "totalPrice": 15.0,
+                "totalProfit": 175.758479
             },
             {
-                "id": "631838",
-                "name": "[특별조건부]수술비(1~7종, 연간3회한)[질병2종]",
-                "quantity": 0,
+                "id": "631804",
+                "name": "수술비(1~7종, 연간3회한)[질병3종]",
+                "quantity": 300000,
                 "theme": "수술",
-                "totalPrice": 120.0,
-                "totalProfit": 3555.852334
+                "totalPrice": 573.0,
+                "totalProfit": 7919.315256
             },
             {
-                "id": "630763",
-                "name": "뇌혈관질환 수술비",
-                "quantity": 5000000,
+                "id": "630697",
+                "name": "암진단비(유사암 제외)",
+                "quantity": 20000000,
                 "theme": "3대진단",
-                "totalPrice": 1370.0,
-                "totalProfit": 25590.335128
+                "totalPrice": 18540.0,
+                "totalProfit": 198248.449025
+            },
+            {
+                "id": "630024",
+                "name": "항암방사선약물치료비",
+                "quantity": 3000000,
+                "theme": "3대진단",
+                "totalPrice": 1830.0,
+                "totalProfit": 17448.892857
+            },
+            {
+                "id": "630527",
+                "name": "유사암진단비",
+                "quantity": 4000000,
+                "theme": "3대진단",
+                "totalPrice": 1192.0,
+                "totalProfit": 8595.038969
             }
         ],
         "availableItems": [
@@ -5721,6 +6910,58 @@ export const SAMPLE_CONTRACTS = {
                     "1000000": {
                         "totalPrice": 11920.0,
                         "totalProfit": 284383.889315
+                    }
+                }
+            },
+            {
+                "id": "631744",
+                "name": "뇌전증진단비",
+                "theme": "3대진단",
+                "confidence": 0.0015081893783823862,
+                "availableQuantities": [
+                    1000000,
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 236.0,
+                        "totalProfit": 6245.972595
+                    },
+                    "3000000": {
+                        "totalPrice": 708.0,
+                        "totalProfit": 18817.571191
+                    },
+                    "5000000": {
+                        "totalPrice": 1180.0,
+                        "totalProfit": 31389.16196
+                    },
+                    "10000000": {
+                        "totalPrice": 2360.0,
+                        "totalProfit": 62818.235868
+                    },
+                    "20000000": {
+                        "totalPrice": 4720.0,
+                        "totalProfit": 125676.351021
+                    }
+                }
+            },
+            {
+                "id": "630637",
+                "name": "다발경화증 진단비",
+                "theme": "기타",
+                "confidence": 0.0028507082192836724,
+                "availableQuantities": [
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 5.0,
+                        "totalProfit": 61.650781
                     }
                 }
             },
@@ -5844,6 +7085,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630710",
+                "name": "암진단비(유사암 및 소액암 제외)",
+                "theme": "3대진단",
+                "confidence": 0.004365964117577403,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    40000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 7070.0,
+                        "totalProfit": 99946.702987
+                    },
+                    "20000000": {
+                        "totalPrice": 14140.0,
+                        "totalProfit": 199933.248043
+                    },
+                    "30000000": {
+                        "totalPrice": 21210.0,
+                        "totalProfit": 299919.917038
+                    },
+                    "40000000": {
+                        "totalPrice": 28280.0,
+                        "totalProfit": 399906.481525
+                    },
+                    "50000000": {
+                        "totalPrice": 35350.0,
+                        "totalProfit": 499892.99415
+                    }
+                }
+            },
+            {
                 "id": "611345",
                 "name": "2-3인실 상급종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
@@ -5927,6 +7204,32 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "theme": "3대진단",
+                "confidence": 0.14236976618589212,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 2534.0,
+                        "totalProfit": 48620.118655
+                    },
+                    "5000000": {
+                        "totalPrice": 6335.0,
+                        "totalProfit": 121610.575746
+                    },
+                    "10000000": {
+                        "totalPrice": 12670.0,
+                        "totalProfit": 243261.07256
+                    }
+                }
+            },
+            {
                 "id": "632512",
                 "name": "수면무호흡진단비",
                 "theme": "기타",
@@ -5939,6 +7242,37 @@ export const SAMPLE_CONTRACTS = {
                     "100000": {
                         "totalPrice": 27.0,
                         "totalProfit": -137.195858
+                    }
+                }
+            },
+            {
+                "id": "633550",
+                "name": "최대두배받는2대질환치료비(2점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.003652496925712038,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 246.0,
+                        "totalProfit": 2924.489734
+                    },
+                    "20000000": {
+                        "totalPrice": 492.0,
+                        "totalProfit": 5889.287911
+                    },
+                    "30000000": {
+                        "totalPrice": 738.0,
+                        "totalProfit": 8853.769616
+                    },
+                    "50000000": {
+                        "totalPrice": 1230.0,
+                        "totalProfit": 14783.11204
                     }
                 }
             },
@@ -6087,7 +7421,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 3000000,
                 "priceAndProfitByQuantity": {
@@ -6106,6 +7441,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5285.0,
                         "totalProfit": 66209.479439
+                    },
+                    "10000000": {
+                        "totalPrice": 10570.0,
+                        "totalProfit": 132458.723426
                     }
                 }
             },
@@ -6136,6 +7475,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630717",
+                "name": "유사암진단비",
+                "theme": "3대진단",
+                "confidence": 0.010149880867644968,
+                "availableQuantities": [
+                    100000,
+                    2000000,
+                    4000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "100000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 188.364685
+                    },
+                    "2000000": {
+                        "totalPrice": 590.0,
+                        "totalProfit": 4165.323427
+                    },
+                    "4000000": {
+                        "totalPrice": 1180.0,
+                        "totalProfit": 8370.411401
+                    },
+                    "6000000": {
+                        "totalPrice": 1770.0,
+                        "totalProfit": 12575.499375
+                    },
+                    "10000000": {
+                        "totalPrice": 2950.0,
+                        "totalProfit": 20985.675323
+                    }
+                }
+            },
+            {
                 "id": "630951",
                 "name": "갑상선암(초기제외)진단비",
                 "theme": "3대진단",
@@ -6148,6 +7523,42 @@ export const SAMPLE_CONTRACTS = {
                     "1000000": {
                         "totalPrice": 102.0,
                         "totalProfit": 789.193737
+                    }
+                }
+            },
+            {
+                "id": "632504",
+                "name": "뇌혈관질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.20775206042115368,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 566.0,
+                        "totalProfit": 10805.226748
+                    },
+                    "5000000": {
+                        "totalPrice": 1415.0,
+                        "totalProfit": 27072.718175
+                    },
+                    "10000000": {
+                        "totalPrice": 2830.0,
+                        "totalProfit": 54185.200936
+                    },
+                    "20000000": {
+                        "totalPrice": 5660.0,
+                        "totalProfit": 108410.16772
+                    },
+                    "30000000": {
+                        "totalPrice": 8490.0,
+                        "totalProfit": 162635.135766
                     }
                 }
             },
@@ -6175,7 +7586,8 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     1000000,
                     2000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 2000000,
                 "priceAndProfitByQuantity": {
@@ -6190,6 +7602,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 175.0,
                         "totalProfit": -8720.804594
+                    },
+                    "10000000": {
+                        "totalPrice": 350.0,
+                        "totalProfit": -17401.31945
                     }
                 }
             },
@@ -6425,7 +7841,8 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     1000000,
                     2000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 2000000,
                 "priceAndProfitByQuantity": {
@@ -6440,6 +7857,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 730.0,
                         "totalProfit": 3599.5077
+                    },
+                    "10000000": {
+                        "totalPrice": 1460.0,
+                        "totalProfit": 7238.971165
                     }
                 }
             },
@@ -6461,6 +7882,94 @@ export const SAMPLE_CONTRACTS = {
                     "500000": {
                         "totalPrice": 7275.0,
                         "totalProfit": 63601.935278
+                    }
+                }
+            },
+            {
+                "id": "640045",
+                "name": "각막이식수술비",
+                "theme": "수술",
+                "confidence": 0.14209283407001128,
+                "availableQuantities": [
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 9.0,
+                        "totalProfit": 63.588821
+                    }
+                }
+            },
+            {
+                "id": "640198",
+                "name": "중등도이상치매간병비",
+                "theme": "기타",
+                "confidence": 0.0003746330553423344,
+                "availableQuantities": [
+                    1000000,
+                    4000000,
+                    10000000,
+                    15000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 232.0,
+                        "totalProfit": 8642.523646
+                    },
+                    "4000000": {
+                        "totalPrice": 927.0,
+                        "totalProfit": 34645.768606
+                    },
+                    "10000000": {
+                        "totalPrice": 2317.0,
+                        "totalProfit": 86653.806576
+                    },
+                    "15000000": {
+                        "totalPrice": 3476.0,
+                        "totalProfit": 130021.614984
+                    },
+                    "20000000": {
+                        "totalPrice": 4634.0,
+                        "totalProfit": 173347.610954
+                    }
+                }
+            },
+            {
+                "id": "631807",
+                "name": "수술비(1~7종, 연간3회한)[질병6종]",
+                "theme": "수술",
+                "confidence": 0.36789965817616654,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    4000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 1980.0,
+                        "totalProfit": 40660.333937
+                    },
+                    "3000000": {
+                        "totalPrice": 2970.0,
+                        "totalProfit": 61010.409716
+                    },
+                    "4000000": {
+                        "totalPrice": 3960.0,
+                        "totalProfit": 81360.47025
+                    },
+                    "5000000": {
+                        "totalPrice": 4950.0,
+                        "totalProfit": 101710.545911
+                    },
+                    "10000000": {
+                        "totalPrice": 9900.0,
+                        "totalProfit": 203460.892033
                     }
                 }
             },
@@ -6508,6 +8017,42 @@ export const SAMPLE_CONTRACTS = {
                     "300000": {
                         "totalPrice": 921.0,
                         "totalProfit": -74666.646546
+                    }
+                }
+            },
+            {
+                "id": "630242",
+                "name": "말기간경화진단비",
+                "theme": "기타",
+                "confidence": 0.005919950755068517,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 149.0,
+                        "totalProfit": 3762.975777
+                    },
+                    "10000000": {
+                        "totalPrice": 297.0,
+                        "totalProfit": 7525.962395
+                    },
+                    "20000000": {
+                        "totalPrice": 594.0,
+                        "totalProfit": 15091.687313
+                    },
+                    "30000000": {
+                        "totalPrice": 891.0,
+                        "totalProfit": 22657.411841
+                    },
+                    "50000000": {
+                        "totalPrice": 1485.0,
+                        "totalProfit": 37788.861577
                     }
                 }
             },
@@ -6606,7 +8151,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.001166429605151993,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -6617,6 +8163,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 7845.0,
                         "totalProfit": 206000.956575
+                    },
+                    "10000000": {
+                        "totalPrice": 15690.0,
+                        "totalProfit": 412041.770881
                     }
                 }
             },
@@ -6626,13 +8176,28 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "confidence": 0.05046258533680708,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    50000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 7.0,
                         "totalProfit": 127.48473
+                    },
+                    "10000000": {
+                        "totalPrice": 68.0,
+                        "totalProfit": 1557.678928
+                    },
+                    "50000000": {
+                        "totalPrice": 340.0,
+                        "totalProfit": 7947.535632
+                    },
+                    "100000000": {
+                        "totalPrice": 680.0,
+                        "totalProfit": 15934.857377
                     }
                 }
             },
@@ -6689,6 +8254,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632343",
+                "name": "통합암진단비(유사암제외)(4대고액암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.17400558949825326,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    70000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 830.0,
+                        "totalProfit": 12787.046279
+                    },
+                    "20000000": {
+                        "totalPrice": 1660.0,
+                        "totalProfit": 25614.058507
+                    },
+                    "30000000": {
+                        "totalPrice": 2490.0,
+                        "totalProfit": 38441.276036
+                    },
+                    "50000000": {
+                        "totalPrice": 4150.0,
+                        "totalProfit": 64095.49367
+                    },
+                    "70000000": {
+                        "totalPrice": 5810.0,
+                        "totalProfit": 89749.48045
+                    }
+                }
+            },
+            {
                 "id": "632520",
                 "name": "131대질병수술비(다빈도62대질병)",
                 "theme": "수술",
@@ -6725,6 +8326,22 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630639",
+                "name": "약제내성결핵(슈퍼결핵 포함) 진단비",
+                "theme": "기타",
+                "confidence": 0.004053052332232587,
+                "availableQuantities": [
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 11.0,
+                        "totalProfit": 196.685817
+                    }
+                }
+            },
+            {
                 "id": "631381",
                 "name": "중대한재생불량성빈혈진단비",
                 "theme": "기타",
@@ -6737,6 +8354,42 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 17.0,
                         "totalProfit": 418.004453
+                    }
+                }
+            },
+            {
+                "id": "630239",
+                "name": "말기폐질환진단비",
+                "theme": "기타",
+                "confidence": 0.0028215214158225587,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 67.0,
+                        "totalProfit": 3147.06672
+                    },
+                    "10000000": {
+                        "totalPrice": 666.0,
+                        "totalProfit": 31676.606398
+                    },
+                    "20000000": {
+                        "totalPrice": 1332.0,
+                        "totalProfit": 63393.10617
+                    },
+                    "30000000": {
+                        "totalPrice": 1998.0,
+                        "totalProfit": 95109.678251
+                    },
+                    "50000000": {
+                        "totalPrice": 3330.0,
+                        "totalProfit": 158542.721751
                     }
                 }
             },
@@ -6763,6 +8416,37 @@ export const SAMPLE_CONTRACTS = {
                     "30000": {
                         "totalPrice": 9.0,
                         "totalProfit": 127.386391
+                    }
+                }
+            },
+            {
+                "id": "632480",
+                "name": "전이암진단비(림프절전이암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.070073736650355,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 550.0,
+                        "totalProfit": 3825.125064
+                    },
+                    "5000000": {
+                        "totalPrice": 1375.0,
+                        "totalProfit": 9622.414932
+                    },
+                    "10000000": {
+                        "totalPrice": 2750.0,
+                        "totalProfit": 19284.558775
+                    },
+                    "20000000": {
+                        "totalPrice": 5500.0,
+                        "totalProfit": 38608.846132
                     }
                 }
             },
@@ -6861,6 +8545,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631712",
+                "name": "급성심근경색증진단비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.0009463427151271343,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    40000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 300.0,
+                        "totalProfit": 4721.622527
+                    },
+                    "10000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 9483.193544
+                    },
+                    "20000000": {
+                        "totalPrice": 1200.0,
+                        "totalProfit": 19006.364937
+                    },
+                    "30000000": {
+                        "totalPrice": 1800.0,
+                        "totalProfit": 28529.538102
+                    },
+                    "40000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 38052.865523
+                    }
+                }
+            },
+            {
                 "id": "633336",
                 "name": "이상지질혈증(고지혈증포함)대상질병진단비[이상지질혈증(고지혈증포함)]",
                 "theme": "기타",
@@ -6920,7 +8640,8 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -6935,6 +8656,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 2200.0,
                         "totalProfit": 57116.970198
+                    },
+                    "10000000": {
+                        "totalPrice": 4400.0,
+                        "totalProfit": 114273.934543
                     }
                 }
             },
@@ -7143,7 +8868,8 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     3000000,
                     4000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -7158,6 +8884,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 765.0,
                         "totalProfit": 21026.948401
+                    },
+                    "10000000": {
+                        "totalPrice": 1530.0,
+                        "totalProfit": 42093.863273
                     }
                 }
             },
@@ -7189,6 +8919,37 @@ export const SAMPLE_CONTRACTS = {
                     "40000": {
                         "totalPrice": 2056.0,
                         "totalProfit": 51967.283524
+                    }
+                }
+            },
+            {
+                "id": "633000",
+                "name": "암(유사암제외) 주요치료비(연간1회한, 5년간)",
+                "theme": "기타",
+                "confidence": 0.05299564294062733,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 1460.0,
+                        "totalProfit": 15794.463005
+                    },
+                    "5000000": {
+                        "totalPrice": 7300.0,
+                        "totalProfit": 79131.186403
+                    },
+                    "10000000": {
+                        "totalPrice": 14600.0,
+                        "totalProfit": 158302.081301
+                    },
+                    "20000000": {
+                        "totalPrice": 29200.0,
+                        "totalProfit": 316643.920161
                     }
                 }
             },
@@ -7317,6 +9078,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632342",
+                "name": "통합암진단비(유사암제외)(10대특정암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.17400558949825326,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    70000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 830.0,
+                        "totalProfit": 12525.345914
+                    },
+                    "20000000": {
+                        "totalPrice": 1660.0,
+                        "totalProfit": 25090.659412
+                    },
+                    "30000000": {
+                        "totalPrice": 2490.0,
+                        "totalProfit": 37655.962134
+                    },
+                    "50000000": {
+                        "totalPrice": 4150.0,
+                        "totalProfit": 62786.568933
+                    },
+                    "70000000": {
+                        "totalPrice": 5810.0,
+                        "totalProfit": 87917.086454
+                    }
+                }
+            },
+            {
                 "id": "633538",
                 "name": "허혈성심장질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
@@ -7334,6 +9131,32 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 1165.0,
                         "totalProfit": 40920.594483
+                    }
+                }
+            },
+            {
+                "id": "610933",
+                "name": "신화상치료비(중증화상및부식진단비)",
+                "theme": "골절/화상",
+                "confidence": 0.1418225016376566,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 36.0,
+                        "totalProfit": 1096.56544
+                    },
+                    "30000000": {
+                        "totalPrice": 54.0,
+                        "totalProfit": 1664.729264
+                    },
+                    "50000000": {
+                        "totalPrice": 90.0,
+                        "totalProfit": 2801.056913
                     }
                 }
             },
@@ -7463,6 +9286,78 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630229",
+                "name": "급성심근경색증진단비",
+                "theme": "3대진단",
+                "confidence": 0.044959751577814684,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    40000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 300.0,
+                        "totalProfit": 4733.144697
+                    },
+                    "10000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 9506.447097
+                    },
+                    "20000000": {
+                        "totalPrice": 1200.0,
+                        "totalProfit": 19053.23973
+                    },
+                    "30000000": {
+                        "totalPrice": 1800.0,
+                        "totalProfit": 28599.923412
+                    },
+                    "40000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 38146.649542
+                    }
+                }
+            },
+            {
+                "id": "632649",
+                "name": "혈전용해치료비Ⅱ(특정심장질환)",
+                "theme": "기타",
+                "confidence": 0.1879086837107572,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    8000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 12.0,
+                        "totalProfit": -673.247183
+                    },
+                    "2000000": {
+                        "totalPrice": 24.0,
+                        "totalProfit": -1306.509988
+                    },
+                    "5000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": -3206.35151
+                    },
+                    "8000000": {
+                        "totalPrice": 96.0,
+                        "totalProfit": -5106.125614
+                    },
+                    "10000000": {
+                        "totalPrice": 120.0,
+                        "totalProfit": -6372.72513
+                    }
+                }
+            },
+            {
                 "id": "611016",
                 "name": "수술비(1~7종, 연간3회한)[상해5종]",
                 "theme": "수술",
@@ -7490,6 +9385,42 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 365.0,
                         "totalProfit": 11738.53397
+                    }
+                }
+            },
+            {
+                "id": "640071",
+                "name": "장기요양급여금(Ⅲ)",
+                "theme": "기타",
+                "confidence": 0.00043663545969919315,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    35000000,
+                    40000000
+                ],
+                "recommendedQuantity": 40000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 870.0,
+                        "totalProfit": 50888.989037
+                    },
+                    "20000000": {
+                        "totalPrice": 1740.0,
+                        "totalProfit": 101818.335863
+                    },
+                    "30000000": {
+                        "totalPrice": 2610.0,
+                        "totalProfit": 152747.582498
+                    },
+                    "35000000": {
+                        "totalPrice": 3045.0,
+                        "totalProfit": 178212.281858
+                    },
+                    "40000000": {
+                        "totalPrice": 3480.0,
+                        "totalProfit": 203676.628652
                     }
                 }
             },
@@ -7531,6 +9462,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632279",
+                "name": "표적항암약물허가치료비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.2852271624825971,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    70000000
+                ],
+                "recommendedQuantity": 70000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 45453.425339
+                    },
+                    "20000000": {
+                        "totalPrice": 4800.0,
+                        "totalProfit": 90946.84276
+                    },
+                    "30000000": {
+                        "totalPrice": 7200.0,
+                        "totalProfit": 136440.276621
+                    },
+                    "50000000": {
+                        "totalPrice": 12000.0,
+                        "totalProfit": 227427.120533
+                    },
+                    "70000000": {
+                        "totalPrice": 16800.0,
+                        "totalProfit": 318414.373467
+                    }
+                }
+            },
+            {
                 "id": "610487",
                 "name": "5대골절진단비",
                 "theme": "골절/화상",
@@ -7558,6 +9525,32 @@ export const SAMPLE_CONTRACTS = {
                     "2000000": {
                         "totalPrice": 2000.0,
                         "totalProfit": 35125.631028
+                    }
+                }
+            },
+            {
+                "id": "610836",
+                "name": "수술비(1~5종)[상해5종]",
+                "theme": "수술",
+                "confidence": 0.007135773849576848,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 6.0,
+                        "totalProfit": -457.587082
+                    },
+                    "5000000": {
+                        "totalPrice": 10.0,
+                        "totalProfit": -736.149139
+                    },
+                    "10000000": {
+                        "totalPrice": 20.0,
+                        "totalProfit": -1434.892256
                     }
                 }
             },
@@ -7672,7 +9665,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.11518652604050396,
                 "availableQuantities": [
                     4000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -7683,6 +9677,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 480.0,
                         "totalProfit": 2597.800005
+                    },
+                    "10000000": {
+                        "totalPrice": 960.0,
+                        "totalProfit": 5235.399955
                     }
                 }
             },
@@ -7765,6 +9763,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631808",
+                "name": "수술비(1~7종, 연간3회한)[질병7종]",
+                "theme": "수술",
+                "confidence": 0.40238241679685616,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 780.0,
+                        "totalProfit": 16017.872748
+                    },
+                    "5000000": {
+                        "totalPrice": 1300.0,
+                        "totalProfit": 26722.977745
+                    },
+                    "6000000": {
+                        "totalPrice": 1560.0,
+                        "totalProfit": 32075.560678
+                    },
+                    "10000000": {
+                        "totalPrice": 2600.0,
+                        "totalProfit": 53485.801981
+                    },
+                    "20000000": {
+                        "totalPrice": 5200.0,
+                        "totalProfit": 107011.454232
+                    }
+                }
+            },
+            {
                 "id": "633259",
                 "name": "상급종합병원 질병수술비",
                 "theme": "수술",
@@ -7792,6 +9826,42 @@ export const SAMPLE_CONTRACTS = {
                     "1000000": {
                         "totalPrice": 3580.0,
                         "totalProfit": 24740.129606
+                    }
+                }
+            },
+            {
+                "id": "611017",
+                "name": "수술비(1~7종, 연간3회한)[상해6종]",
+                "theme": "수술",
+                "confidence": 0.10257888066825657,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 16.0,
+                        "totalProfit": 343.274065
+                    },
+                    "3000000": {
+                        "totalPrice": 24.0,
+                        "totalProfit": 534.838198
+                    },
+                    "5000000": {
+                        "totalPrice": 40.0,
+                        "totalProfit": 918.033398
+                    },
+                    "6000000": {
+                        "totalPrice": 48.0,
+                        "totalProfit": 1109.631702
+                    },
+                    "10000000": {
+                        "totalPrice": 80.0,
+                        "totalProfit": 1875.986036
                     }
                 }
             },
@@ -7884,6 +9954,37 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "633549",
+                "name": "최대두배받는2대질환치료비(1점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.003652496925712038,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 435.0,
+                        "totalProfit": 5080.138541
+                    },
+                    "20000000": {
+                        "totalPrice": 870.0,
+                        "totalProfit": 10200.226721
+                    },
+                    "30000000": {
+                        "totalPrice": 1305.0,
+                        "totalProfit": 15320.309556
+                    },
+                    "50000000": {
+                        "totalPrice": 2175.0,
+                        "totalProfit": 25560.768675
+                    }
+                }
+            },
+            {
                 "id": "631228",
                 "name": "수술비(1~5종)[질병3종]",
                 "theme": "수술",
@@ -7934,7 +10035,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -7953,6 +10055,41 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1560.0,
                         "totalProfit": -2934.121152
+                    },
+                    "10000000": {
+                        "totalPrice": 3120.0,
+                        "totalProfit": -5828.479021
+                    }
+                }
+            },
+            {
+                "id": "633552",
+                "name": "최대두배받는2대질환치료비(4점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.003652496925712038,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 136.0,
+                        "totalProfit": 1436.984703
+                    },
+                    "20000000": {
+                        "totalPrice": 272.0,
+                        "totalProfit": 2914.307195
+                    },
+                    "30000000": {
+                        "totalPrice": 408.0,
+                        "totalProfit": 4391.230552
+                    },
+                    "50000000": {
+                        "totalPrice": 680.0,
+                        "totalProfit": 7345.799527
                     }
                 }
             },
@@ -8041,18 +10178,74 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611018",
+                "name": "수술비(1~7종, 연간3회한)[상해7종]",
+                "theme": "수술",
+                "confidence": 0.10257888066825657,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 15.0,
+                        "totalProfit": 357.630261
+                    },
+                    "5000000": {
+                        "totalPrice": 25.0,
+                        "totalProfit": 622.599432
+                    },
+                    "6000000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 755.141333
+                    },
+                    "10000000": {
+                        "totalPrice": 50.0,
+                        "totalProfit": 1285.190786
+                    },
+                    "20000000": {
+                        "totalPrice": 100.0,
+                        "totalProfit": 2610.367815
+                    }
+                }
+            },
+            {
                 "id": "610015",
                 "name": "일반상해사망",
                 "theme": "사망후유",
                 "confidence": 0.0,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    50000000,
+                    70000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 38.0,
                         "totalProfit": 560.607403
+                    },
+                    "10000000": {
+                        "totalPrice": 377.0,
+                        "totalProfit": 5849.193668
+                    },
+                    "50000000": {
+                        "totalPrice": 1885.0,
+                        "totalProfit": 29405.245867
+                    },
+                    "70000000": {
+                        "totalPrice": 2639.0,
+                        "totalProfit": 41183.275058
+                    },
+                    "100000000": {
+                        "totalPrice": 3770.0,
+                        "totalProfit": 58850.292975
                     }
                 }
             },
@@ -8079,6 +10272,99 @@ export const SAMPLE_CONTRACTS = {
                     "3000000": {
                         "totalPrice": 330.0,
                         "totalProfit": 8191.142565
+                    }
+                }
+            },
+            {
+                "id": "632340",
+                "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.17400558949825326,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    70000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 2930.0,
+                        "totalProfit": 46041.781208
+                    },
+                    "20000000": {
+                        "totalPrice": 5860.0,
+                        "totalProfit": 92123.566982
+                    },
+                    "30000000": {
+                        "totalPrice": 8790.0,
+                        "totalProfit": 138205.200167
+                    },
+                    "50000000": {
+                        "totalPrice": 14650.0,
+                        "totalProfit": 230368.662526
+                    },
+                    "70000000": {
+                        "totalPrice": 20510.0,
+                        "totalProfit": 322532.096378
+                    }
+                }
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "theme": "3대진단",
+                "confidence": 0.18045730932112858,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 630.0,
+                        "totalProfit": 10296.809152
+                    },
+                    "5000000": {
+                        "totalPrice": 1575.0,
+                        "totalProfit": 25802.142758
+                    },
+                    "10000000": {
+                        "totalPrice": 3150.0,
+                        "totalProfit": 51644.537953
+                    }
+                }
+            },
+            {
+                "id": "632481",
+                "name": "전이암진단비(특정전이암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.070073736650355,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 846.0,
+                        "totalProfit": 8810.835063
+                    },
+                    "5000000": {
+                        "totalPrice": 2115.0,
+                        "totalProfit": 22086.840795
+                    },
+                    "10000000": {
+                        "totalPrice": 4230.0,
+                        "totalProfit": 44213.548034
+                    },
+                    "20000000": {
+                        "totalPrice": 8460.0,
+                        "totalProfit": 88467.088796
                     }
                 }
             },
@@ -8112,7 +10398,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -8131,6 +10418,46 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5475.0,
                         "totalProfit": 86873.444625
+                    },
+                    "10000000": {
+                        "totalPrice": 10950.0,
+                        "totalProfit": 173786.653798
+                    }
+                }
+            },
+            {
+                "id": "630763",
+                "name": "뇌혈관질환 수술비",
+                "theme": "3대진단",
+                "confidence": 0.08727498092722706,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 822.0,
+                        "totalProfit": 15715.563319
+                    },
+                    "5000000": {
+                        "totalPrice": 1370.0,
+                        "totalProfit": 26219.121188
+                    },
+                    "10000000": {
+                        "totalPrice": 2740.0,
+                        "totalProfit": 52478.008197
+                    },
+                    "20000000": {
+                        "totalPrice": 5480.0,
+                        "totalProfit": 104995.783505
+                    },
+                    "30000000": {
+                        "totalPrice": 8220.0,
+                        "totalProfit": 157513.554985
                     }
                 }
             },
@@ -8167,6 +10494,42 @@ export const SAMPLE_CONTRACTS = {
                     "100000": {
                         "totalPrice": 650.0,
                         "totalProfit": 16620.795079
+                    }
+                }
+            },
+            {
+                "id": "640089",
+                "name": "중증치매간병비(90일이상)",
+                "theme": "기타",
+                "confidence": 0.00047573767007074477,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    50000000,
+                    90000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 478.0,
+                        "totalProfit": 16319.687571
+                    },
+                    "10000000": {
+                        "totalPrice": 955.0,
+                        "totalProfit": 32637.245444
+                    },
+                    "20000000": {
+                        "totalPrice": 1910.0,
+                        "totalProfit": 65314.778001
+                    },
+                    "50000000": {
+                        "totalPrice": 4775.0,
+                        "totalProfit": 163347.268734
+                    },
+                    "90000000": {
+                        "totalPrice": 8595.0,
+                        "totalProfit": 294057.423942
                     }
                 }
             },
@@ -8234,6 +10597,94 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630430",
+                "name": "뇌출혈진단비_1년미만50%",
+                "theme": "3대진단",
+                "confidence": 0.013273086106889345,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    40000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 920.0,
+                        "totalProfit": 23427.39612
+                    },
+                    "10000000": {
+                        "totalPrice": 1840.0,
+                        "totalProfit": 46894.834203
+                    },
+                    "20000000": {
+                        "totalPrice": 3680.0,
+                        "totalProfit": 93829.632403
+                    },
+                    "30000000": {
+                        "totalPrice": 5520.0,
+                        "totalProfit": 140764.446857
+                    },
+                    "40000000": {
+                        "totalPrice": 7360.0,
+                        "totalProfit": 187699.299945
+                    }
+                }
+            },
+            {
+                "id": "632502",
+                "name": "6대심장질환진단비",
+                "theme": "3대진단",
+                "confidence": 0.04637203226406293,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 3516.0,
+                        "totalProfit": 28188.479141
+                    },
+                    "2000000": {
+                        "totalPrice": 7032.0,
+                        "totalProfit": 56416.802427
+                    },
+                    "3000000": {
+                        "totalPrice": 10548.0,
+                        "totalProfit": 84645.170754
+                    },
+                    "5000000": {
+                        "totalPrice": 17580.0,
+                        "totalProfit": 141101.916648
+                    },
+                    "10000000": {
+                        "totalPrice": 35160.0,
+                        "totalProfit": 282243.737321
+                    }
+                }
+            },
+            {
+                "id": "660052",
+                "name": "가족일상생활중배상책임(Ⅲ)",
+                "theme": "재물/배상",
+                "confidence": 0.2422893926937878,
+                "availableQuantities": [
+                    100000000
+                ],
+                "recommendedQuantity": 100000000,
+                "priceAndProfitByQuantity": {
+                    "100000000": {
+                        "totalPrice": 2078.0,
+                        "totalProfit": 7502.892583
+                    }
+                }
+            },
+            {
                 "id": "633539",
                 "name": "허혈성심장질환통원일당(상급종합병원, 연간30회한)",
                 "theme": "입원일당",
@@ -8289,7 +10740,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -8308,6 +10760,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1565.0,
                         "totalProfit": 33656.505122
+                    },
+                    "10000000": {
+                        "totalPrice": 3130.0,
+                        "totalProfit": 67352.776066
                     }
                 }
             },
@@ -8354,6 +10810,32 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "640070",
+                "name": "장기요양급여금(Ⅱ)",
+                "theme": "기타",
+                "confidence": 0.00045532293774532754,
+                "availableQuantities": [
+                    10000000,
+                    15000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 1937.0,
+                        "totalProfit": 104052.847758
+                    },
+                    "15000000": {
+                        "totalPrice": 2906.0,
+                        "totalProfit": 156120.666127
+                    },
+                    "20000000": {
+                        "totalPrice": 3874.0,
+                        "totalProfit": 208145.92712
+                    }
+                }
+            },
+            {
                 "id": "633015",
                 "name": "상급병실(1인실) 종합병원 질병수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
@@ -8366,6 +10848,42 @@ export const SAMPLE_CONTRACTS = {
                     "100000": {
                         "totalPrice": 130.0,
                         "totalProfit": 3640.413601
+                    }
+                }
+            },
+            {
+                "id": "632648",
+                "name": "혈전용해치료비Ⅱ(뇌졸중)",
+                "theme": "기타",
+                "confidence": 0.15342592509006756,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    8000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 61.0,
+                        "totalProfit": 265.13865
+                    },
+                    "2000000": {
+                        "totalPrice": 122.0,
+                        "totalProfit": 570.247116
+                    },
+                    "5000000": {
+                        "totalPrice": 305.0,
+                        "totalProfit": 1485.855475
+                    },
+                    "8000000": {
+                        "totalPrice": 488.0,
+                        "totalProfit": 2401.662302
+                    },
+                    "10000000": {
+                        "totalPrice": 610.0,
+                        "totalProfit": 3011.849545
                     }
                 }
             },
@@ -8387,6 +10905,42 @@ export const SAMPLE_CONTRACTS = {
                     "300000": {
                         "totalPrice": 1080.0,
                         "totalProfit": 22664.99986
+                    }
+                }
+            },
+            {
+                "id": "630527",
+                "name": "유사암진단비",
+                "theme": "3대진단",
+                "confidence": 0.1909699980255863,
+                "availableQuantities": [
+                    200000,
+                    2000000,
+                    4000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "200000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": 416.043772
+                    },
+                    "2000000": {
+                        "totalPrice": 596.0,
+                        "totalProfit": 4364.166551
+                    },
+                    "4000000": {
+                        "totalPrice": 1192.0,
+                        "totalProfit": 8768.097649
+                    },
+                    "6000000": {
+                        "totalPrice": 1788.0,
+                        "totalProfit": 13172.028748
+                    },
+                    "10000000": {
+                        "totalPrice": 2980.0,
+                        "totalProfit": 21979.890944
                     }
                 }
             },
@@ -8573,6 +11127,32 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631230",
+                "name": "수술비(1~5종)[질병5종]",
+                "theme": "수술",
+                "confidence": 0.028795488529428828,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 3030.0,
+                        "totalProfit": 31026.722064
+                    },
+                    "5000000": {
+                        "totalPrice": 5050.0,
+                        "totalProfit": 51737.754967
+                    },
+                    "10000000": {
+                        "totalPrice": 10100.0,
+                        "totalProfit": 103515.298779
+                    }
+                }
+            },
+            {
                 "id": "611346",
                 "name": "2-3인실 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
@@ -8590,6 +11170,42 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 365.0,
                         "totalProfit": 8950.047703
+                    }
+                }
+            },
+            {
+                "id": "630766",
+                "name": "허혈성심장질환수술비",
+                "theme": "3대진단",
+                "confidence": 0.12182779029312696,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 681.0,
+                        "totalProfit": 15561.487394
+                    },
+                    "5000000": {
+                        "totalPrice": 1135.0,
+                        "totalProfit": 25962.337236
+                    },
+                    "10000000": {
+                        "totalPrice": 2270.0,
+                        "totalProfit": 51964.488306
+                    },
+                    "20000000": {
+                        "totalPrice": 4540.0,
+                        "totalProfit": 103968.77129
+                    },
+                    "30000000": {
+                        "totalPrice": 6810.0,
+                        "totalProfit": 155973.049029
                     }
                 }
             },
@@ -8616,6 +11232,78 @@ export const SAMPLE_CONTRACTS = {
                     "1000000": {
                         "totalPrice": 3010.0,
                         "totalProfit": 68228.476161
+                    }
+                }
+            },
+            {
+                "id": "632503",
+                "name": "6대심장질환진단비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.01641814662999436,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 3512.0,
+                        "totalProfit": 27896.03193
+                    },
+                    "2000000": {
+                        "totalPrice": 7024.0,
+                        "totalProfit": 55831.730179
+                    },
+                    "3000000": {
+                        "totalPrice": 10536.0,
+                        "totalProfit": 83767.466187
+                    },
+                    "5000000": {
+                        "totalPrice": 17560.0,
+                        "totalProfit": 139639.062801
+                    },
+                    "10000000": {
+                        "totalPrice": 35120.0,
+                        "totalProfit": 279317.782435
+                    }
+                }
+            },
+            {
+                "id": "630697",
+                "name": "암진단비(유사암 제외)",
+                "theme": "3대진단",
+                "confidence": 0.13974287365900623,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 927.0,
+                        "totalProfit": 9674.273413
+                    },
+                    "10000000": {
+                        "totalPrice": 9270.0,
+                        "totalProfit": 97100.587873
+                    },
+                    "20000000": {
+                        "totalPrice": 18540.0,
+                        "totalProfit": 194241.009742
+                    },
+                    "30000000": {
+                        "totalPrice": 27810.0,
+                        "totalProfit": 291381.349739
+                    },
+                    "50000000": {
+                        "totalPrice": 46350.0,
+                        "totalProfit": 485662.140268
                     }
                 }
             },
@@ -8699,6 +11387,78 @@ export const SAMPLE_CONTRACTS = {
                     "2000000": {
                         "totalPrice": 760.0,
                         "totalProfit": 6573.804092
+                    }
+                }
+            },
+            {
+                "id": "630144",
+                "name": "질병사망(Ⅱ)",
+                "theme": "사망후유",
+                "confidence": 0.009867504728661481,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    100000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 4480.0,
+                        "totalProfit": 64795.782942
+                    },
+                    "20000000": {
+                        "totalPrice": 8960.0,
+                        "totalProfit": 129631.842191
+                    },
+                    "30000000": {
+                        "totalPrice": 13440.0,
+                        "totalProfit": 194467.628727
+                    },
+                    "50000000": {
+                        "totalPrice": 22400.0,
+                        "totalProfit": 324139.447487
+                    },
+                    "100000000": {
+                        "totalPrice": 44800.0,
+                        "totalProfit": 648319.114829
+                    }
+                }
+            },
+            {
+                "id": "632339",
+                "name": "통합암진단비(유사암제외)(특정소액암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.17400558949825326,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    70000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 2650.0,
+                        "totalProfit": -9548.403837
+                    },
+                    "20000000": {
+                        "totalPrice": 5300.0,
+                        "totalProfit": -19057.094612
+                    },
+                    "30000000": {
+                        "totalPrice": 7950.0,
+                        "totalProfit": -28565.785147
+                    },
+                    "50000000": {
+                        "totalPrice": 13250.0,
+                        "totalProfit": -47583.166753
+                    },
+                    "70000000": {
+                        "totalPrice": 18550.0,
+                        "totalProfit": -66600.548184
                     }
                 }
             },
@@ -8793,7 +11553,9 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    30000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -8808,6 +11570,50 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 3050.0,
                         "totalProfit": 44928.139466
+                    },
+                    "10000000": {
+                        "totalPrice": 6100.0,
+                        "totalProfit": 89896.02594
+                    },
+                    "30000000": {
+                        "totalPrice": 18300.0,
+                        "totalProfit": 269767.566677
+                    }
+                }
+            },
+            {
+                "id": "632341",
+                "name": "통합암진단비(유사암제외)(15대특정암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.17400558949825326,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    70000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 2050.0,
+                        "totalProfit": 31390.44901
+                    },
+                    "20000000": {
+                        "totalPrice": 4100.0,
+                        "totalProfit": 62820.736918
+                    },
+                    "30000000": {
+                        "totalPrice": 6150.0,
+                        "totalProfit": 94251.021081
+                    },
+                    "50000000": {
+                        "totalPrice": 10250.0,
+                        "totalProfit": 157111.689146
+                    },
+                    "70000000": {
+                        "totalPrice": 14350.0,
+                        "totalProfit": 219972.350341
                     }
                 }
             },
@@ -8820,7 +11626,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -8839,6 +11646,67 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1420.0,
                         "totalProfit": 29378.773596
+                    },
+                    "10000000": {
+                        "totalPrice": 2840.0,
+                        "totalProfit": 58797.33598
+                    }
+                }
+            },
+            {
+                "id": "633551",
+                "name": "최대두배받는2대질환치료비(3점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.003652496925712038,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 98.0,
+                        "totalProfit": 1061.676951
+                    },
+                    "20000000": {
+                        "totalPrice": 196.0,
+                        "totalProfit": 2163.342099
+                    },
+                    "30000000": {
+                        "totalPrice": 294.0,
+                        "totalProfit": 3264.993299
+                    },
+                    "50000000": {
+                        "totalPrice": 490.0,
+                        "totalProfit": 5468.674699
+                    }
+                }
+            },
+            {
+                "id": "640143",
+                "name": "장기요양급여금(1~4등급)",
+                "theme": "기타",
+                "confidence": 0.000693395329923369,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 2156.0,
+                        "totalProfit": 90629.209413
+                    },
+                    "10000000": {
+                        "totalPrice": 4312.0,
+                        "totalProfit": 181296.610934
+                    },
+                    "20000000": {
+                        "totalPrice": 8624.0,
+                        "totalProfit": 362633.151413
                     }
                 }
             },
@@ -8896,14 +11764,6 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
-                "id": "630228",
-                "name": "뇌혈관질환진단",
-                "quantity": 10000000,
-                "theme": "3대진단",
-                "totalPrice": 15910.0,
-                "totalProfit": 336827.321569
-            },
-            {
                 "id": "630527",
                 "name": "유사암진단비",
                 "quantity": 3000000,
@@ -8912,36 +11772,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -21552.075702
             },
             {
-                "id": "630697",
-                "name": "암진단비(유사암 제외)",
-                "quantity": 30000000,
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "quantity": 10000000,
                 "theme": "3대진단",
-                "totalPrice": 53880.0,
-                "totalProfit": 614673.064916
+                "totalPrice": 9200.0,
+                "totalProfit": 45473.786751
             },
             {
-                "id": "610605",
-                "name": "일반상해고도후유장해",
+                "id": "630228",
+                "name": "뇌혈관질환진단",
                 "quantity": 10000000,
-                "theme": "사망후유",
-                "totalPrice": 102.0,
-                "totalProfit": 4198.223823
-            },
-            {
-                "id": "632504",
-                "name": "뇌혈관질환수술비(25%체증형)",
-                "quantity": 10000000,
-                "theme": "수술",
-                "totalPrice": 3000.0,
-                "totalProfit": 73886.786265
-            },
-            {
-                "id": "610015",
-                "name": "일반상해사망",
-                "quantity": 50000000,
-                "theme": "사망후유",
-                "totalPrice": 3795.0,
-                "totalProfit": 160341.675926
+                "theme": "3대진단",
+                "totalPrice": 15910.0,
+                "totalProfit": 336827.321569
             },
             {
                 "id": "632505",
@@ -8952,12 +11796,36 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -97722.39103
             },
             {
-                "id": "630235",
-                "name": "허혈성심질환진단",
+                "id": "610605",
+                "name": "일반상해고도후유장해",
                 "quantity": 10000000,
+                "theme": "사망후유",
+                "totalPrice": 102.0,
+                "totalProfit": 4198.223823
+            },
+            {
+                "id": "610015",
+                "name": "일반상해사망",
+                "quantity": 50000000,
+                "theme": "사망후유",
+                "totalPrice": 3795.0,
+                "totalProfit": 160341.675926
+            },
+            {
+                "id": "632504",
+                "name": "뇌혈관질환수술비(25%체증형)",
+                "quantity": 10000000,
+                "theme": "수술",
+                "totalPrice": 3000.0,
+                "totalProfit": 73886.786265
+            },
+            {
+                "id": "630697",
+                "name": "암진단비(유사암 제외)",
+                "quantity": 30000000,
                 "theme": "3대진단",
-                "totalPrice": 9200.0,
-                "totalProfit": 45473.786751
+                "totalPrice": 53880.0,
+                "totalProfit": 614673.064916
             }
         ],
         "availableItems": [
@@ -9046,6 +11914,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631744",
+                "name": "뇌전증진단비",
+                "theme": "3대진단",
+                "confidence": 0.0016804175967644877,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 431.0,
+                        "totalProfit": 18006.547088
+                    },
+                    "2000000": {
+                        "totalPrice": 862.0,
+                        "totalProfit": 36058.977567
+                    },
+                    "5000000": {
+                        "totalPrice": 2155.0,
+                        "totalProfit": 90216.293138
+                    },
+                    "10000000": {
+                        "totalPrice": 4310.0,
+                        "totalProfit": 180478.469667
+                    },
+                    "20000000": {
+                        "totalPrice": 8620.0,
+                        "totalProfit": 361002.831474
+                    }
+                }
+            },
+            {
                 "id": "632314",
                 "name": "만성신부전 동정맥루조성술치료비(급여, 연간1회한)",
                 "theme": "3대진단",
@@ -9129,6 +12033,27 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "640056",
+                "name": "5대장기이식수술비",
+                "theme": "수술",
+                "confidence": 0.13469106067949674,
+                "availableQuantities": [
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 70.0,
+                        "totalProfit": -559.798223
+                    },
+                    "20000000": {
+                        "totalPrice": 140.0,
+                        "totalProfit": -1073.668504
+                    }
+                }
+            },
+            {
                 "id": "632310",
                 "name": "갑상선기능저하증진단비",
                 "theme": "3대진단",
@@ -9163,7 +12088,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632532",
                 "name": "131대질병수술비(편도염)",
                 "theme": "수술",
-                "confidence": 0.15899254201830174,
+                "confidence": 0.15899254201830176,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -9264,6 +12189,68 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "theme": "3대진단",
+                "confidence": 0.07753523337530044,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 1591.0,
+                        "totalProfit": 32660.805788
+                    },
+                    "5000000": {
+                        "totalPrice": 7955.0,
+                        "totalProfit": 163487.301321
+                    },
+                    "10000000": {
+                        "totalPrice": 15910.0,
+                        "totalProfit": 327020.428235
+                    },
+                    "20000000": {
+                        "totalPrice": 31820.0,
+                        "totalProfit": 654086.679285
+                    }
+                }
+            },
+            {
+                "id": "633550",
+                "name": "최대두배받는2대질환치료비(2점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.0048953162733971125,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 1111.0,
+                        "totalProfit": 29839.144904
+                    },
+                    "20000000": {
+                        "totalPrice": 2222.0,
+                        "totalProfit": 59724.211031
+                    },
+                    "30000000": {
+                        "totalPrice": 3333.0,
+                        "totalProfit": 89609.285846
+                    },
+                    "50000000": {
+                        "totalPrice": 5555.0,
+                        "totalProfit": 149379.426789
+                    }
+                }
+            },
+            {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
@@ -9288,7 +12275,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631422",
                 "name": "32대질병관혈수술비(연간1회한)[14대질병]",
                 "theme": "수술",
-                "confidence": 0.05380480287044521,
+                "confidence": 0.053804802870445215,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -9314,7 +12301,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633119",
                 "name": "질병입원 간병인비용지원(간병인비용 2,000만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.0027883094452807624,
+                "confidence": 0.002788309445280762,
                 "availableQuantities": [
                     100000,
                     1000000,
@@ -9350,7 +12337,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633517",
                 "name": "특정순환계질환 급여치료비(요양병원)(본인부담금 1백만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.04607643369139975,
+                "confidence": 0.04607643369139976,
                 "availableQuantities": [
                     1000000
                 ],
@@ -9385,6 +12372,42 @@ export const SAMPLE_CONTRACTS = {
                     "300000": {
                         "totalPrice": 378.0,
                         "totalProfit": -26285.831171
+                    }
+                }
+            },
+            {
+                "id": "630388",
+                "name": "희귀난치성 7대질환진단비",
+                "theme": "기타",
+                "confidence": 0.03244904267033748,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 560.0,
+                        "totalProfit": 26953.725297
+                    },
+                    "2000000": {
+                        "totalPrice": 1120.0,
+                        "totalProfit": 53953.362269
+                    },
+                    "3000000": {
+                        "totalPrice": 1680.0,
+                        "totalProfit": 80953.008266
+                    },
+                    "5000000": {
+                        "totalPrice": 2800.0,
+                        "totalProfit": 134952.291236
+                    },
+                    "10000000": {
+                        "totalPrice": 5600.0,
+                        "totalProfit": 269950.48603
                     }
                 }
             },
@@ -9470,7 +12493,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632321",
                 "name": "지방간대상질병관리지원비(간효소수치200IU/L 이상)",
                 "theme": "기타",
-                "confidence": 0.004114284124082538,
+                "confidence": 0.004114284124082537,
                 "availableQuantities": [
                     300000
                 ],
@@ -9491,7 +12514,8 @@ export const SAMPLE_CONTRACTS = {
                     200000,
                     2000000,
                     4000000,
-                    6000000
+                    6000000,
+                    10000000
                 ],
                 "recommendedQuantity": 6000000,
                 "priceAndProfitByQuantity": {
@@ -9510,6 +12534,10 @@ export const SAMPLE_CONTRACTS = {
                     "6000000": {
                         "totalPrice": 1002.0,
                         "totalProfit": -49922.159782
+                    },
+                    "10000000": {
+                        "totalPrice": 1670.0,
+                        "totalProfit": -83172.976187
                     }
                 }
             },
@@ -9519,13 +12547,64 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "confidence": 0.015992778911732314,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    30000000,
+                    50000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 138.0,
                         "totalProfit": 5421.341508
+                    },
+                    "10000000": {
+                        "totalPrice": 1380.0,
+                        "totalProfit": 54626.753057
+                    },
+                    "30000000": {
+                        "totalPrice": 4140.0,
+                        "totalProfit": 163972.130373
+                    },
+                    "50000000": {
+                        "totalPrice": 6900.0,
+                        "totalProfit": 273317.501044
+                    }
+                }
+            },
+            {
+                "id": "632504",
+                "name": "뇌혈관질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.1737407444045115,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 14422.363644
+                    },
+                    "5000000": {
+                        "totalPrice": 1500.0,
+                        "totalProfit": 36124.8128
+                    },
+                    "10000000": {
+                        "totalPrice": 3000.0,
+                        "totalProfit": 72295.540486
+                    },
+                    "20000000": {
+                        "totalPrice": 6000.0,
+                        "totalProfit": 144637.003998
+                    },
+                    "30000000": {
+                        "totalPrice": 9000.0,
+                        "totalProfit": 216978.48259
                     }
                 }
             },
@@ -9537,7 +12616,9 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    20000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -9552,6 +12633,14 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5080.0,
                         "totalProfit": 331378.674073
+                    },
+                    "10000000": {
+                        "totalPrice": 10160.0,
+                        "totalProfit": 662803.276339
+                    },
+                    "20000000": {
+                        "totalPrice": 20320.0,
+                        "totalProfit": 1325652.490783
                     }
                 }
             },
@@ -9559,7 +12648,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632319",
                 "name": "지방간대상질병관리지원비(간효소수치80IU/L 이상)",
                 "theme": "기타",
-                "confidence": 0.004114284124082538,
+                "confidence": 0.004114284124082537,
                 "availableQuantities": [
                     200000
                 ],
@@ -9575,7 +12664,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631430",
                 "name": "32대질병관혈수술비(연간1회한)[4대질병]",
                 "theme": "수술",
-                "confidence": 0.05380480287044521,
+                "confidence": 0.053804802870445215,
                 "availableQuantities": [
                     200000,
                     300000
@@ -9596,11 +12685,12 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632651",
                 "name": "혈전용해치료비Ⅱ(특정심장질환)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.10277062210497329,
+                "confidence": 0.10277062210497326,
                 "availableQuantities": [
                     1000000,
                     2000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 2000000,
                 "priceAndProfitByQuantity": {
@@ -9615,6 +12705,41 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1200.0,
                         "totalProfit": -202335.411165
+                    },
+                    "10000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": -404624.892853
+                    }
+                }
+            },
+            {
+                "id": "610468",
+                "name": "중대상해수술비",
+                "theme": "수술",
+                "confidence": 0.0124893045566718,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 89.0,
+                        "totalProfit": 5043.726949
+                    },
+                    "5000000": {
+                        "totalPrice": 445.0,
+                        "totalProfit": 25402.349645
+                    },
+                    "10000000": {
+                        "totalPrice": 890.0,
+                        "totalProfit": 50850.62428
+                    },
+                    "20000000": {
+                        "totalPrice": 1780.0,
+                        "totalProfit": 101747.181021
                     }
                 }
             },
@@ -9689,7 +12814,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632652",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(뇌졸중)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.2666891868543302,
+                "confidence": 0.26668918685433013,
                 "availableQuantities": [
                     3000000,
                     5000000
@@ -9798,7 +12923,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632323",
                 "name": "특정담낭·담관염진단비",
                 "theme": "기타",
-                "confidence": 0.004115296567838075,
+                "confidence": 0.004115296567838074,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -9819,11 +12944,12 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632650",
                 "name": "혈전용해치료비Ⅱ(뇌졸중)(연간1회한)",
                 "theme": "기타",
-                "confidence": 0.10277062210497329,
+                "confidence": 0.10277062210497326,
                 "availableQuantities": [
                     1000000,
                     2000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 2000000,
                 "priceAndProfitByQuantity": {
@@ -9838,6 +12964,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 2620.0,
                         "totalProfit": -23713.748146
+                    },
+                    "10000000": {
+                        "totalPrice": 5240.0,
+                        "totalProfit": -47381.575672
                     }
                 }
             },
@@ -9887,7 +13017,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630930",
                 "name": "통풍진단비보장 특약",
                 "theme": "기타",
-                "confidence": 0.037567864298729145,
+                "confidence": 0.03756786429872915,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -9913,7 +13043,8 @@ export const SAMPLE_CONTRACTS = {
                     1500000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 3000000,
                 "priceAndProfitByQuantity": {
@@ -9932,6 +13063,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 7650.0,
                         "totalProfit": 267664.925797
+                    },
+                    "10000000": {
+                        "totalPrice": 15300.0,
+                        "totalProfit": 535375.77462
                     }
                 }
             },
@@ -10104,7 +13239,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.0006542076588077875,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -10115,6 +13251,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 9050.0,
                         "totalProfit": 483661.897307
+                    },
+                    "10000000": {
+                        "totalPrice": 18100.0,
+                        "totalProfit": 967369.725117
                     }
                 }
             },
@@ -10124,13 +13264,100 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "confidence": 0.09474786283844126,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    50000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 10.0,
                         "totalProfit": 368.10104
+                    },
+                    "10000000": {
+                        "totalPrice": 102.0,
+                        "totalProfit": 4251.426155
+                    },
+                    "50000000": {
+                        "totalPrice": 510.0,
+                        "totalProfit": 21440.853732
+                    },
+                    "100000000": {
+                        "totalPrice": 1020.0,
+                        "totalProfit": 42927.637391
+                    }
+                }
+            },
+            {
+                "id": "632505",
+                "name": "허혈성심장질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.2970282895355622,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 830.0,
+                        "totalProfit": -28380.593701
+                    },
+                    "5000000": {
+                        "totalPrice": 2075.0,
+                        "totalProfit": -70882.597192
+                    },
+                    "10000000": {
+                        "totalPrice": 4150.0,
+                        "totalProfit": -141719.26132
+                    },
+                    "20000000": {
+                        "totalPrice": 8300.0,
+                        "totalProfit": -283392.584535
+                    },
+                    "30000000": {
+                        "totalPrice": 12450.0,
+                        "totalProfit": -425065.90775
+                    }
+                }
+            },
+            {
+                "id": "631706",
+                "name": "뇌졸중진단비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.0011255411673297625,
+                "availableQuantities": [
+                    5000000,
+                    9000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 5260.0,
+                        "totalProfit": 84060.636634
+                    },
+                    "9000000": {
+                        "totalPrice": 9468.0,
+                        "totalProfit": 151345.82882
+                    },
+                    "10000000": {
+                        "totalPrice": 10520.0,
+                        "totalProfit": 168167.116328
+                    },
+                    "20000000": {
+                        "totalPrice": 21040.0,
+                        "totalProfit": 336380.096791
+                    },
+                    "30000000": {
+                        "totalPrice": 31560.0,
+                        "totalProfit": 504593.077254
                     }
                 }
             },
@@ -10138,7 +13365,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632520",
                 "name": "131대질병수술비(다빈도62대질병)",
                 "theme": "수술",
-                "confidence": 0.15899254201830174,
+                "confidence": 0.15899254201830176,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -10216,11 +13443,13 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631406",
                 "name": "32대질병관혈수술비(연간1회한)[5대질병]",
                 "theme": "수술",
-                "confidence": 0.05380480287044521,
+                "confidence": 0.053804802870445215,
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    20000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -10235,6 +13464,14 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5080.0,
                         "totalProfit": 331378.674073
+                    },
+                    "10000000": {
+                        "totalPrice": 10160.0,
+                        "totalProfit": 662803.276339
+                    },
+                    "20000000": {
+                        "totalPrice": 20320.0,
+                        "totalProfit": 1325652.490783
                     }
                 }
             },
@@ -10268,7 +13505,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640047",
                 "name": "인공관절수술비",
                 "theme": "수술",
-                "confidence": 0.0943334095781134,
+                "confidence": 0.09433340957811338,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -10312,6 +13549,78 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631712",
+                "name": "급성심근경색증진단비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.0008213030859530499,
+                "availableQuantities": [
+                    5000000,
+                    9000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 1670.0,
+                        "totalProfit": 12033.146743
+                    },
+                    "9000000": {
+                        "totalPrice": 3006.0,
+                        "totalProfit": 21696.370437
+                    },
+                    "10000000": {
+                        "totalPrice": 3340.0,
+                        "totalProfit": 24112.172262
+                    },
+                    "20000000": {
+                        "totalPrice": 6680.0,
+                        "totalProfit": 48270.242861
+                    },
+                    "30000000": {
+                        "totalPrice": 10020.0,
+                        "totalProfit": 72428.31346
+                    }
+                }
+            },
+            {
+                "id": "630222",
+                "name": "뇌졸중진단비",
+                "theme": "3대진단",
+                "confidence": 0.022279524601004463,
+                "availableQuantities": [
+                    5000000,
+                    9000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 5265.0,
+                        "totalProfit": 84421.436011
+                    },
+                    "9000000": {
+                        "totalPrice": 9477.0,
+                        "totalProfit": 151995.257912
+                    },
+                    "10000000": {
+                        "totalPrice": 10530.0,
+                        "totalProfit": 168888.715081
+                    },
+                    "20000000": {
+                        "totalPrice": 21060.0,
+                        "totalProfit": 337823.282066
+                    },
+                    "30000000": {
+                        "totalPrice": 31590.0,
+                        "totalProfit": 506757.84905
+                    }
+                }
+            },
+            {
                 "id": "632134",
                 "name": "131대질병수술비(특정31대질병)",
                 "theme": "수술",
@@ -10319,7 +13628,8 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -10334,6 +13644,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 5075.0,
                         "totalProfit": 213746.078563
+                    },
+                    "10000000": {
+                        "totalPrice": 10150.0,
+                        "totalProfit": 427538.08267
                     }
                 }
             },
@@ -10341,7 +13655,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633525",
                 "name": "뇌혈관질환통원일당(연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0018263219833482124,
+                "confidence": 0.0018263219833482126,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -10367,7 +13681,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632526",
                 "name": "131대질병수술비(유방의장애)",
                 "theme": "수술",
-                "confidence": 0.15899254201830174,
+                "confidence": 0.15899254201830176,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -10403,7 +13717,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631622",
                 "name": "급성심근경색증통원일당(1일이상 30일한도)[급성심근경색증상급종합병원통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.00226564290536905,
+                "confidence": 0.0022656429053690497,
                 "availableQuantities": [
                     50000,
                     100000
@@ -10515,7 +13829,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.0006542076588077875,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -10526,6 +13841,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 2405.0,
                         "totalProfit": 127754.052369
+                    },
+                    "10000000": {
+                        "totalPrice": 4810.0,
+                        "totalProfit": 255554.030378
                     }
                 }
             },
@@ -10623,6 +13942,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "633000",
+                "name": "암(유사암제외) 주요치료비(연간1회한, 5년간)",
+                "theme": "기타",
+                "confidence": 0.08231013114881977,
+                "availableQuantities": [
+                    1000000,
+                    4000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 3430.0,
+                        "totalProfit": 97773.00859
+                    },
+                    "4000000": {
+                        "totalPrice": 13720.0,
+                        "totalProfit": 391229.476454
+                    },
+                    "5000000": {
+                        "totalPrice": 17150.0,
+                        "totalProfit": 489048.301646
+                    },
+                    "10000000": {
+                        "totalPrice": 34300.0,
+                        "totalProfit": 978142.419341
+                    },
+                    "20000000": {
+                        "totalPrice": 68600.0,
+                        "totalProfit": 1956330.655285
+                    }
+                }
+            },
+            {
                 "id": "631806",
                 "name": "수술비(1~7종, 연간3회한)[질병5종]",
                 "theme": "수술",
@@ -10716,6 +14071,32 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630971",
+                "name": "질병후유장해(3~100%)",
+                "theme": "사망후유",
+                "confidence": 0.05468309279705865,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 18280.0,
+                        "totalProfit": 116817.844957
+                    },
+                    "20000000": {
+                        "totalPrice": 36560.0,
+                        "totalProfit": 233681.62802
+                    },
+                    "30000000": {
+                        "totalPrice": 54840.0,
+                        "totalProfit": 350545.411083
+                    }
+                }
+            },
+            {
                 "id": "633538",
                 "name": "허혈성심장질환통원일당(종합병원, 연간30회한)",
                 "theme": "입원일당",
@@ -10747,10 +14128,36 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "610933",
+                "name": "신화상치료비(중증화상및부식진단비)",
+                "theme": "골절/화상",
+                "confidence": 0.04012488091008118,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": 2770.671601
+                    },
+                    "30000000": {
+                        "totalPrice": 90.0,
+                        "totalProfit": 4178.974473
+                    },
+                    "50000000": {
+                        "totalPrice": 150.0,
+                        "totalProfit": 6995.582047
+                    }
+                }
+            },
+            {
                 "id": "633317",
                 "name": "질병입원 간병인비용지원(간병인비용 1,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00015058169941650103,
+                "confidence": 0.000150581699416501,
                 "availableQuantities": [
                     600000,
                     1000000
@@ -10802,7 +14209,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "632653",
                 "name": "기계적혈전제거술(카테터법)치료비Ⅱ(특정심장질환)(급여, 연간1회한)",
                 "theme": "기타",
-                "confidence": 0.2666891868543302,
+                "confidence": 0.26668918685433013,
                 "availableQuantities": [
                     3000000,
                     5000000
@@ -10865,7 +14272,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633537",
                 "name": "허혈성심장질환통원일당(연간30회한)",
                 "theme": "입원일당",
-                "confidence": 0.0018240845607782874,
+                "confidence": 0.0018240845607782872,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -10910,6 +14317,78 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 245.0,
                         "totalProfit": 3943.104309
+                    }
+                }
+            },
+            {
+                "id": "630229",
+                "name": "급성심근경색증진단비",
+                "theme": "3대진단",
+                "confidence": 0.04604921138369099,
+                "availableQuantities": [
+                    5000000,
+                    9000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 1675.0,
+                        "totalProfit": 12409.048581
+                    },
+                    "9000000": {
+                        "totalPrice": 3015.0,
+                        "totalProfit": 22372.996019
+                    },
+                    "10000000": {
+                        "totalPrice": 3350.0,
+                        "totalProfit": 24863.975939
+                    },
+                    "20000000": {
+                        "totalPrice": 6700.0,
+                        "totalProfit": 49773.838852
+                    },
+                    "30000000": {
+                        "totalPrice": 10050.0,
+                        "totalProfit": 74683.713128
+                    }
+                }
+            },
+            {
+                "id": "632649",
+                "name": "혈전용해치료비Ⅱ(특정심장질환)",
+                "theme": "기타",
+                "confidence": 0.23306712640420102,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    8000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 70.0,
+                        "totalProfit": -11179.931832
+                    },
+                    "2000000": {
+                        "totalPrice": 140.0,
+                        "totalProfit": -22313.967251
+                    },
+                    "5000000": {
+                        "totalPrice": 350.0,
+                        "totalProfit": -55716.070344
+                    },
+                    "8000000": {
+                        "totalPrice": 560.0,
+                        "totalProfit": -89118.175019
+                    },
+                    "10000000": {
+                        "totalPrice": 700.0,
+                        "totalProfit": -111386.244275
                     }
                 }
             },
@@ -11128,7 +14607,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.12316652512894949,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -11139,6 +14619,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 340.0,
                         "totalProfit": 2058.90164
+                    },
+                    "10000000": {
+                        "totalPrice": 680.0,
+                        "totalProfit": 4163.714372
                     }
                 }
             },
@@ -11242,6 +14726,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631808",
+                "name": "수술비(1~7종, 연간3회한)[질병7종]",
+                "theme": "수술",
+                "confidence": 0.21713615421080557,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 1020.0,
+                        "totalProfit": 36132.885371
+                    },
+                    "5000000": {
+                        "totalPrice": 1700.0,
+                        "totalProfit": 60252.09097
+                    },
+                    "6000000": {
+                        "totalPrice": 2040.0,
+                        "totalProfit": 72311.693769
+                    },
+                    "10000000": {
+                        "totalPrice": 3400.0,
+                        "totalProfit": 120550.104966
+                    },
+                    "20000000": {
+                        "totalPrice": 6800.0,
+                        "totalProfit": 241146.132958
+                    }
+                }
+            },
+            {
                 "id": "631785",
                 "name": "4대양성종양진단비(위·십이지장·소화계통 양성종양및특정폴립)",
                 "theme": "3대진단",
@@ -11264,6 +14784,42 @@ export const SAMPLE_CONTRACTS = {
                     "300000": {
                         "totalPrice": 1098.0,
                         "totalProfit": 50618.303201
+                    }
+                }
+            },
+            {
+                "id": "611017",
+                "name": "수술비(1~7종, 연간3회한)[상해6종]",
+                "theme": "수술",
+                "confidence": 0.04280782095422575,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    6000000,
+                    7000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 105.0,
+                        "totalProfit": 5396.607331
+                    },
+                    "5000000": {
+                        "totalPrice": 175.0,
+                        "totalProfit": 9024.967981
+                    },
+                    "6000000": {
+                        "totalPrice": 210.0,
+                        "totalProfit": 10839.143846
+                    },
+                    "7000000": {
+                        "totalPrice": 245.0,
+                        "totalProfit": 12653.328632
+                    },
+                    "10000000": {
+                        "totalPrice": 350.0,
+                        "totalProfit": 18095.865148
                     }
                 }
             },
@@ -11321,6 +14877,37 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "633549",
+                "name": "최대두배받는2대질환치료비(1점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.0048953162733971125,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 1830.0,
+                        "totalProfit": 48298.748346
+                    },
+                    "20000000": {
+                        "totalPrice": 3660.0,
+                        "totalProfit": 96643.402788
+                    },
+                    "30000000": {
+                        "totalPrice": 5490.0,
+                        "totalProfit": 144988.058426
+                    },
+                    "50000000": {
+                        "totalPrice": 9150.0,
+                        "totalProfit": 241677.37662
+                    }
+                }
+            },
+            {
                 "id": "611302",
                 "name": "간병인사용 일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
@@ -11338,6 +14925,37 @@ export const SAMPLE_CONTRACTS = {
                     "150000": {
                         "totalPrice": 12.0,
                         "totalProfit": 184.307878
+                    }
+                }
+            },
+            {
+                "id": "633552",
+                "name": "최대두배받는2대질환치료비(4점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.0048953162733971125,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 427.0,
+                        "totalProfit": 11540.893111
+                    },
+                    "20000000": {
+                        "totalPrice": 854.0,
+                        "totalProfit": 23127.715141
+                    },
+                    "30000000": {
+                        "totalPrice": 1281.0,
+                        "totalProfit": 34714.537313
+                    },
+                    "50000000": {
+                        "totalPrice": 2135.0,
+                        "totalProfit": 57888.181515
                     }
                 }
             },
@@ -11436,18 +15054,74 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611018",
+                "name": "수술비(1~7종, 연간3회한)[상해7종]",
+                "theme": "수술",
+                "confidence": 0.04280782095422575,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 96.0,
+                        "totalProfit": 4926.804059
+                    },
+                    "5000000": {
+                        "totalPrice": 160.0,
+                        "totalProfit": 8241.961028
+                    },
+                    "6000000": {
+                        "totalPrice": 192.0,
+                        "totalProfit": 9899.537624
+                    },
+                    "10000000": {
+                        "totalPrice": 320.0,
+                        "totalProfit": 16529.851562
+                    },
+                    "20000000": {
+                        "totalPrice": 640.0,
+                        "totalProfit": 33105.641229
+                    }
+                }
+            },
+            {
                 "id": "610015",
                 "name": "일반상해사망",
                 "theme": "사망후유",
                 "confidence": 0.0,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    30000000,
+                    50000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 76.0,
                         "totalProfit": 3209.761892
+                    },
+                    "10000000": {
+                        "totalPrice": 759.0,
+                        "totalProfit": 32431.901457
+                    },
+                    "30000000": {
+                        "totalPrice": 2277.0,
+                        "totalProfit": 97387.566954
+                    },
+                    "50000000": {
+                        "totalPrice": 3795.0,
+                        "totalProfit": 162343.232451
+                    },
+                    "100000000": {
+                        "totalPrice": 7590.0,
+                        "totalProfit": 324732.385553
                     }
                 }
             },
@@ -11455,7 +15129,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630519",
                 "name": "특정희귀난치성질환수술비",
                 "theme": "수술",
-                "confidence": 0.02922609948743716,
+                "confidence": 0.029226099487437162,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -11531,6 +15205,58 @@ export const SAMPLE_CONTRACTS = {
                     "200000": {
                         "totalPrice": 14460.0,
                         "totalProfit": 374281.366914
+                    }
+                }
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "theme": "3대진단",
+                "confidence": 0.20022770534986215,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 920.0,
+                        "totalProfit": -99.245471
+                    },
+                    "5000000": {
+                        "totalPrice": 4600.0,
+                        "totalProfit": -313.035076
+                    },
+                    "10000000": {
+                        "totalPrice": 9200.0,
+                        "totalProfit": -580.282638
+                    },
+                    "20000000": {
+                        "totalPrice": 18400.0,
+                        "totalProfit": -1114.75665
+                    }
+                }
+            },
+            {
+                "id": "630110",
+                "name": "조혈모세포이식수술비",
+                "theme": "수술",
+                "confidence": 0.013548695003731962,
+                "availableQuantities": [
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 76.0,
+                        "totalProfit": 3072.697227
+                    },
+                    "20000000": {
+                        "totalPrice": 152.0,
+                        "totalProfit": 6191.323796
                     }
                 }
             },
@@ -11619,14 +15345,51 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
-                "id": "631414",
-                "name": "32대질병관혈수술비(연간1회한)[9대질병]",
-                "theme": "수술",
-                "confidence": 0.05380480287044521,
+                "id": "630763",
+                "name": "뇌혈관질환 수술비",
+                "theme": "3대진단",
+                "confidence": 0.1501679576494936,
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 582.0,
+                        "totalProfit": 13986.194152
+                    },
+                    "3000000": {
+                        "totalPrice": 873.0,
+                        "totalProfit": 21002.257072
+                    },
+                    "5000000": {
+                        "totalPrice": 1455.0,
+                        "totalProfit": 35034.374252
+                    },
+                    "10000000": {
+                        "totalPrice": 2910.0,
+                        "totalProfit": 70114.677948
+                    },
+                    "20000000": {
+                        "totalPrice": 5820.0,
+                        "totalProfit": 140275.294001
+                    }
+                }
+            },
+            {
+                "id": "631414",
+                "name": "32대질병관혈수술비(연간1회한)[9대질병]",
+                "theme": "수술",
+                "confidence": 0.053804802870445215,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -11641,6 +15404,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1500.0,
                         "totalProfit": 90203.741732
+                    },
+                    "10000000": {
+                        "totalPrice": 3000.0,
+                        "totalProfit": 180453.40602
                     }
                 }
             },
@@ -11695,7 +15462,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631621",
                 "name": "급성심근경색증통원일당(1일이상 30일한도)[급성심근경색증통원일당]",
                 "theme": "입원일당",
-                "confidence": 0.00226564290536905,
+                "confidence": 0.0022656429053690497,
                 "availableQuantities": [
                     10000
                 ],
@@ -11704,6 +15471,42 @@ export const SAMPLE_CONTRACTS = {
                     "10000": {
                         "totalPrice": 155.0,
                         "totalProfit": 8450.742961
+                    }
+                }
+            },
+            {
+                "id": "630430",
+                "name": "뇌출혈진단비_1년미만50%",
+                "theme": "3대진단",
+                "confidence": 0.020047966760881063,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 274.0,
+                        "totalProfit": 10735.826687
+                    },
+                    "5000000": {
+                        "totalPrice": 1370.0,
+                        "totalProfit": 53862.769974
+                    },
+                    "10000000": {
+                        "totalPrice": 2740.0,
+                        "totalProfit": 107771.450182
+                    },
+                    "20000000": {
+                        "totalPrice": 5480.0,
+                        "totalProfit": 215588.81172
+                    },
+                    "30000000": {
+                        "totalPrice": 8220.0,
+                        "totalProfit": 323406.173257
                     }
                 }
             },
@@ -11732,7 +15535,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -11751,6 +15555,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 10860.0,
                         "totalProfit": 266148.584971
+                    },
+                    "10000000": {
+                        "totalPrice": 21720.0,
+                        "totalProfit": 532342.869288
                     }
                 }
             },
@@ -11784,7 +15592,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -11803,6 +15612,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1645.0,
                         "totalProfit": -130594.154417
+                    },
+                    "10000000": {
+                        "totalPrice": 3290.0,
+                        "totalProfit": -261142.385604
                     }
                 }
             },
@@ -11834,6 +15647,22 @@ export const SAMPLE_CONTRACTS = {
                     "200000": {
                         "totalPrice": 6280.0,
                         "totalProfit": 411553.897331
+                    }
+                }
+            },
+            {
+                "id": "633002",
+                "name": "종합병원 암 주요치료비(본인부담금 1천만원이상)(연간1회한, 5년간)",
+                "theme": "기타",
+                "confidence": 0.06912648628749071,
+                "availableQuantities": [
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 31570.0,
+                        "totalProfit": 293437.884454
                     }
                 }
             },
@@ -11878,7 +15707,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633516",
                 "name": "특정순환계질환 급여치료비(요양병원 제외)(본인부담금 1백만원이상)(연간1회한, 5년간)",
                 "theme": "기타",
-                "confidence": 0.04607643369139975,
+                "confidence": 0.04607643369139976,
                 "availableQuantities": [
                     1000000
                 ],
@@ -11899,7 +15728,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -11918,6 +15748,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1695.0,
                         "totalProfit": 53787.686362
+                    },
+                    "10000000": {
+                        "totalPrice": 3390.0,
+                        "totalProfit": 107621.302168
                     }
                 }
             },
@@ -11939,6 +15773,42 @@ export const SAMPLE_CONTRACTS = {
                     "200000": {
                         "totalPrice": 3954.0,
                         "totalProfit": -233471.205205
+                    }
+                }
+            },
+            {
+                "id": "631584",
+                "name": "뇌혈관질환진단비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.0327120979297612,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 1590.0,
+                        "totalProfit": 32591.661377
+                    },
+                    "5000000": {
+                        "totalPrice": 7950.0,
+                        "totalProfit": 163141.628141
+                    },
+                    "10000000": {
+                        "totalPrice": 15900.0,
+                        "totalProfit": 326329.081876
+                    },
+                    "15000000": {
+                        "totalPrice": 23850.0,
+                        "totalProfit": 489516.545053
+                    },
+                    "20000000": {
+                        "totalPrice": 31800.0,
+                        "totalProfit": 652703.998788
                     }
                 }
             },
@@ -11965,6 +15835,42 @@ export const SAMPLE_CONTRACTS = {
                     "300000": {
                         "totalPrice": 720.0,
                         "totalProfit": 23804.226136
+                    }
+                }
+            },
+            {
+                "id": "632648",
+                "name": "혈전용해치료비Ⅱ(뇌졸중)",
+                "theme": "기타",
+                "confidence": 0.23306712640420102,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    5000000,
+                    8000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 190.0,
+                        "totalProfit": -1448.06725
+                    },
+                    "2000000": {
+                        "totalPrice": 380.0,
+                        "totalProfit": -2850.225762
+                    },
+                    "5000000": {
+                        "totalPrice": 950.0,
+                        "totalProfit": -7056.691369
+                    },
+                    "8000000": {
+                        "totalPrice": 1520.0,
+                        "totalProfit": -11263.16196
+                    },
+                    "10000000": {
+                        "totalPrice": 1900.0,
+                        "totalProfit": -14067.473999
                     }
                 }
             },
@@ -12003,7 +15909,8 @@ export const SAMPLE_CONTRACTS = {
                     200000,
                     2000000,
                     4000000,
-                    6000000
+                    6000000,
+                    10000000
                 ],
                 "recommendedQuantity": 6000000,
                 "priceAndProfitByQuantity": {
@@ -12022,6 +15929,10 @@ export const SAMPLE_CONTRACTS = {
                     "6000000": {
                         "totalPrice": 1014.0,
                         "totalProfit": -49007.01587
+                    },
+                    "10000000": {
+                        "totalPrice": 1690.0,
+                        "totalProfit": -81647.732825
                     }
                 }
             },
@@ -12034,7 +15945,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
@@ -12053,6 +15965,36 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 12500.0,
                         "totalProfit": 575235.988551
+                    },
+                    "10000000": {
+                        "totalPrice": 25000.0,
+                        "totalProfit": 1150517.903569
+                    }
+                }
+            },
+            {
+                "id": "640443",
+                "name": "7대장기이식대기등록",
+                "theme": "수술",
+                "confidence": 0.048131035561283994,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 137.0,
+                        "totalProfit": 8479.285655
+                    },
+                    "5000000": {
+                        "totalPrice": 685.0,
+                        "totalProfit": 42580.146414
+                    },
+                    "10000000": {
+                        "totalPrice": 1370.0,
+                        "totalProfit": 85206.215968
                     }
                 }
             },
@@ -12192,6 +16134,68 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631588",
+                "name": "허혈성심장질환진단비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.03462640644385609,
+                "availableQuantities": [
+                    1000000,
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 918.0,
+                        "totalProfit": -239.93316
+                    },
+                    "5000000": {
+                        "totalPrice": 4590.0,
+                        "totalProfit": -1016.497938
+                    },
+                    "10000000": {
+                        "totalPrice": 9180.0,
+                        "totalProfit": -1987.196152
+                    },
+                    "15000000": {
+                        "totalPrice": 13770.0,
+                        "totalProfit": -2957.885463
+                    },
+                    "20000000": {
+                        "totalPrice": 18360.0,
+                        "totalProfit": -3928.583678
+                    }
+                }
+            },
+            {
+                "id": "632325",
+                "name": "크론병및궤양성대장염진단비",
+                "theme": "기타",
+                "confidence": 0.006074423117748325,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 168.0,
+                        "totalProfit": 5844.894594
+                    },
+                    "5000000": {
+                        "totalPrice": 420.0,
+                        "totalProfit": 14681.134933
+                    },
+                    "10000000": {
+                        "totalPrice": 840.0,
+                        "totalProfit": 29408.185082
+                    }
+                }
+            },
+            {
                 "id": "631737",
                 "name": "암특정재활치료비(급여, 1일1회한, 연간20회한)",
                 "theme": "3대진단",
@@ -12241,6 +16245,42 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 275.0,
                         "totalProfit": 6615.817961
+                    }
+                }
+            },
+            {
+                "id": "630766",
+                "name": "허혈성심장질환수술비",
+                "theme": "3대진단",
+                "confidence": 0.15149867746632678,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 812.0,
+                        "totalProfit": -27716.554972
+                    },
+                    "3000000": {
+                        "totalPrice": 1218.0,
+                        "totalProfit": -41551.873097
+                    },
+                    "5000000": {
+                        "totalPrice": 2030.0,
+                        "totalProfit": -69222.505042
+                    },
+                    "10000000": {
+                        "totalPrice": 4060.0,
+                        "totalProfit": -138399.082755
+                    },
+                    "20000000": {
+                        "totalPrice": 8120.0,
+                        "totalProfit": -276752.242483
                     }
                 }
             },
@@ -12300,7 +16340,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -12319,6 +16360,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 10830.0,
                         "totalProfit": 264227.522593
+                    },
+                    "10000000": {
+                        "totalPrice": 21660.0,
+                        "totalProfit": 528500.855887
                     }
                 }
             },
@@ -12366,6 +16411,78 @@ export const SAMPLE_CONTRACTS = {
                     "2000000": {
                         "totalPrice": 554.0,
                         "totalProfit": 26581.92138
+                    }
+                }
+            },
+            {
+                "id": "630697",
+                "name": "암진단비(유사암 제외)",
+                "theme": "3대진단",
+                "confidence": 0.23156390029438523,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 1796.0,
+                        "totalProfit": 16807.578293
+                    },
+                    "10000000": {
+                        "totalPrice": 17960.0,
+                        "totalProfit": 168488.176564
+                    },
+                    "20000000": {
+                        "totalPrice": 35920.0,
+                        "totalProfit": 337022.173598
+                    },
+                    "30000000": {
+                        "totalPrice": 53880.0,
+                        "totalProfit": 505556.170632
+                    },
+                    "50000000": {
+                        "totalPrice": 89800.0,
+                        "totalProfit": 842624.164701
+                    }
+                }
+            },
+            {
+                "id": "610781",
+                "name": "일반상해후유장해(3~100%)",
+                "theme": "사망후유",
+                "confidence": 0.023221180727254348,
+                "availableQuantities": [
+                    10000000,
+                    30000000,
+                    50000000,
+                    70000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 593.0,
+                        "totalProfit": 780.991136
+                    },
+                    "30000000": {
+                        "totalPrice": 1779.0,
+                        "totalProfit": 2434.835515
+                    },
+                    "50000000": {
+                        "totalPrice": 2965.0,
+                        "totalProfit": 4088.676304
+                    },
+                    "70000000": {
+                        "totalPrice": 4151.0,
+                        "totalProfit": 5742.520683
+                    },
+                    "100000000": {
+                        "totalPrice": 5930.0,
+                        "totalProfit": 8223.278499
                     }
                 }
             },
@@ -12422,6 +16539,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630144",
+                "name": "질병사망(Ⅱ)",
+                "theme": "사망후유",
+                "confidence": 0.006220592468309151,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    100000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 14730.0,
+                        "totalProfit": 464665.634848
+                    },
+                    "20000000": {
+                        "totalPrice": 29460.0,
+                        "totalProfit": 929377.200434
+                    },
+                    "30000000": {
+                        "totalPrice": 44190.0,
+                        "totalProfit": 1394088.773393
+                    },
+                    "50000000": {
+                        "totalPrice": 73650.0,
+                        "totalProfit": 2323511.904565
+                    },
+                    "100000000": {
+                        "totalPrice": 147300.0,
+                        "totalProfit": 4647069.74724
+                    }
+                }
+            },
+            {
                 "id": "630024",
                 "name": "항암방사선약물치료비",
                 "theme": "3대진단",
@@ -12430,7 +16583,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -12449,6 +16603,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 4465.0,
                         "totalProfit": 54579.865861
+                    },
+                    "10000000": {
+                        "totalPrice": 8930.0,
+                        "totalProfit": 109205.609013
                     }
                 }
             },
@@ -12461,7 +16619,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -12480,6 +16639,41 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 3890.0,
                         "totalProfit": -76225.973276
+                    },
+                    "10000000": {
+                        "totalPrice": 7780.0,
+                        "totalProfit": -152406.01723
+                    }
+                }
+            },
+            {
+                "id": "633551",
+                "name": "최대두배받는2대질환치료비(3점이상)(포인트적립형)",
+                "theme": "기타",
+                "confidence": 0.0048953162733971125,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 388.0,
+                        "totalProfit": 10353.717434
+                    },
+                    "20000000": {
+                        "totalPrice": 776.0,
+                        "totalProfit": 20753.362724
+                    },
+                    "30000000": {
+                        "totalPrice": 1164.0,
+                        "totalProfit": 31153.015509
+                    },
+                    "50000000": {
+                        "totalPrice": 1940.0,
+                        "totalProfit": 51952.313583
                     }
                 }
             },
@@ -12542,6 +16736,22 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
+                "id": "610030",
+                "name": "후유장해담보(외모추상2배)",
+                "quantity": 1000000,
+                "theme": "사망후유",
+                "totalPrice": 84.0,
+                "totalProfit": 280.321811
+            },
+            {
+                "id": "640169",
+                "name": "치아보존치료비(크라운무제한)(유치및영구치,상해및질병)",
+                "quantity": 300000,
+                "theme": "치아",
+                "totalPrice": 24795.0,
+                "totalProfit": 455959.454901
+            },
+            {
                 "id": "640147",
                 "name": "갱신형 치아보철치료비(상해 및 질병)",
                 "quantity": 1500000,
@@ -12550,12 +16760,36 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 30200.91338
             },
             {
-                "id": "610030",
-                "name": "후유장해담보(외모추상2배)",
-                "quantity": 1000000,
-                "theme": "사망후유",
-                "totalPrice": 84.0,
-                "totalProfit": 280.321811
+                "id": "640149",
+                "name": "자녀 치아근관치료비(유치 및 영구치, 상해 및 질병)",
+                "quantity": 30000,
+                "theme": "치아",
+                "totalPrice": 1236.0,
+                "totalProfit": 30384.137813
+            },
+            {
+                "id": "640288",
+                "name": "신치아보철치료비(임플란트 무제한)(2년감액형)[재식립 임플란트치료비보장]",
+                "quantity": 2000000,
+                "theme": "치아",
+                "totalPrice": 1396.0,
+                "totalProfit": 85850.25806
+            },
+            {
+                "id": "631301",
+                "name": "치주소파술치료비",
+                "quantity": 20000,
+                "theme": "치아",
+                "totalPrice": 390.0,
+                "totalProfit": -3131.412867
+            },
+            {
+                "id": "640153",
+                "name": "자녀 치아촬영비(X-ray 및 파노라마)",
+                "quantity": 10000,
+                "theme": "치아",
+                "totalPrice": 1249.0,
+                "totalProfit": 35287.089237
             },
             {
                 "id": "630696",
@@ -12572,46 +16806,6 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "치아",
                 "totalPrice": 2624.0,
                 "totalProfit": 70514.110796
-            },
-            {
-                "id": "640288",
-                "name": "신치아보철치료비(임플란트 무제한)(2년감액형)[재식립 임플란트치료비보장]",
-                "quantity": 2000000,
-                "theme": "치아",
-                "totalPrice": 1396.0,
-                "totalProfit": 85850.25806
-            },
-            {
-                "id": "640149",
-                "name": "자녀 치아근관치료비(유치 및 영구치, 상해 및 질병)",
-                "quantity": 30000,
-                "theme": "치아",
-                "totalPrice": 1236.0,
-                "totalProfit": 30384.137813
-            },
-            {
-                "id": "640169",
-                "name": "치아보존치료비(크라운무제한)(유치및영구치,상해및질병)",
-                "quantity": 300000,
-                "theme": "치아",
-                "totalPrice": 24795.0,
-                "totalProfit": 455959.454901
-            },
-            {
-                "id": "640153",
-                "name": "자녀 치아촬영비(X-ray 및 파노라마)",
-                "quantity": 10000,
-                "theme": "치아",
-                "totalPrice": 1249.0,
-                "totalProfit": 35287.089237
-            },
-            {
-                "id": "631301",
-                "name": "치주소파술치료비",
-                "quantity": 20000,
-                "theme": "치아",
-                "totalPrice": 390.0,
-                "totalProfit": -3131.412867
             }
         ],
         "availableItems": [
@@ -12685,7 +16879,9 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.0036176481557453444,
                 "availableQuantities": [
                     4000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    20000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -12696,6 +16892,14 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 350.0,
                         "totalProfit": 8929.544
+                    },
+                    "10000000": {
+                        "totalPrice": 700.0,
+                        "totalProfit": 17903.312
+                    },
+                    "20000000": {
+                        "totalPrice": 1400.0,
+                        "totalProfit": 35850.68
                     }
                 }
             },
@@ -13063,6 +17267,37 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "610015",
+                "name": "일반상해사망",
+                "theme": "사망후유",
+                "confidence": 0.0,
+                "availableQuantities": [
+                    1000000,
+                    100000000,
+                    200000000,
+                    300000000
+                ],
+                "recommendedQuantity": 300000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 80.0,
+                        "totalProfit": 1065.6846
+                    },
+                    "100000000": {
+                        "totalPrice": 8040.0,
+                        "totalProfit": 112461.88
+                    },
+                    "200000000": {
+                        "totalPrice": 16080.0,
+                        "totalProfit": 224967.89
+                    },
+                    "300000000": {
+                        "totalPrice": 24120.0,
+                        "totalProfit": 337474.1
+                    }
+                }
+            },
+            {
                 "id": "640147",
                 "name": "갱신형 치아보철치료비(상해 및 질병)",
                 "theme": "치아",
@@ -13261,7 +17496,10 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.002718416025393978,
                 "availableQuantities": [
                     1000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    14000000,
+                    15000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
@@ -13272,6 +17510,18 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 8005.0,
                         "totalProfit": 124233.92
+                    },
+                    "10000000": {
+                        "totalPrice": 16010.0,
+                        "totalProfit": 248511.97
+                    },
+                    "14000000": {
+                        "totalPrice": 22414.0,
+                        "totalProfit": 347934.38
+                    },
+                    "15000000": {
+                        "totalPrice": 24015.0,
+                        "totalProfit": 372790.03
                     }
                 }
             }
@@ -13303,20 +17553,12 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
-                "id": "630228",
-                "name": "뇌혈관질환진단",
+                "id": "630235",
+                "name": "허혈성심질환진단",
                 "quantity": 30000000,
                 "theme": "3대진단",
-                "totalPrice": 26970.0,
-                "totalProfit": 351805.810741
-            },
-            {
-                "id": "630527",
-                "name": "유사암진단비",
-                "quantity": 10000000,
-                "theme": "3대진단",
-                "totalPrice": 1500.0,
-                "totalProfit": 15684.939143
+                "totalPrice": 17490.0,
+                "totalProfit": 250408.004799
             },
             {
                 "id": "633391",
@@ -13327,12 +17569,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 49017.42717
             },
             {
-                "id": "610605",
-                "name": "일반상해고도후유장해",
+                "id": "633380",
+                "name": "암진단비(유사암제외)(면책기간미적용)",
                 "quantity": 50000000,
-                "theme": "사망후유",
-                "totalPrice": 300.0,
-                "totalProfit": 6846.15265
+                "theme": "3대진단",
+                "totalPrice": 56950.0,
+                "totalProfit": 952260.682456
+            },
+            {
+                "id": "630527",
+                "name": "유사암진단비",
+                "quantity": 10000000,
+                "theme": "3대진단",
+                "totalPrice": 1500.0,
+                "totalProfit": 15684.939143
             },
             {
                 "id": "610015",
@@ -13343,23 +17593,59 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 55406.183985
             },
             {
-                "id": "630235",
-                "name": "허혈성심질환진단",
-                "quantity": 30000000,
-                "theme": "3대진단",
-                "totalPrice": 17490.0,
-                "totalProfit": 250408.004799
+                "id": "610605",
+                "name": "일반상해고도후유장해",
+                "quantity": 50000000,
+                "theme": "사망후유",
+                "totalPrice": 300.0,
+                "totalProfit": 6846.15265
             },
             {
-                "id": "633380",
-                "name": "암진단비(유사암제외)(면책기간미적용)",
-                "quantity": 50000000,
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "quantity": 30000000,
                 "theme": "3대진단",
-                "totalPrice": 56950.0,
-                "totalProfit": 952260.682456
+                "totalPrice": 26970.0,
+                "totalProfit": 351805.810741
             }
         ],
         "availableItems": [
+            {
+                "id": "631766",
+                "name": "다빈치로봇 암수술비(특정암)",
+                "theme": "3대진단",
+                "confidence": 0.18806679306346477,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    2500000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 15.0,
+                        "totalProfit": 1094.5997
+                    },
+                    "2000000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 2232.5015
+                    },
+                    "2500000": {
+                        "totalPrice": 38.0,
+                        "totalProfit": 2834.0542
+                    },
+                    "5000000": {
+                        "totalPrice": 75.0,
+                        "totalProfit": 5646.447
+                    },
+                    "10000000": {
+                        "totalPrice": 150.0,
+                        "totalProfit": 11336.496
+                    }
+                }
+            },
             {
                 "id": "631858",
                 "name": "질병수술비(특정5대질병 제외)",
@@ -13435,6 +17721,63 @@ export const SAMPLE_CONTRACTS = {
                     "30000": {
                         "totalPrice": 54.0,
                         "totalProfit": 1393.4729
+                    }
+                }
+            },
+            {
+                "id": "633383",
+                "name": "통합암진단비(유사암제외)(15대특정암진단비)(면책기간미적용)",
+                "theme": "3대진단",
+                "confidence": 0.018291146480200613,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 369.0,
+                        "totalProfit": 7462.3706
+                    },
+                    "10000000": {
+                        "totalPrice": 3690.0,
+                        "totalProfit": 75014.85
+                    },
+                    "20000000": {
+                        "totalPrice": 7380.0,
+                        "totalProfit": 150073.25
+                    },
+                    "30000000": {
+                        "totalPrice": 11070.0,
+                        "totalProfit": 225131.38
+                    },
+                    "50000000": {
+                        "totalPrice": 18450.0,
+                        "totalProfit": 375248.2
+                    }
+                }
+            },
+            {
+                "id": "631726",
+                "name": "항암세기조절방사선치료비",
+                "theme": "3대진단",
+                "confidence": 0.2136416187784835,
+                "availableQuantities": [
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 110.0,
+                        "totalProfit": 7353.5693
+                    },
+                    "20000000": {
+                        "totalPrice": 220.0,
+                        "totalProfit": 14750.459
                     }
                 }
             },
@@ -13554,6 +17897,32 @@ export const SAMPLE_CONTRACTS = {
                     "2000000": {
                         "totalPrice": 320.0,
                         "totalProfit": 5464.185
+                    }
+                }
+            },
+            {
+                "id": "640056",
+                "name": "5대장기이식수술비",
+                "theme": "수술",
+                "confidence": 0.1549839913992013,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 156.0,
+                        "totalProfit": 2743.8125
+                    },
+                    "30000000": {
+                        "totalPrice": 234.0,
+                        "totalProfit": 4137.5356
+                    },
+                    "50000000": {
+                        "totalPrice": 390.0,
+                        "totalProfit": 6924.809
                     }
                 }
             },
@@ -13714,6 +18083,37 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "theme": "3대진단",
+                "confidence": 0.08861169528605764,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 4495.0,
+                        "totalProfit": 83778.336
+                    },
+                    "10000000": {
+                        "totalPrice": 8990.0,
+                        "totalProfit": 167600.2
+                    },
+                    "20000000": {
+                        "totalPrice": 17980.0,
+                        "totalProfit": 335243.94
+                    },
+                    "30000000": {
+                        "totalPrice": 26970.0,
+                        "totalProfit": 502887.72
+                    }
+                }
+            },
+            {
                 "id": "610464",
                 "name": "상해흉터복원수술비",
                 "theme": "수술",
@@ -13808,6 +18208,32 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "640496",
+                "name": "중증질환자(뇌혈관질환) 산정특례대상 진단비(연간1회한)",
+                "theme": "3대진단",
+                "confidence": 0.10488506139604628,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 410.0,
+                        "totalProfit": 16869.43
+                    },
+                    "20000000": {
+                        "totalPrice": 820.0,
+                        "totalProfit": 33782.13
+                    },
+                    "30000000": {
+                        "totalPrice": 1230.0,
+                        "totalProfit": 50694.83
+                    }
+                }
+            },
+            {
                 "id": "633313",
                 "name": "질병입원 간병인비용지원(간병인비용 200만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
@@ -13856,6 +18282,135 @@ export const SAMPLE_CONTRACTS = {
                     "1000000": {
                         "totalPrice": 1346.0,
                         "totalProfit": 39456.566
+                    }
+                }
+            },
+            {
+                "id": "640497",
+                "name": "중증질환자(심장질환) 산정특례대상 진단비(연간1회한)",
+                "theme": "3대진단",
+                "confidence": 0.10800445879676998,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 315.0,
+                        "totalProfit": 14727.393
+                    },
+                    "10000000": {
+                        "totalPrice": 630.0,
+                        "totalProfit": 29498.344
+                    },
+                    "20000000": {
+                        "totalPrice": 1260.0,
+                        "totalProfit": 59040.21
+                    },
+                    "30000000": {
+                        "totalPrice": 1890.0,
+                        "totalProfit": 88582.125
+                    }
+                }
+            },
+            {
+                "id": "633384",
+                "name": "통합암진단비(유사암제외)(10대특정암진단비)(면책기간미적용)",
+                "theme": "3대진단",
+                "confidence": 0.018291146480200613,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 135.0,
+                        "totalProfit": 2589.4634
+                    },
+                    "10000000": {
+                        "totalPrice": 1350.0,
+                        "totalProfit": 26285.525
+                    },
+                    "20000000": {
+                        "totalPrice": 2700.0,
+                        "totalProfit": 52614.33
+                    },
+                    "30000000": {
+                        "totalPrice": 4050.0,
+                        "totalProfit": 78943.11
+                    },
+                    "50000000": {
+                        "totalPrice": 6750.0,
+                        "totalProfit": 131600.98
+                    }
+                }
+            },
+            {
+                "id": "632504",
+                "name": "뇌혈관질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.17376793662408688,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 480.0,
+                        "totalProfit": 12148.047
+                    },
+                    "5000000": {
+                        "totalPrice": 1200.0,
+                        "totalProfit": 30434.998
+                    },
+                    "10000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 60912.906
+                    },
+                    "20000000": {
+                        "totalPrice": 4800.0,
+                        "totalProfit": 121869.08
+                    },
+                    "30000000": {
+                        "totalPrice": 7200.0,
+                        "totalProfit": 182825.27
+                    }
+                }
+            },
+            {
+                "id": "610468",
+                "name": "중대상해수술비",
+                "theme": "수술",
+                "confidence": 0.01427349092191063,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 355.0,
+                        "totalProfit": 12759.802
+                    },
+                    "10000000": {
+                        "totalPrice": 710.0,
+                        "totalProfit": 25562.797
+                    },
+                    "20000000": {
+                        "totalPrice": 1420.0,
+                        "totalProfit": 51168.957
                     }
                 }
             },
@@ -14047,6 +18602,63 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "640045",
+                "name": "각막이식수술비",
+                "theme": "수술",
+                "confidence": 0.12951332753000586,
+                "availableQuantities": [
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 17.0,
+                        "totalProfit": 271.33667
+                    },
+                    "20000000": {
+                        "totalPrice": 34.0,
+                        "totalProfit": 585.88306
+                    }
+                }
+            },
+            {
+                "id": "631807",
+                "name": "수술비(1~7종, 연간3회한)[질병6종]",
+                "theme": "수술",
+                "confidence": 0.205902160668828,
+                "availableQuantities": [
+                    500000,
+                    1000000,
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "500000": {
+                        "totalPrice": 415.0,
+                        "totalProfit": 9658.856
+                    },
+                    "1000000": {
+                        "totalPrice": 830.0,
+                        "totalProfit": 19360.994
+                    },
+                    "3000000": {
+                        "totalPrice": 2490.0,
+                        "totalProfit": 58170.152
+                    },
+                    "5000000": {
+                        "totalPrice": 4150.0,
+                        "totalProfit": 96978.87
+                    },
+                    "10000000": {
+                        "totalPrice": 8300.0,
+                        "totalProfit": 194001.3
+                    }
+                }
+            },
+            {
                 "id": "633014",
                 "name": "상급병실(1인실) 종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
@@ -14198,13 +18810,33 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "사망후유",
                 "confidence": 0.10828327181536145,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    30000000,
+                    50000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 6.0,
                         "totalProfit": 142.57199
+                    },
+                    "10000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": 1816.1769
+                    },
+                    "30000000": {
+                        "totalPrice": 180.0,
+                        "totalProfit": 5534.9727
+                    },
+                    "50000000": {
+                        "totalPrice": 300.0,
+                        "totalProfit": 9253.803
+                    },
+                    "100000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 18550.824
                     }
                 }
             },
@@ -14236,6 +18868,42 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 1360.0,
                         "totalProfit": 29317.156
+                    }
+                }
+            },
+            {
+                "id": "632505",
+                "name": "허혈성심장질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.17391379880924776,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 557.0,
+                        "totalProfit": 10243.563
+                    },
+                    "5000000": {
+                        "totalPrice": 1392.0,
+                        "totalProfit": 25643.879
+                    },
+                    "10000000": {
+                        "totalPrice": 2784.0,
+                        "totalProfit": 51330.68
+                    },
+                    "20000000": {
+                        "totalPrice": 5568.0,
+                        "totalProfit": 102704.62
+                    },
+                    "30000000": {
+                        "totalPrice": 8352.0,
+                        "totalProfit": 154078.62
                     }
                 }
             },
@@ -14313,6 +18981,78 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630239",
+                "name": "말기폐질환진단비",
+                "theme": "기타",
+                "confidence": 0.003208160939445657,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 5080.0,
+                        "totalProfit": 108188.7
+                    },
+                    "10000000": {
+                        "totalPrice": 10160.0,
+                        "totalProfit": 216420.6
+                    },
+                    "20000000": {
+                        "totalPrice": 20320.0,
+                        "totalProfit": 432884.75
+                    },
+                    "30000000": {
+                        "totalPrice": 30480.0,
+                        "totalProfit": 649348.94
+                    },
+                    "50000000": {
+                        "totalPrice": 50800.0,
+                        "totalProfit": 1082277.0
+                    }
+                }
+            },
+            {
+                "id": "633380",
+                "name": "암진단비(유사암제외)(면책기간미적용)",
+                "theme": "3대진단",
+                "confidence": 0.00043554072785341425,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 1139.0,
+                        "totalProfit": 22667.074
+                    },
+                    "10000000": {
+                        "totalPrice": 11390.0,
+                        "totalProfit": 227061.7
+                    },
+                    "20000000": {
+                        "totalPrice": 22780.0,
+                        "totalProfit": 454166.7
+                    },
+                    "30000000": {
+                        "totalPrice": 34170.0,
+                        "totalProfit": 681271.6
+                    },
+                    "50000000": {
+                        "totalPrice": 56950.0,
+                        "totalProfit": 1135481.6
+                    }
+                }
+            },
+            {
                 "id": "611301",
                 "name": "일반상해입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
@@ -14377,6 +19117,37 @@ export const SAMPLE_CONTRACTS = {
                     "1000000": {
                         "totalPrice": 56.0,
                         "totalProfit": -1295.3998
+                    }
+                }
+            },
+            {
+                "id": "631724",
+                "name": "항암양성자방사선치료비",
+                "theme": "3대진단",
+                "confidence": 0.21625188202302842,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    40000000
+                ],
+                "recommendedQuantity": 40000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": 6492.4917
+                    },
+                    "20000000": {
+                        "totalPrice": 120.0,
+                        "totalProfit": 13028.3125
+                    },
+                    "30000000": {
+                        "totalPrice": 180.0,
+                        "totalProfit": 19564.105
+                    },
+                    "40000000": {
+                        "totalPrice": 240.0,
+                        "totalProfit": 26099.94
                     }
                 }
             },
@@ -14497,7 +19268,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.09654272168581028,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -14508,6 +19280,41 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 3185.0,
                         "totalProfit": 79431.64
+                    },
+                    "10000000": {
+                        "totalPrice": 6370.0,
+                        "totalProfit": 158906.5
+                    }
+                }
+            },
+            {
+                "id": "640491",
+                "name": "중증질환자(심장질환) 산정특례대상 진단비(연간1회한)",
+                "theme": "3대진단",
+                "confidence": 0.0122994786586461,
+                "availableQuantities": [
+                    3000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 99.0,
+                        "totalProfit": 6953.3853
+                    },
+                    "10000000": {
+                        "totalPrice": 330.0,
+                        "totalProfit": 23279.701
+                    },
+                    "20000000": {
+                        "totalPrice": 660.0,
+                        "totalProfit": 46602.73
+                    },
+                    "30000000": {
+                        "totalPrice": 990.0,
+                        "totalProfit": 69926.04
                     }
                 }
             },
@@ -14781,6 +19588,78 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630971",
+                "name": "질병후유장해(3~100%)",
+                "theme": "사망후유",
+                "confidence": 0.05094570668344263,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 6250.0,
+                        "totalProfit": 99615.02
+                    },
+                    "10000000": {
+                        "totalPrice": 12500.0,
+                        "totalProfit": 199273.34
+                    },
+                    "20000000": {
+                        "totalPrice": 25000.0,
+                        "totalProfit": 398589.97
+                    },
+                    "30000000": {
+                        "totalPrice": 37500.0,
+                        "totalProfit": 597906.6
+                    },
+                    "50000000": {
+                        "totalPrice": 62500.0,
+                        "totalProfit": 996539.8
+                    }
+                }
+            },
+            {
+                "id": "632995",
+                "name": "계속받는 표적항암약물허가치료비Ⅱ(연간1회한)(비급여)",
+                "theme": "기타",
+                "confidence": 0.011124440560884971,
+                "availableQuantities": [
+                    10000000,
+                    30000000,
+                    50000000,
+                    70000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 50.0,
+                        "totalProfit": 7730.7207
+                    },
+                    "30000000": {
+                        "totalPrice": 150.0,
+                        "totalProfit": 23280.666
+                    },
+                    "50000000": {
+                        "totalPrice": 250.0,
+                        "totalProfit": 38830.215
+                    },
+                    "70000000": {
+                        "totalPrice": 350.0,
+                        "totalProfit": 54380.203
+                    },
+                    "100000000": {
+                        "totalPrice": 500.0,
+                        "totalProfit": 77704.77
+                    }
+                }
+            },
+            {
                 "id": "630670",
                 "name": "추간판장애(디스크질환)수술비",
                 "theme": "수술",
@@ -14798,6 +19677,68 @@ export const SAMPLE_CONTRACTS = {
                     "2000000": {
                         "totalPrice": 1952.0,
                         "totalProfit": 59734.12
+                    }
+                }
+            },
+            {
+                "id": "632277",
+                "name": "계속받는 표적항암약물허가치료비Ⅱ(연간1회한)",
+                "theme": "3대진단",
+                "confidence": 0.032468685995945205,
+                "availableQuantities": [
+                    10000000,
+                    30000000,
+                    50000000,
+                    70000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 200.0,
+                        "totalProfit": 23132.129
+                    },
+                    "30000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 69484.48
+                    },
+                    "50000000": {
+                        "totalPrice": 1000.0,
+                        "totalProfit": 115836.79
+                    },
+                    "70000000": {
+                        "totalPrice": 1400.0,
+                        "totalProfit": 162189.08
+                    },
+                    "100000000": {
+                        "totalPrice": 2000.0,
+                        "totalProfit": 231717.56
+                    }
+                }
+            },
+            {
+                "id": "610933",
+                "name": "신화상치료비(중증화상및부식진단비)",
+                "theme": "골절/화상",
+                "confidence": 0.04585700675437849,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": 1951.5193
+                    },
+                    "30000000": {
+                        "totalPrice": 90.0,
+                        "totalProfit": 2948.9878
+                    },
+                    "50000000": {
+                        "totalPrice": 150.0,
+                        "totalProfit": 4943.7373
                     }
                 }
             },
@@ -14937,6 +19878,27 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631728",
+                "name": "다빈치로봇 암수술비(암(특정암제외))",
+                "theme": "3대진단",
+                "confidence": 0.18806679306346477,
+                "availableQuantities": [
+                    2000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 16.0,
+                        "totalProfit": 812.23
+                    },
+                    "10000000": {
+                        "totalPrice": 80.0,
+                        "totalProfit": 4234.9844
+                    }
+                }
+            },
+            {
                 "id": "611262",
                 "name": "간병인사용 일반상해입원일당(1일이상180일한도)(요양병원)",
                 "theme": "입원일당",
@@ -14954,6 +19916,32 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 115.0,
                         "totalProfit": 3039.6294
+                    }
+                }
+            },
+            {
+                "id": "632649",
+                "name": "혈전용해치료비Ⅱ(특정심장질환)",
+                "theme": "기타",
+                "confidence": 0.13601805017337687,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 80.0,
+                        "totalProfit": -1250.7305
+                    },
+                    "5000000": {
+                        "totalPrice": 200.0,
+                        "totalProfit": -3061.451
+                    },
+                    "10000000": {
+                        "totalPrice": 400.0,
+                        "totalProfit": -6079.3984
                     }
                 }
             },
@@ -15047,6 +20035,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632279",
+                "name": "표적항암약물허가치료비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.2250296840269966,
+                "availableQuantities": [
+                    10000000,
+                    30000000,
+                    50000000,
+                    70000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 110.0,
+                        "totalProfit": 8458.3955
+                    },
+                    "30000000": {
+                        "totalPrice": 330.0,
+                        "totalProfit": 25461.822
+                    },
+                    "50000000": {
+                        "totalPrice": 550.0,
+                        "totalProfit": 42465.613
+                    },
+                    "70000000": {
+                        "totalPrice": 770.0,
+                        "totalProfit": 59469.332
+                    },
+                    "100000000": {
+                        "totalPrice": 1100.0,
+                        "totalProfit": 84974.5
+                    }
+                }
+            },
+            {
                 "id": "610487",
                 "name": "5대골절진단비",
                 "theme": "골절/화상",
@@ -15074,6 +20098,32 @@ export const SAMPLE_CONTRACTS = {
                     "3000000": {
                         "totalPrice": 2490.0,
                         "totalProfit": 39457.547
+                    }
+                }
+            },
+            {
+                "id": "610836",
+                "name": "수술비(1~5종)[상해5종]",
+                "theme": "수술",
+                "confidence": 0.006778855225017485,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 9.0,
+                        "totalProfit": -355.43115
+                    },
+                    "5000000": {
+                        "totalPrice": 16.0,
+                        "totalProfit": -504.9555
+                    },
+                    "10000000": {
+                        "totalPrice": 31.0,
+                        "totalProfit": -1025.3629
                     }
                 }
             },
@@ -15121,7 +20171,9 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    15000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -15136,6 +20188,45 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 4260.0,
                         "totalProfit": 78988.53
+                    },
+                    "10000000": {
+                        "totalPrice": 8520.0,
+                        "totalProfit": 158020.36
+                    },
+                    "15000000": {
+                        "totalPrice": 12780.0,
+                        "totalProfit": 237052.47
+                    }
+                }
+            },
+            {
+                "id": "640490",
+                "name": "중증질환자(뇌혈관질환) 산정특례대상 진단비(연간1회한)",
+                "theme": "3대진단",
+                "confidence": 0.011334634203639943,
+                "availableQuantities": [
+                    3000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 72.0,
+                        "totalProfit": 3913.9888
+                    },
+                    "10000000": {
+                        "totalPrice": 240.0,
+                        "totalProfit": 13147.735
+                    },
+                    "20000000": {
+                        "totalPrice": 480.0,
+                        "totalProfit": 26339.104
+                    },
+                    "30000000": {
+                        "totalPrice": 720.0,
+                        "totalProfit": 39530.477
                     }
                 }
             },
@@ -15188,7 +20279,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.11598413314856515,
                 "availableQuantities": [
                     5000000,
-                    7000000
+                    7000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -15199,6 +20291,46 @@ export const SAMPLE_CONTRACTS = {
                     "7000000": {
                         "totalPrice": 343.0,
                         "totalProfit": 6741.7227
+                    },
+                    "10000000": {
+                        "totalPrice": 490.0,
+                        "totalProfit": 9649.635
+                    }
+                }
+            },
+            {
+                "id": "631166",
+                "name": "5대기관질병수술비(Ⅱ)(연간1회한)",
+                "theme": "수술",
+                "confidence": 0.03746942935061403,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 2250.0,
+                        "totalProfit": 59970.766
+                    },
+                    "5000000": {
+                        "totalPrice": 3750.0,
+                        "totalProfit": 99980.266
+                    },
+                    "10000000": {
+                        "totalPrice": 7500.0,
+                        "totalProfit": 200003.88
+                    },
+                    "20000000": {
+                        "totalPrice": 15000.0,
+                        "totalProfit": 400051.25
+                    },
+                    "30000000": {
+                        "totalPrice": 22500.0,
+                        "totalProfit": 600098.6
                     }
                 }
             },
@@ -15211,7 +20343,8 @@ export const SAMPLE_CONTRACTS = {
                     2000000,
                     3000000,
                     5000000,
-                    6000000
+                    6000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -15230,6 +20363,10 @@ export const SAMPLE_CONTRACTS = {
                     "6000000": {
                         "totalPrice": 4884.0,
                         "totalProfit": 76159.375
+                    },
+                    "10000000": {
+                        "totalPrice": 8140.0,
+                        "totalProfit": 126961.21
                     }
                 }
             },
@@ -15277,6 +20414,68 @@ export const SAMPLE_CONTRACTS = {
                     "300000": {
                         "totalPrice": 1530.0,
                         "totalProfit": 46011.82
+                    }
+                }
+            },
+            {
+                "id": "631808",
+                "name": "수술비(1~7종, 연간3회한)[질병7종]",
+                "theme": "수술",
+                "confidence": 0.205902160668828,
+                "availableQuantities": [
+                    5000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 1050.0,
+                        "totalProfit": 23885.803
+                    },
+                    "6000000": {
+                        "totalPrice": 1260.0,
+                        "totalProfit": 28671.725
+                    },
+                    "10000000": {
+                        "totalPrice": 2100.0,
+                        "totalProfit": 47815.15
+                    },
+                    "20000000": {
+                        "totalPrice": 4200.0,
+                        "totalProfit": 95673.84
+                    }
+                }
+            },
+            {
+                "id": "611017",
+                "name": "수술비(1~7종, 연간3회한)[상해6종]",
+                "theme": "수술",
+                "confidence": 0.04892322394768657,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    7000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 51.0,
+                        "totalProfit": 1390.4392
+                    },
+                    "5000000": {
+                        "totalPrice": 85.0,
+                        "totalProfit": 2346.2034
+                    },
+                    "7000000": {
+                        "totalPrice": 119.0,
+                        "totalProfit": 3302.074
+                    },
+                    "10000000": {
+                        "totalPrice": 170.0,
+                        "totalProfit": 4735.8813
                     }
                 }
             },
@@ -15435,7 +20634,8 @@ export const SAMPLE_CONTRACTS = {
                     400000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -15454,6 +20654,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 590.0,
                         "totalProfit": -6036.9463
+                    },
+                    "10000000": {
+                        "totalPrice": 1180.0,
+                        "totalProfit": -12030.37
                     }
                 }
             },
@@ -15583,18 +20787,100 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611018",
+                "name": "수술비(1~7종, 연간3회한)[상해7종]",
+                "theme": "수술",
+                "confidence": 0.04892322394768657,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 70.0,
+                        "totalProfit": 1758.1803
+                    },
+                    "10000000": {
+                        "totalPrice": 140.0,
+                        "totalProfit": 3559.62
+                    },
+                    "20000000": {
+                        "totalPrice": 280.0,
+                        "totalProfit": 7162.4814
+                    }
+                }
+            },
+            {
                 "id": "610015",
                 "name": "일반상해사망",
                 "theme": "사망후유",
                 "confidence": 0.0,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    30000000,
+                    50000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 48.0,
                         "totalProfit": 1471.7737
+                    },
+                    "10000000": {
+                        "totalPrice": 480.0,
+                        "totalProfit": 15107.0
+                    },
+                    "30000000": {
+                        "totalPrice": 1440.0,
+                        "totalProfit": 45407.875
+                    },
+                    "50000000": {
+                        "totalPrice": 2400.0,
+                        "totalProfit": 75708.836
+                    },
+                    "100000000": {
+                        "totalPrice": 4800.0,
+                        "totalProfit": 151460.9
+                    }
+                }
+            },
+            {
+                "id": "633381",
+                "name": "통합암진단비(유사암제외)(특정소액암진단비)(면책기간미적용)",
+                "theme": "3대진단",
+                "confidence": 0.018291146480200613,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 261.0,
+                        "totalProfit": 3852.9192
+                    },
+                    "10000000": {
+                        "totalPrice": 2610.0,
+                        "totalProfit": 38916.53
+                    },
+                    "20000000": {
+                        "totalPrice": 5220.0,
+                        "totalProfit": 77876.61
+                    },
+                    "30000000": {
+                        "totalPrice": 7830.0,
+                        "totalProfit": 116836.4
+                    },
+                    "50000000": {
+                        "totalPrice": 13050.0,
+                        "totalProfit": 194756.33
                     }
                 }
             },
@@ -15657,6 +20943,68 @@ export const SAMPLE_CONTRACTS = {
                     "2000000": {
                         "totalPrice": 442.0,
                         "totalProfit": 18044.488
+                    }
+                }
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "theme": "3대진단",
+                "confidence": 0.2288316632569853,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 2915.0,
+                        "totalProfit": 58994.68
+                    },
+                    "10000000": {
+                        "totalPrice": 5830.0,
+                        "totalProfit": 118032.914
+                    },
+                    "20000000": {
+                        "totalPrice": 11660.0,
+                        "totalProfit": 236109.11
+                    },
+                    "30000000": {
+                        "totalPrice": 17490.0,
+                        "totalProfit": 354185.28
+                    },
+                    "50000000": {
+                        "totalPrice": 29150.0,
+                        "totalProfit": 590337.6
+                    }
+                }
+            },
+            {
+                "id": "630110",
+                "name": "조혈모세포이식수술비",
+                "theme": "수술",
+                "confidence": 0.015484222861407956,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 160.0,
+                        "totalProfit": 4966.2275
+                    },
+                    "30000000": {
+                        "totalPrice": 240.0,
+                        "totalProfit": 7471.0967
+                    },
+                    "50000000": {
+                        "totalPrice": 400.0,
+                        "totalProfit": 12480.504
                     }
                 }
             },
@@ -15739,6 +21087,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630763",
+                "name": "뇌혈관질환 수술비",
+                "theme": "3대진단",
+                "confidence": 0.13649285537110348,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 1165.0,
+                        "totalProfit": 29748.2
+                    },
+                    "10000000": {
+                        "totalPrice": 2330.0,
+                        "totalProfit": 59539.53
+                    },
+                    "20000000": {
+                        "totalPrice": 4660.0,
+                        "totalProfit": 119122.25
+                    },
+                    "30000000": {
+                        "totalPrice": 6990.0,
+                        "totalProfit": 178705.0
+                    },
+                    "50000000": {
+                        "totalPrice": 11650.0,
+                        "totalProfit": 297870.53
+                    }
+                }
+            },
+            {
                 "id": "633121",
                 "name": "간병인사용 질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
@@ -15796,6 +21180,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "633382",
+                "name": "통합암진단비(유사암제외)(특정소화기암진단비)(면책기간미적용)",
+                "theme": "3대진단",
+                "confidence": 0.018291146480200613,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 519.0,
+                        "totalProfit": 10295.534
+                    },
+                    "10000000": {
+                        "totalPrice": 5191.0,
+                        "totalProfit": 103401.55
+                    },
+                    "20000000": {
+                        "totalPrice": 10382.0,
+                        "totalProfit": 206846.38
+                    },
+                    "30000000": {
+                        "totalPrice": 15573.0,
+                        "totalProfit": 310291.2
+                    },
+                    "50000000": {
+                        "totalPrice": 25955.0,
+                        "totalProfit": 517181.16
+                    }
+                }
+            },
+            {
                 "id": "633122",
                 "name": "간호·간병통합서비스 사용 질병입원일당(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
@@ -15833,6 +21253,78 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632997",
+                "name": "표적항암약물허가치료비Ⅱ(비급여)",
+                "theme": "기타",
+                "confidence": 0.07605006944912786,
+                "availableQuantities": [
+                    30000000,
+                    50000000,
+                    70000000,
+                    80000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "30000000": {
+                        "totalPrice": 90.0,
+                        "totalProfit": 8607.307
+                    },
+                    "50000000": {
+                        "totalPrice": 150.0,
+                        "totalProfit": 14374.863
+                    },
+                    "70000000": {
+                        "totalPrice": 210.0,
+                        "totalProfit": 20142.102
+                    },
+                    "80000000": {
+                        "totalPrice": 240.0,
+                        "totalProfit": 23025.52
+                    },
+                    "100000000": {
+                        "totalPrice": 300.0,
+                        "totalProfit": 28793.055
+                    }
+                }
+            },
+            {
+                "id": "632502",
+                "name": "6대심장질환진단비",
+                "theme": "3대진단",
+                "confidence": 0.02813207043749179,
+                "availableQuantities": [
+                    1000000,
+                    2000000,
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 2257.0,
+                        "totalProfit": 34798.75
+                    },
+                    "2000000": {
+                        "totalPrice": 4514.0,
+                        "totalProfit": 69640.9
+                    },
+                    "3000000": {
+                        "totalPrice": 6771.0,
+                        "totalProfit": 104483.055
+                    },
+                    "5000000": {
+                        "totalPrice": 11285.0,
+                        "totalProfit": 174167.1
+                    },
+                    "10000000": {
+                        "totalPrice": 22570.0,
+                        "totalProfit": 348377.62
+                    }
+                }
+            },
+            {
                 "id": "611335",
                 "name": "일반상해입원 간병인비용지원(간병인비용 200만원 이상)(요양병원제외)",
                 "theme": "입원일당",
@@ -15865,7 +21357,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.09654272168581028,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -15876,6 +21369,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1165.0,
                         "totalProfit": 29582.021
+                    },
+                    "10000000": {
+                        "totalPrice": 2330.0,
+                        "totalProfit": 59207.562
                     }
                 }
             },
@@ -15963,6 +21460,32 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632648",
+                "name": "혈전용해치료비Ⅱ(뇌졸중)",
+                "theme": "기타",
+                "confidence": 0.13601805017337687,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 178.0,
+                        "totalProfit": 2634.8123
+                    },
+                    "5000000": {
+                        "totalPrice": 445.0,
+                        "totalProfit": 6651.9897
+                    },
+                    "10000000": {
+                        "totalPrice": 890.0,
+                        "totalProfit": 13347.523
+                    }
+                }
+            },
+            {
                 "id": "631803",
                 "name": "수술비(1~7종, 연간3회한)[질병2종]",
                 "theme": "수술",
@@ -15980,6 +21503,42 @@ export const SAMPLE_CONTRACTS = {
                     "300000": {
                         "totalPrice": 960.0,
                         "totalProfit": 21411.453
+                    }
+                }
+            },
+            {
+                "id": "630527",
+                "name": "유사암진단비",
+                "theme": "3대진단",
+                "confidence": 0.2817544762972552,
+                "availableQuantities": [
+                    200000,
+                    2000000,
+                    4000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "200000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 297.0499
+                    },
+                    "2000000": {
+                        "totalPrice": 300.0,
+                        "totalProfit": 3359.272
+                    },
+                    "4000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 6761.7974
+                    },
+                    "6000000": {
+                        "totalPrice": 900.0,
+                        "totalProfit": 10164.328
+                    },
+                    "10000000": {
+                        "totalPrice": 1500.0,
+                        "totalProfit": 16969.383
                     }
                 }
             },
@@ -16129,6 +21688,32 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631230",
+                "name": "수술비(1~5종)[질병5종]",
+                "theme": "수술",
+                "confidence": 0.03278360969457513,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 2322.0,
+                        "totalProfit": 49261.074
+                    },
+                    "5000000": {
+                        "totalPrice": 3870.0,
+                        "totalProfit": 82130.47
+                    },
+                    "10000000": {
+                        "totalPrice": 7740.0,
+                        "totalProfit": 164304.42
+                    }
+                }
+            },
+            {
                 "id": "611346",
                 "name": "2-3인실 종합병원 일반상해입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
@@ -16141,6 +21726,42 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 225.0,
                         "totalProfit": 5163.1064
+                    }
+                }
+            },
+            {
+                "id": "630766",
+                "name": "허혈성심장질환수술비",
+                "theme": "3대진단",
+                "confidence": 0.13778684690424287,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 1362.0,
+                        "totalProfit": 25142.6
+                    },
+                    "10000000": {
+                        "totalPrice": 2723.0,
+                        "totalProfit": 50269.4
+                    },
+                    "20000000": {
+                        "totalPrice": 5446.0,
+                        "totalProfit": 100582.375
+                    },
+                    "30000000": {
+                        "totalPrice": 8169.0,
+                        "totalProfit": 150895.31
+                    },
+                    "50000000": {
+                        "totalPrice": 13615.0,
+                        "totalProfit": 251520.94
                     }
                 }
             },
@@ -16291,6 +21912,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630144",
+                "name": "질병사망(Ⅱ)",
+                "theme": "사망후유",
+                "confidence": 0.007109248535210458,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    100000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 5370.0,
+                        "totalProfit": 135865.8
+                    },
+                    "20000000": {
+                        "totalPrice": 10740.0,
+                        "totalProfit": 271775.16
+                    },
+                    "30000000": {
+                        "totalPrice": 16110.0,
+                        "totalProfit": 407684.56
+                    },
+                    "50000000": {
+                        "totalPrice": 26850.0,
+                        "totalProfit": 679503.0
+                    },
+                    "100000000": {
+                        "totalPrice": 53700.0,
+                        "totalProfit": 1359049.6
+                    }
+                }
+            },
+            {
                 "id": "631138",
                 "name": "유사암수술비",
                 "theme": "3대진단",
@@ -16299,7 +21956,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -16318,6 +21976,46 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 580.0,
                         "totalProfit": -6774.3677
+                    },
+                    "10000000": {
+                        "totalPrice": 1160.0,
+                        "totalProfit": -13505.477
+                    }
+                }
+            },
+            {
+                "id": "633385",
+                "name": "통합암진단비(유사암제외)(4대고액암진단비)(면책기간미적용)",
+                "theme": "3대진단",
+                "confidence": 0.018291146480200613,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 109.0,
+                        "totalProfit": 2235.4734
+                    },
+                    "10000000": {
+                        "totalPrice": 1090.0,
+                        "totalProfit": 22746.326
+                    },
+                    "20000000": {
+                        "totalPrice": 2180.0,
+                        "totalProfit": 45536.22
+                    },
+                    "30000000": {
+                        "totalPrice": 3270.0,
+                        "totalProfit": 68325.81
+                    },
+                    "50000000": {
+                        "totalPrice": 5450.0,
+                        "totalProfit": 113905.3
                     }
                 }
             },
@@ -16329,7 +22027,9 @@ export const SAMPLE_CONTRACTS = {
                 "availableQuantities": [
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000,
+                    20000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -16344,6 +22044,14 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 2430.0,
                         "totalProfit": 47080.676
+                    },
+                    "10000000": {
+                        "totalPrice": 4860.0,
+                        "totalProfit": 94204.6
+                    },
+                    "20000000": {
+                        "totalPrice": 9720.0,
+                        "totalProfit": 188452.47
                     }
                 }
             },
@@ -16354,7 +22062,8 @@ export const SAMPLE_CONTRACTS = {
                 "confidence": 0.09654272168581028,
                 "availableQuantities": [
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -16365,6 +22074,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 2235.0,
                         "totalProfit": 47176.273
+                    },
+                    "10000000": {
+                        "totalPrice": 4470.0,
+                        "totalProfit": 94396.04
                     }
                 }
             },
@@ -16489,30 +22202,6 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
-                "id": "632343",
-                "name": "통합암진단비(유사암제외)(4대고액암진단비)",
-                "quantity": 40000000,
-                "theme": "3대진단",
-                "totalPrice": 1480.0,
-                "totalProfit": -1806.459082
-            },
-            {
-                "id": "632339",
-                "name": "통합암진단비(유사암제외)(특정소액암진단비)",
-                "quantity": 40000000,
-                "theme": "3대진단",
-                "totalPrice": 6044.0,
-                "totalProfit": -320330.527434
-            },
-            {
-                "id": "632279",
-                "name": "표적항암약물허가치료비Ⅱ",
-                "quantity": 50000000,
-                "theme": "3대진단",
-                "totalPrice": 500.0,
-                "totalProfit": 77947.803262
-            },
-            {
                 "id": "632342",
                 "name": "통합암진단비(유사암제외)(10대특정암진단비)",
                 "quantity": 40000000,
@@ -16521,12 +22210,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -29920.270219
             },
             {
-                "id": "630228",
-                "name": "뇌혈관질환진단",
-                "quantity": 20000000,
+                "id": "632343",
+                "name": "통합암진단비(유사암제외)(4대고액암진단비)",
+                "quantity": 40000000,
                 "theme": "3대진단",
-                "totalPrice": 7520.0,
-                "totalProfit": 162686.910031
+                "totalPrice": 1480.0,
+                "totalProfit": -1806.459082
+            },
+            {
+                "id": "610015",
+                "name": "일반상해사망",
+                "quantity": 1000000,
+                "theme": "사망후유",
+                "totalPrice": 13.0,
+                "totalProfit": 623.192925
             },
             {
                 "id": "632504",
@@ -16535,14 +22232,6 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "수술",
                 "totalPrice": 1503.0,
                 "totalProfit": 49778.902994
-            },
-            {
-                "id": "632341",
-                "name": "통합암진단비(유사암제외)(15대특정암진단비)",
-                "quantity": 40000000,
-                "theme": "3대진단",
-                "totalPrice": 3360.0,
-                "totalProfit": -37243.478286
             },
             {
                 "id": "631442",
@@ -16561,12 +22250,28 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 59108.127108
             },
             {
-                "id": "630527",
-                "name": "유사암진단비",
-                "quantity": 8000000,
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "quantity": 20000000,
                 "theme": "3대진단",
-                "totalPrice": 3016.0,
-                "totalProfit": 7326.700821
+                "totalPrice": 2260.0,
+                "totalProfit": 70620.295952
+            },
+            {
+                "id": "632341",
+                "name": "통합암진단비(유사암제외)(15대특정암진단비)",
+                "quantity": 40000000,
+                "theme": "3대진단",
+                "totalPrice": 3360.0,
+                "totalProfit": -37243.478286
+            },
+            {
+                "id": "632340",
+                "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
+                "quantity": 40000000,
+                "theme": "3대진단",
+                "totalPrice": 4824.0,
+                "totalProfit": -26297.251397
             },
             {
                 "id": "610605",
@@ -16577,28 +22282,36 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 125.817062
             },
             {
-                "id": "610015",
-                "name": "일반상해사망",
-                "quantity": 1000000,
-                "theme": "사망후유",
-                "totalPrice": 13.0,
-                "totalProfit": 623.192925
-            },
-            {
-                "id": "630235",
-                "name": "허혈성심질환진단",
+                "id": "630228",
+                "name": "뇌혈관질환진단",
                 "quantity": 20000000,
                 "theme": "3대진단",
-                "totalPrice": 2260.0,
-                "totalProfit": 70620.295952
+                "totalPrice": 7520.0,
+                "totalProfit": 162686.910031
             },
             {
-                "id": "632340",
-                "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
+                "id": "632279",
+                "name": "표적항암약물허가치료비Ⅱ",
+                "quantity": 50000000,
+                "theme": "3대진단",
+                "totalPrice": 500.0,
+                "totalProfit": 77947.803262
+            },
+            {
+                "id": "630527",
+                "name": "유사암진단비",
+                "quantity": 8000000,
+                "theme": "3대진단",
+                "totalPrice": 3016.0,
+                "totalProfit": 7326.700821
+            },
+            {
+                "id": "632339",
+                "name": "통합암진단비(유사암제외)(특정소액암진단비)",
                 "quantity": 40000000,
                 "theme": "3대진단",
-                "totalPrice": 4824.0,
-                "totalProfit": -26297.251397
+                "totalPrice": 6044.0,
+                "totalProfit": -320330.527434
             }
         ],
         "availableItems": [
@@ -16606,7 +22319,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631858",
                 "name": "질병수술비(특정5대질병 제외)",
                 "theme": "수술",
-                "confidence": 0.10482022876634901,
+                "confidence": 0.10482022876634899,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -16697,6 +22410,27 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631726",
+                "name": "항암세기조절방사선치료비",
+                "theme": "3대진단",
+                "confidence": 0.1588856289157308,
+                "availableQuantities": [
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 210.0,
+                        "totalProfit": 27335.826613
+                    },
+                    "20000000": {
+                        "totalPrice": 420.0,
+                        "totalProfit": 54717.689271
+                    }
+                }
+            },
+            {
                 "id": "610921",
                 "name": "골절진단비Ⅱ",
                 "theme": "골절/화상",
@@ -16736,7 +22470,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633331",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 9.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008023469826655258,
+                "confidence": 0.008023469826655256,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -16765,6 +22499,42 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 2300.0,
                         "totalProfit": -73882.2114
+                    }
+                }
+            },
+            {
+                "id": "640056",
+                "name": "5대장기이식수술비",
+                "theme": "수술",
+                "confidence": 0.1621248772630767,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    40000000,
+                    50000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 35.0,
+                        "totalProfit": 784.899161
+                    },
+                    "20000000": {
+                        "totalPrice": 70.0,
+                        "totalProfit": 1615.50321
+                    },
+                    "30000000": {
+                        "totalPrice": 105.0,
+                        "totalProfit": 2446.127109
+                    },
+                    "40000000": {
+                        "totalPrice": 140.0,
+                        "totalProfit": 3276.731538
+                    },
+                    "50000000": {
+                        "totalPrice": 175.0,
+                        "totalProfit": 4107.355609
                     }
                 }
             },
@@ -16904,6 +22674,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630228",
+                "name": "뇌혈관질환진단",
+                "theme": "3대진단",
+                "confidence": 0.04430584764302882,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 1880.0,
+                        "totalProfit": 19274.080232
+                    },
+                    "10000000": {
+                        "totalPrice": 3760.0,
+                        "totalProfit": 38593.851617
+                    },
+                    "15000000": {
+                        "totalPrice": 5640.0,
+                        "totalProfit": 57913.651721
+                    },
+                    "20000000": {
+                        "totalPrice": 7520.0,
+                        "totalProfit": 77233.423106
+                    },
+                    "30000000": {
+                        "totalPrice": 11280.0,
+                        "totalProfit": 115873.010609
+                    }
+                }
+            },
+            {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
@@ -16954,7 +22760,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631442",
                 "name": "계속받는 항암방사선약물치료비(급여)(연간1회한)",
                 "theme": "3대진단",
-                "confidence": 0.09249057743390623,
+                "confidence": 0.09249057743390622,
                 "availableQuantities": [
                     100000,
                     1000000,
@@ -16985,7 +22791,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633313",
                 "name": "질병입원 간병인비용지원(간병인비용 200만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.0018825940568286787,
+                "confidence": 0.0018825940568286785,
                 "availableQuantities": [
                     400000
                 ],
@@ -17022,12 +22828,13 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631130",
                 "name": "암수술비(유사암제외)",
                 "theme": "3대진단",
-                "confidence": 0.03794901460406158,
+                "confidence": 0.03794901460406159,
                 "availableQuantities": [
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -17046,6 +22853,10 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 1945.0,
                         "totalProfit": -61356.91156
+                    },
+                    "10000000": {
+                        "totalPrice": 3890.0,
+                        "totalProfit": -122668.123814
                     }
                 }
             },
@@ -17053,15 +22864,97 @@ export const SAMPLE_CONTRACTS = {
                 "id": "630331",
                 "name": "질병고도후유장해",
                 "theme": "사망후유",
-                "confidence": 0.009138730806704179,
+                "confidence": 0.009138730806704177,
                 "availableQuantities": [
-                    1000000
+                    1000000,
+                    10000000,
+                    30000000,
+                    50000000,
+                    100000000
                 ],
                 "recommendedQuantity": 1000000,
                 "priceAndProfitByQuantity": {
                     "1000000": {
                         "totalPrice": 55.0,
                         "totalProfit": 1852.949311
+                    },
+                    "10000000": {
+                        "totalPrice": 548.0,
+                        "totalProfit": 18768.911617
+                    },
+                    "30000000": {
+                        "totalPrice": 1644.0,
+                        "totalProfit": 56398.185865
+                    },
+                    "50000000": {
+                        "totalPrice": 2740.0,
+                        "totalProfit": 94027.445097
+                    },
+                    "100000000": {
+                        "totalPrice": 5480.0,
+                        "totalProfit": 188100.602478
+                    }
+                }
+            },
+            {
+                "id": "632504",
+                "name": "뇌혈관질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.23514867517415966,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 301.0,
+                        "totalProfit": 9775.916206
+                    },
+                    "5000000": {
+                        "totalPrice": 752.0,
+                        "totalProfit": 24465.147243
+                    },
+                    "10000000": {
+                        "totalPrice": 1503.0,
+                        "totalProfit": 48889.664602
+                    },
+                    "20000000": {
+                        "totalPrice": 3006.0,
+                        "totalProfit": 97825.022032
+                    }
+                }
+            },
+            {
+                "id": "610468",
+                "name": "중대상해수술비",
+                "theme": "수술",
+                "confidence": 0.007136745460955315,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 99.0,
+                        "totalProfit": 6618.623289
+                    },
+                    "5000000": {
+                        "totalPrice": 165.0,
+                        "totalProfit": 11061.520894
+                    },
+                    "10000000": {
+                        "totalPrice": 330.0,
+                        "totalProfit": 22168.736662
+                    },
+                    "20000000": {
+                        "totalPrice": 660.0,
+                        "totalProfit": 44383.19845
                     }
                 }
             },
@@ -17069,7 +22962,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633116",
                 "name": "질병입원 간병인비용지원(간병인비용 500만원 이상)(요양병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.01287088475157448,
+                "confidence": 0.012870884751574479,
                 "availableQuantities": [
                     1000000
                 ],
@@ -17085,7 +22978,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633715",
                 "name": "통합포인트 대상 질병진단비((A7) 다발경화증진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     2000000
                 ],
@@ -17122,7 +23015,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631227",
                 "name": "수술비(1~5종)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.016391804847287562,
+                "confidence": 0.016391804847287566,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -17195,7 +23088,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633330",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 7.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008023469826655258,
+                "confidence": 0.008023469826655256,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -17218,10 +23111,31 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "640045",
+                "name": "각막이식수술비",
+                "theme": "수술",
+                "confidence": 0.13438434455134654,
+                "availableQuantities": [
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 4.0,
+                        "totalProfit": -34.170032
+                    },
+                    "20000000": {
+                        "totalPrice": 8.0,
+                        "totalProfit": -22.641118
+                    }
+                }
+            },
+            {
                 "id": "633716",
                 "name": "통합포인트 대상 질병진단비((A8) 뇌전증진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17251,6 +23165,42 @@ export const SAMPLE_CONTRACTS = {
                     "1000000": {
                         "totalPrice": 595.0,
                         "totalProfit": 34241.972375
+                    }
+                }
+            },
+            {
+                "id": "631807",
+                "name": "수술비(1~7종, 연간3회한)[질병6종]",
+                "theme": "수술",
+                "confidence": 0.12309656044582254,
+                "availableQuantities": [
+                    2000000,
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 820.0,
+                        "totalProfit": 18403.345503
+                    },
+                    "3000000": {
+                        "totalPrice": 1230.0,
+                        "totalProfit": 27627.895653
+                    },
+                    "5000000": {
+                        "totalPrice": 2050.0,
+                        "totalProfit": 46076.97994
+                    },
+                    "6000000": {
+                        "totalPrice": 2460.0,
+                        "totalProfit": 55301.514076
+                    },
+                    "10000000": {
+                        "totalPrice": 4100.0,
+                        "totalProfit": 92199.682648
                     }
                 }
             },
@@ -17305,7 +23255,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633712",
                 "name": "통합포인트 대상 질병진단비((A4) 특정전이암진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17368,7 +23318,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633719",
                 "name": "통합포인트 대상 질병진단비((B1) 림프절전이암진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17384,7 +23334,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633709",
                 "name": "통합포인트 대상 질병진단비((A1) 특정패혈증진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17400,7 +23350,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631804",
                 "name": "수술비(1~7종, 연간3회한)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.12309656044582255,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     300000,
                     400000,
@@ -17457,7 +23407,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633725",
                 "name": "통합포인트 대상 질병진단비((B7) 간경변증진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17473,7 +23423,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633714",
                 "name": "통합포인트 대상 질병진단비((A6) 경계성종양진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17482,6 +23432,68 @@ export const SAMPLE_CONTRACTS = {
                     "100000": {
                         "totalPrice": 2.0,
                         "totalProfit": -58.740767
+                    }
+                }
+            },
+            {
+                "id": "610605",
+                "name": "일반상해고도후유장해",
+                "theme": "사망후유",
+                "confidence": 0.05414163590768072,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    50000000,
+                    100000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 3.0,
+                        "totalProfit": 154.17502
+                    },
+                    "10000000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 1953.137347
+                    },
+                    "50000000": {
+                        "totalPrice": 150.0,
+                        "totalProfit": 9948.601782
+                    },
+                    "100000000": {
+                        "totalPrice": 300.0,
+                        "totalProfit": 19942.942165
+                    }
+                }
+            },
+            {
+                "id": "632505",
+                "name": "허혈성심장질환수술비(25%체증형)",
+                "theme": "수술",
+                "confidence": 0.30588949737947785,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 231.0,
+                        "totalProfit": 11515.763111
+                    },
+                    "5000000": {
+                        "totalPrice": 578.0,
+                        "totalProfit": 28901.337328
+                    },
+                    "10000000": {
+                        "totalPrice": 1155.0,
+                        "totalProfit": 57761.653763
+                    },
+                    "20000000": {
+                        "totalPrice": 2310.0,
+                        "totalProfit": 115569.001039
                     }
                 }
             },
@@ -17517,6 +23529,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632343",
+                "name": "통합암진단비(유사암제외)(4대고액암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.39335517425046057,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 37.0,
+                        "totalProfit": -892.542961
+                    },
+                    "10000000": {
+                        "totalPrice": 370.0,
+                        "totalProfit": -8514.063213
+                    },
+                    "20000000": {
+                        "totalPrice": 740.0,
+                        "totalProfit": -16982.38802
+                    },
+                    "30000000": {
+                        "totalPrice": 1110.0,
+                        "totalProfit": -25450.712826
+                    },
+                    "50000000": {
+                        "totalPrice": 1850.0,
+                        "totalProfit": -42387.36244
+                    }
+                }
+            },
+            {
                 "id": "632520",
                 "name": "131대질병수술비(다빈도62대질병)",
                 "theme": "수술",
@@ -17546,7 +23594,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631381",
                 "name": "중대한재생불량성빈혈진단비",
                 "theme": "기타",
-                "confidence": 0.01755683514594498,
+                "confidence": 0.017556835145944978,
                 "availableQuantities": [
                     5000000
                 ],
@@ -17555,6 +23603,37 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 9.0,
                         "totalProfit": -32.789415
+                    }
+                }
+            },
+            {
+                "id": "630239",
+                "name": "말기폐질환진단비",
+                "theme": "기타",
+                "confidence": 0.0016040804697228285,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000,
+                    50000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 715.0,
+                        "totalProfit": 20870.616899
+                    },
+                    "10000000": {
+                        "totalPrice": 1430.0,
+                        "totalProfit": 41786.945202
+                    },
+                    "20000000": {
+                        "totalPrice": 2860.0,
+                        "totalProfit": 83619.628921
+                    },
+                    "50000000": {
+                        "totalPrice": 7150.0,
+                        "totalProfit": 209117.680076
                     }
                 }
             },
@@ -17575,10 +23654,31 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632480",
+                "name": "전이암진단비(림프절전이암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.12426227581742777,
+                "availableQuantities": [
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 1085.0,
+                        "totalProfit": -107267.501794
+                    },
+                    "10000000": {
+                        "totalPrice": 2170.0,
+                        "totalProfit": -214489.314629
+                    }
+                }
+            },
+            {
                 "id": "631229",
                 "name": "수술비(1~5종)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.016391804847287562,
+                "confidence": 0.016391804847287566,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -17646,7 +23746,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633720",
                 "name": "통합포인트 대상 질병진단비((B2) 통합포인트 대상 순환계질환(2종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17659,10 +23759,36 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631724",
+                "name": "항암양성자방사선치료비",
+                "theme": "3대진단",
+                "confidence": 0.16252857037155413,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 8760.392204
+                    },
+                    "20000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": 17566.840538
+                    },
+                    "30000000": {
+                        "totalPrice": 90.0,
+                        "totalProfit": 26373.29375
+                    }
+                }
+            },
+            {
                 "id": "640047",
                 "name": "인공관절수술비",
                 "theme": "수술",
-                "confidence": 0.10405798255505175,
+                "confidence": 0.10405798255505173,
                 "availableQuantities": [
                     1000000,
                     2000000
@@ -17723,6 +23849,42 @@ export const SAMPLE_CONTRACTS = {
                     "500000": {
                         "totalPrice": 110.0,
                         "totalProfit": 4125.722742
+                    }
+                }
+            },
+            {
+                "id": "630222",
+                "name": "뇌졸중진단비",
+                "theme": "3대진단",
+                "confidence": 0.012731156914859694,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 895.0,
+                        "totalProfit": 17606.430923
+                    },
+                    "10000000": {
+                        "totalPrice": 1790.0,
+                        "totalProfit": 35258.570453
+                    },
+                    "15000000": {
+                        "totalPrice": 2685.0,
+                        "totalProfit": 52910.722625
+                    },
+                    "20000000": {
+                        "totalPrice": 3580.0,
+                        "totalProfit": 70562.862156
+                    },
+                    "30000000": {
+                        "totalPrice": 5370.0,
+                        "totalProfit": 105867.153858
                     }
                 }
             },
@@ -17797,7 +23959,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633713",
                 "name": "통합포인트 대상 질병진단비((A5) 제자리암진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -17892,7 +24054,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631806",
                 "name": "수술비(1~7종, 연간3회한)[질병5종]",
                 "theme": "수술",
-                "confidence": 0.12309656044582255,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     1000000,
                     2000000,
@@ -17925,6 +24087,114 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632342",
+                "name": "통합암진단비(유사암제외)(10대특정암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.3219266028218892,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 38.0,
+                        "totalProfit": -1652.407381
+                    },
+                    "10000000": {
+                        "totalPrice": 380.0,
+                        "totalProfit": -16112.706746
+                    },
+                    "20000000": {
+                        "totalPrice": 760.0,
+                        "totalProfit": -32179.677233
+                    },
+                    "30000000": {
+                        "totalPrice": 1140.0,
+                        "totalProfit": -48246.662735
+                    },
+                    "50000000": {
+                        "totalPrice": 1900.0,
+                        "totalProfit": -80380.60371
+                    }
+                }
+            },
+            {
+                "id": "630971",
+                "name": "질병후유장해(3~100%)",
+                "theme": "사망후유",
+                "confidence": 0.025472853341721315,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 546.0,
+                        "totalProfit": -60520.181333
+                    },
+                    "10000000": {
+                        "totalPrice": 5460.0,
+                        "totalProfit": -604790.421418
+                    },
+                    "20000000": {
+                        "totalPrice": 10920.0,
+                        "totalProfit": -1209535.104053
+                    },
+                    "30000000": {
+                        "totalPrice": 16380.0,
+                        "totalProfit": -1814279.786688
+                    },
+                    "50000000": {
+                        "totalPrice": 27300.0,
+                        "totalProfit": -3023769.151957
+                    }
+                }
+            },
+            {
+                "id": "632995",
+                "name": "계속받는 표적항암약물허가치료비Ⅱ(연간1회한)(비급여)",
+                "theme": "기타",
+                "confidence": 0.021415234900337757,
+                "availableQuantities": [
+                    10000000,
+                    30000000,
+                    50000000,
+                    80000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 40.0,
+                        "totalProfit": 15741.35074
+                    },
+                    "30000000": {
+                        "totalPrice": 120.0,
+                        "totalProfit": 47316.253855
+                    },
+                    "50000000": {
+                        "totalPrice": 200.0,
+                        "totalProfit": 78891.452954
+                    },
+                    "80000000": {
+                        "totalPrice": 320.0,
+                        "totalProfit": 126253.867979
+                    },
+                    "100000000": {
+                        "totalPrice": 400.0,
+                        "totalProfit": 157829.096658
+                    }
+                }
+            },
+            {
                 "id": "630670",
                 "name": "추간판장애(디스크질환)수술비",
                 "theme": "수술",
@@ -17941,10 +24211,72 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632277",
+                "name": "계속받는 표적항암약물허가치료비Ⅱ(연간1회한)",
+                "theme": "3대진단",
+                "confidence": 0.026318759811520594,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    50000000,
+                    70000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 180.0,
+                        "totalProfit": 54990.076041
+                    },
+                    "20000000": {
+                        "totalPrice": 360.0,
+                        "totalProfit": 110026.372619
+                    },
+                    "50000000": {
+                        "totalPrice": 900.0,
+                        "totalProfit": 275135.051499
+                    },
+                    "70000000": {
+                        "totalPrice": 1260.0,
+                        "totalProfit": 385207.471008
+                    },
+                    "100000000": {
+                        "totalPrice": 1800.0,
+                        "totalProfit": 550316.303378
+                    }
+                }
+            },
+            {
+                "id": "610933",
+                "name": "신화상치료비(중증화상및부식진단비)",
+                "theme": "골절/화상",
+                "confidence": 0.022928503377189244,
+                "availableQuantities": [
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "20000000": {
+                        "totalPrice": 20.0,
+                        "totalProfit": 1232.231005
+                    },
+                    "30000000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 1871.215829
+                    },
+                    "50000000": {
+                        "totalPrice": 50.0,
+                        "totalProfit": 3149.185475
+                    }
+                }
+            },
+            {
                 "id": "633710",
                 "name": "통합포인트 대상 질병진단비((A2) 기타피부암진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     200000
                 ],
@@ -17960,7 +24292,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633317",
                 "name": "질병입원 간병인비용지원(간병인비용 1,000만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00013637034275014283,
+                "confidence": 0.0001363703427501428,
                 "availableQuantities": [
                     600000
                 ],
@@ -17992,7 +24324,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633234",
                 "name": "간병인지원 질병입원일당(Ⅰ)(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.035598802979057036,
+                "confidence": 0.03559880297905704,
                 "availableQuantities": [
                     10000,
                     20000
@@ -18038,6 +24370,32 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 160.0,
                         "totalProfit": 439.236319
+                    }
+                }
+            },
+            {
+                "id": "632649",
+                "name": "혈전용해치료비Ⅱ(특정심장질환)",
+                "theme": "기타",
+                "confidence": 0.22149307684792485,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 12.0,
+                        "totalProfit": -1499.944005
+                    },
+                    "5000000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": -3681.243025
+                    },
+                    "10000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": -7316.776786
                     }
                 }
             },
@@ -18151,6 +24509,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632279",
+                "name": "표적항암약물허가치료비Ⅱ",
+                "theme": "3대진단",
+                "confidence": 0.1642484103569474,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 100.0,
+                        "totalProfit": 17904.227568
+                    },
+                    "20000000": {
+                        "totalPrice": 200.0,
+                        "totalProfit": 35854.357479
+                    },
+                    "30000000": {
+                        "totalPrice": 300.0,
+                        "totalProfit": 53804.465747
+                    },
+                    "50000000": {
+                        "totalPrice": 500.0,
+                        "totalProfit": 89704.70612
+                    },
+                    "100000000": {
+                        "totalPrice": 1000.0,
+                        "totalProfit": 179455.452231
+                    }
+                }
+            },
+            {
                 "id": "610487",
                 "name": "5대골절진단비",
                 "theme": "골절/화상",
@@ -18178,6 +24572,37 @@ export const SAMPLE_CONTRACTS = {
                     "3000000": {
                         "totalPrice": 1860.0,
                         "totalProfit": 29275.908337
+                    }
+                }
+            },
+            {
+                "id": "610836",
+                "name": "수술비(1~5종)[상해5종]",
+                "theme": "수술",
+                "confidence": 0.0033894276125087425,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 2.0,
+                        "totalProfit": -628.464242
+                    },
+                    "5000000": {
+                        "totalPrice": 4.0,
+                        "totalProfit": -959.414201
+                    },
+                    "6000000": {
+                        "totalPrice": 5.0,
+                        "totalProfit": -1124.873642
+                    },
+                    "10000000": {
+                        "totalPrice": 8.0,
+                        "totalProfit": -1873.110001
                     }
                 }
             },
@@ -18315,7 +24740,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633721",
                 "name": "통합포인트 대상 질병진단비((B3) 통합포인트 대상 순환계질환(3종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -18331,7 +24756,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631560",
                 "name": "양성뇌종양진단비Ⅱ",
                 "theme": "기타",
-                "confidence": 0.07799926929017352,
+                "confidence": 0.07799926929017353,
                 "availableQuantities": [
                     2000000,
                     5000000
@@ -18396,10 +24821,41 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "631808",
+                "name": "수술비(1~7종, 연간3회한)[질병7종]",
+                "theme": "수술",
+                "confidence": 0.12309656044582254,
+                "availableQuantities": [
+                    5000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 500.0,
+                        "totalProfit": 11263.333819
+                    },
+                    "6000000": {
+                        "totalPrice": 600.0,
+                        "totalProfit": 13525.138731
+                    },
+                    "10000000": {
+                        "totalPrice": 1000.0,
+                        "totalProfit": 22572.390408
+                    },
+                    "20000000": {
+                        "totalPrice": 2000.0,
+                        "totalProfit": 45190.519599
+                    }
+                }
+            },
+            {
                 "id": "633717",
                 "name": "통합포인트 대상 질병진단비((A9) 통합포인트 대상 순환계질환(1종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -18412,10 +24868,46 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611017",
+                "name": "수술비(1~7종, 연간3회한)[상해6종]",
+                "theme": "수술",
+                "confidence": 0.024461611973843285,
+                "availableQuantities": [
+                    3000000,
+                    4000000,
+                    5000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 9.0,
+                        "totalProfit": 376.255863
+                    },
+                    "4000000": {
+                        "totalPrice": 12.0,
+                        "totalProfit": 516.901638
+                    },
+                    "5000000": {
+                        "totalPrice": 15.0,
+                        "totalProfit": 657.576074
+                    },
+                    "6000000": {
+                        "totalPrice": 18.0,
+                        "totalProfit": 798.221849
+                    },
+                    "10000000": {
+                        "totalPrice": 30.0,
+                        "totalProfit": 1360.850054
+                    }
+                }
+            },
+            {
                 "id": "632986",
                 "name": "간호·간병통합서비스 사용 질병입원일당(1일이상180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.09165265625319652,
+                "confidence": 0.09165265625319653,
                 "availableQuantities": [
                     50000,
                     70000
@@ -18472,7 +24964,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633332",
                 "name": "당뇨병진단비Ⅱ[당화혈색소 11.0%이상]",
                 "theme": "기타",
-                "confidence": 0.008023469826655258,
+                "confidence": 0.008023469826655256,
                 "availableQuantities": [
                     500000,
                     1000000,
@@ -18508,7 +25000,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631228",
                 "name": "수술비(1~5종)[질병3종]",
                 "theme": "수술",
-                "confidence": 0.016391804847287562,
+                "confidence": 0.016391804847287566,
                 "availableQuantities": [
                     500000,
                     1000000
@@ -18529,7 +25021,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633711",
                 "name": "통합포인트 대상 질병진단비((A3) 갑상선암진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -18582,7 +25074,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640046",
                 "name": "깁스치료비",
                 "theme": "골절/화상",
-                "confidence": 0.29310175400937416,
+                "confidence": 0.2931017540093742,
                 "availableQuantities": [
                     200000,
                     300000,
@@ -18631,10 +25123,144 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "611018",
+                "name": "수술비(1~7종, 연간3회한)[상해7종]",
+                "theme": "수술",
+                "confidence": 0.024461611973843285,
+                "availableQuantities": [
+                    5000000,
+                    6000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 10.0,
+                        "totalProfit": 383.354153
+                    },
+                    "6000000": {
+                        "totalPrice": 12.0,
+                        "totalProfit": 469.156433
+                    },
+                    "10000000": {
+                        "totalPrice": 20.0,
+                        "totalProfit": 812.41991
+                    },
+                    "20000000": {
+                        "totalPrice": 40.0,
+                        "totalProfit": 1670.578604
+                    }
+                }
+            },
+            {
+                "id": "610015",
+                "name": "일반상해사망",
+                "theme": "사망후유",
+                "confidence": 0.0,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    50000000,
+                    100000000
+                ],
+                "recommendedQuantity": 100000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 13.0,
+                        "totalProfit": 733.101372
+                    },
+                    "10000000": {
+                        "totalPrice": 130.0,
+                        "totalProfit": 7742.507608
+                    },
+                    "50000000": {
+                        "totalPrice": 650.0,
+                        "totalProfit": 38895.459342
+                    },
+                    "100000000": {
+                        "totalPrice": 1300.0,
+                        "totalProfit": 77836.645954
+                    }
+                }
+            },
+            {
+                "id": "632340",
+                "name": "통합암진단비(유사암제외)(특정소화기암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.1790694599647463,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 121.0,
+                        "totalProfit": -3023.436988
+                    },
+                    "10000000": {
+                        "totalPrice": 1206.0,
+                        "totalProfit": -30168.361939
+                    },
+                    "20000000": {
+                        "totalPrice": 2412.0,
+                        "totalProfit": -60291.020932
+                    },
+                    "30000000": {
+                        "totalPrice": 3618.0,
+                        "totalProfit": -90413.644353
+                    },
+                    "50000000": {
+                        "totalPrice": 6030.0,
+                        "totalProfit": -150658.94278
+                    }
+                }
+            },
+            {
+                "id": "630235",
+                "name": "허혈성심질환진단",
+                "theme": "3대진단",
+                "confidence": 0.11441583162849266,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    15000000,
+                    20000000,
+                    30000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 565.0,
+                        "totalProfit": 13672.916163
+                    },
+                    "10000000": {
+                        "totalPrice": 1130.0,
+                        "totalProfit": 27391.542981
+                    },
+                    "15000000": {
+                        "totalPrice": 1695.0,
+                        "totalProfit": 41110.18268
+                    },
+                    "20000000": {
+                        "totalPrice": 2260.0,
+                        "totalProfit": 54828.809498
+                    },
+                    "30000000": {
+                        "totalPrice": 3390.0,
+                        "totalProfit": 82266.076016
+                    }
+                }
+            },
+            {
                 "id": "633723",
                 "name": "통합포인트 대상 질병진단비((B5) 통합포인트 대상 순환계질환(5종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -18647,10 +25273,52 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630110",
+                "name": "조혈모세포이식수술비",
+                "theme": "수술",
+                "confidence": 0.007742111430703978,
+                "availableQuantities": [
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 20000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 50.0,
+                        "totalProfit": 2244.215512
+                    },
+                    "20000000": {
+                        "totalPrice": 100.0,
+                        "totalProfit": 4534.169591
+                    }
+                }
+            },
+            {
+                "id": "632481",
+                "name": "전이암진단비(특정전이암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.12426227581742777,
+                "availableQuantities": [
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 925.0,
+                        "totalProfit": -41821.584547
+                    },
+                    "10000000": {
+                        "totalPrice": 1850.0,
+                        "totalProfit": -83597.462264
+                    }
+                }
+            },
+            {
                 "id": "633318",
                 "name": "질병입원 간병인비용지원(간병인비용 1,500만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
-                "confidence": 0.00010698198828302941,
+                "confidence": 0.0001069819882830294,
                 "availableQuantities": [
                     1000000
                 ],
@@ -18692,7 +25360,8 @@ export const SAMPLE_CONTRACTS = {
                     1000000,
                     2000000,
                     3000000,
-                    5000000
+                    5000000,
+                    10000000
                 ],
                 "recommendedQuantity": 5000000,
                 "priceAndProfitByQuantity": {
@@ -18711,6 +25380,36 @@ export const SAMPLE_CONTRACTS = {
                     "5000000": {
                         "totalPrice": 2015.0,
                         "totalProfit": -35238.225933
+                    },
+                    "10000000": {
+                        "totalPrice": 4030.0,
+                        "totalProfit": -70430.75577
+                    }
+                }
+            },
+            {
+                "id": "630763",
+                "name": "뇌혈관질환 수술비",
+                "theme": "3대진단",
+                "confidence": 0.06824642768555174,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 728.0,
+                        "totalProfit": 23961.200569
+                    },
+                    "10000000": {
+                        "totalPrice": 1455.0,
+                        "totalProfit": 47881.363965
+                    },
+                    "20000000": {
+                        "totalPrice": 2910.0,
+                        "totalProfit": 95808.421592
                     }
                 }
             },
@@ -18758,6 +25457,42 @@ export const SAMPLE_CONTRACTS = {
                     "200000": {
                         "totalPrice": 226.0,
                         "totalProfit": -11245.150797
+                    }
+                }
+            },
+            {
+                "id": "632997",
+                "name": "표적항암약물허가치료비Ⅱ(비급여)",
+                "theme": "기타",
+                "confidence": 0.15279291140249113,
+                "availableQuantities": [
+                    30000000,
+                    50000000,
+                    70000000,
+                    80000000,
+                    100000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "30000000": {
+                        "totalPrice": 60.0,
+                        "totalProfit": 14278.216976
+                    },
+                    "50000000": {
+                        "totalPrice": 100.0,
+                        "totalProfit": 23827.753708
+                    },
+                    "70000000": {
+                        "totalPrice": 140.0,
+                        "totalProfit": 33377.151639
+                    },
+                    "80000000": {
+                        "totalPrice": 160.0,
+                        "totalProfit": 38151.838439
+                    },
+                    "100000000": {
+                        "totalPrice": 200.0,
+                        "totalProfit": 47701.416775
                     }
                 }
             },
@@ -18828,7 +25563,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631226",
                 "name": "수술비(1~5종)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.016391804847287562,
+                "confidence": 0.016391804847287566,
                 "availableQuantities": [
                     100000,
                     200000
@@ -18849,7 +25584,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633015",
                 "name": "상급병실(1인실) 종합병원 질병수술입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.0673513488944601,
+                "confidence": 0.06735134889446011,
                 "availableQuantities": [
                     20000,
                     100000,
@@ -18877,10 +25612,36 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632648",
+                "name": "혈전용해치료비Ⅱ(뇌졸중)",
+                "theme": "기타",
+                "confidence": 0.22149307684792485,
+                "availableQuantities": [
+                    2000000,
+                    5000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "2000000": {
+                        "totalPrice": 40.0,
+                        "totalProfit": -870.126515
+                    },
+                    "5000000": {
+                        "totalPrice": 100.0,
+                        "totalProfit": -2106.714246
+                    },
+                    "10000000": {
+                        "totalPrice": 200.0,
+                        "totalProfit": -4167.730857
+                    }
+                }
+            },
+            {
                 "id": "633718",
                 "name": "통합포인트 대상 질병진단비((A10) 심근병증진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -18896,7 +25657,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631803",
                 "name": "수술비(1~7종, 연간3회한)[질병2종]",
                 "theme": "수술",
-                "confidence": 0.12309656044582255,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     200000,
                     300000
@@ -18914,10 +25675,46 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630527",
+                "name": "유사암진단비",
+                "theme": "3대진단",
+                "confidence": 0.1408772381486276,
+                "availableQuantities": [
+                    100000,
+                    2000000,
+                    4000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "100000": {
+                        "totalPrice": 38.0,
+                        "totalProfit": -169.53667
+                    },
+                    "2000000": {
+                        "totalPrice": 754.0,
+                        "totalProfit": -3042.748209
+                    },
+                    "4000000": {
+                        "totalPrice": 1508.0,
+                        "totalProfit": -6039.772486
+                    },
+                    "6000000": {
+                        "totalPrice": 2262.0,
+                        "totalProfit": -9036.796763
+                    },
+                    "10000000": {
+                        "totalPrice": 3770.0,
+                        "totalProfit": -15030.830303
+                    }
+                }
+            },
+            {
                 "id": "633724",
                 "name": "통합포인트 대상 질병진단비((B6) 크론병진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -18959,7 +25756,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631263",
                 "name": "종합병원 질병입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.02522554480887033,
+                "confidence": 0.025225544808870338,
                 "availableQuantities": [
                     10000,
                     20000,
@@ -19026,7 +25823,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "633339",
                 "name": "2-3인실 상급종합병원 질병입원일당(1일이상 30일한도)",
                 "theme": "입원일당",
-                "confidence": 0.057240816869222555,
+                "confidence": 0.05724081686922256,
                 "availableQuantities": [
                     20000,
                     50000
@@ -19040,6 +25837,37 @@ export const SAMPLE_CONTRACTS = {
                     "50000": {
                         "totalPrice": 230.0,
                         "totalProfit": 5754.565147
+                    }
+                }
+            },
+            {
+                "id": "631230",
+                "name": "수술비(1~5종)[질병5종]",
+                "theme": "수술",
+                "confidence": 0.016391804847287566,
+                "availableQuantities": [
+                    3000000,
+                    5000000,
+                    6000000,
+                    10000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "3000000": {
+                        "totalPrice": 1644.0,
+                        "totalProfit": 21014.141337
+                    },
+                    "5000000": {
+                        "totalPrice": 2740.0,
+                        "totalProfit": 35054.041726
+                    },
+                    "6000000": {
+                        "totalPrice": 3288.0,
+                        "totalProfit": 42073.992413
+                    },
+                    "10000000": {
+                        "totalPrice": 5480.0,
+                        "totalProfit": 70153.79319
                     }
                 }
             },
@@ -19065,10 +25893,36 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630766",
+                "name": "허혈성심장질환수술비",
+                "theme": "3대진단",
+                "confidence": 0.06889342345212143,
+                "availableQuantities": [
+                    5000000,
+                    10000000,
+                    20000000
+                ],
+                "recommendedQuantity": 10000000,
+                "priceAndProfitByQuantity": {
+                    "5000000": {
+                        "totalPrice": 566.0,
+                        "totalProfit": 28294.636196
+                    },
+                    "10000000": {
+                        "totalPrice": 1132.0,
+                        "totalProfit": 56634.968391
+                    },
+                    "20000000": {
+                        "totalPrice": 2264.0,
+                        "totalProfit": 113315.655626
+                    }
+                }
+            },
+            {
                 "id": "631805",
                 "name": "수술비(1~7종, 연간3회한)[질병4종]",
                 "theme": "수술",
-                "confidence": 0.12309656044582255,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     400000,
                     500000,
@@ -19154,10 +26008,82 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "630697",
+                "name": "암진단비(유사암 제외)",
+                "theme": "3대진단",
+                "confidence": 0.13232222873964872,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 50000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 393.0,
+                        "totalProfit": -14386.30713
+                    },
+                    "10000000": {
+                        "totalPrice": 3930.0,
+                        "totalProfit": -143451.646808
+                    },
+                    "20000000": {
+                        "totalPrice": 7860.0,
+                        "totalProfit": -286857.56081
+                    },
+                    "30000000": {
+                        "totalPrice": 11790.0,
+                        "totalProfit": -430263.490823
+                    },
+                    "50000000": {
+                        "totalPrice": 19650.0,
+                        "totalProfit": -717075.318825
+                    }
+                }
+            },
+            {
+                "id": "610781",
+                "name": "일반상해후유장해(3~100%)",
+                "theme": "사망후유",
+                "confidence": 0.013269246129859627,
+                "availableQuantities": [
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000,
+                    100000000
+                ],
+                "recommendedQuantity": 100000000,
+                "priceAndProfitByQuantity": {
+                    "10000000": {
+                        "totalPrice": 290.0,
+                        "totalProfit": 11222.431347
+                    },
+                    "20000000": {
+                        "totalPrice": 580.0,
+                        "totalProfit": 22490.601347
+                    },
+                    "30000000": {
+                        "totalPrice": 870.0,
+                        "totalProfit": 33758.757295
+                    },
+                    "50000000": {
+                        "totalPrice": 1450.0,
+                        "totalProfit": 56295.083242
+                    },
+                    "100000000": {
+                        "totalPrice": 2900.0,
+                        "totalProfit": 112635.905135
+                    }
+                }
+            },
+            {
                 "id": "633722",
                 "name": "통합포인트 대상 질병진단비((B4) 통합포인트 대상 순환계질환(4종)진단비)",
                 "theme": "기타",
-                "confidence": 0.010431006890554078,
+                "confidence": 0.01043100689055408,
                 "availableQuantities": [
                     100000
                 ],
@@ -19253,6 +26179,42 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
+                "id": "632339",
+                "name": "통합암진단비(유사암제외)(특정소액암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.1076408885361749,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 151.0,
+                        "totalProfit": -11533.611964
+                    },
+                    "10000000": {
+                        "totalPrice": 1511.0,
+                        "totalProfit": -114837.947871
+                    },
+                    "20000000": {
+                        "totalPrice": 3022.0,
+                        "totalProfit": -229630.203142
+                    },
+                    "30000000": {
+                        "totalPrice": 4533.0,
+                        "totalProfit": -344422.428442
+                    },
+                    "50000000": {
+                        "totalPrice": 7555.0,
+                        "totalProfit": -574006.909013
+                    }
+                }
+            },
+            {
                 "id": "611338",
                 "name": "일반상해입원 간병인비용지원(간병인비용 200만원 이상)(간호·간병통합서비스 포함)",
                 "theme": "입원일당",
@@ -19265,6 +26227,42 @@ export const SAMPLE_CONTRACTS = {
                     "400000": {
                         "totalPrice": 639.0,
                         "totalProfit": 24019.132486
+                    }
+                }
+            },
+            {
+                "id": "632341",
+                "name": "통합암진단비(유사암제외)(15대특정암진단비)",
+                "theme": "3대진단",
+                "confidence": 0.2504980313933177,
+                "availableQuantities": [
+                    1000000,
+                    10000000,
+                    20000000,
+                    30000000,
+                    50000000
+                ],
+                "recommendedQuantity": 30000000,
+                "priceAndProfitByQuantity": {
+                    "1000000": {
+                        "totalPrice": 84.0,
+                        "totalProfit": -2700.756262
+                    },
+                    "10000000": {
+                        "totalPrice": 840.0,
+                        "totalProfit": -26596.144756
+                    },
+                    "20000000": {
+                        "totalPrice": 1680.0,
+                        "totalProfit": -53146.568868
+                    },
+                    "30000000": {
+                        "totalPrice": 2520.0,
+                        "totalProfit": -79696.976966
+                    },
+                    "50000000": {
+                        "totalPrice": 4200.0,
+                        "totalProfit": -132797.809176
                     }
                 }
             },
@@ -19298,7 +26296,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "631802",
                 "name": "수술비(1~7종, 연간3회한)[질병1종]",
                 "theme": "수술",
-                "confidence": 0.12309656044582255,
+                "confidence": 0.12309656044582254,
                 "availableQuantities": [
                     100000,
                     200000,
@@ -19348,52 +26346,12 @@ export const SAMPLE_CONTRACTS = {
         ],
         "items": [
             {
-                "id": "611252",
-                "name": "운전자용 자동차사고부상치료비(6급)",
-                "quantity": 800000,
+                "id": "611256",
+                "name": "운전자용 자동차사고부상치료비(10급)",
+                "quantity": 200000,
                 "theme": "운전/비용",
-                "totalPrice": 48.0,
-                "totalProfit": 361.360926
-            },
-            {
-                "id": "610933",
-                "name": "신화상치료비(중증화상및부식진단비)",
-                "quantity": 30000000,
-                "theme": "골절/화상",
-                "totalPrice": 57.0,
-                "totalProfit": 173.948143
-            },
-            {
-                "id": "620951",
-                "name": "운전자용 벌금(대물)",
-                "quantity": 5000000,
-                "theme": "운전/비용",
-                "totalPrice": 42.0,
-                "totalProfit": -821.408313
-            },
-            {
-                "id": "610464",
-                "name": "상해흉터복원수술비",
-                "quantity": 5000000,
-                "theme": "수술",
-                "totalPrice": 44.0,
-                "totalProfit": -208.847292
-            },
-            {
-                "id": "610918",
-                "name": "골절수술비Ⅱ",
-                "quantity": 100000,
-                "theme": "골절/화상",
-                "totalPrice": 213.0,
-                "totalProfit": -2770.906207
-            },
-            {
-                "id": "611193",
-                "name": "10대골절수술비",
-                "quantity": 500000,
-                "theme": "골절/화상",
-                "totalPrice": 445.0,
-                "totalProfit": -2250.741208
+                "totalPrice": 4.0,
+                "totalProfit": -91.038088
             },
             {
                 "id": "610439",
@@ -19404,36 +26362,36 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -73594.718572
             },
             {
-                "id": "611164",
-                "name": "운전자용 교통상해사망",
+                "id": "610789",
+                "name": "일반상해후유장해(3~100%)",
                 "quantity": 10000000,
                 "theme": "사망후유",
-                "totalPrice": 730.0,
-                "totalProfit": 9166.435733
+                "totalPrice": 2570.0,
+                "totalProfit": -44228.526876
             },
             {
-                "id": "620274",
-                "name": "보복운전피해",
-                "quantity": 1000000,
-                "theme": "기타",
-                "totalPrice": 10.0,
-                "totalProfit": 260.685288
+                "id": "610708",
+                "name": "관절(무릎·고관절) 수술비",
+                "quantity": 100000,
+                "theme": "수술",
+                "totalPrice": 22.0,
+                "totalProfit": -1080.967192
             },
             {
-                "id": "611192",
-                "name": "10대골절진단비",
-                "quantity": 500000,
-                "theme": "골절/화상",
-                "totalPrice": 1400.0,
-                "totalProfit": -19324.093944
-            },
-            {
-                "id": "611256",
-                "name": "운전자용 자동차사고부상치료비(10급)",
-                "quantity": 200000,
+                "id": "620951",
+                "name": "운전자용 벌금(대물)",
+                "quantity": 5000000,
                 "theme": "운전/비용",
-                "totalPrice": 4.0,
-                "totalProfit": -91.038088
+                "totalPrice": 42.0,
+                "totalProfit": -821.408313
+            },
+            {
+                "id": "610918",
+                "name": "골절수술비Ⅱ",
+                "quantity": 100000,
+                "theme": "골절/화상",
+                "totalPrice": 213.0,
+                "totalProfit": -2770.906207
             },
             {
                 "id": "640046",
@@ -19444,20 +26402,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -4249.164607
             },
             {
-                "id": "611249",
-                "name": "운전자용 자동차사고부상치료비(1-14급)[3급]",
-                "quantity": 9000000,
-                "theme": "운전/비용",
-                "totalPrice": 72.0,
-                "totalProfit": 1658.930046
+                "id": "610921",
+                "name": "골절진단비Ⅱ",
+                "quantity": 500000,
+                "theme": "골절/화상",
+                "totalPrice": 4620.0,
+                "totalProfit": -101463.709336
             },
             {
-                "id": "610468",
-                "name": "중대상해수술비",
-                "quantity": 5000000,
-                "theme": "수술",
-                "totalPrice": 260.0,
-                "totalProfit": 3682.190739
+                "id": "611164",
+                "name": "운전자용 교통상해사망",
+                "quantity": 10000000,
+                "theme": "사망후유",
+                "totalPrice": 730.0,
+                "totalProfit": 9166.435733
             },
             {
                 "id": "610469",
@@ -19476,76 +26434,12 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -313.749623
             },
             {
-                "id": "611248",
-                "name": "운전자용 자동차사고부상치료비(1-14급)[2급]",
-                "quantity": 10000000,
-                "theme": "운전/비용",
-                "totalPrice": 310.0,
-                "totalProfit": 1413.04826
-            },
-            {
-                "id": "620962",
-                "name": "자동차사고 변호사선임비용(타인사망,중대법규위반및중상해경찰조사포함)_자가용운전자용",
-                "quantity": 50000000,
-                "theme": "운전/비용",
-                "totalPrice": 4634.0,
-                "totalProfit": -131932.524547
-            },
-            {
-                "id": "610929",
-                "name": "신화상치료비(화상수술비)",
-                "quantity": 100000,
+                "id": "610931",
+                "name": "신화상치료비(화상진단비)",
+                "quantity": 200000,
                 "theme": "골절/화상",
-                "totalPrice": 9.0,
-                "totalProfit": -38.430908
-            },
-            {
-                "id": "620966",
-                "name": "교통사고 처리지원금(Ⅲ)(중대법규위반,6주미만)",
-                "quantity": 10000000,
-                "theme": "운전/비용",
-                "totalPrice": 5995.0,
-                "totalProfit": 201853.001565
-            },
-            {
-                "id": "611257",
-                "name": "운전자용 자동차사고부상치료비(11급)",
-                "quantity": 200000,
-                "theme": "운전/비용",
-                "totalPrice": 514.0,
-                "totalProfit": 5466.823069
-            },
-            {
-                "id": "610663",
-                "name": "외모특정상해수술비",
-                "quantity": 100000,
-                "theme": "수술",
-                "totalPrice": 58.0,
-                "totalProfit": 1113.44458
-            },
-            {
-                "id": "610689",
-                "name": "자동차사고 치아보철치료비",
-                "quantity": 200000,
-                "theme": "운전/비용",
-                "totalPrice": 24.0,
-                "totalProfit": 316.64691
-            },
-            {
-                "id": "610789",
-                "name": "일반상해후유장해(3~100%)",
-                "quantity": 10000000,
-                "theme": "사망후유",
-                "totalPrice": 2570.0,
-                "totalProfit": -44228.526876
-            },
-            {
-                "id": "611254",
-                "name": "운전자용 자동차사고부상치료비(8급)",
-                "quantity": 200000,
-                "theme": "운전/비용",
-                "totalPrice": 22.0,
-                "totalProfit": -141.648594
+                "totalPrice": 174.0,
+                "totalProfit": -6896.342715
             },
             {
                 "id": "610470",
@@ -19556,76 +26450,28 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -15247.579978
             },
             {
-                "id": "620115",
-                "name": "면허취소_영업용",
-                "quantity": 10000000,
-                "theme": "운전/비용",
-                "totalPrice": 800.0,
-                "totalProfit": -9649.231862
-            },
-            {
-                "id": "611253",
-                "name": "운전자용 자동차사고부상치료비(7급)",
-                "quantity": 400000,
-                "theme": "운전/비용",
-                "totalPrice": 36.0,
-                "totalProfit": 91.491307
-            },
-            {
-                "id": "610931",
-                "name": "신화상치료비(화상진단비)",
-                "quantity": 200000,
+                "id": "610929",
+                "name": "신화상치료비(화상수술비)",
+                "quantity": 100000,
                 "theme": "골절/화상",
-                "totalPrice": 174.0,
-                "totalProfit": -6896.342715
+                "totalPrice": 9.0,
+                "totalProfit": -38.430908
             },
             {
-                "id": "620973",
-                "name": "교통사고 처리지원금(Ⅶ)",
-                "quantity": 200000000,
-                "theme": "운전/비용",
-                "totalPrice": 15645.0,
-                "totalProfit": 223245.371074
+                "id": "611192",
+                "name": "10대골절진단비",
+                "quantity": 500000,
+                "theme": "골절/화상",
+                "totalPrice": 1400.0,
+                "totalProfit": -19324.093944
             },
             {
-                "id": "610708",
-                "name": "관절(무릎·고관절) 수술비",
-                "quantity": 100000,
-                "theme": "수술",
-                "totalPrice": 22.0,
-                "totalProfit": -1080.967192
-            },
-            {
-                "id": "611247",
-                "name": "운전자용 자동차사고부상치료비(1-14급)[1급]",
+                "id": "620966",
+                "name": "교통사고 처리지원금(Ⅲ)(중대법규위반,6주미만)",
                 "quantity": 10000000,
                 "theme": "운전/비용",
-                "totalPrice": 2320.0,
-                "totalProfit": 72781.735846
-            },
-            {
-                "id": "620952",
-                "name": "운전자용 벌금(Ⅱ)",
-                "quantity": 30000000,
-                "theme": "운전/비용",
-                "totalPrice": 1824.0,
-                "totalProfit": -6530.989149
-            },
-            {
-                "id": "610728",
-                "name": "외상성척추손상 수술비",
-                "quantity": 100000,
-                "theme": "수술",
-                "totalPrice": 16.0,
-                "totalProfit": 209.431299
-            },
-            {
-                "id": "611260",
-                "name": "운전자용 자동차사고부상치료비(14급)",
-                "quantity": 100000,
-                "theme": "운전/비용",
-                "totalPrice": 1956.0,
-                "totalProfit": 37745.917968
+                "totalPrice": 5995.0,
+                "totalProfit": 201853.001565
             },
             {
                 "id": "611250",
@@ -19636,20 +26482,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": -721.529073
             },
             {
-                "id": "610921",
-                "name": "골절진단비Ⅱ",
-                "quantity": 500000,
-                "theme": "골절/화상",
-                "totalPrice": 4620.0,
-                "totalProfit": -101463.709336
+                "id": "640154",
+                "name": "응급실내원비(응급)",
+                "quantity": 30000,
+                "theme": "기타",
+                "totalPrice": 636.0,
+                "totalProfit": 7483.549618
             },
             {
-                "id": "610224",
-                "name": "운전자교통상해50%이상고도후유장해",
-                "quantity": 200000,
-                "theme": "사망후유",
-                "totalPrice": 42.0,
-                "totalProfit": 568.832943
+                "id": "611253",
+                "name": "운전자용 자동차사고부상치료비(7급)",
+                "quantity": 400000,
+                "theme": "운전/비용",
+                "totalPrice": 36.0,
+                "totalProfit": 91.491307
             },
             {
                 "id": "611251",
@@ -19660,6 +26506,62 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 390.918151
             },
             {
+                "id": "611260",
+                "name": "운전자용 자동차사고부상치료비(14급)",
+                "quantity": 100000,
+                "theme": "운전/비용",
+                "totalPrice": 1956.0,
+                "totalProfit": 37745.917968
+            },
+            {
+                "id": "611254",
+                "name": "운전자용 자동차사고부상치료비(8급)",
+                "quantity": 200000,
+                "theme": "운전/비용",
+                "totalPrice": 22.0,
+                "totalProfit": -141.648594
+            },
+            {
+                "id": "611247",
+                "name": "운전자용 자동차사고부상치료비(1-14급)[1급]",
+                "quantity": 10000000,
+                "theme": "운전/비용",
+                "totalPrice": 2320.0,
+                "totalProfit": 72781.735846
+            },
+            {
+                "id": "611193",
+                "name": "10대골절수술비",
+                "quantity": 500000,
+                "theme": "골절/화상",
+                "totalPrice": 445.0,
+                "totalProfit": -2250.741208
+            },
+            {
+                "id": "611257",
+                "name": "운전자용 자동차사고부상치료비(11급)",
+                "quantity": 200000,
+                "theme": "운전/비용",
+                "totalPrice": 514.0,
+                "totalProfit": 5466.823069
+            },
+            {
+                "id": "610728",
+                "name": "외상성척추손상 수술비",
+                "quantity": 100000,
+                "theme": "수술",
+                "totalPrice": 16.0,
+                "totalProfit": 209.431299
+            },
+            {
+                "id": "610468",
+                "name": "중대상해수술비",
+                "quantity": 5000000,
+                "theme": "수술",
+                "totalPrice": 260.0,
+                "totalProfit": 3682.190739
+            },
+            {
                 "id": "611258",
                 "name": "운전자용 자동차사고부상치료비(12급)",
                 "quantity": 100000,
@@ -19668,20 +26570,20 @@ export const SAMPLE_CONTRACTS = {
                 "totalProfit": 19035.625447
             },
             {
-                "id": "620111",
-                "name": "면허정지_영업용",
-                "quantity": 50000,
-                "theme": "운전/비용",
-                "totalPrice": 230.0,
-                "totalProfit": -8012.53256
+                "id": "620274",
+                "name": "보복운전피해",
+                "quantity": 1000000,
+                "theme": "기타",
+                "totalPrice": 10.0,
+                "totalProfit": 260.685288
             },
             {
-                "id": "640154",
-                "name": "응급실내원비(응급)",
-                "quantity": 30000,
-                "theme": "기타",
-                "totalPrice": 636.0,
-                "totalProfit": 7483.549618
+                "id": "611248",
+                "name": "운전자용 자동차사고부상치료비(1-14급)[2급]",
+                "quantity": 10000000,
+                "theme": "운전/비용",
+                "totalPrice": 310.0,
+                "totalProfit": 1413.04826
             },
             {
                 "id": "611259",
@@ -19690,6 +26592,54 @@ export const SAMPLE_CONTRACTS = {
                 "theme": "운전/비용",
                 "totalPrice": 14.0,
                 "totalProfit": 152.403095
+            },
+            {
+                "id": "611252",
+                "name": "운전자용 자동차사고부상치료비(6급)",
+                "quantity": 800000,
+                "theme": "운전/비용",
+                "totalPrice": 48.0,
+                "totalProfit": 361.360926
+            },
+            {
+                "id": "610224",
+                "name": "운전자교통상해50%이상고도후유장해",
+                "quantity": 200000,
+                "theme": "사망후유",
+                "totalPrice": 42.0,
+                "totalProfit": 568.832943
+            },
+            {
+                "id": "610689",
+                "name": "자동차사고 치아보철치료비",
+                "quantity": 200000,
+                "theme": "운전/비용",
+                "totalPrice": 24.0,
+                "totalProfit": 316.64691
+            },
+            {
+                "id": "611249",
+                "name": "운전자용 자동차사고부상치료비(1-14급)[3급]",
+                "quantity": 9000000,
+                "theme": "운전/비용",
+                "totalPrice": 72.0,
+                "totalProfit": 1658.930046
+            },
+            {
+                "id": "610933",
+                "name": "신화상치료비(중증화상및부식진단비)",
+                "quantity": 30000000,
+                "theme": "골절/화상",
+                "totalPrice": 57.0,
+                "totalProfit": 173.948143
+            },
+            {
+                "id": "610663",
+                "name": "외모특정상해수술비",
+                "quantity": 100000,
+                "theme": "수술",
+                "totalPrice": 58.0,
+                "totalProfit": 1113.44458
             }
         ],
         "availableItems": [
@@ -19697,7 +26647,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611193",
                 "name": "10대골절수술비",
                 "theme": "골절/화상",
-                "confidence": 0.08381691742183145,
+                "confidence": 0.09284909925756618,
                 "availableQuantities": [
                     1000000
                 ],
@@ -19713,7 +26663,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611250",
                 "name": "운전자용 자동차사고부상치료비(4급)",
                 "theme": "운전/비용",
-                "confidence": 0.23096331747033283,
+                "confidence": 0.2600007472048037,
                 "availableQuantities": [
                     9000000
                 ],
@@ -19729,7 +26679,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610716",
                 "name": "운전자용 자동차사고부상치료비(1~3급)",
                 "theme": "운전/비용",
-                "confidence": 0.013504959430191798,
+                "confidence": 0.014411059763737232,
                 "availableQuantities": [
                     30000000
                 ],
@@ -19745,7 +26695,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620951",
                 "name": "운전자용 벌금(대물)",
                 "theme": "운전/비용",
-                "confidence": 0.6046050779661727,
+                "confidence": 0.6622130780756285,
                 "availableQuantities": [
                     5000000
                 ],
@@ -19761,7 +26711,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610921",
                 "name": "골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.1815791955889544,
+                "confidence": 0.19180204370766518,
                 "availableQuantities": [
                     100000
                 ],
@@ -19777,7 +26727,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620241",
                 "name": "행정소송법률비용",
                 "theme": "재물/배상",
-                "confidence": 0.0046510028993272815,
+                "confidence": 0.004765175865141509,
                 "availableQuantities": [
                     20000000
                 ],
@@ -19790,26 +26740,10 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
-                "id": "620974",
-                "name": "운전자용 벌금(Ⅲ)(비탑승중포함)",
-                "theme": "운전/비용",
-                "confidence": NaN,
-                "availableQuantities": [
-                    30000000
-                ],
-                "recommendedQuantity": 30000000,
-                "priceAndProfitByQuantity": {
-                    "30000000": {
-                        "totalPrice": 259.0,
-                        "totalProfit": 3476.000734
-                    }
-                }
-            },
-            {
                 "id": "611255",
                 "name": "운전자용 자동차사고부상치료비(9급)",
                 "theme": "운전/비용",
-                "confidence": 0.3472423872377747,
+                "confidence": 0.39513588233993885,
                 "availableQuantities": [
                     600000
                 ],
@@ -19825,7 +26759,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611128",
                 "name": "외상성뇌출혈진단비",
                 "theme": "3대진단",
-                "confidence": 0.06479656501360702,
+                "confidence": 0.07035180200402458,
                 "availableQuantities": [
                     1000000
                 ],
@@ -19841,7 +26775,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610931",
                 "name": "신화상치료비(화상진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.18370787549629658,
+                "confidence": 0.19682618151302678,
                 "availableQuantities": [
                     200000
                 ],
@@ -19854,26 +26788,10 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
-                "id": "620975",
-                "name": "자동차사고 변호사선임비용(타인사망,중대법규위반및중상해경찰조사포함)(비탑승중포함)",
-                "theme": "운전/비용",
-                "confidence": NaN,
-                "availableQuantities": [
-                    50000000
-                ],
-                "recommendedQuantity": 50000000,
-                "priceAndProfitByQuantity": {
-                    "50000000": {
-                        "totalPrice": 581.0,
-                        "totalProfit": 842.450163
-                    }
-                }
-            },
-            {
                 "id": "620276",
                 "name": "업무상과실·중과실치사상벌금",
                 "theme": "재물/배상",
-                "confidence": 0.12944810956410474,
+                "confidence": 0.12899390384129522,
                 "availableQuantities": [
                     20000000
                 ],
@@ -19889,7 +26807,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610648",
                 "name": "화재상해사망",
                 "theme": "사망후유",
-                "confidence": 0.003309285913882744,
+                "confidence": 0.0033538272883071483,
                 "availableQuantities": [
                     10000000
                 ],
@@ -19921,7 +26839,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611257",
                 "name": "운전자용 자동차사고부상치료비(11급)",
                 "theme": "운전/비용",
-                "confidence": 0.3937540151447514,
+                "confidence": 0.44918993639399285,
                 "availableQuantities": [
                     600000
                 ],
@@ -19937,7 +26855,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620252",
                 "name": "가족화재벌금",
                 "theme": "재물/배상",
-                "confidence": 0.08963224514856791,
+                "confidence": 0.09815670518339295,
                 "availableQuantities": [
                     20000000
                 ],
@@ -19953,7 +26871,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610926",
                 "name": "운전자용 교통상해골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.01539874126970536,
+                "confidence": 0.01661814299408579,
                 "availableQuantities": [
                     200000
                 ],
@@ -19969,7 +26887,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611260",
                 "name": "운전자용 자동차사고부상치료비(14급)",
                 "theme": "운전/비용",
-                "confidence": 0.4635214570052165,
+                "confidence": 0.5302710174750739,
                 "availableQuantities": [
                     300000
                 ],
@@ -19985,7 +26903,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611254",
                 "name": "운전자용 자동차사고부상치료비(8급)",
                 "theme": "운전/비용",
-                "confidence": 0.3239865732842863,
+                "confidence": 0.3681088553129118,
                 "availableQuantities": [
                     600000
                 ],
@@ -20001,7 +26919,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610909",
                 "name": "상급병실(1인실) 상급종합병원 일반상해입원일당(1일이상 10일한도)",
                 "theme": "입원일당",
-                "confidence": 0.026603373298740202,
+                "confidence": 0.026513344104722725,
                 "availableQuantities": [
                     30000
                 ],
@@ -20017,7 +26935,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610852",
                 "name": "종합병원 일반상해입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.06285343073295495,
+                "confidence": 0.06592066767803376,
                 "availableQuantities": [
                     20000
                 ],
@@ -20033,7 +26951,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611166",
                 "name": "운전자용 교통상해후유장해(3~100%)",
                 "theme": "사망후유",
-                "confidence": 0.05184806943799553,
+                "confidence": 0.05699163491242224,
                 "availableQuantities": [
                     50000000
                 ],
@@ -20049,7 +26967,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620175",
                 "name": "자동차사고성형비용(본인)",
                 "theme": "수술",
-                "confidence": 0.1596644845917976,
+                "confidence": 0.178515153561658,
                 "availableQuantities": [
                     1000000
                 ],
@@ -20065,7 +26983,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610728",
                 "name": "외상성척추손상 수술비",
                 "theme": "수술",
-                "confidence": 0.0773377529410247,
+                "confidence": 0.08008105007787207,
                 "availableQuantities": [
                     100000
                 ],
@@ -20081,7 +26999,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620016",
                 "name": "가족과실치사상벌금",
                 "theme": "재물/배상",
-                "confidence": 0.09792260023958692,
+                "confidence": 0.1101893345113604,
                 "availableQuantities": [
                     7000000
                 ],
@@ -20097,7 +27015,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611251",
                 "name": "운전자용 자동차사고부상치료비(5급)",
                 "theme": "운전/비용",
-                "confidence": 0.2542191314238212,
+                "confidence": 0.28702777423183073,
                 "availableQuantities": [
                     4500000
                 ],
@@ -20113,7 +27031,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620274",
                 "name": "보복운전피해",
                 "theme": "기타",
-                "confidence": 0.3136266370320636,
+                "confidence": 0.32931157377065934,
                 "availableQuantities": [
                     1000000
                 ],
@@ -20129,7 +27047,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611014",
                 "name": "수술비(1~7종, 연간3회한)[상해3종]",
                 "theme": "수술",
-                "confidence": 0.12760407027120121,
+                "confidence": 0.13811912216598587,
                 "availableQuantities": [
                     500000
                 ],
@@ -20145,7 +27063,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611310",
                 "name": "간병인지원 일반상해입원일당(Ⅰ)(181일이상)(요양,정신,한방병원제외)",
                 "theme": "입원일당",
-                "confidence": 0.009867775932886073,
+                "confidence": 0.010868102854614859,
                 "availableQuantities": [
                     10000
                 ],
@@ -20161,7 +27079,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611256",
                 "name": "운전자용 자동차사고부상치료비(10급)",
                 "theme": "운전/비용",
-                "confidence": 0.37049820119126303,
+                "confidence": 0.4221629093669659,
                 "availableQuantities": [
                     600000
                 ],
@@ -20177,7 +27095,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611252",
                 "name": "운전자용 자동차사고부상치료비(6급)",
                 "theme": "운전/비용",
-                "confidence": 0.27747494537730955,
+                "confidence": 0.31405480125885776,
                 "availableQuantities": [
                     2400000
                 ],
@@ -20193,7 +27111,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610470",
                 "name": "상해수술위로금",
                 "theme": "수술",
-                "confidence": 0.08278040719792137,
+                "confidence": 0.07598073155284087,
                 "availableQuantities": [
                     500000
                 ],
@@ -20209,7 +27127,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640154",
                 "name": "응급실내원비(응급)",
                 "theme": "기타",
-                "confidence": 0.23817129706050416,
+                "confidence": 0.2450627637169433,
                 "availableQuantities": [
                     50000
                 ],
@@ -20225,7 +27143,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611248",
                 "name": "운전자용 자동차사고부상치료비(1-14급)[2급]",
                 "theme": "운전/비용",
-                "confidence": 0.18445168956335609,
+                "confidence": 0.20594669315074965,
                 "availableQuantities": [
                     12000000
                 ],
@@ -20241,7 +27159,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610789",
                 "name": "일반상해후유장해(3~100%)",
                 "theme": "사망후유",
-                "confidence": 0.1061329120417636,
+                "confidence": 0.11224505694131826,
                 "availableQuantities": [
                     50000000
                 ],
@@ -20257,7 +27175,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610933",
                 "name": "신화상치료비(중증화상및부식진단비)",
                 "theme": "골절/화상",
-                "confidence": 0.2069636894497849,
+                "confidence": 0.22385320854005378,
                 "availableQuantities": [
                     30000000
                 ],
@@ -20273,7 +27191,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611259",
                 "name": "운전자용 자동차사고부상치료비(13급)",
                 "theme": "운전/비용",
-                "confidence": 0.4402656430517281,
+                "confidence": 0.5032439904480468,
                 "availableQuantities": [
                     300000
                 ],
@@ -20286,26 +27204,10 @@ export const SAMPLE_CONTRACTS = {
                 }
             },
             {
-                "id": "620976",
-                "name": "교통사고 처리지원금(Ⅷ)(비탑승중포함)",
-                "theme": "운전/비용",
-                "confidence": NaN,
-                "availableQuantities": [
-                    200000000
-                ],
-                "recommendedQuantity": 200000000,
-                "priceAndProfitByQuantity": {
-                    "200000000": {
-                        "totalPrice": 3046.0,
-                        "totalProfit": 30465.475441
-                    }
-                }
-            },
-            {
                 "id": "610928",
                 "name": "한방치료비Ⅱ[골절(치아파절제외)]",
                 "theme": "골절/화상",
-                "confidence": 0.011687895628690348,
+                "confidence": 0.012263522536383593,
                 "availableQuantities": [
                     200000
                 ],
@@ -20321,7 +27223,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620235",
                 "name": "의료사고법률비용",
                 "theme": "재물/배상",
-                "confidence": 0.04888186651489679,
+                "confidence": 0.05100422953086381,
                 "availableQuantities": [
                     2000000
                 ],
@@ -20337,7 +27239,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610757",
                 "name": "상해수술 한방치료비",
                 "theme": "기타",
-                "confidence": 0.005354072295830231,
+                "confidence": 0.00536616478954756,
                 "availableQuantities": [
                     200000
                 ],
@@ -20353,7 +27255,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611016",
                 "name": "수술비(1~7종, 연간3회한)[상해5종]",
                 "theme": "수술",
-                "confidence": 0.12760407027120121,
+                "confidence": 0.13811912216598587,
                 "availableQuantities": [
                     5000000
                 ],
@@ -20369,7 +27271,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611258",
                 "name": "운전자용 자동차사고부상치료비(12급)",
                 "theme": "운전/비용",
-                "confidence": 0.41700982909823975,
+                "confidence": 0.47621696342101977,
                 "availableQuantities": [
                     300000
                 ],
@@ -20385,7 +27287,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611309",
                 "name": "간병인지원 일반상해입원일당(Ⅰ)(1일이상 180일한도)",
                 "theme": "입원일당",
-                "confidence": 0.013749618655914314,
+                "confidence": 0.015117104507666412,
                 "availableQuantities": [
                     10000
                 ],
@@ -20401,7 +27303,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610439",
                 "name": "임시생활비담보",
                 "theme": "입원일당",
-                "confidence": 0.011029083173944907,
+                "confidence": 0.012817583148098135,
                 "availableQuantities": [
                     10000
                 ],
@@ -20417,7 +27319,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611015",
                 "name": "수술비(1~7종, 연간3회한)[상해4종]",
                 "theme": "수술",
-                "confidence": 0.12760407027120121,
+                "confidence": 0.13811912216598587,
                 "availableQuantities": [
                     1000000
                 ],
@@ -20433,7 +27335,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610663",
                 "name": "외모특정상해수술비",
                 "theme": "수술",
-                "confidence": 0.03892675269979582,
+                "confidence": 0.0366508675181954,
                 "availableQuantities": [
                     100000
                 ],
@@ -20449,7 +27351,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610929",
                 "name": "신화상치료비(화상수술비)",
                 "theme": "골절/화상",
-                "confidence": 0.1604520615428082,
+                "confidence": 0.16979915448599975,
                 "availableQuantities": [
                     100000
                 ],
@@ -20465,7 +27367,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611012",
                 "name": "수술비(1~7종, 연간3회한)[상해1종]",
                 "theme": "수술",
-                "confidence": 0.12760407027120121,
+                "confidence": 0.13811912216598587,
                 "availableQuantities": [
                     300000
                 ],
@@ -20481,7 +27383,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611253",
                 "name": "운전자용 자동차사고부상치료비(7급)",
                 "theme": "운전/비용",
-                "confidence": 0.30073075933079796,
+                "confidence": 0.3410818282858848,
                 "availableQuantities": [
                     1200000
                 ],
@@ -20497,7 +27399,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611017",
                 "name": "수술비(1~7종, 연간3회한)[상해6종]",
                 "theme": "수술",
-                "confidence": 0.12760407027120121,
+                "confidence": 0.13811912216598587,
                 "availableQuantities": [
                     10000000
                 ],
@@ -20513,7 +27415,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610918",
                 "name": "골절수술비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.13089395541372625,
+                "confidence": 0.13649312721257342,
                 "availableQuantities": [
                     100000
                 ],
@@ -20529,7 +27431,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640046",
                 "name": "깁스치료비",
                 "theme": "골절/화상",
-                "confidence": 0.47731610534719626,
+                "confidence": 0.4827959141660872,
                 "availableQuantities": [
                     200000
                 ],
@@ -20545,7 +27447,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611018",
                 "name": "수술비(1~7종, 연간3회한)[상해7종]",
                 "theme": "수술",
-                "confidence": 0.12760407027120121,
+                "confidence": 0.13811912216598587,
                 "availableQuantities": [
                     20000000
                 ],
@@ -20577,7 +27479,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620277",
                 "name": "사이버명예훼손피해",
                 "theme": "기타",
-                "confidence": 0.03620861001260694,
+                "confidence": 0.039280981331200775,
                 "availableQuantities": [
                     1000000
                 ],
@@ -20593,7 +27495,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "640449",
                 "name": "특정단순창상봉합술치료비(급여,연간3회한)",
                 "theme": "기타",
-                "confidence": 0.18189786233045493,
+                "confidence": 0.18351978621794093,
                 "availableQuantities": [
                     50000
                 ],
@@ -20625,7 +27527,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611013",
                 "name": "수술비(1~7종, 연간3회한)[상해2종]",
                 "theme": "수술",
-                "confidence": 0.12760407027120121,
+                "confidence": 0.13811912216598587,
                 "availableQuantities": [
                     300000
                 ],
@@ -20641,7 +27543,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610766",
                 "name": "상급종합병원일반상해입원일당(1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.013121752616648151,
+                "confidence": 0.013613923668515828,
                 "availableQuantities": [
                     20000
                 ],
@@ -20657,7 +27559,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610689",
                 "name": "자동차사고 치아보철치료비",
                 "theme": "운전/비용",
-                "confidence": 0.030945838305892467,
+                "confidence": 0.03052137412713888,
                 "availableQuantities": [
                     200000
                 ],
@@ -20673,7 +27575,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610661",
                 "name": "운전중 교통상해사망",
                 "theme": "사망후유",
-                "confidence": 0.013521690394231779,
+                "confidence": 0.013794836466787109,
                 "availableQuantities": [
                     50000000
                 ],
@@ -20689,7 +27591,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610466",
                 "name": "강력범죄위로금-일상생활",
                 "theme": "기타",
-                "confidence": 0.02026814323594265,
+                "confidence": 0.017542851021357456,
                 "availableQuantities": [
                     10000000
                 ],
@@ -20705,7 +27607,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611247",
                 "name": "운전자용 자동차사고부상치료비(1-14급)[1급]",
                 "theme": "운전/비용",
-                "confidence": 0.1611958756098677,
+                "confidence": 0.17891966612372262,
                 "availableQuantities": [
                     30000000
                 ],
@@ -20721,7 +27623,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610912",
                 "name": "골절(치아파절제외)진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.09214551865938723,
+                "confidence": 0.09623037105004704,
                 "availableQuantities": [
                     200000
                 ],
@@ -20737,7 +27639,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610927",
                 "name": "운전자용 교통상해골절진단비Ⅱ",
                 "theme": "골절/화상",
-                "confidence": 0.017034931377904062,
+                "confidence": 0.01838508579018831,
                 "availableQuantities": [
                     200000
                 ],
@@ -20753,7 +27655,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "611249",
                 "name": "운전자용 자동차사고부상치료비(1-14급)[3급]",
                 "theme": "운전/비용",
-                "confidence": 0.20770750351684444,
+                "confidence": 0.23297372017777668,
                 "availableQuantities": [
                     9000000
                 ],
@@ -20769,7 +27671,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620279",
                 "name": "인터넷직거래사기피해",
                 "theme": "기타",
-                "confidence": 0.03703028828754917,
+                "confidence": 0.040411561091132024,
                 "availableQuantities": [
                     500000
                 ],
@@ -20801,7 +27703,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610708",
                 "name": "관절(무릎·고관절) 수술비",
                 "theme": "수술",
-                "confidence": 0.061879168425172805,
+                "confidence": 0.06148015572349615,
                 "availableQuantities": [
                     100000
                 ],
@@ -20817,7 +27719,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "620238",
                 "name": "민사소송법률비용",
                 "theme": "재물/배상",
-                "confidence": 0.03050417627642242,
+                "confidence": 0.03176211691105933,
                 "availableQuantities": [
                     20000000
                 ],
@@ -20833,7 +27735,7 @@ export const SAMPLE_CONTRACTS = {
                 "id": "610684",
                 "name": "자가용운전자용 자동차사고입원일당(1~11급/1일이상)",
                 "theme": "입원일당",
-                "confidence": 0.029282171111257742,
+                "confidence": 0.029127465140719233,
                 "availableQuantities": [
                     70000
                 ],
