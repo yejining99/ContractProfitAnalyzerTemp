@@ -1327,7 +1327,7 @@ const getModifiedItems = useCallback(() => {
                       <tr className="border-b">
                         <th className="px-2 py-1 text-left text-sm w-[50%]">아이템명</th>
                         <th className="px-2 py-1 text-left text-sm w-[3%]"></th>
-                        <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
+                        <th className="px-2 py-1 text-left text-sm w-[13%]">가입금액</th>
                         <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
                         <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
                         <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
@@ -1500,7 +1500,6 @@ const getModifiedItems = useCallback(() => {
             </CardContent>
           </Card>
         </div>
-
         {/* 오른쪽 패널: 전체 아이템 목록 */}
         <Card className="w-[60%] overflow-hidden flex flex-col">
           <CardHeader className="py-2">
@@ -1829,6 +1828,23 @@ const getModifiedItems = useCallback(() => {
                 <TabsContent key={theme} value={theme}>
                   <div className="relative">
                     {/* 실제 데이터를 위한 테이블 */}
+                    <CardContent className="py-1">
+                          <div className="overflow-x-auto">
+                            <table className="w-full">
+                              <thead>
+                                <tr className="border-b">
+                                  <th className="px-2 py-1 text-left text-sm w-[70%]">아이템명</th>
+                                  <th className="px-2 py-1 text-left text-sm w-[10%]">증가율</th>
+                                  <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
+                                  <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
+                                  <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
+                                  <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
+                                  <th className="px-2 py-1 text-left w-[1%]"></th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </div>
+                        </CardContent>
                     <table className="w-full">
                       <tbody>
                         {(sortedItems || [])
@@ -1908,19 +1924,7 @@ const getModifiedItems = useCallback(() => {
               <div className="flex-[0.6]">
                 <h3 className="text-sm font-medium text-gray-500 mb-1 flex items-center gap-2">
                   수정 후
-                  {profitabilityChange !== "0.0" && (
-                    <Badge 
-                      variant="outline"
-                      className={`flex items-center gap-1 ${
-                        Number(profitabilityChange) > 0
-                          ? 'border-red-500 text-red-700 bg-red-50'
-                          : 'border-blue-500 text-blue-700 bg-blue-50'
-                      }`}
-                    >
-                      {Number(profitabilityChange) > 0 ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
-                      {profitabilityChange > 0 ? "+" : ""}{profitabilityChange}%
-                    </Badge>
-                  )}
+                  {profitabilityChange !== "0.0" }
                 </h3>
                 <div className="grid grid-cols-3 gap-2">
                   <div className={`bg-white p-2 rounded-lg h-[85px] ${
