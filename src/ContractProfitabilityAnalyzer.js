@@ -171,6 +171,8 @@ const ContractProfitabilityAnalyzer = () => {
   // 상태 관리
   // 현재 선택된 계약 ID
   const [contractId, setContractId] = useState("");
+  // 검색 쿼리 상태 추가
+  const [searchQuery, setSearchQuery] = useState("");
   // 현재 계약 정보
   const [contract, setContract] = useState(null);
   // 계약 수정 사항 목록
@@ -183,6 +185,8 @@ const ContractProfitabilityAnalyzer = () => {
   const [sortedItems, setSortedItems] = useState([]);
   // 실손 할인 선택 상태 추가
   const [selectedSilsonType, setSelectedSilsonType] = useState(null);
+  // 현재 계약 아이템 섹션 접힘 상��� 추가
+  const [isContractItemsCollapsed, setIsContractItemsCollapsed] = useState(false);
 
   // 스크롤을 위한 ref 추가
   const itemListRef = useRef(null);
@@ -194,7 +198,7 @@ const ContractProfitabilityAnalyzer = () => {
     }
   };
 
-  // 아이템의 현재 상���� 확인 변수 (포함 여부, 수정 여부 등)
+  // 아이템의 현재 상태 확인 변수 (포함 여부, 수정 여부 등)
   const getItemStatus = (item) => {
     if (!contract) return { included: false, modified: false };
     
@@ -293,7 +297,7 @@ const ContractProfitabilityAnalyzer = () => {
             const originalSetItem = contract?.items.find(i => i.id === id);
             const modSetItem = modifications.find(mod => mod.id === id);
             
-            // 원래 있던 아이템이고 수량이 같은 경우 변경 없음
+            // 원래 있던 아이템이고 수량이 같은 경우 변경 ����음
             if (originalSetItem) {
                 // 원래 아이템이 추가된 경우도 true 반환
                 if (modSetItem?.action === 'add') {
@@ -427,7 +431,7 @@ const ContractProfitabilityAnalyzer = () => {
   const filterItemsByTheme = (items, theme) => {
     if (theme === 'all') return items;
     return items.filter(item => {
-      // theme이 문자열인 경우와 배열인 경우 모두 처리
+      // theme이 문자열인 경우와 배열�� 경우 모두 처리
       if (Array.isArray(item.theme)) {
         return item.theme.includes(theme);
       }
@@ -449,7 +453,7 @@ const ContractProfitabilityAnalyzer = () => {
       return contract?.items.find(i => i.id === item.id)?.quantity;
     };
 
-    // 수량 상태 초기화 로직 수정
+    // 수량 상태 초기화 로직 수��
     const [previewQuantity, setPreviewQuantity] = useState(() => {
       const existingMod = modifications.find(mod => mod.id === item.id);
       const originalItem = contract?.items.find(i => i.id === item.id);
@@ -519,10 +523,9 @@ const ContractProfitabilityAnalyzer = () => {
     };
 
     const getMetricsForQuantity = (quantity) => {
-      if (!details?.priceAndProfitByQuantity || !quantity) {
-        return { totalPrice: 0, totalProfit: 0 };
-      }
-      return details.priceAndProfitByQuantity[quantity] || { totalPrice: 0, totalProfit: 0 };
+      // 모든 경우에 availableItems의 값 사용
+      const details = contract?.availableItems.find(i => i.id === item.id);
+      return details?.priceAndProfitByQuantity[quantity] || { totalPrice: 0, totalProfit: 0 };
     };
 
     const metrics = getMetricsForQuantity(previewQuantity);
@@ -720,7 +723,12 @@ const ContractProfitabilityAnalyzer = () => {
       if (!contract || (isSetMember && !isSetHeader)) return null;
 
       const currentMetrics = calculateMetrics(contract.items);
-      const itemMetrics = getMetricsForQuantity(previewQuantity);
+      
+      // 현재 계약에 포함된 아이템인 경우 원본 값 사용
+      const originalItem = contract.items.find(i => i.id === item.id);
+      const itemMetrics = originalItem 
+        ? { totalPrice: originalItem.totalPrice, totalProfit: originalItem.totalProfit }
+        : getMetricsForQuantity(previewQuantity);
 
       if (!itemMetrics) return null;
 
@@ -812,7 +820,20 @@ const ContractProfitabilityAnalyzer = () => {
             {/* 세트의 모든 아이템을 한번에 토글 */}
             {isSetExpanded && setInfo.ids.map(id => {
               const itemDetails = contract?.availableItems.find(i => i.id === id);
+              const originalItem = contract.items.find(i => i.id === id);
               if (!itemDetails) return null;
+
+              // 원본 아이템의 메트릭스 계산
+              const metrics = status.originallyIncluded && !status.modified
+                ? {
+                    totalPrice: originalItem?.totalPrice || 0,
+                    totalProfit: originalItem?.totalProfit || 0
+                  }
+                : itemDetails.priceAndProfitByQuantity[previewQuantity] || { totalPrice: 0, totalProfit: 0 };
+
+              const profitability = metrics.totalPrice > 0 
+                ? (metrics.totalProfit / metrics.totalPrice) * 100 
+                : 0;
 
               return (
                 <tr 
@@ -926,16 +947,20 @@ const ContractProfitabilityAnalyzer = () => {
               )}
             </td>
             <td className="px-2 py-1 text-sm w-[10%]">
-              <select 
-                className="border rounded px-1 py-0.5 text-xs w-20"
-                value={previewQuantity}
-                onChange={handleQuantityChange}
-                disabled={!contract}
-              >
-                {details?.availableQuantities?.map(q => (
-                  <option key={q} value={q}>{formatAmountToManWon(q)}</option>
-                ))}
-              </select>
+              {status.originallyIncluded && !status.modified ? (
+                <span>{formatAmountToManWon(item.quantity)}</span>
+              ) : (
+                <select 
+                  className="border rounded px-1 py-0.5 text-xs w-20"
+                  value={previewQuantity}
+                  onChange={handleQuantityChange}
+                  disabled={!contract}
+                >
+                  {details?.availableQuantities?.map(q => (
+                    <option key={q} value={q}>{formatAmountToManWon(q)}</option>
+                  ))}
+                </select>
+              )}
             </td>
             <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
             <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
@@ -1280,31 +1305,169 @@ const getModifiedItems = useCallback(() => {
           {getThemeRatioDisplay()}
 
           {/* 현재 계약 아이템 */}
-          <Card className="flex-1 overflow-auto">
+          <Card className={`overflow-auto transition-all duration-300 ${
+            isContractItemsCollapsed ? 'flex-none h-10' : 'flex-1'
+          }`}>
             <CardHeader className="py-2">
-              <CardTitle>현재 계약 아이템</CardTitle>
+              <CardTitle 
+                onClick={() => setIsContractItemsCollapsed(!isContractItemsCollapsed)} 
+                className="cursor-pointer flex items-center gap-2"
+              >
+                현재 계약 아이템
+                <span className="text-sm text-gray-500">
+                  {isContractItemsCollapsed ? '▲' : '▼' }
+                </span>
+              </CardTitle>
             </CardHeader>
-            <CardContent className="py-1">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="px-2 py-1 text-left text-sm w-[80%]">아이템명</th>
-                      <th className="px-2 py-1 text-left text-sm w-[10%]"></th>
-                      <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
-                      <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
-                      <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
-                      <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
-                      <th className="px-2 py-1 text-sm w-[5%]"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {contract?.items.map(item => (
-                      <ItemRow key={item.id} item={item} />
-                    ))}
+            {!isContractItemsCollapsed && (
+              <CardContent className="py-1">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="px-2 py-1 text-left text-sm w-[50%]">아이템명</th>
+                        <th className="px-2 py-1 text-left text-sm w-[3%]"></th>
+                        <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
+                        <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
+                        <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
+                        <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
+                        <th className="px-2 py-1 text-sm w-[5%]"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {contract?.items.reduce((acc, item) => {
+                        const setInfo = getSetInfo(contract.id, item.id);
+                        
+                        // 이미 처리된 세트의 첫 번째 아이템인 경우에만 세트 전체를 처리
+                        if (setInfo) {
+                          const setItems = contract.items.filter(i => setInfo.ids.includes(i.id));
+                          const firstSetItem = setItems[0];
+                          
+                          // 현재 아이템이 세트의 첫 번째 아이템인 경우에만 세트 전체를 처리
+                          if (item.id === firstSetItem.id) {
+                            const setMetrics = setItems.reduce((sum, i) => ({
+                              totalPrice: sum.totalPrice + i.totalPrice,
+                              totalProfit: sum.totalProfit + i.totalProfit
+                            }), { totalPrice: 0, totalProfit: 0 });
+
+                          // 세트 헤더 추가
+                          acc.push({
+                            type: 'set-header',
+                            setId: setInfo.id,
+                            itemId: item.id,
+                            element: (
+                              <tr key={`set-${setInfo.id}`} className="border-b last:border-b-0 bg-purple-50">
+                                <td className="px-2 py-1 text-sm">
+                                  <div className="flex items-center gap-1">
+                                    <Badge variant="outline" className="bg-purple-50 border-purple-200 text-purple-700">
+                                      세트 ({setItems.length}개)
+                                    </Badge>
+                                  </div>
+                                </td>
+                                <td className="px-2 py-1 text-sm text-center"></td>
+                                <td className="px-2 py-1 text-sm"></td>
+                                <td className="px-2 py-1 text-sm text-right">
+                                  ₩{Math.floor(setMetrics.totalPrice).toLocaleString()}
+                                </td>
+                                <td className="px-2 py-1 text-sm text-right">
+                                  ₩{Math.floor(setMetrics.totalProfit).toLocaleString()}
+                                </td>
+                                <td className="px-2 py-1 text-sm text-right">
+                                  {setMetrics.totalPrice > 0 
+                                    ? Math.floor((setMetrics.totalProfit / setMetrics.totalPrice) * 100)
+                                    : 0}%
+                                </td>
+                                <td className="px-2 py-1 text-sm"></td>
+                              </tr>
+                            )
+                          });
+
+                          // 세트의 모든 멤버 추가
+                          setItems.forEach(setItem => {
+                            acc.push({
+                              type: 'set-member',
+                              setId: setInfo.id,
+                              itemId: setItem.id,
+                              element: (
+                                <tr key={setItem.id} className="border-b last:border-b-0">
+                                  <td className="px-2 py-1 text-sm">
+                                    <div className="flex items-center gap-1 ml-6">
+                                      <span className="text-purple-400 mr-1">└</span>
+                                      {setItem.name}
+                                    </div>
+                                  </td>
+                                  <td className="px-2 py-1 text-sm text-center"></td>
+                                  <td className="px-2 py-1 text-sm">
+                                    {formatAmountToManWon(setItem.quantity)}
+                                  </td>
+                                  <td className="px-2 py-1 text-sm text-right">
+                                    ₩{Math.floor(setItem.totalPrice).toLocaleString()}
+                                  </td>
+                                  <td className="px-2 py-1 text-sm text-right">
+                                    ₩{Math.floor(setItem.totalProfit).toLocaleString()}
+                                  </td>
+                                  <td className="px-2 py-1 text-sm text-right">
+                                    {setItem.totalPrice > 0 
+                                      ? Math.floor((setItem.totalProfit / setItem.totalPrice) * 100)
+                                      : 0}%
+                                  </td>
+                                  <td className="px-2 py-1 text-sm">
+                                    <div className="flex justify-end gap-1">
+                                      <button
+                                        onClick={() => toggleItem(setItem, null, 'remove')}
+                                        className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                                      >
+                                        -
+                                      </button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              )
+                            });
+                          });
+                        }
+                      } else {
+                        // 일반 아이템 추가
+                        acc.push({
+                          type: 'single',
+                          itemId: item.id,
+                          element: (
+                            <tr key={item.id} className="border-b last:border-b-0">
+                              <td className="px-2 py-1 text-sm">{item.name}</td>
+                              <td className="px-2 py-1 text-sm text-center"></td>
+                              <td className="px-2 py-1 text-sm">
+                                {formatAmountToManWon(item.quantity)}
+                              </td>
+                              <td className="px-2 py-1 text-sm text-right">
+                                ₩{Math.floor(item.totalPrice).toLocaleString()}
+                              </td>
+                              <td className="px-2 py-1 text-sm text-right">
+                                ₩{Math.floor(item.totalProfit).toLocaleString()}
+                              </td>
+                              <td className="px-2 py-1 text-sm text-right">
+                                {item.totalPrice > 0 
+                                  ? Math.floor((item.totalProfit / item.totalPrice) * 100)
+                                  : 0}%
+                              </td>
+                              <td className="px-2 py-1 text-sm">
+                                <div className="flex justify-end gap-1">
+                                  <button
+                                    onClick={() => toggleItem(item, null, 'remove')}
+                                    className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                                  >
+                                    -
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          )
+                        });
+                      }
+                      return acc;
+                    }, []).map(row => row.element)}
                     {(!contract?.items || contract.items.length === 0) && (
                       <tr>
-                        <td colSpan="6" className="px-4 py-8 text-center text-gray-500">
+                        <td colSpan="7" className="px-4 py-8 text-center text-gray-500">
                           계약에 포함된 아이템이 없습니다
                         </td>
                       </tr>
@@ -1313,10 +1476,13 @@ const getModifiedItems = useCallback(() => {
                 </table>
               </div>
             </CardContent>
+            )}
           </Card>
 
           {/* 수정 사항 아이템 */}
-          <Card className="flex-1 overflow-auto">
+          <Card className={`overflow-auto transition-all duration-300 ${
+            isContractItemsCollapsed ? 'flex-[2]' : 'flex-1'
+          }`}>
             <CardHeader className="py-2">
               <CardTitle>수정 사항</CardTitle>
             </CardHeader>
@@ -1338,276 +1504,297 @@ const getModifiedItems = useCallback(() => {
         {/* 오른쪽 패널: 전체 아이템 목록 */}
         <Card className="w-[60%] overflow-hidden flex flex-col">
           <CardHeader className="py-2">
-            <CardTitle className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <h3 className="text-lg font-semibold">전체 아이템</h3>
-                <div className="flex gap-1">
-                  <button
-                    onClick={() => {
-                      if (!contract || !originalContract) return;
-                      
-                      // 원본 데이터를 복사하여 사용
-                      const itemsToSort = [...originalContract.availableItems];
-                      
-                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
-                      const groups = [];
-                      const processedItems = new Set();
-
-                      itemsToSort.forEach(item => {
-                        if (processedItems.has(item.id)) return;
-
-                        const setInfo = getSetInfo(originalContract.id, item.id);
-                        if (setInfo) {
-                          // 세트 아이템인 경우
-                          const groupItems = setInfo.ids.map(id => 
-                            itemsToSort.find(i => i.id === id)
-                          ).filter(Boolean);
+            <CardTitle>
+              <div className="flex flex-col gap-2 w-full">
+                {/* 상단 헤더 */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-semibold">전체 아이템</h3>
+                    <div className="flex gap-1">
+                      <button
+                        onClick={() => {
+                          if (!contract || !originalContract) return;
                           
-                          setInfo.ids.forEach(id => processedItems.add(id));
+                          // 원본 데이터를 복사하여 사용
+                          const itemsToSort = [...originalContract.availableItems];
                           
-                          groups.push({
-                            type: 'set',
-                            items: groupItems
+                          // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                          const groups = [];
+                          const processedItems = new Set();
+
+                          itemsToSort.forEach(item => {
+                            if (processedItems.has(item.id)) return;
+
+                            const setInfo = getSetInfo(originalContract.id, item.id);
+                            if (setInfo) {
+                              // 세트 아이템인 경우
+                              const groupItems = setInfo.ids.map(id => 
+                                itemsToSort.find(i => i.id === id)
+                              ).filter(Boolean);
+                              
+                              setInfo.ids.forEach(id => processedItems.add(id));
+                              
+                              groups.push({
+                                type: 'set',
+                                items: groupItems
+                              });
+                            } else {
+                              // 일반 아이템인 경우
+                              groups.push({
+                                type: 'single',
+                                items: [item],
+                                confidence: item.confidence || 0
+                              });
+                              processedItems.add(item.id);
+                            }
                           });
-                        } else {
-                          // 일반 아이템인 경우
-                          groups.push({
-                            type: 'single',
-                            items: [item],
-                            confidence: item.confidence || 0
+
+                          // 2. 그룹 단위로 랜덤 정렬
+                          const randomizedGroups = groups.sort(() => Math.random() - 0.5);
+
+                          // 3. 정렬된 그룹에서 아이템 추출
+                          const randomizedItems = randomizedGroups.flatMap(group => group.items);
+                          const sortedRandomizedItems = randomizedItems.sort((a, b) => {
+                            const aIncluded = contract.items.some(item => item.id === a.id);
+                            const bIncluded = contract.items.some(item => item.id === b.id);
+                            return aIncluded - bIncluded; // Non-included items first
                           });
-                          processedItems.add(item.id);
-                        }
-                      });
-
-                      // 2. 그룹 단위로 랜덤 정렬
-                      const randomizedGroups = groups.sort(() => Math.random() - 0.5);
-
-                      // 3. 정렬된 그룹에서 아이템 추출
-                      const randomizedItems = randomizedGroups.flatMap(group => group.items);
-                      
-                      setSortedItems(randomizedItems);
-                      
-                      // 스크롤 초기화 추가
-                      resetScroll();
-                    }}
-                    className="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
-                    disabled={!contract}
-                  >
-                    🎲 랜덤정렬
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (!contract || !originalContract) return;
-                      
-                      const itemsToSort = [...originalContract.availableItems];
-                      const groups = [];
-                      const processedItems = new Set();
-
-                      itemsToSort.forEach(item => {
-                        if (processedItems.has(item.id)) return;
-
-                        const setInfo = getSetInfo(originalContract.id, item.id);
-                        if (setInfo) {
-                          // 세트 아이템인 경우
-                          const groupItems = setInfo.ids.map(id => 
-                            itemsToSort.find(i => i.id === id)
-                          ).filter(Boolean);
+                          setSortedItems(sortedRandomizedItems);
                           
-                          setInfo.ids.forEach(id => processedItems.add(id));
+                          // 스크롤 초기화 추가
+                          resetScroll();
+                        }}
+                        className="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                        disabled={!contract}
+                      >
+                        🎲 랜덤정렬
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (!contract || !originalContract) return;
                           
-                          // 세트의 평균 추천도 계산
-                          const avgConfidence = groupItems.reduce((sum, item) => 
-                            sum + (item.confidence || 0), 0) / groupItems.length;
+                          const itemsToSort = [...originalContract.availableItems];
+                          const groups = [];
+                          const processedItems = new Set();
 
-                          groups.push({
-                            type: 'set',
-                            items: groupItems,
-                            score: avgConfidence
+                          itemsToSort.forEach(item => {
+                            if (processedItems.has(item.id)) return;
+
+                            const setInfo = getSetInfo(originalContract.id, item.id);
+                            if (setInfo) {
+                              // 세트 아이템인 경우
+                              const groupItems = setInfo.ids.map(id => 
+                                itemsToSort.find(i => i.id === id)
+                              ).filter(Boolean);
+                              
+                              setInfo.ids.forEach(id => processedItems.add(id));
+                              
+                              // 세트의 평균 추천도 계산
+                              const avgConfidence = groupItems.reduce((sum, item) => 
+                                sum + (item.confidence || 0), 0) / groupItems.length;
+
+                              groups.push({
+                                type: 'set',
+                                items: groupItems,
+                                score: avgConfidence
+                              });
+                            } else {
+                              // 일반 아이템인 경우
+                              groups.push({
+                                type: 'single',
+                                items: [item],
+                                score: item.confidence || 0
+                              });
+                              processedItems.add(item.id);
+                            }
                           });
-                        } else {
-                          // 일반 아이템인 경우
-                          groups.push({
-                            type: 'single',
-                            items: [item],
-                            score: item.confidence || 0
+
+                          // 추천도 기준으로 정렬
+                          groups.sort((a, b) => b.score - a.score);
+
+                          const sortedRecommendedItems = groups.flatMap(group => group.items).sort((a, b) => {
+                            const aIncluded = contract.items.some(item => item.id === a.id);
+                            const bIncluded = contract.items.some(item => item.id === b.id);
+                            return aIncluded - bIncluded; // Non-included items first
                           });
-                          processedItems.add(item.id);
-                        }
-                      });
-
-                      // 추천도 기준으로 정렬
-                      groups.sort((a, b) => b.score - a.score);
-
-                      const sortedItems = groups.flatMap(group => group.items);
-                      setSortedItems(sortedItems);
-                      resetScroll();
-                    }}
-                    className="px-2 py-1 text-xs bg-blue-100 hover:bg-blue-200 rounded transition-colors"
-                    disabled={!contract}
-                  >
-                    ⭐ 추천정렬
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (!contract || !originalContract) return;
-                      
-                      // 원본 데이터를 복사하여 사용
-                      const itemsToSort = [...originalContract.availableItems];
-                      
-                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
-                      const groups = [];
-                      const processedItems = new Set();
-
-                      itemsToSort.forEach(item => {
-                        if (processedItems.has(item.id)) return;
-
-                        const setInfo = getSetInfo(originalContract.id, item.id);
-                        if (setInfo) {
-                          // 세트 아이템인 경우
-                          const groupItems = setInfo.ids.map(id => 
-                            itemsToSort.find(i => i.id === id)
-                          ).filter(Boolean);
+                          setSortedItems(sortedRecommendedItems);
+                          resetScroll();
+                        }}
+                        className="px-2 py-1 text-xs bg-blue-100 hover:bg-blue-200 rounded transition-colors"
+                        disabled={!contract}
+                      >
+                        ⭐ 추천정렬
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (!contract || !originalContract) return;
                           
-                          setInfo.ids.forEach(id => processedItems.add(id));
+                          // 원본 데이터를 복사하여 사용
+                          const itemsToSort = [...originalContract.availableItems];
                           
-                          // 세트 전체의 메트릭스 계산
-                          const setMetrics = groupItems.reduce((acc, item) => {
-                            const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                            return {
-                              totalPrice: acc.totalPrice + (metrics?.totalPrice || 0),
-                              totalProfit: acc.totalProfit + (metrics?.totalProfit || 0)
-                            };
-                          }, { totalPrice: 0, totalProfit: 0 });
+                          // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
+                          const groups = [];
+                          const processedItems = new Set();
 
-                          const setProfitability = setMetrics.totalPrice > 0 
-                            ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
-                            : -Infinity;
+                          itemsToSort.forEach(item => {
+                            if (processedItems.has(item.id)) return;
 
-                          groups.push({
-                            type: 'set',
-                            items: groupItems,
-                            profitability: setProfitability
+                            const setInfo = getSetInfo(originalContract.id, item.id);
+                            if (setInfo) {
+                              // 세트 아이템인 경우
+                              const groupItems = setInfo.ids.map(id => 
+                                itemsToSort.find(i => i.id === id)
+                              ).filter(Boolean);
+                              
+                              setInfo.ids.forEach(id => processedItems.add(id));
+                              
+                              // 세트 전체의 메트릭스 계산
+                              const setMetrics = groupItems.reduce((acc, item) => {
+                                const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                                return {
+                                  totalPrice: acc.totalPrice + (metrics?.totalPrice || 0),
+                                  totalProfit: acc.totalProfit + (metrics?.totalProfit || 0)
+                                };
+                              }, { totalPrice: 0, totalProfit: 0 });
+
+                              const setProfitability = setMetrics.totalPrice > 0 
+                                ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
+                                : -Infinity;
+
+                              groups.push({
+                                type: 'set',
+                                items: groupItems,
+                                profitability: setProfitability
+                              });
+                            } else {
+                              // 일반 아이템인 경우
+                              const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                              const profitability = metrics?.totalPrice > 0 
+                                ? (metrics.totalProfit / metrics.totalPrice) * 100 
+                                : -Infinity;
+
+                              groups.push({
+                                type: 'single',
+                                items: [item],
+                                profitability: profitability
+                              });
+                              processedItems.add(item.id);
+                            }
                           });
-                        } else {
-                          // 일반 아이템인 경우
-                          const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                          const profitability = metrics?.totalPrice > 0 
-                            ? (metrics.totalProfit / metrics.totalPrice) * 100 
-                            : -Infinity;
 
-                          groups.push({
-                            type: 'single',
-                            items: [item],
-                            profitability: profitability
+                          // 2. 모든 그룹을 KMV(%) 기준으로 정렬
+                          groups.sort((a, b) => b.profitability - a.profitability);
+
+                          // 3. 정렬된 그룹에서 아이템 추출
+                          const sortedKMVItems = groups.flatMap(group => group.items).sort((a, b) => {
+                            const aIncluded = contract.items.some(item => item.id === a.id);
+                            const bIncluded = contract.items.some(item => item.id === b.id);
+                            return aIncluded - bIncluded; // Non-included items first
                           });
-                          processedItems.add(item.id);
-                        }
-                      });
 
-                      // 2. 모든 그룹을 KMV(%) 기준으로 정렬
-                      groups.sort((a, b) => b.profitability - a.profitability);
-
-                      // 3. 정렬된 그룹에서 아이템 추출
-                      const sortedItems = groups.flatMap(group => group.items);
-
-                      setSortedItems(sortedItems);
-                      
-                      // 스크롤 초기화
-                      resetScroll();
-                    }}
-                    className="px-2 py-1 text-xs bg-green-100 hover:bg-green-200 rounded transition-colors"
-                    disabled={!contract}
-                  >
-                    💰 KMV정렬
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (!contract || !originalContract) return;
-                      
-                      const itemsToSort = [...originalContract.availableItems];
-                      const groups = [];
-                      const processedItems = new Set();
-
-                      itemsToSort.forEach(item => {
-                        if (processedItems.has(item.id)) return;
-
-                        const setInfo = getSetInfo(originalContract.id, item.id);
-                        if (setInfo) {
-                          // 세트 아이템인 경우
-                          const groupItems = setInfo.ids.map(id => 
-                            itemsToSort.find(i => i.id === id)
-                          ).filter(Boolean);
+                          setSortedItems(sortedKMVItems);
                           
-                          setInfo.ids.forEach(id => processedItems.add(id));
+                          // 스크롤 초기화
+                          resetScroll();
+                        }}
+                        className="px-2 py-1 text-xs bg-green-100 hover:bg-green-200 rounded transition-colors"
+                        disabled={!contract}
+                      >
+                        💰 KMV정렬
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (!contract || !originalContract) return;
                           
-                          // 세트 전체의 메트릭스와 평균 추천도 계산
-                          const setMetrics = groupItems.reduce((acc, item) => {
-                            const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                            return {
-                              totalPrice: acc.totalPrice + (metrics?.totalPrice || 0),
-                              totalProfit: acc.totalProfit + (metrics?.totalProfit || 0),
-                              confidence: acc.confidence + (item.confidence || 0)
-                            };
-                          }, { totalPrice: 0, totalProfit: 0, confidence: 0 });
+                          const itemsToSort = [...originalContract.availableItems];
+                          const groups = [];
+                          const processedItems = new Set();
 
-                          const avgConfidence = setMetrics.confidence / groupItems.length;
-                          const setProfitability = setMetrics.totalPrice > 0 
-                            ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
-                            : 0;
+                          itemsToSort.forEach(item => {
+                            if (processedItems.has(item.id)) return;
 
-                          groups.push({
-                            type: 'set',
-                            items: groupItems,
-                            score: avgConfidence * setProfitability // 추천도와 수익률의 곱
+                            const setInfo = getSetInfo(originalContract.id, item.id);
+                            if (setInfo) {
+                              // 세트 아이템인 경우
+                              const groupItems = setInfo.ids.map(id => 
+                                itemsToSort.find(i => i.id === id)
+                              ).filter(Boolean);
+                              
+                              setInfo.ids.forEach(id => processedItems.add(id));
+                              
+                              // 세트 전체의 메트릭스와 평균 추천도 계산
+                              const setMetrics = groupItems.reduce((acc, item) => {
+                                const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                                return {
+                                  totalPrice: acc.totalPrice + (metrics?.totalPrice || 0),
+                                  totalProfit: acc.totalProfit + (metrics?.totalProfit || 0),
+                                  confidence: acc.confidence + (item.confidence || 0)
+                                };
+                              }, { totalPrice: 0, totalProfit: 0, confidence: 0 });
+
+                              const avgConfidence = setMetrics.confidence / groupItems.length;
+                              const setProfitability = setMetrics.totalPrice > 0 
+                                ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
+                                : 0;
+
+                              groups.push({
+                                type: 'set',
+                                items: groupItems,
+                                score: avgConfidence * setProfitability // 추천도와 수익률의 곱
+                              });
+                            } else {
+                              // 일반 아이템인 경우
+                              const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
+                              const profitability = metrics?.totalPrice > 0 
+                                ? (metrics.totalProfit / metrics.totalPrice) * 100 
+                                : 0;
+
+                              groups.push({
+                                type: 'single',
+                                items: [item],
+                                score: (item.confidence || 0) * profitability // 추천도와 수익률의 곱
+                              });
+                              processedItems.add(item.id);
+                            }
                           });
-                        } else {
-                          // 일반 아이템인 경우
-                          const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                          const profitability = metrics?.totalPrice > 0 
-                            ? (metrics.totalProfit / metrics.totalPrice) * 100 
-                            : 0;
 
-                          groups.push({
-                            type: 'single',
-                            items: [item],
-                            score: (item.confidence || 0) * profitability // 추천도와 수익률의 곱
+                          // 추천도×KMV 점수로 정렬
+                          groups.sort((a, b) => b.score - a.score);
+
+                          const sortedRecommendationKMVItems = groups.flatMap(group => group.items).sort((a, b) => {
+                            const aIncluded = contract.items.some(item => item.id === a.id);
+                            const bIncluded = contract.items.some(item => item.id === b.id);
+                            return aIncluded - bIncluded; // Non-included items first
                           });
-                          processedItems.add(item.id);
-                        }
-                      });
-
-                      // 추천도×KMV 점수로 정렬
-                      groups.sort((a, b) => b.score - a.score);
-
-                      const sortedItems = groups.flatMap(group => group.items);
-                      setSortedItems(sortedItems);
-                      resetScroll();
-                    }}
-                    className="px-2 py-1 text-xs bg-purple-100 hover:bg-purple-200 rounded transition-colors"
-                    disabled={!contract}
-                  >
-                    🎯 추천×KMV정렬
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 text-sm font-normal">
-                <span className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-blue-50 border border-blue-200 rounded"></div>
-                  현재 계약
-                </span>
-                <span className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-green-50 border border-green-200 rounded"></div>
-                  새로 추가
-                </span>
-                <span className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-yellow-50 border border-yellow-200 rounded"></div>
-                  수량 변경
-                </span>
-                <span className="flex items-center gap-1">
-                  <div className="w-3 h-3 bg-red-50 border border-red-200 rounded"></div>
-                  삭제 예정
-                </span>
+                          setSortedItems(sortedRecommendationKMVItems);
+                          resetScroll();
+                        }}
+                        className="px-2 py-1 text-xs bg-purple-100 hover:bg-purple-200 rounded transition-colors"
+                        disabled={!contract}
+                      >
+                        🎯 추천×KMV정렬
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm font-normal">
+                    <span className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-blue-50 border border-blue-200 rounded"></div>
+                      현재 계약
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-green-50 border border-green-200 rounded"></div>
+                      새로 추가
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-yellow-50 border border-yellow-200 rounded"></div>
+                      가입금액 변경
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <div className="w-3 h-3 bg-red-50 border border-red-200 rounded"></div>
+                      삭제 예정
+                    </span>
+                  </div>
+                </div>        
               </div>
             </CardTitle>
           </CardHeader>
@@ -1620,32 +1807,27 @@ const getModifiedItems = useCallback(() => {
               className="w-full"
               onValueChange={(value) => setSelectedType(value)}
             >
-              <TabsList className="mb-4 flex flex-wrap gap-1">
-                {getAvailableThemes.map(theme => (
-                  <TabsTrigger key={theme} value={theme}>
-                    {theme === "all" ? "전체" : THEME_LABELS[theme] || theme}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
+              <div className="flex justify-between mb-4">
+                <TabsList className="flex flex-wrap gap-1">
+                  {getAvailableThemes.map(theme => (
+                    <TabsTrigger key={theme} value={theme}>
+                      {theme === "all" ? "전체" : THEME_LABELS[theme] || theme}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+                {/* 검색 입력 필드를 테마 오른편에 배치 */}
+                <input
+                  type="text"
+                  placeholder="아이템 검색..."
+                  className="flex-grow p-2 border rounded bg-white shadow-sm focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
 
               {getAvailableThemes.map(theme => (
                 <TabsContent key={theme} value={theme}>
                   <div className="relative">
-                    {/* 고정된 헤더를 위한 테이블 */}
-                    <table className="w-full sticky top-0 bg-white z-10 shadow-sm">
-                      <thead>
-                        <tr className="border-b">
-                          <th className="px-2 py-1 text-left text-sm w-[70%]">아이템명</th>
-                          <th className="px-2 py-1 text-left text-sm w-[10%]">영향도</th>
-                          <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
-                          <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
-                          <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
-                          <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
-                          <th className="px-2 py-1 text-sm w-[5%]"></th>
-                        </tr>
-                      </thead>
-                    </table>
-                    
                     {/* 실제 데이터를 위한 테이블 */}
                     <table className="w-full">
                       <tbody>
@@ -1655,6 +1837,8 @@ const getModifiedItems = useCallback(() => {
                             const itemThemes = Array.isArray(item.theme) ? item.theme : [item.theme];
                             return itemThemes.includes(theme);
                           })
+                          // 검색 쿼리에 따라 필터링
+                          .filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
                           .map(item => (
                             <ItemRow 
                               key={item.id} 
@@ -1706,7 +1890,7 @@ const getModifiedItems = useCallback(() => {
                 </div>
               </div>
 
-              {/* 구분선 */}
+              {/* 구분��� */}
               <div className="flex flex-col items-center gap-2 h-[85px]">
                 <div className="h-12 w-px bg-gray-300"></div>
                 {profitabilityChange !== "0.0" && (
@@ -1800,6 +1984,11 @@ const getModifiedItems = useCallback(() => {
           </div>
         </div>
       )}
+
+      {/* 추가된 정보 */}
+      <div className="bg-gray-100 p-4 text-center text-sm text-gray-700">
+        목표치: GA +1150% 이상, TA +1050% 이상, TM +630% 이상
+      </div>
     </div>
   );
 };
