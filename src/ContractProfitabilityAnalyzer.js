@@ -187,7 +187,7 @@ const ContractProfitabilityAnalyzer = () => {
     }
   };
 
-  // 아이템의 현재 상�� 확인 변수 (포함 여부, 수정 여부 등)
+  // 아이템의 현재 상���� 확인 변수 (포함 여부, 수정 여부 등)
   const getItemStatus = (item) => {
     if (!contract) return { included: false, modified: false };
     
@@ -286,7 +286,7 @@ const ContractProfitabilityAnalyzer = () => {
             const originalSetItem = contract?.items.find(i => i.id === id);
             const modSetItem = modifications.find(mod => mod.id === id);
             
-            // 원래 있던 아이템이고 수량이 같으면 변경 없음
+            // 원래 있던 아이템이고 수량이 같은 경우 변경 없음
             if (originalSetItem) {
                 // 원래 아이템이 추가된 경우도 true 반환
                 if (modSetItem?.action === 'add') {
@@ -523,31 +523,59 @@ const ContractProfitabilityAnalyzer = () => {
       ? ((metrics.totalProfit / metrics.totalPrice) * 100).toFixed(1) 
       : '0.0';
 
-    // 미리보기 수량으로 수익률 영향도 계산
-    const calculateProfitabilityImpact = () => {
-      const contractQuantity = getCurrentContractQuantity();
-      const isModified = modifications.some(mod => mod.id === item.id);
+    // 세트 정보 가져오기
+    const setInfo = getSetInfo(contract?.id, item.id);
+    const isSetHeader = setInfo?.ids[0] === item.id;
+    const isSetMember = !!setInfo;
+
+    // 세트 전체 메트릭스 계산 함수 추가
+    const calculateSetMetrics = () => {
+      if (!setInfo || !isSetHeader) return null;
+
+      const setMetrics = setInfo.ids.reduce((acc, id) => {
+        const itemDetails = contract?.availableItems.find(i => i.id === id);
+        const itemMod = modifications.find(mod => mod.id === id);
+        const quantity = itemMod?.quantity || itemDetails?.recommendedQuantity || 0;
+        const metrics = itemDetails?.priceAndProfitByQuantity[quantity] || { totalPrice: 0, totalProfit: 0 };
+
+        return {
+          totalPrice: acc.totalPrice + metrics.totalPrice,
+          totalProfit: acc.totalProfit + metrics.totalProfit
+        };
+      }, { totalPrice: 0, totalProfit: 0 });
+
+      const profitability = setMetrics.totalPrice > 0 
+        ? ((setMetrics.totalProfit / setMetrics.totalPrice) * 100).toFixed(1) 
+        : '0.0';
+
+      return {
+        ...setMetrics,
+        profitability
+      };
+    };
+
+    // 세트 전체 영향도 계산
+    const calculateSetProfitabilityImpact = () => {
+      if (!setInfo || !isSetHeader || !contract) return null;
+
+      const currentMetrics = calculateMetrics(contract.items);
+      const setMetrics = calculateSetMetrics();
+
+      if (!setMetrics) return null;
+
+      const newTotalPrice = currentMetrics.totalPrice + setMetrics.totalPrice;
+      const newTotalProfit = currentMetrics.totalProfit + setMetrics.totalProfit;
       
-      if (!contract || contractQuantity !== undefined || isModified) {
-        return null;
-      }
-
-      // 현재 계약의 전체 수익률 계산
-      const currentTotalPrice = contract.items.reduce((sum, item) => sum + item.totalPrice, 0);
-      const currentTotalProfit = contract.items.reduce((sum, item) => sum + item.totalProfit, 0);
-      const currentProfitability = currentTotalPrice ? (currentTotalProfit / currentTotalPrice) * 100 : 0;
-
-      // 새 아이템 추가 시 수익률 계산
-      const newItemMetrics = details?.priceAndProfitByQuantity[previewQuantity] || 
-                            { totalPrice: 0, totalProfit: 0 };
-
-      const newTotalPrice = currentTotalPrice + newItemMetrics.totalPrice;
-      const newTotalProfit = currentTotalProfit + newItemMetrics.totalProfit;
-      const newProfitability = newTotalPrice ? (newTotalProfit / newTotalPrice) * 100 : 0;
+      const currentProfitability = currentMetrics.totalPrice > 0 
+        ? (currentMetrics.totalProfit / currentMetrics.totalPrice) * 100 
+        : 0;
+      const newProfitability = newTotalPrice > 0 
+        ? (newTotalProfit / newTotalPrice) * 100 
+        : 0;
 
       const impact = newProfitability - currentProfitability;
 
-      // 영향도 레벨 정의
+      // 영향도 레벨 결정
       let level;
       if (impact > PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER.threshold) {
         level = PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER;
@@ -566,8 +594,6 @@ const ContractProfitabilityAnalyzer = () => {
         color: level.color
       };
     };
-
-    const profitabilityImpact = calculateProfitabilityImpact();
 
     // 동시 판매 불가능한 아이템 표시를 위한 배지 추가
     const getIncompatibilityWarning = () => {
@@ -634,10 +660,6 @@ const ContractProfitabilityAnalyzer = () => {
 
     const statusInfo = getItemStatusInfo();
 
-    // 세트 정보 가져오기
-    const setInfo = getSetInfo(contract?.id, item.id);
-    const isSetHeader = setInfo?.ids[0] === item.id;
-
     // handleReAddItem 함수 추가
     const handleReAddItem = () => {
       const setInfo = getSetInfo(contract?.id, item.id);
@@ -683,76 +705,263 @@ const ContractProfitabilityAnalyzer = () => {
       }
     };
 
+    // 세트 아이템 표시 여부를 위한 상태 추가
+    const [isSetExpanded, setIsSetExpanded] = useState(true);
+
+    // 일반 아이템의 영향도 계산 함수 추가
+    const calculateItemProfitabilityImpact = () => {
+      if (!contract || (isSetMember && !isSetHeader)) return null;
+
+      const currentMetrics = calculateMetrics(contract.items);
+      const itemMetrics = getMetricsForQuantity(previewQuantity);
+
+      if (!itemMetrics) return null;
+
+      const newTotalPrice = currentMetrics.totalPrice + itemMetrics.totalPrice;
+      const newTotalProfit = currentMetrics.totalProfit + itemMetrics.totalProfit;
+      
+      const currentProfitability = currentMetrics.totalPrice > 0 
+        ? (currentMetrics.totalProfit / currentMetrics.totalPrice) * 100 
+        : 0;
+      const newProfitability = newTotalPrice > 0 
+        ? (newTotalProfit / newTotalPrice) * 100 
+        : 0;
+
+      const impact = newProfitability - currentProfitability;
+
+      // 영향도 레벨 결정
+      let level;
+      if (impact > PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER.threshold) {
+        level = PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER;
+      } else if (impact > PROFITABILITY_IMPACT_LEVELS.BETTER.threshold) {
+        level = PROFITABILITY_IMPACT_LEVELS.BETTER;
+      } else if (impact > PROFITABILITY_IMPACT_LEVELS.SIMILAR.threshold) {
+        level = PROFITABILITY_IMPACT_LEVELS.SIMILAR;
+      } else if (impact > PROFITABILITY_IMPACT_LEVELS.WORSE.threshold) {
+        level = PROFITABILITY_IMPACT_LEVELS.WORSE;
+      } else {
+        level = PROFITABILITY_IMPACT_LEVELS.MUCH_WORSE;
+      }
+
+      return {
+        value: `${impact > 0 ? '+' : ''}${impact.toFixed(1)}%`,
+        color: level.color
+      };
+    };
+
+    // 영향도 표시를 위한 값 계산
+    const profitabilityImpact = isSetHeader 
+      ? calculateSetProfitabilityImpact() 
+      : !isSetMember 
+        ? calculateItemProfitabilityImpact()
+        : null;
+
     return (
-      <tr className={`border-b last:border-b-0 ${statusInfo.style}`}>
-        <td className="px-2 py-1 text-sm w-[80%]">
-          <div className="flex items-center gap-1">
-            <span className="font-medium text-sm">{details?.name}</span>
-            {showThemeBadge && details?.theme && (
-              Array.isArray(details.theme) 
-                ? details.theme.map(t => (
-                    <Badge key={t} variant="outline" className="text-xs px-1">
-                      {THEME_LABELS[THEME_MAPPING[t]] || t}
-                    </Badge>
-                  ))
-                : <Badge variant="outline" className="text-xs px-1">
-                    {THEME_LABELS[THEME_MAPPING[details.theme]] || details.theme}
-                  </Badge>
-            )}
-          </div>
-        </td>
-        <td className="px-2 py-1 text-sm w-[10%] text-center">
-          {profitabilityImpact && (
-            <Badge 
-              variant="outline" 
-              className={profitabilityImpact.color}
+      <>
+        {/* 세트 요약 행을 먼저 렌더링 */}
+        {isSetHeader && (
+          <>
+            <tr 
+              className="border-b last:border-b-0 bg-purple-50 cursor-pointer hover:bg-purple-100"
+              onClick={() => setIsSetExpanded(!isSetExpanded)}
             >
-              {profitabilityImpact.value}
-            </Badge>
-          )}
-        </td>
-        <td className="px-2 py-1 text-sm w-[10%]">
-          <select 
-            className="border rounded px-1 py-0.5 text-xs w-20"
-            value={previewQuantity}
-            onChange={handleQuantityChange}
-            disabled={!contract}
-          >
-            {details?.availableQuantities?.map(q => (
-              <option key={q} value={q}>{formatAmountToManWon(q)}</option>
-            ))}
-          </select>
-        </td>
-        <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
-        <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
-        <td className="px-2 py-1 text-sm text-right w-[10%]">{Math.floor(profitability)}%</td>
-        <td className="px-2 py-1 text-sm w-[6%]">
-          <div className="flex justify-end gap-1">
-            {status.modified && status.action === 'remove' ? (
-              <button
-                onClick={handleReAddItem}
-                className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+              <td className="px-2 py-1 text-sm">
+                <div className="flex items-center gap-1">
+                  <Badge variant="outline" className="bg-purple-50 border-purple-200 text-purple-700">
+                    세트 ({setInfo.ids.length}개)
+                  </Badge>
+                  <span className="text-purple-700 ml-1">
+                    {isSetExpanded ? '▼' : '▶'}
+                  </span>
+                </div>
+              </td>
+              <td className="px-2 py-1 text-sm text-center">
+                {profitabilityImpact && (
+                  <Badge 
+                    variant="outline" 
+                    className={profitabilityImpact.color}
+                  >
+                    {profitabilityImpact.value}
+                  </Badge>
+                )}
+              </td>
+              <td className="px-2 py-1 text-sm">
+                {/* 세트 전체 가입금액은 표시하지 않음 */}
+              </td>
+              <td className="px-2 py-1 text-sm text-right">
+                ₩{Math.floor(calculateSetMetrics()?.totalPrice || 0).toLocaleString()}
+              </td>
+              <td className="px-2 py-1 text-sm text-right">
+                ₩{Math.floor(calculateSetMetrics()?.totalProfit || 0).toLocaleString()}
+              </td>
+              <td className="px-2 py-1 text-sm text-right">
+                {calculateSetMetrics()?.profitability?.toFixed(1) ?? '0.0'}%
+              </td>
+              <td className="px-2 py-1 text-sm">
+                {/* 세트 전체 행에는 액션 버튼 없음 */}
+              </td>
+            </tr>
+
+            {/* 세트의 모든 아이템을 한번에 토글 */}
+            {isSetExpanded && setInfo.ids.map(id => {
+              const itemDetails = contract?.availableItems.find(i => i.id === id);
+              if (!itemDetails) return null;
+
+              return (
+                <tr 
+                  key={id} 
+                  className={`border-b last:border-b-0 ${statusInfo.style} bg-opacity-50`}
+                >
+                  <td className="px-2 py-1 text-sm">
+                    <div className="flex items-center gap-1 ml-6">
+                      <span className="text-purple-400 mr-1">└</span>
+                      <span className="font-medium">{itemDetails.name}</span>
+                      {showThemeBadge && itemDetails.theme && (
+                        Array.isArray(itemDetails.theme) 
+                          ? itemDetails.theme.map(t => (
+                              <Badge key={t} variant="outline" className="text-xs px-1">
+                                {THEME_LABELS[THEME_MAPPING[t]] || t}
+                              </Badge>
+                            ))
+                          : <Badge variant="outline" className="text-xs px-1">
+                              {THEME_LABELS[THEME_MAPPING[itemDetails.theme]] || itemDetails.theme}
+                            </Badge>
+                      )}
+                    </div>
+                  </td>
+                  <td className="px-2 py-1 text-sm text-center">
+                    {/* 세트 아이템의 개별 영향도는 표시하지 않음 */}
+                  </td>
+                  <td className="px-2 py-1 text-sm w-[10%]">
+                    <select 
+                      className="border rounded px-1 py-0.5 text-xs w-20"
+                      value={previewQuantity}
+                      onChange={handleQuantityChange}
+                      disabled={!contract}
+                    >
+                      {itemDetails?.availableQuantities?.map(q => (
+                        <option key={q} value={q}>{formatAmountToManWon(q)}</option>
+                      ))}
+                    </select>
+                  </td>
+                  <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
+                  <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
+                  <td className="px-2 py-1 text-sm text-right w-[10%]">{Math.floor(profitability)}%</td>
+                  <td className="px-2 py-1 text-sm w-[5%]">
+                    <div className="flex justify-end gap-1">
+                      {status.modified && status.action === 'remove' ? (
+                        <button
+                          onClick={handleReAddItem}
+                          className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                        >
+                          +
+                        </button>
+                      ) : status.originallyIncluded || status.modified ? (
+                        <button
+                          onClick={handleRemoveItem}
+                          className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                        >
+                          -
+                        </button>
+                      ) : (
+                        <button
+                          onClick={handleAddItem}
+                          className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                        >
+                          +
+                        </button>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </>
+        )}
+
+        {/* 일반 아이템 행 (세트 멤버가 아닌 경우에만 렌더링) */}
+        {!isSetMember && (
+          <tr className={`border-b last:border-b-0 ${statusInfo.style}`}>
+            <td className="px-2 py-1 text-sm w-[80%]">
+              <div className={`flex items-center gap-1 ${isSetMember ? 'ml-6' : ''}`}>
+                {/* 세트 표시 아이콘 */}
+                {isSetHeader && (
+                  <Badge variant="outline" className="text-xs px-1 bg-purple-50 border-purple-200 text-purple-700">
+                    세트
+                  </Badge>
+                )}
+                {/* 세트 멤버 연결선 */}
+                {isSetMember && (
+                  <span className="text-purple-400 mr-1">└</span>
+                )}
+                <span className="font-medium text-sm">{details?.name}</span>
+                {showThemeBadge && details?.theme && (
+                  Array.isArray(details.theme) 
+                    ? details.theme.map(t => (
+                        <Badge key={t} variant="outline" className="text-xs px-1">
+                          {THEME_LABELS[THEME_MAPPING[t]] || t}
+                        </Badge>
+                      ))
+                    : <Badge variant="outline" className="text-xs px-1">
+                        {THEME_LABELS[THEME_MAPPING[details.theme]] || details.theme}
+                      </Badge>
+                )}
+              </div>
+            </td>
+            <td className="px-2 py-1 text-sm w-[10%] text-center">
+              {profitabilityImpact && (
+                <Badge 
+                  variant="outline" 
+                  className={profitabilityImpact.color}
+                >
+                  {profitabilityImpact.value}
+                </Badge>
+              )}
+            </td>
+            <td className="px-2 py-1 text-sm w-[10%]">
+              <select 
+                className="border rounded px-1 py-0.5 text-xs w-20"
+                value={previewQuantity}
+                onChange={handleQuantityChange}
+                disabled={!contract}
               >
-                +
-              </button>
-            ) : status.originallyIncluded || status.modified ? (
-              <button
-                onClick={handleRemoveItem}
-                className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
-              >
-                -
-              </button>
-            ) : (
-              <button
-                onClick={handleAddItem}
-                className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
-              >
-                +
-              </button>
-            )}
-          </div>
-        </td>
-      </tr>
+                {details?.availableQuantities?.map(q => (
+                  <option key={q} value={q}>{formatAmountToManWon(q)}</option>
+                ))}
+              </select>
+            </td>
+            <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
+            <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
+            <td className="px-2 py-1 text-sm text-right w-[10%]">{Math.floor(profitability)}%</td>
+            <td className="px-2 py-1 text-sm w-[5%]">
+              <div className="flex justify-end gap-1">
+                {status.modified && status.action === 'remove' ? (
+                  <button
+                    onClick={handleReAddItem}
+                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                  >
+                    +
+                  </button>
+                ) : status.originallyIncluded || status.modified ? (
+                  <button
+                    onClick={handleRemoveItem}
+                    className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                  >
+                    -
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleAddItem}
+                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                  >
+                    +
+                  </button>
+                )}
+              </div>
+            </td>
+          </tr>
+        )}
+      </>
     );
   };
 
@@ -989,7 +1198,7 @@ const getModifiedItems = useCallback(() => {
       {/* 메인 컨텐츠 영역 */}
       <div className="flex flex-1 p-2 gap-2 overflow-hidden">
         {/* 왼쪽 패널: 계약 검색, 현재 계약 아이템, 수정 사항 */}
-        <div className="w-1/3 flex flex-col gap-2">
+        <div className="w-[40%] flex flex-col gap-2">
           {/* 검색 영역 */}
           <Card className="shadow-sm">
             <CardContent className="py-2">
@@ -1073,13 +1282,13 @@ const getModifiedItems = useCallback(() => {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b">
-                      <th className="px-2 py-1 text-left text-sm w-[60%]">아이템명</th>
-                      <th className="px-2 py-1 text-center text-sm w-[10%]">영향도</th>
+                      <th className="px-2 py-1 text-left text-sm w-[80%]">아이템명</th>
+                      <th className="px-2 py-1 text-left text-sm w-[10%]"></th>
                       <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
-                      <th className="px-2 py-1 text-right text-sm w-[10%]">월납P</th>
-                      <th className="px-2 py-1 text-right text-sm w-[10%]">KMV</th>
-                      <th className="px-2 py-1 text-right text-sm w-[10%]">KMV(%)</th>
-                      <th className="px-2 py-1 text-sm w-[6%]"></th>
+                      <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
+                      <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
+                      <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
+                      <th className="px-2 py-1 text-sm w-[5%]"></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1120,7 +1329,7 @@ const getModifiedItems = useCallback(() => {
         </div>
 
         {/* 오른쪽 패널: 전체 아이템 목록 */}
-        <Card className="w-2/3 overflow-hidden flex flex-col">
+        <Card className="w-[60%] overflow-hidden flex flex-col">
           <CardHeader className="py-2">
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -1157,7 +1366,8 @@ const getModifiedItems = useCallback(() => {
                           // 일반 아이템인 경우
                           groups.push({
                             type: 'single',
-                            items: [item]
+                            items: [item],
+                            confidence: item.confidence || 0
                           });
                           processedItems.add(item.id);
                         }
@@ -1183,10 +1393,7 @@ const getModifiedItems = useCallback(() => {
                     onClick={() => {
                       if (!contract || !originalContract) return;
                       
-                      // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
-                      
-                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
@@ -1202,31 +1409,31 @@ const getModifiedItems = useCallback(() => {
                           
                           setInfo.ids.forEach(id => processedItems.add(id));
                           
+                          // 세트의 평균 추천도 계산
+                          const avgConfidence = groupItems.reduce((sum, item) => 
+                            sum + (item.confidence || 0), 0) / groupItems.length;
+
                           groups.push({
                             type: 'set',
                             items: groupItems,
-                            confidence: Math.min(...groupItems.map(item => item.confidence || 0))
+                            score: avgConfidence
                           });
                         } else {
                           // 일반 아이템인 경우
                           groups.push({
                             type: 'single',
                             items: [item],
-                            confidence: item.confidence || 0
+                            score: item.confidence || 0
                           });
                           processedItems.add(item.id);
                         }
                       });
 
-                      // 2. 모든 그룹을 confidence 기준으로 정렬
-                      groups.sort((a, b) => b.confidence - a.confidence);
+                      // 추천도 기준으로 정렬
+                      groups.sort((a, b) => b.score - a.score);
 
-                      // 3. 정렬된 그룹에서 아이템 추출
                       const sortedItems = groups.flatMap(group => group.items);
-
                       setSortedItems(sortedItems);
-                      
-                      // 스크롤 초기화 추가
                       resetScroll();
                     }}
                     className="px-2 py-1 text-xs bg-blue-100 hover:bg-blue-200 rounded transition-colors"
@@ -1269,18 +1476,15 @@ const getModifiedItems = useCallback(() => {
                           const setProfitability = setMetrics.totalPrice > 0 
                             ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
                             : -Infinity;
-                            
 
                           groups.push({
                             type: 'set',
                             items: groupItems,
                             profitability: setProfitability
                           });
-                          
                         } else {
                           // 일반 아이템인 경우
                           const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
-                          // 수정: totalPrice가 0인 경우 -Infinity로 처리하 마지막으로 정렬되도록 함
                           const profitability = metrics?.totalPrice > 0 
                             ? (metrics.totalProfit / metrics.totalPrice) * 100 
                             : -Infinity;
@@ -1294,7 +1498,7 @@ const getModifiedItems = useCallback(() => {
                         }
                       });
 
-                      // 2. 모든 그룹을 수익률 기준으로 정렬
+                      // 2. 모든 그룹을 KMV(%) 기준으로 정렬
                       groups.sort((a, b) => b.profitability - a.profitability);
 
                       // 3. 정렬된 그룹에서 아이템 추출
@@ -1302,7 +1506,7 @@ const getModifiedItems = useCallback(() => {
 
                       setSortedItems(sortedItems);
                       
-                      // 스크롤 초기화 추가
+                      // 스크롤 초기화
                       resetScroll();
                     }}
                     className="px-2 py-1 text-xs bg-green-100 hover:bg-green-200 rounded transition-colors"
@@ -1314,10 +1518,7 @@ const getModifiedItems = useCallback(() => {
                     onClick={() => {
                       if (!contract || !originalContract) return;
                       
-                      // 원본 데이터를 복사하여 사용
                       const itemsToSort = [...originalContract.availableItems];
-                      
-                      // 1. 모든 아이템을 그룹화 (세트 또는 단일 아이템)
                       const groups = [];
                       const processedItems = new Set();
 
@@ -1333,60 +1534,47 @@ const getModifiedItems = useCallback(() => {
                           
                           setInfo.ids.forEach(id => processedItems.add(id));
                           
-                          // 세트 전체의 메트릭스 계산
+                          // 세트 전체의 메트릭스와 평균 추천도 계산
                           const setMetrics = groupItems.reduce((acc, item) => {
                             const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
                             return {
                               totalPrice: acc.totalPrice + (metrics?.totalPrice || 0),
-                              totalProfit: acc.totalProfit + (metrics?.totalProfit || 0)
+                              totalProfit: acc.totalProfit + (metrics?.totalProfit || 0),
+                              confidence: acc.confidence + (item.confidence || 0)
                             };
-                          }, { totalPrice: 0, totalProfit: 0 });
+                          }, { totalPrice: 0, totalProfit: 0, confidence: 0 });
 
-                          // 세트의 평균 추천도 계산
-                          const avgConfidence = groupItems.reduce((sum, item) => 
-                            sum + (item.confidence || 0), 0) / groupItems.length;
-
+                          const avgConfidence = setMetrics.confidence / groupItems.length;
                           const setProfitability = setMetrics.totalPrice > 0 
                             ? (setMetrics.totalProfit / setMetrics.totalPrice) * 100 
-                            : -Infinity;
-
-                          // 추천도와 수익률을 곱한 점수 계산
-                          const score = avgConfidence * setProfitability;
+                            : 0;
 
                           groups.push({
                             type: 'set',
                             items: groupItems,
-                            score: score
+                            score: avgConfidence * setProfitability // 추천도와 수익률의 곱
                           });
                         } else {
                           // 일반 아이템인 경우
                           const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
                           const profitability = metrics?.totalPrice > 0 
                             ? (metrics.totalProfit / metrics.totalPrice) * 100 
-                            : -Infinity;
-                          const score = (item.confidence || 0) * profitability;
-
-
-                          
+                            : 0;
 
                           groups.push({
                             type: 'single',
                             items: [item],
-                            score: score
+                            score: (item.confidence || 0) * profitability // 추천도와 수익률의 곱
                           });
                           processedItems.add(item.id);
                         }
                       });
 
-                      // 2. 모든 그룹을 점수 기준으로 정렬
+                      // 추천도×KMV 점수로 정렬
                       groups.sort((a, b) => b.score - a.score);
 
-                      // 3. 정렬된 그룹에서 아이템 추출
                       const sortedItems = groups.flatMap(group => group.items);
-
                       setSortedItems(sortedItems);
-                      
-                      // 스크롤 초기화 추가
                       resetScroll();
                     }}
                     className="px-2 py-1 text-xs bg-purple-100 hover:bg-purple-200 rounded transition-colors"
@@ -1440,13 +1628,13 @@ const getModifiedItems = useCallback(() => {
                     <table className="w-full sticky top-0 bg-white z-10 shadow-sm">
                       <thead>
                         <tr className="border-b">
-                          <th className="px-2 py-1 text-left text-sm w-[60%]">아이템명</th>
-                          <th className="px-2 py-1 text-center text-sm w-[10%]">영향도</th>
+                          <th className="px-2 py-1 text-left text-sm w-[70%]">아이템명</th>
+                          <th className="px-2 py-1 text-left text-sm w-[10%]">영향도</th>
                           <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
-                          <th className="px-2 py-1 text-right text-sm w-[10%]">월납P</th>
-                          <th className="px-2 py-1 text-right text-sm w-[10%]">KMV</th>
-                          <th className="px-2 py-1 text-right text-sm w-[10%]">KMV(%)</th>
-                          <th className="px-2 py-1 text-sm w-[6%]"></th>
+                          <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
+                          <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
+                          <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
+                          <th className="px-2 py-1 text-sm w-[5%]"></th>
                         </tr>
                       </thead>
                     </table>
@@ -1481,29 +1669,29 @@ const getModifiedItems = useCallback(() => {
       {contract && (
         <div className="border-t bg-gray-50">
           <div className="container mx-auto p-2">
-            <div className="flex justify-between items-center gap-4">
+            <div className="flex justify-between items-start gap-4">
               {/* 현재 계약 수익성 */}
-              <div className="flex-1">
+              <div className="flex-[0.4]">
                 <h3 className="text-sm font-medium text-gray-500 mb-1">현재 계약</h3>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="bg-white p-2 rounded-lg">
+                  <div className="bg-white p-2 rounded-lg h-[85px]">
                     <div className="text-sm text-gray-500">월납P</div>
                     <div className="text-lg font-medium">₩{Math.floor(originalMetrics.totalPrice).toLocaleString()}</div>
                   </div>
-                  <div className="bg-white p-2 rounded-lg">
+                  <div className="bg-white p-2 rounded-lg h-[85px]">
                     <div className="text-sm text-gray-500">KMV</div>
                     <div className="text-lg font-medium">₩{Math.floor(originalMetrics.totalProfit).toLocaleString()}</div>
                     {selectedSilsonType && contract?.silson_discount && (
-                      <div className="text-sm text-blue-600 mt-1">
+                      <div className="text-xs text-blue-600 mt-1">
                         차감 KMV: ₩{Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}
                       </div>
                     )}
                   </div>
-                  <div className="bg-white p-2 rounded-lg">
+                  <div className="bg-white p-2 rounded-lg h-[85px]">
                     <div className="text-sm text-gray-500">KMV(%)</div>
                     <div className="text-lg font-medium">{Math.floor(originalMetrics.profitability)}%</div>
                     {selectedSilsonType && contract?.silson_discount && (
-                      <div className="text-sm text-blue-600 mt-1">
+                      <div className="text-xs text-blue-600 mt-1">
                         차감 후 KMV(%): {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
                       </div>
                     )}
@@ -1512,7 +1700,7 @@ const getModifiedItems = useCallback(() => {
               </div>
 
               {/* 구분선 */}
-              <div className="flex flex-col items-center gap-2">
+              <div className="flex flex-col items-center gap-2 h-[85px]">
                 <div className="h-12 w-px bg-gray-300"></div>
                 {profitabilityChange !== "0.0" && (
                   <div className={`text-lg font-bold ${
@@ -1526,7 +1714,7 @@ const getModifiedItems = useCallback(() => {
               </div>
 
               {/* 수정 후 수익성 */}
-              <div className="flex-1">
+              <div className="flex-[0.6]">
                 <h3 className="text-sm font-medium text-gray-500 mb-1">
                   수정 후
                   {profitabilityChange !== "0.0" && (
@@ -1544,20 +1732,18 @@ const getModifiedItems = useCallback(() => {
                   )}
                 </h3>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className={`bg-white p-2 rounded-lg ${
+                  <div className={`bg-white p-2 rounded-lg h-[85px] ${
                     modifiedMetrics.totalPrice !== originalMetrics.totalPrice 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
                   }`}>
                     <div className="text-sm text-gray-500">월납P</div>
-                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}
-                    {/* 수정 후 월납P와 현재 계약 월납P의 차이 표시 추가 */}
-                    <div className="text-sm text-blue-600 mt-1">
-                     변화 월납P ₩{(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)).toLocaleString()}
-                    </div>
+                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}</div>
+                    <div className="text-xs text-blue-600 mt-1">
+                      변화 월납P ₩{(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)).toLocaleString()}
                     </div>
                   </div>
-                  <div className={`bg-white p-2 rounded-lg ${
+                  <div className={`bg-white p-2 rounded-lg h-[85px] ${
                     modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
@@ -1572,7 +1758,7 @@ const getModifiedItems = useCallback(() => {
                       ).toLocaleString()}
                     </div>
                   </div>
-                  <div className={`bg-white p-2 rounded-lg ${
+                  <div className={`bg-white p-2 rounded-lg h-[85px] ${
                     modifiedMetrics.profitability !== originalMetrics.profitability 
                       ? 'ring-2 ring-offset-2 ring-yellow-200' 
                       : ''
