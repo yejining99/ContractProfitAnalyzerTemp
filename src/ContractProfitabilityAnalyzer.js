@@ -160,6 +160,13 @@ const formatAmountToManWon = (amount) => {
   return `${manWon}만원`;
 };
 
+// channel별 KMV 목표값 상수 추가
+const CHANNEL_KMV_TARGETS = {
+  'GA': 1150,
+  'TA': 1050,
+  'TM': 630
+};
+
 const ContractProfitabilityAnalyzer = () => {
   // 상태 관리
   // 현재 선택된 계약 ID
@@ -590,7 +597,7 @@ const ContractProfitabilityAnalyzer = () => {
       }
 
       return {
-        value: `${impact > 0 ? '+' : ''}${impact.toFixed(1)}%`,
+        value: `${impact > 0 ? '+' : ''}${Math.floor(impact)}%`,  // Math.floor() 추가
         color: level.color
       };
     };
@@ -744,7 +751,7 @@ const ContractProfitabilityAnalyzer = () => {
       }
 
       return {
-        value: `${impact > 0 ? '+' : ''}${impact.toFixed(1)}%`,
+        value: `${impact > 0 ? '+' : ''}${Math.floor(impact)}%`,  // Math.floor() 추가
         color: level.color
       };
     };
@@ -795,7 +802,7 @@ const ContractProfitabilityAnalyzer = () => {
                 ₩{Math.floor(calculateSetMetrics()?.totalProfit || 0).toLocaleString()}
               </td>
               <td className="px-2 py-1 text-sm text-right">
-                {calculateSetMetrics()?.profitability?.toFixed(1) ?? '0.0'}%
+                {Math.floor(profitability)}%
               </td>
               <td className="px-2 py-1 text-sm">
                 {/* 세트 전체 행에는 액션 버튼 없음 */}
@@ -1715,12 +1722,12 @@ const getModifiedItems = useCallback(() => {
 
               {/* 수정 후 수익성 */}
               <div className="flex-[0.6]">
-                <h3 className="text-sm font-medium text-gray-500 mb-1">
+                <h3 className="text-sm font-medium text-gray-500 mb-1 flex items-center gap-2">
                   수정 후
                   {profitabilityChange !== "0.0" && (
                     <Badge 
                       variant="outline"
-                      className={`ml-2 flex items-center gap-1 ${
+                      className={`flex items-center gap-1 ${
                         Number(profitabilityChange) > 0
                           ? 'border-red-500 text-red-700 bg-red-50'
                           : 'border-blue-500 text-blue-700 bg-blue-50'
@@ -1765,11 +1772,14 @@ const getModifiedItems = useCallback(() => {
                   }`}>
                     <div className="text-sm text-gray-500">KMV(%)</div>
                     <div className={`text-lg font-medium ${
-                      Number(profitabilityChange) !== 0
-                        ? Number(profitabilityChange) > 0 
-                          ? 'text-red-500' 
+                      contract?.channel ? (
+                        ((modifiedMetrics.totalProfit + 
+                          (selectedSilsonType && contract?.silson_discount 
+                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                            : 0)) / modifiedMetrics.totalPrice) * 100 >= CHANNEL_KMV_TARGETS[contract.channel]
+                          ? 'text-red-500'
                           : 'text-blue-500'
-                        : ''
+                      ) : ''
                     }`}>
                       {Math.floor(
                         ((modifiedMetrics.totalProfit + 
@@ -1778,6 +1788,11 @@ const getModifiedItems = useCallback(() => {
                             : 0)) / modifiedMetrics.totalPrice) * 100
                       )}%
                     </div>
+                    {contract?.channel && (
+                      <div className="text-sm font-semibold text-red-600 mt-1">
+                        목표 +{CHANNEL_KMV_TARGETS[contract.channel]}% !!! 
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
