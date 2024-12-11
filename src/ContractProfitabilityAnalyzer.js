@@ -453,36 +453,39 @@ const ContractProfitabilityAnalyzer = () => {
       return contract?.items.find(i => i.id === item.id)?.quantity;
     };
 
-    // 수량 상태 초기화 로직 수��
+    // 수량 상태 초기화 로직 수정
     const [previewQuantity, setPreviewQuantity] = useState(() => {
       const existingMod = modifications.find(mod => mod.id === item.id);
-      const originalItem = contract?.items.find(i => i.id === item.id);
       const details = getItemDetails();
       
       if (existingMod && existingMod.action !== 'remove') {
         return existingMod.quantity;
       }
-      if (originalItem) {
-        return originalItem.quantity;
+      if (details?.recommendedQuantity) {
+        return details.recommendedQuantity;
       }
-      return details?.recommendedQuantity || 0;
+
+      return 0;
     });
 
-    // useEffect 추가하여 modifications 변경 시 previewQuantity 동기화
-    useEffect(() => {
-      const existingMod = modifications.find(mod => mod.id === item.id);
-      if (existingMod && existingMod.action !== 'remove') {
-        setPreviewQuantity(existingMod.quantity);
-      }
-    }, [modifications, item.id]);
-
+    // handleQuantityChange 함수 수정
     const handleQuantityChange = (e) => {
       const newQuantity = Number(e.target.value);
       setPreviewQuantity(newQuantity);
       
-      // 수정된 토글 아이템 호출
-      if (status.included || status.originallyIncluded) {
-        toggleItem(item, newQuantity, status.originallyIncluded ? 'modify' : 'add');
+      // 세트 아이템인 경우와 일반 아이템인 경우를 구분
+      const setInfo = getSetInfo(contract?.id, item.id);
+      
+      if (setInfo) {
+        // 현재 아이템의 수량만 변경
+        if (status.included || status.originallyIncluded) {
+          toggleItem(item, newQuantity, status.originallyIncluded ? 'modify' : 'add');
+        }
+      } else {
+        // 일반 아이템 처리 (기존과 동일)
+        if (status.included || status.originallyIncluded) {
+          toggleItem(item, newQuantity, status.originallyIncluded ? 'modify' : 'add');
+        }
       }
     };
 
@@ -788,6 +791,21 @@ const ContractProfitabilityAnalyzer = () => {
                   <span className="text-purple-700 ml-1">
                     {isSetExpanded ? '▼' : '▶'}
                   </span>
+                  {/* 세트의 모든 아이템의 테마를 수집하고 중복 제거하여 표시 */}
+                  {showThemeBadge && (
+                    <>
+                      {Array.from(new Set(
+                        setInfo.ids
+                          .map(id => contract?.availableItems.find(i => i.id === id))
+                          .filter(Boolean)
+                          .flatMap(item => Array.isArray(item.theme) ? item.theme : [item.theme])
+                      )).map(theme => (
+                        <Badge key={theme} variant="outline" className="text-xs px-1 ml-1">
+                          {THEME_LABELS[THEME_MAPPING[theme]] || theme}
+                        </Badge>
+                      ))}
+                    </>
+                  )}
                 </div>
               </td>
               <td className="px-2 py-1 text-sm text-center">
@@ -820,62 +838,62 @@ const ContractProfitabilityAnalyzer = () => {
             {/* 세트의 모든 아이템을 한번에 토글 */}
             {isSetExpanded && setInfo.ids.map(id => {
               const itemDetails = contract?.availableItems.find(i => i.id === id);
-              const originalItem = contract.items.find(i => i.id === id);
               if (!itemDetails) return null;
 
-              // 원본 아이템의 메트릭스 계산
-              const metrics = status.originallyIncluded && !status.modified
-                ? {
-                    totalPrice: originalItem?.totalPrice || 0,
-                    totalProfit: originalItem?.totalProfit || 0
-                  }
-                : itemDetails.priceAndProfitByQuantity[previewQuantity] || { totalPrice: 0, totalProfit: 0 };
+              // 수량 옵션 재정렬: 추천 수량을 첫 번째로
+              const sortedQuantities = [...itemDetails.availableQuantities].sort((a, b) => {
+                if (a === itemDetails.recommendedQuantity) return -1;
+                if (b === itemDetails.recommendedQuantity) return 1;
+                return a - b;
+              });
+
+              const metrics = itemDetails.priceAndProfitByQuantity[previewQuantity] || 
+                itemDetails.priceAndProfitByQuantity[itemDetails.recommendedQuantity] || 
+                { totalPrice: 0, totalProfit: 0 };
 
               const profitability = metrics.totalPrice > 0 
                 ? (metrics.totalProfit / metrics.totalPrice) * 100 
                 : 0;
+            // 아이템의 상태 확인
+            const itemStatus = getItemStatus(itemDetails);
+            const statusInfo = getItemStatusInfo(itemStatus);
 
               return (
-                <tr 
-                  key={id} 
-                  className={`border-b last:border-b-0 ${statusInfo.style} bg-opacity-50`}
-                >
+                <tr key={id} className={`border-b last:border-b-0 ${statusInfo.style}`}>
                   <td className="px-2 py-1 text-sm">
                     <div className="flex items-center gap-1 ml-6">
                       <span className="text-purple-400 mr-1">└</span>
-                      <span className="font-medium">{itemDetails.name}</span>
-                      {showThemeBadge && itemDetails.theme && (
-                        Array.isArray(itemDetails.theme) 
-                          ? itemDetails.theme.map(t => (
-                              <Badge key={t} variant="outline" className="text-xs px-1">
-                                {THEME_LABELS[THEME_MAPPING[t]] || t}
-                              </Badge>
-                            ))
-                          : <Badge variant="outline" className="text-xs px-1">
-                              {THEME_LABELS[THEME_MAPPING[itemDetails.theme]] || itemDetails.theme}
-                            </Badge>
-                      )}
+                      {itemDetails.name}
+                      
                     </div>
                   </td>
-                  <td className="px-2 py-1 text-sm text-center">
-                    {/* 세트 아이템의 개별 영향도는 표시하지 않음 */}
-                  </td>
-                  <td className="px-2 py-1 text-sm w-[10%]">
+                  <td className="px-2 py-1 text-sm text-center"></td>
+                  <td className="px-2 py-1 text-sm">
                     <select 
                       className="border rounded px-1 py-0.5 text-xs w-20"
                       value={previewQuantity}
                       onChange={handleQuantityChange}
                       disabled={!contract}
                     >
-                      {itemDetails?.availableQuantities?.map(q => (
-                        <option key={q} value={q}>{formatAmountToManWon(q)}</option>
+                      {sortedQuantities.map(q => (
+                        <option key={q} value={q}>
+                          {q === itemDetails.recommendedQuantity 
+                            ? `${formatAmountToManWon(q)}` 
+                            : formatAmountToManWon(q)}
+                        </option>
                       ))}
                     </select>
                   </td>
-                  <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
-                  <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
-                  <td className="px-2 py-1 text-sm text-right w-[10%]">{Math.floor(profitability)}%</td>
-                  <td className="px-2 py-1 text-sm w-[5%]">
+                  <td className="px-2 py-1 text-sm text-right">
+                    ₩{Math.floor(metrics.totalPrice).toLocaleString()}
+                  </td>
+                  <td className="px-2 py-1 text-sm text-right">
+                    ₩{Math.floor(metrics.totalProfit).toLocaleString()}
+                  </td>
+                  <td className="px-2 py-1 text-sm text-right">
+                    {Math.floor(profitability)}%
+                  </td>
+                  <td className="px-2 py-1 text-sm">
                     <div className="flex justify-end gap-1">
                       {status.modified && status.action === 'remove' ? (
                         <button
@@ -947,9 +965,7 @@ const ContractProfitabilityAnalyzer = () => {
               )}
             </td>
             <td className="px-2 py-1 text-sm w-[10%]">
-              {status.originallyIncluded && !status.modified ? (
-                <span>{formatAmountToManWon(item.quantity)}</span>
-              ) : (
+              {(
                 <select 
                   className="border rounded px-1 py-0.5 text-xs w-20"
                   value={previewQuantity}
@@ -1742,7 +1758,7 @@ const getModifiedItems = useCallback(() => {
                                 score: avgConfidence * setProfitability // 추천도와 수익률의 곱
                               });
                             } else {
-                              // 일반 아이템인 경우
+                              // ��반 아이템인 경우
                               const metrics = item.priceAndProfitByQuantity[item.recommendedQuantity];
                               const profitability = metrics?.totalPrice > 0 
                                 ? (metrics.totalProfit / metrics.totalPrice) * 100 
