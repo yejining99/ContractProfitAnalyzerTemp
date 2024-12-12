@@ -783,7 +783,7 @@ const ContractProfitabilityAnalyzer = () => {
               className="border-b last:border-b-0 bg-purple-50 cursor-pointer hover:bg-purple-100"
               onClick={() => setIsSetExpanded(!isSetExpanded)}
             >
-              <td className="px-2 py-1 text-sm">
+              <td className="px-2 py-1 text-[12px]">
                 <div className="flex items-center gap-1">
                   <Badge variant="outline" className="bg-purple-50 border-purple-200 text-purple-700">
                     세트 ({setInfo.ids.length}개)
@@ -800,7 +800,7 @@ const ContractProfitabilityAnalyzer = () => {
                           .filter(Boolean)
                           .flatMap(item => Array.isArray(item.theme) ? item.theme : [item.theme])
                       )).map(theme => (
-                        <Badge key={theme} variant="outline" className="text-xs px-1 ml-1">
+                        <Badge key={theme} variant="outline" className="text-[12px] px-1 ml-1">
                           {THEME_LABELS[THEME_MAPPING[theme]] || theme}
                         </Badge>
                       ))}
@@ -808,7 +808,7 @@ const ContractProfitabilityAnalyzer = () => {
                   )}
                 </div>
               </td>
-              <td className="px-2 py-1 text-sm text-center">
+              <td className="px-2 py-1 text-[12px] text-center">
                 {profitabilityImpact && (
                   <Badge 
                     variant="outline" 
@@ -818,19 +818,19 @@ const ContractProfitabilityAnalyzer = () => {
                   </Badge>
                 )}
               </td>
-              <td className="px-2 py-1 text-sm">
+              <td className="px-2 py-1 text-[12px]">
                 {/* 세트 전체 가입금액은 표시하지 않음 */}
               </td>
-              <td className="px-2 py-1 text-sm text-right">
+              <td className="px-2 py-1 text-[12px] text-right">
                 ₩{Math.floor(calculateSetMetrics()?.totalPrice || 0).toLocaleString()}
               </td>
-              <td className="px-2 py-1 text-sm text-right">
+              <td className="px-2 py-1 text-[12px] text-right">
                 ₩{Math.floor(calculateSetMetrics()?.totalProfit || 0).toLocaleString()}
               </td>
-              <td className="px-2 py-1 text-sm text-right">
+              <td className="px-2 py-1 text-[12px] text-right">
                 {Math.floor(profitability)}%
               </td>
-              <td className="px-2 py-1 text-sm">
+              <td className="px-2 py-1 text-[12px]">
                 {/* 세트 전체 행에는 액션 버튼 없음 */}
               </td>
             </tr>
@@ -851,29 +851,29 @@ const ContractProfitabilityAnalyzer = () => {
               ? 'bg-blue-50' // 현재 계약
               : 'bg-purple-50/30' // 기본 세트 멤버 스타일
           }`}>
-            <td className="px-2 py-1 text-sm">
+            <td className="px-2 py-1 text-[12px]">
               <div className="flex items-center gap-1 ml-6">
                 <span className="text-purple-400 mr-1">└</span>
-                <span className="font-medium text-sm">{details?.name}</span>
+                <span className="font-medium text-[12px]">{details?.name}</span>
                 {showThemeBadge && details?.theme && (
                   Array.isArray(details.theme) 
                     ? details.theme.map(t => (
-                        <Badge key={t} variant="outline" className="text-xs px-1">
+                        <Badge key={t} variant="outline" className="text-[12px] px-1">
                           {THEME_LABELS[THEME_MAPPING[t]] || t}
                         </Badge>
                       ))
-                    : <Badge variant="outline" className="text-xs px-1">
+                    : <Badge variant="outline" className="text-[12px] px-1">
                         {THEME_LABELS[THEME_MAPPING[details.theme]] || details.theme}
                       </Badge>
                 )}
               </div>
             </td>
-            <td className="px-2 py-1 text-sm text-center">
+            <td className="px-2 py-1 text-[12px] text-center">
               {/* 세트 멤버는 개별 영향도를 표시하지 않음 */}
             </td>
-            <td className="px-2 py-1 text-sm">
+            <td className="px-2 py-1 text-[12px]">
               <select 
-                className="border rounded px-1 py-0.5 text-xs w-20"
+                className="border rounded px-1 py-0.5 text-[12px] w-20"
                 value={previewQuantity}
                 onChange={handleQuantityChange}
                 disabled={!contract}
@@ -883,29 +883,29 @@ const ContractProfitabilityAnalyzer = () => {
                 ))}
               </select>
             </td>
-            <td className="px-2 py-1 text-sm text-right">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
-            <td className="px-2 py-1 text-sm text-right">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
-            <td className="px-2 py-1 text-sm text-right">{Math.floor(profitability)}%</td>
-            <td className="px-2 py-1 text-sm">
+            <td className="px-2 py-1 text-[12px] text-right">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
+            <td className="px-2 py-1 text-[12px] text-right">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
+            <td className="px-2 py-1 text-[12px] text-right">{Math.floor(profitability)}%</td>
+            <td className="px-2 py-1 text-[12px]">
               <div className="flex justify-end gap-1">
                 {status.modified && status.action === 'remove' ? (
                   <button
                     onClick={() => handleReAddItem()}
-                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                    className="px-1 py-0.5 text-[12px] text-green-600 hover:bg-green-100 rounded"
                   >
                     +
                   </button>
                 ) : status.originallyIncluded || status.modified ? (
                   <button
                     onClick={() => handleRemoveItem()}
-                    className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                    className="px-1 py-0.5 text-[12px] text-red-600 hover:bg-red-100 rounded"
                   >
                     -
                   </button>
                 ) : (
                   <button
                     onClick={() => handleAddItem()}
-                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                    className="px-1 py-0.5 text-[12px] text-green-600 hover:bg-green-100 rounded"
                   >
                     +
                   </button>
@@ -918,29 +918,29 @@ const ContractProfitabilityAnalyzer = () => {
         {/* 일반 아이템 행 (세트 멤버가 아닌 경우에만 렌더링) */}
         {!isSetMember && (
           <tr className={`border-b last:border-b-0 ${statusInfo.style}`}>
-            <td className="px-2 py-1 text-sm w-[80%]">
+            <td className="px-2 py-1 text-[12px] w-[80%]">
               <div className={`flex items-center gap-1 ${isSetMember ? 'ml-6' : ''}`}>
                 {/* 세트 표시 아이콘 */}
                 {isSetHeader && (
-                  <Badge variant="outline" className="text-xs px-1 bg-purple-50 border-purple-200 text-purple-700">
+                  <Badge variant="outline" className="text-[12px] px-1 bg-purple-50 border-purple-200 text-purple-700">
                     세트
                   </Badge>
                 )}
-                <span className="font-medium text-sm">{details?.name}</span>
+                <span className="font-medium text-[12px]">{details?.name}</span>
                 {showThemeBadge && details?.theme && (
                   Array.isArray(details.theme) 
                     ? details.theme.map(t => (
-                        <Badge key={t} variant="outline" className="text-xs px-1">
+                        <Badge key={t} variant="outline" className="text-[12px] px-1">
                           {THEME_LABELS[THEME_MAPPING[t]] || t}
                         </Badge>
                       ))
-                    : <Badge variant="outline" className="text-xs px-1">
+                    : <Badge variant="outline" className="text-[12px] px-1">
                         {THEME_LABELS[THEME_MAPPING[details.theme]] || details.theme}
                       </Badge>
                 )}
               </div>
             </td>
-            <td className="px-2 py-1 text-sm w-[10%] text-center">
+            <td className="px-2 py-1 text-[12px] w-[10%] text-center">
               {profitabilityImpact && (
                 <Badge 
                   variant="outline" 
@@ -950,10 +950,10 @@ const ContractProfitabilityAnalyzer = () => {
                 </Badge>
               )}
             </td>
-            <td className="px-2 py-1 text-sm w-[10%]">
+            <td className="px-2 py-1 text-[12px] w-[10%]">
               {(
                 <select 
-                  className="border rounded px-1 py-0.5 text-xs w-20"
+                  className="border rounded px-1 py-0.5 text-[12px] w-20"
                   value={previewQuantity}
                   onChange={handleQuantityChange}
                   disabled={!contract}
@@ -964,29 +964,29 @@ const ContractProfitabilityAnalyzer = () => {
                 </select>
               )}
             </td>
-            <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
-            <td className="px-2 py-1 text-sm text-right w-[10%]">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
-            <td className="px-2 py-1 text-sm text-right w-[10%]">{Math.floor(profitability)}%</td>
-            <td className="px-2 py-1 text-sm w-[5%]">
+            <td className="px-2 py-1 text-[12px] text-right w-[10%]">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
+            <td className="px-2 py-1 text-[12px] text-right w-[10%]">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
+            <td className="px-2 py-1 text-[12px] text-right w-[10%]">{Math.floor(profitability)}%</td>
+            <td className="px-2 py-1 text-[12px] w-[5%]">
               <div className="flex justify-end gap-1">
                 {status.modified && status.action === 'remove' ? (
                   <button
                     onClick={() => handleReAddItem()}
-                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                    className="px-1 py-0.5 text-[12px] text-green-600 hover:bg-green-100 rounded"
                   >
                     +
                   </button>
                 ) : status.originallyIncluded || status.modified ? (
                   <button
                     onClick={() => handleRemoveItem()}
-                    className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                    className="px-1 py-0.5 text-[12px] text-red-600 hover:bg-red-100 rounded"
                   >
                     -
                   </button>
                 ) : (
                   <button
                     onClick={() => handleAddItem()}
-                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                    className="px-1 py-0.5 text-[12px] text-green-600 hover:bg-green-100 rounded"
                   >
                     +
                   </button>
@@ -1119,10 +1119,10 @@ const getModifiedItems = useCallback(() => {
 
     return (
       <Card className="shadow-sm">
-        <CardHeader className="py-2">
-          <CardTitle>계약 테마 구성</CardTitle>
+        <CardHeader className="py-1">
+        <h3 className="text-[15px] font-bold">계약 테마 구성</h3>
         </CardHeader>
-        <CardContent className="py-2">
+        <CardContent className="py-1">
           <div className="space-y-2">
             {/* 프로그레스 바 컨테이너 */}
             <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden flex">
@@ -1142,7 +1142,7 @@ const getModifiedItems = useCallback(() => {
             </div>
 
             {/* 범례 */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex flex-wrap justify-center gap-4 text-[12px]">
               {Object.entries(ratio).map(([theme, percentage], index) => (
                 percentage > 0 && (
                   <div key={theme} className="flex items-center gap-1">
@@ -1232,10 +1232,10 @@ const getModifiedItems = useCallback(() => {
       {/* 메인 컨텐츠 영역 */}
       <div className="flex flex-1 p-2 gap-2 overflow-hidden">
         {/* 왼쪽 패널: 계약 검색, 현재 계약 아이템, 수정 사항 */}
-        <div className="w-[40%] flex flex-col gap-2">
+        <div className="w-[30%] flex flex-col gap-2">
           {/* 검색 영역 */}
           <Card className="shadow-sm">
-            <CardContent className="py-2">
+            <CardContent className="py-1">
               <div className="flex items-center gap-2 mt-1">
                 <div className="flex-1 flex gap-2">
                   <input 
@@ -1261,7 +1261,7 @@ const getModifiedItems = useCallback(() => {
                   )}
                 </div>
                 <button
-                  className="px-4 py-2 bg-red-500 text-white rounded flex items-center gap-2 hover:bg-red-600"
+                  className="px-4 py-1 bg-red-500 text-white rounded flex items-center gap-2 hover:bg-red-600"
                   onClick={searchContract}
                 >
                   <Search size={16} />
@@ -1271,38 +1271,6 @@ const getModifiedItems = useCallback(() => {
             </CardContent>
           </Card>
 
-          {/* 계약 기본 정보 - 검색 영역 아래 추가 */}
-          {contract && (
-            <Card className="shadow-sm">
-              <CardHeader className="py-2">
-                <CardTitle>계약 기본 정보</CardTitle>
-              </CardHeader>
-              <CardContent className="py-2">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500">채널:</span>
-                    <span className="font-medium">{contract.channel}</span>
-                  </div>
-                  <span className="text-gray-300">•</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500">상품명:</span>
-                    <span className="font-medium">{contract.unt_pd_nm}</span>
-                  </div>
-                  <span className="text-gray-300">•</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500">나이:</span>
-                    <span className="font-medium">{contract.age}세</span>
-                  </div>
-                  <span className="text-gray-300">•</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500">성별:</span>
-                    <span className="font-medium">{contract.gndr}</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          )}
-
           {/* 테마 비율 표시 */}
           {getThemeRatioDisplay()}
 
@@ -1310,16 +1278,8 @@ const getModifiedItems = useCallback(() => {
           <Card className={`overflow-auto transition-all duration-300 ${
             isContractItemsCollapsed ? 'flex-none h-10' : 'flex-1'
           }`}>
-            <CardHeader className="py-2">
-              <CardTitle 
-                onClick={() => setIsContractItemsCollapsed(!isContractItemsCollapsed)} 
-                className="cursor-pointer flex items-center gap-2"
-              >
-                현재 계약 아이템
-                <span className="text-sm text-gray-500">
-                  {isContractItemsCollapsed ? '▲' : '▼' }
-                </span>
-              </CardTitle>
+            <CardHeader className="py-1">
+              <h3 className="text-[15px] font-semibold">현재 계약 아이템</h3>
             </CardHeader>
             {!isContractItemsCollapsed && (
               <CardContent className="py-1">
@@ -1327,13 +1287,13 @@ const getModifiedItems = useCallback(() => {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b">
-                        <th className="px-2 py-1 text-left text-sm w-[50%]">아이템명</th>
-                        <th className="px-2 py-1 text-left text-sm w-[3%]"></th>
-                        <th className="px-2 py-1 text-left text-sm w-[13%]">가입금액</th>
-                        <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
-                        <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
-                        <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
-                        <th className="px-2 py-1 text-sm w-[5%]"></th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[50%]">아이템명</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[3%]"></th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[13%]">가입금액</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV(%)</th>
+                        <th className="px-2 py-1 text-[12px] w-[5%]"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1359,27 +1319,27 @@ const getModifiedItems = useCallback(() => {
                             itemId: item.id,
                             element: (
                               <tr key={`set-${setInfo.id}`} className="border-b last:border-b-0 bg-purple-50">
-                                <td className="px-2 py-1 text-sm">
+                                <td className="px-2 py-1 text-[12px]">
                                   <div className="flex items-center gap-1">
                                     <Badge variant="outline" className="bg-purple-50 border-purple-200 text-purple-700">
                                       세트 ({setItems.length}개)
                                     </Badge>
                                   </div>
                                 </td>
-                                <td className="px-2 py-1 text-sm text-center"></td>
-                                <td className="px-2 py-1 text-sm"></td>
-                                <td className="px-2 py-1 text-sm text-right">
+                                <td className="px-2 py-1 text-[12px] text-center"></td>
+                                <td className="px-2 py-1 text-[12px]"></td>
+                                <td className="px-2 py-1 text-[12px] text-right">
                                   ₩{Math.floor(setMetrics.totalPrice).toLocaleString()}
                                 </td>
-                                <td className="px-2 py-1 text-sm text-right">
+                                <td className="px-2 py-1 text-[12px] text-right">
                                   ₩{Math.floor(setMetrics.totalProfit).toLocaleString()}
                                 </td>
-                                <td className="px-2 py-1 text-sm text-right">
+                                <td className="px-2 py-1 text-[12px] text-right">
                                   {setMetrics.totalPrice > 0 
                                     ? Math.floor((setMetrics.totalProfit / setMetrics.totalPrice) * 100)
                                     : 0}%
                                 </td>
-                                <td className="px-2 py-1 text-sm"></td>
+                                <td className="px-2 py-1 text-[12px]"></td>
                               </tr>
                             )
                           });
@@ -1392,32 +1352,32 @@ const getModifiedItems = useCallback(() => {
                               itemId: setItem.id,
                               element: (
                                 <tr key={setItem.id} className="border-b last:border-b-0">
-                                  <td className="px-2 py-1 text-sm">
+                                  <td className="px-2 py-1 text-[12px]">
                                     <div className="flex items-center gap-1 ml-6">
                                       <span className="text-purple-400 mr-1">└</span>
                                       {setItem.name}
                                     </div>
                                   </td>
-                                  <td className="px-2 py-1 text-sm text-center"></td>
-                                  <td className="px-2 py-1 text-sm">
+                                  <td className="px-2 py-1 text-[12px] text-center"></td>
+                                  <td className="px-2 py-1 text-[12px]">
                                     {formatAmountToManWon(setItem.quantity)}
                                   </td>
-                                  <td className="px-2 py-1 text-sm text-right">
+                                  <td className="px-2 py-1 text-[12px] text-right">
                                     ₩{Math.floor(setItem.totalPrice).toLocaleString()}
                                   </td>
-                                  <td className="px-2 py-1 text-sm text-right">
+                                  <td className="px-2 py-1 text-[12px] text-right">
                                     ₩{Math.floor(setItem.totalProfit).toLocaleString()}
                                   </td>
-                                  <td className="px-2 py-1 text-sm text-right">
+                                  <td className="px-2 py-1 text-[12px] text-right">
                                     {setItem.totalPrice > 0 
                                       ? Math.floor((setItem.totalProfit / setItem.totalPrice) * 100)
                                       : 0}%
                                   </td>
-                                  <td className="px-2 py-1 text-sm">
+                                  <td className="px-2 py-1 text-[12px]">
                                     <div className="flex justify-end gap-1">
                                       <button
                                         onClick={() => toggleItem(setItem, null, 'remove')}
-                                        className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                                        className="px-1 py-0.5 text-[12px] text-red-600 hover:bg-red-100 rounded"
                                       >
                                         -
                                       </button>
@@ -1435,27 +1395,27 @@ const getModifiedItems = useCallback(() => {
                           itemId: item.id,
                           element: (
                             <tr key={item.id} className="border-b last:border-b-0">
-                              <td className="px-2 py-1 text-sm">{item.name}</td>
-                              <td className="px-2 py-1 text-sm text-center"></td>
-                              <td className="px-2 py-1 text-sm">
+                              <td className="px-2 py-1 text-[12px]">{item.name}</td>
+                              <td className="px-2 py-1 text-[12px] text-center"></td>
+                              <td className="px-2 py-1 text-[12px]">
                                 {formatAmountToManWon(item.quantity)}
                               </td>
-                              <td className="px-2 py-1 text-sm text-right">
+                              <td className="px-2 py-1 text-[12px] text-right">
                                 ₩{Math.floor(item.totalPrice).toLocaleString()}
                               </td>
-                              <td className="px-2 py-1 text-sm text-right">
+                              <td className="px-2 py-1 text-[12px] text-right">
                                 ₩{Math.floor(item.totalProfit).toLocaleString()}
                               </td>
-                              <td className="px-2 py-1 text-sm text-right">
+                              <td className="px-2 py-1 text-[12px] text-right">
                                 {item.totalPrice > 0 
                                   ? Math.floor((item.totalProfit / item.totalPrice) * 100)
                                   : 0}%
                               </td>
-                              <td className="px-2 py-1 text-sm">
+                              <td className="px-2 py-1 text-[12px]">
                                 <div className="flex justify-end gap-1">
                                   <button
                                     onClick={() => toggleItem(item, null, 'remove')}
-                                    className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                                    className="px-1 py-0.5 text-[12px] text-red-600 hover:bg-red-100 rounded"
                                   >
                                     -
                                   </button>
@@ -1480,13 +1440,50 @@ const getModifiedItems = useCallback(() => {
             </CardContent>
             )}
           </Card>
-
+          </div>
+        {/* 중간 패널: 수정 사항 */}
+        <div className="w-[30%] flex flex-col gap-2">
+          {/* 계약 기본 정보 - 검색 영역 아래 추가 */}
+        {contract && (
+          <Card className="shadow-sm">
+            <CardHeader className="py-1">
+              <CardTitle>
+                <h3 className="text-[15px] font-bold">계약 기본 정보</h3>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="py-1">
+              <div className="flex items-center gap-2"> {/* gap-4 -> gap-2 */}
+                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
+                  <span className="text-sm text-gray-500">채널:</span>
+                  <span className="text-sm font-medium">{contract.channel}</span>
+                </div>
+                <span className="text-sm text-gray-300">•</span>
+                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
+                  <span className="text-sm text-gray-500">상품명:</span>
+                  <span className="text-sm font-medium">{contract.unt_pd_nm}</span>
+                </div>
+                <span className="text-sm text-gray-300">•</span>
+                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
+                  <span className="text-sm text-gray-500">나이:</span>
+                  <span className="text-sm font-medium">{contract.age}세</span>
+                </div>
+                <span className="text-sm text-gray-300">•</span>
+                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
+                  <span className="text-sm text-gray-500">성별:</span>
+                  <span className="text-sm font-medium">{contract.gndr}</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
           {/* 수정 사항 아이템 */}
           <Card className={`overflow-auto transition-all duration-300 ${
             isContractItemsCollapsed ? 'flex-[2]' : 'flex-1'
           }`}>
-            <CardHeader className="py-2">
-              <CardTitle>수정 사항</CardTitle>
+            <CardHeader className="py-1">
+              <CardTitle>
+              <h3 className="text-[15px] font-semibold">수정 사항</h3>
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-1">
@@ -1501,16 +1498,152 @@ const getModifiedItems = useCallback(() => {
               </div>
             </CardContent>
           </Card>
-        </div>
+
+              {/* 현재 계약 수익성 */}
+          <Card className="h-25 shadow-md hover:shadow-lg transition-shadow">
+            <div className="h-full p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <CardTitle className="text-sm font-medium text-gray-700">현재 계약</CardTitle>
+                {selectedSilsonType && (
+                  <Badge variant="outline" className="bg-blue-50 text-blue-600 text-[12px]">
+                    실손 차감 적용
+                  </Badge>
+                )}
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                {/* 월납P */}
+                <div className="bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100">
+                  <div className="text-[12px] text-gray-500 mb-1">월납P</div>
+                  <div className="text-sm font-semibold text-gray-900">
+                    ₩{Math.floor(originalMetrics.totalPrice).toLocaleString()}
+                  </div>
+                </div>
+
+                {/* KMV */}
+                <div className="bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100">
+                  <div className="flex flex-col">
+                    <div className="text-[12px] text-gray-500 mb-1">KMV</div>
+                    <div className="text-sm font-semibold text-gray-900">
+                      ₩{Math.floor(originalMetrics.totalProfit).toLocaleString()}
+                    </div>
+                    {selectedSilsonType && contract?.silson_discount && (
+                      <div className="text-[12px] text-blue-600 mt-1 truncate" title={`차감 KMV: ₩${Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}`}>
+                        차감: ₩{Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* KMV(%) */}
+                <div className="bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100">
+                  <div className="flex flex-col">
+                    <div className="text-[12px] text-gray-500 mb-1">KMV(%)</div>
+                    <div className="text-sm font-semibold text-gray-900">
+                      {Math.floor(originalMetrics.profitability)}%
+                    </div>
+                    {selectedSilsonType && contract?.silson_discount && (
+                      <div className="text-[12px] text-blue-600 mt-1 truncate" title={`차감 후 KMV(%): ${Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%`}>
+                        차감 후: {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+
+          <Card className="h-25 shadow-md hover:shadow-lg transition-shadow">
+            <div className="h-full p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <CardTitle className="text-sm font-medium text-gray-700">수정 후</CardTitle>
+                {selectedSilsonType && (
+                  <Badge variant="outline" className="bg-blue-50 text-blue-600 text-[12px]">
+                    실손 차감 적용
+                  </Badge>
+                )}
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+              {/* 월납P */}
+              <div className={`bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100 ${
+                modifiedMetrics.totalPrice !== originalMetrics.totalPrice 
+                  ? 'ring-2 ring-yellow-200' 
+                  : ''
+              }`}>
+                <div className="flex flex-col">
+                  <div className="text-[12px] text-gray-500 mb-1">월납P</div>
+                  <div className="text-sm font-semibold text-gray-900">
+                    ₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}
+                  </div>
+                  {modifications.length > 0 && (
+                    <div className="text-[12px] text-blue-600 mt-1">
+                      {(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)) > 0 ? '+' : ''}
+                      ₩{(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)).toLocaleString()}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+                {/* KMV */}
+                <div className={`bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100 ${
+                  modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
+                    ? 'ring-2 ring-yellow-200' 
+                    : ''
+                }`}>
+                  <div className="flex flex-col">
+                    <div className="text-[12px] text-gray-500 mb-1">KMV</div>
+                    <div className="text-sm font-semibold text-gray-900">
+                      ₩{Math.floor(
+                        modifiedMetrics.totalProfit + 
+                        (selectedSilsonType && contract?.silson_discount 
+                          ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                          : 0)
+                      ).toLocaleString()}
+                    </div>
+                  </div>
+                </div>
+
+                {/* KMV(%) */}
+                <div className={`bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100 ${
+                  modifiedMetrics.profitability !== originalMetrics.profitability 
+                    ? 'ring-2 ring-yellow-200' 
+                    : ''
+                }`}>
+                  <div className="flex flex-col">
+                    <div className="text-[12px] text-gray-500 mb-1">KMV(%)</div>
+                    <div className={`text-sm font-semibold ${
+                      contract?.channel ? (
+                        ((modifiedMetrics.totalProfit + 
+                          (selectedSilsonType && contract?.silson_discount 
+                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                            : 0)) / modifiedMetrics.totalPrice) * 100 >= CHANNEL_KMV_TARGETS[contract.channel]
+                          ? 'text-red-500'
+                          : 'text-blue-500'
+                      ) : 'text-gray-900'
+                    }`}>
+                      {Math.floor(
+                        ((modifiedMetrics.totalProfit + 
+                          (selectedSilsonType && contract?.silson_discount 
+                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                            : 0)) / modifiedMetrics.totalPrice) * 100
+                      )}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+          </div>
+
         {/* 오른쪽 패널: 전체 아이템 목록 */}
-        <Card className="w-[60%] overflow-hidden flex flex-col">
-          <CardHeader className="py-2">
+        <Card className="w-[50%] overflow-hidden flex flex-col">
+          <CardHeader className="py-1">
             <CardTitle>
               <div className="flex flex-col gap-2 w-full">
                 {/* 상단 헤더 */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-semibold">전체 아이템</h3>
+                    <h3 className="text-[15px] font-semibold">전체 아이템</h3>
                     <div className="flex gap-1">
                       <button
                         onClick={() => {
@@ -1565,7 +1698,7 @@ const getModifiedItems = useCallback(() => {
                           // 스크롤 초기화 추가
                           resetScroll();
                         }}
-                        className="px-2 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                        className="px-2 py-1 text-[12px] bg-gray-100 hover:bg-gray-200 rounded transition-colors"
                         disabled={!contract}
                       >
                         🎲 랜덤정렬
@@ -1621,7 +1754,7 @@ const getModifiedItems = useCallback(() => {
                           setSortedItems(sortedRecommendedItems);
                           resetScroll();
                         }}
-                        className="px-2 py-1 text-xs bg-blue-100 hover:bg-blue-200 rounded transition-colors"
+                        className="px-2 py-1 text-[12px] bg-blue-100 hover:bg-blue-200 rounded transition-colors"
                         disabled={!contract}
                       >
                         ⭐ 추천정렬
@@ -1698,7 +1831,7 @@ const getModifiedItems = useCallback(() => {
                           // 스크롤 초기화
                           resetScroll();
                         }}
-                        className="px-2 py-1 text-xs bg-green-100 hover:bg-green-200 rounded transition-colors"
+                        className="px-2 py-1 text-[12px] bg-green-100 hover:bg-green-200 rounded transition-colors"
                         disabled={!contract}
                       >
                         💰 KMV정렬
@@ -1770,14 +1903,14 @@ const getModifiedItems = useCallback(() => {
                           setSortedItems(sortedRecommendationKMVItems);
                           resetScroll();
                         }}
-                        className="px-2 py-1 text-xs bg-purple-100 hover:bg-purple-200 rounded transition-colors"
+                        className="px-2 py-1 text-[12px] bg-purple-100 hover:bg-purple-200 rounded transition-colors"
                         disabled={!contract}
                       >
                         🎯 추천×KMV정렬
                       </button>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 text-sm font-normal">
+                  <div className="flex items-center gap-3 text-[12px] font-normal">
                     <span className="flex items-center gap-1">
                       <div className="w-3 h-3 bg-blue-50 border border-blue-200 rounded"></div>
                       현재 계약
@@ -1835,12 +1968,12 @@ const getModifiedItems = useCallback(() => {
                             <table className="w-full">
                               <thead>
                                 <tr className="border-b">
-                                  <th className="px-2 py-1 text-left text-sm w-[70%]">아이템명</th>
-                                  <th className="px-2 py-1 text-left text-sm w-[10%]">증가율</th>
-                                  <th className="px-2 py-1 text-left text-sm w-[10%]">가입금액</th>
-                                  <th className="px-2 py-1 text-left text-sm w-[10%]">월납P</th>
-                                  <th className="px-2 py-1 text-left text-sm w-[10%]">KMV</th>
-                                  <th className="px-2 py-1 text-left text-sm w-[10%]">KMV(%)</th>
+                                  <th className="px-2 py-1 text-left text-[12px] w-[70%]">아이템명</th>
+                                  <th className="px-2 py-1 text-left text-[12px] w-[10%]">증가율</th>
+                                  <th className="px-2 py-1 text-left text-[12px] w-[10%]">가입금액</th>
+                                  <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
+                                  <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV</th>
+                                  <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV(%)</th>
                                   <th className="px-2 py-1 text-left w-[1%]"></th>
                                 </tr>
                               </thead>
@@ -1874,125 +2007,10 @@ const getModifiedItems = useCallback(() => {
         </Card>
       </div>
 
-      {/* 하단 수익성 분석 영역 */}
-      {contract && (
-        <div className="border-t bg-gray-50">
-          <div className="container mx-auto p-2">
-            <div className="flex justify-between items-start gap-4">
-              {/* 현재 계약 수익성 */}
-              <div className="flex-[0.4]">
-                <h3 className="text-sm font-medium text-gray-500 mb-1">현재 계약</h3>
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="bg-white p-2 rounded-lg h-[85px]">
-                    <div className="text-sm text-gray-500">월납P</div>
-                    <div className="text-lg font-medium">₩{Math.floor(originalMetrics.totalPrice).toLocaleString()}</div>
-                  </div>
-                  <div className="bg-white p-2 rounded-lg h-[85px]">
-                    <div className="text-sm text-gray-500">KMV</div>
-                    <div className="text-lg font-medium">₩{Math.floor(originalMetrics.totalProfit).toLocaleString()}</div>
-                    {selectedSilsonType && contract?.silson_discount && (
-                      <div className="text-xs text-blue-600 mt-1">
-                        차감 KMV: ₩{Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}
-                      </div>
-                    )}
-                  </div>
-                  <div className="bg-white p-2 rounded-lg h-[85px]">
-                    <div className="text-sm text-gray-500">KMV(%)</div>
-                    <div className="text-lg font-medium">{Math.floor(originalMetrics.profitability)}%</div>
-                    {selectedSilsonType && contract?.silson_discount && (
-                      <div className="text-xs text-blue-600 mt-1">
-                        차감 후 KMV(%): {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* 구분��� */}
-              <div className="flex flex-col items-center gap-2 h-[85px]">
-                <div className="h-12 w-px bg-gray-300"></div>
-                {profitabilityChange !== "0.0" && (
-                  <div className={`text-lg font-bold ${
-                    Number(profitabilityChange) > 0 
-                      ? 'text-red-500' 
-                      : 'text-blue-500'
-                  }`}>
-                    {profitabilityChange > 0 ? '▲' : '▼'} {Math.abs(profitabilityChange)}%
-                  </div>
-                )}
-              </div>
-
-              {/* 수정 후 수익성 */}
-              <div className="flex-[0.6]">
-                <h3 className="text-sm font-medium text-gray-500 mb-1 flex items-center gap-2">
-                  수정 후
-                  {profitabilityChange !== "0.0" }
-                </h3>
-                <div className="grid grid-cols-3 gap-2">
-                  <div className={`bg-white p-2 rounded-lg h-[85px] ${
-                    modifiedMetrics.totalPrice !== originalMetrics.totalPrice 
-                      ? 'ring-2 ring-offset-2 ring-yellow-200' 
-                      : ''
-                  }`}>
-                    <div className="text-sm text-gray-500">월납P</div>
-                    <div className="text-lg font-medium">₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}</div>
-                    <div className="text-xs text-blue-600 mt-1">
-                      변화 월납P ₩{(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)).toLocaleString()}
-                    </div>
-                  </div>
-                  <div className={`bg-white p-2 rounded-lg h-[85px] ${
-                    modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
-                      ? 'ring-2 ring-offset-2 ring-yellow-200' 
-                      : ''
-                  }`}>
-                    <div className="text-sm text-gray-500">KMV</div>
-                    <div className="text-lg font-medium">
-                      ₩{Math.floor(
-                        modifiedMetrics.totalProfit + 
-                        (selectedSilsonType && contract?.silson_discount 
-                          ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
-                          : 0)
-                      ).toLocaleString()}
-                    </div>
-                  </div>
-                  <div className={`bg-white p-2 rounded-lg h-[85px] ${
-                    modifiedMetrics.profitability !== originalMetrics.profitability 
-                      ? 'ring-2 ring-offset-2 ring-yellow-200' 
-                      : ''
-                  }`}>
-                    <div className="text-sm text-gray-500">KMV(%)</div>
-                    <div className={`text-lg font-medium ${
-                      contract?.channel ? (
-                        ((modifiedMetrics.totalProfit + 
-                          (selectedSilsonType && contract?.silson_discount 
-                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
-                            : 0)) / modifiedMetrics.totalPrice) * 100 >= CHANNEL_KMV_TARGETS[contract.channel]
-                          ? 'text-red-500'
-                          : 'text-blue-500'
-                      ) : ''
-                    }`}>
-                      {Math.floor(
-                        ((modifiedMetrics.totalProfit + 
-                          (selectedSilsonType && contract?.silson_discount 
-                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
-                            : 0)) / modifiedMetrics.totalPrice) * 100
-                      )}%
-                    </div>
-                    {contract?.channel && (
-                      <div className="text-sm font-semibold text-red-600 mt-1">
-                        목표 +{CHANNEL_KMV_TARGETS[contract.channel]}% !!! 
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      
 
       {/* 추가된 정보 */}
-      <div className="bg-gray-100 p-4 text-center text-sm text-gray-700">
+      <div className="bg-gray-100 p-4 text-center text-[12px] text-gray-700">
         목표치: GA +1150% 이상, TA +1050% 이상, TM +630% 이상
       </div>
     </div>
