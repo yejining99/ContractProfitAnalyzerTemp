@@ -793,7 +793,7 @@ const ContractProfitabilityAnalyzer = () => {
                   </span>
                   {/* 세트의 모든 아이템의 테마를 수집하고 중복 제거하여 표시 */}
                   {showThemeBadge && (
-                    <>
+                    <>                   
                       {Array.from(new Set(
                         setInfo.ids
                           .map(id => contract?.availableItems.find(i => i.id === id))
@@ -834,95 +834,85 @@ const ContractProfitabilityAnalyzer = () => {
                 {/* 세트 전체 행에는 액션 버튼 없음 */}
               </td>
             </tr>
-
-            {/* 세트의 모든 아이템을 한번에 토글 */}
-            {isSetExpanded && setInfo.ids.map(id => {
-              const itemDetails = contract?.availableItems.find(i => i.id === id);
-              if (!itemDetails) return null;
-
-              // 수량 옵션 재정렬: 추천 수량을 첫 번째로
-              const sortedQuantities = [...itemDetails.availableQuantities].sort((a, b) => {
-                if (a === itemDetails.recommendedQuantity) return -1;
-                if (b === itemDetails.recommendedQuantity) return 1;
-                return a - b;
-              });
-
-              const metrics = itemDetails.priceAndProfitByQuantity[previewQuantity] || 
-                itemDetails.priceAndProfitByQuantity[itemDetails.recommendedQuantity] || 
-                { totalPrice: 0, totalProfit: 0 };
-
-              const profitability = metrics.totalPrice > 0 
-                ? (metrics.totalProfit / metrics.totalPrice) * 100 
-                : 0;
-            // 아이템의 상태 확인
-            const itemStatus = getItemStatus(itemDetails);
-            const statusInfo = getItemStatusInfo(itemStatus);
-
-              return (
-                <tr key={id} className={`border-b last:border-b-0 ${statusInfo.style}`}>
-                  <td className="px-2 py-1 text-sm">
-                    <div className="flex items-center gap-1 ml-6">
-                      <span className="text-purple-400 mr-1">└</span>
-                      {itemDetails.name}
-                      
-                    </div>
-                  </td>
-                  <td className="px-2 py-1 text-sm text-center"></td>
-                  <td className="px-2 py-1 text-sm">
-                    <select 
-                      className="border rounded px-1 py-0.5 text-xs w-20"
-                      value={previewQuantity}
-                      onChange={handleQuantityChange}
-                      disabled={!contract}
-                    >
-                      {sortedQuantities.map(q => (
-                        <option key={q} value={q}>
-                          {q === itemDetails.recommendedQuantity 
-                            ? `${formatAmountToManWon(q)}` 
-                            : formatAmountToManWon(q)}
-                        </option>
-                      ))}
-                    </select>
-                  </td>
-                  <td className="px-2 py-1 text-sm text-right">
-                    ₩{Math.floor(metrics.totalPrice).toLocaleString()}
-                  </td>
-                  <td className="px-2 py-1 text-sm text-right">
-                    ₩{Math.floor(metrics.totalProfit).toLocaleString()}
-                  </td>
-                  <td className="px-2 py-1 text-sm text-right">
-                    {Math.floor(profitability)}%
-                  </td>
-                  <td className="px-2 py-1 text-sm">
-                    <div className="flex justify-end gap-1">
-                      {status.modified && status.action === 'remove' ? (
-                        <button
-                          onClick={handleReAddItem}
-                          className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
-                        >
-                          +
-                        </button>
-                      ) : status.originallyIncluded || status.modified ? (
-                        <button
-                          onClick={handleRemoveItem}
-                          className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
-                        >
-                          -
-                        </button>
-                      ) : (
-                        <button
-                          onClick={handleAddItem}
-                          className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
-                        >
-                          +
-                        </button>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              );
-            })}
+           
           </>
+        )}
+
+        {/* 세트 멤버 연결선 */}
+        {isSetMember && (
+          <tr className={`border-b last:border-b-0 ${
+            status.modified ? (
+              status.action === 'remove' 
+                ? 'bg-red-50' // 삭제 예정
+                : status.originallyIncluded 
+                  ? 'bg-yellow-50' // 수량 변경
+                  : 'bg-green-50' // 새로 추가
+            ) : status.originallyIncluded 
+              ? 'bg-blue-50' // 현재 계약
+              : 'bg-purple-50/30' // 기본 세트 멤버 스타일
+          }`}>
+            <td className="px-2 py-1 text-sm">
+              <div className="flex items-center gap-1 ml-6">
+                <span className="text-purple-400 mr-1">└</span>
+                <span className="font-medium text-sm">{details?.name}</span>
+                {showThemeBadge && details?.theme && (
+                  Array.isArray(details.theme) 
+                    ? details.theme.map(t => (
+                        <Badge key={t} variant="outline" className="text-xs px-1">
+                          {THEME_LABELS[THEME_MAPPING[t]] || t}
+                        </Badge>
+                      ))
+                    : <Badge variant="outline" className="text-xs px-1">
+                        {THEME_LABELS[THEME_MAPPING[details.theme]] || details.theme}
+                      </Badge>
+                )}
+              </div>
+            </td>
+            <td className="px-2 py-1 text-sm text-center">
+              {/* 세트 멤버는 개별 영향도를 표시하지 않음 */}
+            </td>
+            <td className="px-2 py-1 text-sm">
+              <select 
+                className="border rounded px-1 py-0.5 text-xs w-20"
+                value={previewQuantity}
+                onChange={handleQuantityChange}
+                disabled={!contract}
+              >
+                {details?.availableQuantities?.map(q => (
+                  <option key={q} value={q}>{formatAmountToManWon(q)}</option>
+                ))}
+              </select>
+            </td>
+            <td className="px-2 py-1 text-sm text-right">₩{Math.floor(metrics.totalPrice).toLocaleString()}</td>
+            <td className="px-2 py-1 text-sm text-right">₩{Math.floor(metrics.totalProfit).toLocaleString()}</td>
+            <td className="px-2 py-1 text-sm text-right">{Math.floor(profitability)}%</td>
+            <td className="px-2 py-1 text-sm">
+              <div className="flex justify-end gap-1">
+                {status.modified && status.action === 'remove' ? (
+                  <button
+                    onClick={() => handleReAddItem()}
+                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                  >
+                    +
+                  </button>
+                ) : status.originallyIncluded || status.modified ? (
+                  <button
+                    onClick={() => handleRemoveItem()}
+                    className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
+                  >
+                    -
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleAddItem()}
+                    className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
+                  >
+                    +
+                  </button>
+                )}
+              </div>
+            </td>
+          </tr>
         )}
 
         {/* 일반 아이템 행 (세트 멤버가 아닌 경우에만 렌더링) */}
@@ -935,10 +925,6 @@ const ContractProfitabilityAnalyzer = () => {
                   <Badge variant="outline" className="text-xs px-1 bg-purple-50 border-purple-200 text-purple-700">
                     세트
                   </Badge>
-                )}
-                {/* 세트 멤버 연결선 */}
-                {isSetMember && (
-                  <span className="text-purple-400 mr-1">└</span>
                 )}
                 <span className="font-medium text-sm">{details?.name}</span>
                 {showThemeBadge && details?.theme && (
@@ -985,21 +971,21 @@ const ContractProfitabilityAnalyzer = () => {
               <div className="flex justify-end gap-1">
                 {status.modified && status.action === 'remove' ? (
                   <button
-                    onClick={handleReAddItem}
+                    onClick={() => handleReAddItem()}
                     className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
                   >
                     +
                   </button>
                 ) : status.originallyIncluded || status.modified ? (
                   <button
-                    onClick={handleRemoveItem}
+                    onClick={() => handleRemoveItem()}
                     className="px-1 py-0.5 text-xs text-red-600 hover:bg-red-100 rounded"
                   >
                     -
                   </button>
                 ) : (
                   <button
-                    onClick={handleAddItem}
+                    onClick={() => handleAddItem()}
                     className="px-1 py-0.5 text-xs text-green-600 hover:bg-green-100 rounded"
                   >
                     +
@@ -1869,7 +1855,7 @@ const getModifiedItems = useCallback(() => {
                             const itemThemes = Array.isArray(item.theme) ? item.theme : [item.theme];
                             return itemThemes.includes(theme);
                           })
-                          // 검색 쿼리에 따라 필터링
+                          // 검색 쿼리에 ��라 필터링
                           .filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
                           .map(item => (
                             <ItemRow 
