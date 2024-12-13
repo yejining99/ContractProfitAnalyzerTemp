@@ -327,6 +327,7 @@ const ContractProfitabilityAnalyzer = () => {
 
     // modType이 'remove'일 때의 로직 수정
     if (modType === 'remove') {
+        // originalItem인 경우에는 originalItem의 수량을 마지막으로 업데이트
         if (setInfo) {
             // 세트 아이템 삭제 로직은 그대로 유지
             const newModifications = modifications.filter(mod => 
@@ -334,10 +335,13 @@ const ContractProfitabilityAnalyzer = () => {
             );
             
             setInfo.ids.forEach(id => {
-                if (contract?.items.find(i => i.id === id)) {
+                const originalSetItem = contract?.items.find(i => i.id === id);
+                if (originalSetItem) {
                     newModifications.push({
-                        id,
-                        action: 'remove'
+                        id: originalSetItem.id,
+                        action: 'remove',
+                        // 원래 수량 유지
+                        quantity: originalSetItem.quantity
                     });
                 }
             });
@@ -634,7 +638,14 @@ const ContractProfitabilityAnalyzer = () => {
     const incompatibilityWarning = getIncompatibilityWarning();
 
     const handleRemoveItem = () => {
-      toggleItem(item, null, 'remove');  // toggleItem remove 로직 사용
+      const originalItem = contract?.items.find(i => i.id === item.id);
+        if (originalItem) {
+          // 원본 아이템의 정보를 모두 포함하여 toggleItem 호출
+          toggleItem(item, originalItem.quantity, 'remove');
+        }
+        else {
+          toggleItem(item, null, 'remove');  // toggleItem remove 로직 사용
+        }
     };
 
     // 아이템 상태에 따른 스타일과 라벨 결정
@@ -1311,10 +1322,10 @@ const getModifiedItems = useCallback(() => {
             </CardContent>
           </Card>
 
-          {/* ��마 비��� 표시 */}
+          {/* 테마 비율 표시 */}
           {getThemeRatioDisplay()}
 
-          {/* 현재 계약 아이템과 중간 패널을 가��로 배치 */}
+          {/* 현재 계약 아이템과 중간 패널을 가로로 배치 */}
           <div className="flex gap-2 h-[calc(100vh-240px)]">
           <Card className="flex-1 flex flex-col">
             <CardHeader className="py-1">
@@ -1529,6 +1540,8 @@ const getModifiedItems = useCallback(() => {
                     실손 차감 적용
                   </Badge>
                 )}
+
+
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {/* 월납P */}
@@ -1582,6 +1595,45 @@ const getModifiedItems = useCallback(() => {
                     실손 차감 적용
                   </Badge>
                 )}
+
+                 {/* 영향도 배지 추가 */}
+                  {modifications.length > 0 && (() => {
+                    const currentMetrics = calculateMetrics(contract.items);
+                    const newTotalPrice = modifiedMetrics.totalPrice;
+                    const newTotalProfit = modifiedMetrics.totalProfit;
+                    
+                    const currentProfitability = currentMetrics.totalPrice > 0 
+                      ? (currentMetrics.totalProfit / currentMetrics.totalPrice) * 100 
+                      : 0;
+                    const newProfitability = newTotalPrice > 0 
+                      ? (newTotalProfit / newTotalPrice) * 100 
+                      : 0;
+
+                    const impact = newProfitability - currentProfitability;
+
+                    // 영향도 레벨 결정
+                    let level;
+                    if (impact > PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER.threshold) {
+                      level = PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER;
+                    } else if (impact > PROFITABILITY_IMPACT_LEVELS.BETTER.threshold) {
+                      level = PROFITABILITY_IMPACT_LEVELS.BETTER;
+                    } else if (impact > PROFITABILITY_IMPACT_LEVELS.SIMILAR.threshold) {
+                      level = PROFITABILITY_IMPACT_LEVELS.SIMILAR;
+                    } else if (impact > PROFITABILITY_IMPACT_LEVELS.WORSE.threshold) {
+                      level = PROFITABILITY_IMPACT_LEVELS.WORSE;
+                    } else {
+                      level = PROFITABILITY_IMPACT_LEVELS.MUCH_WORSE;
+                    }
+
+                    return (
+                      <Badge 
+                        variant="outline" 
+                        className={level.color}
+                      >
+                        {`${impact > 0 ? '+' : ''}${Math.floor(impact)}%`}
+                      </Badge>
+                    );
+                  })()}
               </div>
               <div className="grid grid-cols-3 gap-4">
               {/* 월납P */}
