@@ -849,11 +849,11 @@ const ContractProfitabilityAnalyzer = () => {
                   : 'bg-green-50' // 새로 추가
             ) : status.originallyIncluded 
               ? 'bg-blue-50' // 현재 계약
-              : 'bg-purple-50/30' // 기본 세트 멤버 스타일
+              : 'bg-white' // 기본 세트 멤버 스타일
           }`}>
             <td className="px-2 py-1 text-[12px]">
               <div className="flex items-center gap-1 ml-6">
-                <span className="text-purple-400 mr-1">└</span>
+                <span className="text-400 mr-1">└</span>
                 <span className="font-medium text-[12px]">{details?.name}</span>
                 {showThemeBadge && details?.theme && (
                   Array.isArray(details.theme) 
@@ -1231,17 +1231,23 @@ const getModifiedItems = useCallback(() => {
     <div className="flex flex-col h-screen">
       {/* 메인 컨텐츠 영역 */}
       <div className="flex flex-1 p-2 gap-2 overflow-hidden">
-        {/* 왼쪽 패널: 계약 검색, 현재 계약 아이템, 수정 사항 */}
-        <div className="w-[30%] flex flex-col gap-2">
-          {/* 검색 영역 */}
-          <Card className="shadow-sm">
+        {/* 왼쪽 패널*/}
+        <div className="w-[50%] flex flex-col gap-2 h-screen">
+          {/* 검색과 기본 정보를 포함하는 카드 */}
+          <Card className="w-full shadow-sm">
+            <CardHeader className="py-1">
+              <CardTitle>
+                <h3 className="text-[15px] font-bold">계약 검색</h3>
+              </CardTitle>
+            </CardHeader>
             <CardContent className="py-1">
-              <div className="flex items-center gap-2 mt-1">
-                <div className="flex-1 flex gap-2">
+              <div className="flex items-center gap-4">
+                {/* 검색 영역 */}
+                <div className="flex items-center gap-2">
                   <input 
                     type="text"
                     placeholder="계약 번호 입력"
-                    className="flex-1 p-2 border rounded"
+                    className="w-[200px] p-2 border rounded"
                     value={contractId}
                     onChange={(e) => setContractId(e.target.value)}
                   />
@@ -1259,30 +1265,63 @@ const getModifiedItems = useCallback(() => {
                       ))}
                     </select>
                   )}
+                  <button
+                    className="px-4 py-1 bg-red-500 text-white rounded flex items-center gap-2 hover:bg-red-600"
+                    onClick={searchContract}
+                  >
+                    <Search size={12} />
+                    검색
+                  </button>
                 </div>
-                <button
-                  className="px-4 py-1 bg-red-500 text-white rounded flex items-center gap-2 hover:bg-red-600"
-                  onClick={searchContract}
-                >
-                  <Search size={16} />
-                  검색
-                </button>
+
+                {/* 기본 정보 영역 */}
+                <div className="border-l pl-8">
+                  {contract ? (
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1">
+                          <span className="text-sm text-gray-500">채널:</span>
+                          <span className="text-sm font-medium">{contract.channel}</span>
+                        </div>
+                        <span className="text-sm text-gray-300">•</span>
+                        <div className="flex items-center gap-1">
+                          <span className="text-sm text-gray-500">상품명:</span>
+                          <span className="text-sm font-medium">{contract.unt_pd_nm}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1">
+                          <span className="text-sm text-gray-500">나이:</span>
+                          <span className="text-sm font-medium">{contract.age}세</span>
+                        </div>
+                        <span className="text-sm text-gray-300">•</span>
+                        <div className="flex items-center gap-1">
+                          <span className="text-sm text-gray-500">성별:</span>
+                          <span className="text-sm font-medium">{contract.gndr}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-sm text-gray-500 text-center">
+                      계약을 검색해주세요
+                    </div>
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* 테마 비율 표시 */}
+          {/* ��마 비��� 표시 */}
           {getThemeRatioDisplay()}
 
-          {/* 현재 계약 아이템 */}
-          <Card className={`overflow-auto transition-all duration-300 ${
-            isContractItemsCollapsed ? 'flex-none h-10' : 'flex-1'
-          }`}>
+          {/* 현재 계약 아이템과 중간 패널을 가��로 배치 */}
+          <div className="flex gap-2 h-[calc(100vh-240px)]">
+          <Card className="flex-1 flex flex-col">
             <CardHeader className="py-1">
               <h3 className="text-[15px] font-semibold">현재 계약 아이템</h3>
             </CardHeader>
             {!isContractItemsCollapsed && (
-              <CardContent className="py-1">
+              <CardContent className="py-1 overflow-auto">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
@@ -1440,56 +1479,37 @@ const getModifiedItems = useCallback(() => {
             </CardContent>
             )}
           </Card>
-          </div>
-        {/* 중간 패널: 수정 사항 */}
-        <div className="w-[30%] flex flex-col gap-2">
-          {/* 계약 기본 정보 - 검색 영역 아래 추가 */}
-        {contract && (
-          <Card className="shadow-sm">
-            <CardHeader className="py-1">
-              <CardTitle>
-                <h3 className="text-[15px] font-bold">계약 기본 정보</h3>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="py-1">
-              <div className="flex items-center gap-2"> {/* gap-4 -> gap-2 */}
-                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
-                  <span className="text-sm text-gray-500">채널:</span>
-                  <span className="text-sm font-medium">{contract.channel}</span>
-                </div>
-                <span className="text-sm text-gray-300">•</span>
-                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
-                  <span className="text-sm text-gray-500">상품명:</span>
-                  <span className="text-sm font-medium">{contract.unt_pd_nm}</span>
-                </div>
-                <span className="text-sm text-gray-300">•</span>
-                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
-                  <span className="text-sm text-gray-500">나이:</span>
-                  <span className="text-sm font-medium">{contract.age}세</span>
-                </div>
-                <span className="text-sm text-gray-300">•</span>
-                <div className="flex items-center gap-1"> {/* gap-2 -> gap-1 */}
-                  <span className="text-sm text-gray-500">성별:</span>
-                  <span className="text-sm font-medium">{contract.gndr}</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
+
+
+        {/*수정 사항 */}
+        <div className="flex-1 flex flex-col gap-2">
           {/* 수정 사항 아이템 */}
-          <Card className={`overflow-auto transition-all duration-300 ${
-            isContractItemsCollapsed ? 'flex-[2]' : 'flex-1'
-          }`}>
-            <CardHeader className="py-1">
+          <Card className="flex-1 flex flex-col overflow-hidden" style={{ maxHeight: '60%' }}>
+            <CardHeader className="py-1 shrink-0">
               <CardTitle>
-              <h3 className="text-[15px] font-semibold">수정 사항</h3>
+                <h3 className="text-[15px] font-semibold">수정 사항</h3>
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex-1 overflow-auto">
               <div className="space-y-1">
-                {modifications.map(mod => (
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="px-2 py-1 text-left text-[12px] w-[80%]">아이템명</th>
+                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">증가율</th>
+                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">가입금액</th>
+                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
+                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV</th>
+                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV(%)</th>
+                      <th className="px-2 py-1 text-left w-[1%]"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {modifications.map(mod => (
                   <ItemRow key={mod.id} item={mod} />
                 ))}
+                  </tbody>
+                </table>
                 {modifications.length === 0 && (
                   <div className="text-center text-gray-500 py-4">
                     수정 사항이 없습니다
@@ -1634,6 +1654,8 @@ const getModifiedItems = useCallback(() => {
             </div>
           </Card>
           </div>
+          </div>
+      </div>
 
         {/* 오른쪽 패널: 전체 아이템 목록 */}
         <Card className="w-[50%] overflow-hidden flex flex-col">
