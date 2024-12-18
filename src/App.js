@@ -3,7 +3,7 @@ import ContractProfitabilityAnalyzer from './ContractProfitabilityAnalyzer';
 function App() {
   return (
     <div className="App">
-      <ContractProfitabilityAnalyzer />
+      <ContractProfitabilityAnalyzer /> 
     </div>
   );
 }

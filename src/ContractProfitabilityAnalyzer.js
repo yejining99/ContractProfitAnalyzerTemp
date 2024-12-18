@@ -865,7 +865,7 @@ const ContractProfitabilityAnalyzer = () => {
             <td className="px-2 py-1 text-[12px]">
               <div className="flex items-center gap-1 ml-6">
                 <span className="text-400 mr-1">└</span>
-                <span className="font-medium text-[12px]">{details?.name}</span>
+                <span className="font-medium text-[12px] whitespace-nowrap">{details?.name}</span>
                 {showThemeBadge && details?.theme && (
                   Array.isArray(details.theme) 
                     ? details.theme.map(t => (
@@ -1136,7 +1136,7 @@ const getModifiedItems = useCallback(() => {
         <CardContent className="py-1">
           <div className="space-y-2">
             {/* 프로그레스 바 컨테이너 */}
-            <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden flex">
+            <div className="w-full h-4 bg-gray-100 rounded-full flex">
               {Object.entries(ratio).map(([theme, percentage], index) => (
                 percentage > 0 && (
                   <div 
@@ -1243,9 +1243,9 @@ const getModifiedItems = useCallback(() => {
       {/* 메인 컨텐츠 영역 */}
       <div className="flex flex-1 p-2 gap-2 overflow-hidden">
         {/* 왼쪽 패널*/}
-        <div className="w-[50%] overflow-hidden flex flex-col h-full">
+        <div className="w-[50%] flex flex-col h-full overflow-hidden gap-4">
           {/* 검색과 기본 정보를 포함하는 카드 */}
-          <Card className="w-full shadow-sm">
+          <Card className="w-full shadow-sm flex-shrink-0">
             <CardHeader className="py-1">
               <CardTitle>
                 <h3 className="text-[15px] font-bold">계약 검색</h3>
@@ -1286,9 +1286,9 @@ const getModifiedItems = useCallback(() => {
                 </div>
 
                 {/* 기본 정보 영역 */}
-                <div className="border-l pl-8">
+                <div className="border-l pl-4">
                   {contract ? (
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1">
                       <div className="flex items-center gap-2">
                         <div className="flex items-center gap-1">
                           <span className="text-sm text-gray-500">채널:</span>
@@ -1326,18 +1326,16 @@ const getModifiedItems = useCallback(() => {
           {getThemeRatioDisplay()}
 
           {/* 현재 계약 아이템과 중간 패널을 가로로 배치 */}
-          <div className="flex gap-2 h-[calc(100vh-240px)]">
-          <Card className="flex-1 flex flex-col">
+          <div className="flex flex-1 gap-2 overflow-hidden">
+          <Card className="flex-1 flex flex-col overflow-hidden">
             <CardHeader className="py-1">
               <h3 className="text-[15px] font-semibold">현재 계약 아이템</h3>
             </CardHeader>
-            {!isContractItemsCollapsed && (
-              <CardContent className="py-1 overflow-auto">
-                <div className="overflow-x-auto">
+              <CardContent className="flex-1 overflow-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b">
-                        <th className="px-2 py-1 text-left text-[12px] w-[50%]">아이템명</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[80%]">아이템명</th>
                         <th className="px-2 py-1 text-left text-[12px] w-[3%]"></th>
                         <th className="px-2 py-1 text-left text-[12px] w-[13%]">가입금액</th>
                         <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
@@ -1403,13 +1401,13 @@ const getModifiedItems = useCallback(() => {
                               element: (
                                 <tr key={setItem.id} className="border-b last:border-b-0">
                                   <td className="px-2 py-1 text-[12px]">
-                                    <div className="flex items-center gap-1 ml-6">
+                                    <div className="flex items-center gap-1 ml-6 whitespace-nowrap">
                                       <span className="text-purple-400 mr-1">└</span>
                                       {setItem.name}
                                     </div>
                                   </td>
                                   <td className="px-2 py-1 text-[12px] text-center"></td>
-                                  <td className="px-2 py-1 text-[12px]">
+                                  <td className="px-2 py-1 text-[12px] whitespace-nowrap">
                                     {formatAmountToManWon(setItem.quantity)}
                                   </td>
                                   <td className="px-2 py-1 text-[12px] text-right">
@@ -1445,7 +1443,7 @@ const getModifiedItems = useCallback(() => {
                           itemId: item.id,
                           element: (
                             <tr key={item.id} className="border-b last:border-b-0">
-                              <td className="px-2 py-1 text-[12px]">{item.name}</td>
+                              <td className="font-medium text-[12px] whitespace-nowrap">{item.name}</td>
                               <td className="px-2 py-1 text-[12px] text-center"></td>
                               <td className="px-2 py-1 text-[12px]">
                                 {formatAmountToManWon(item.quantity)}
@@ -1486,24 +1484,22 @@ const getModifiedItems = useCallback(() => {
                     )}
                   </tbody>
                 </table>
-              </div>
             </CardContent>
-            )}
           </Card>
 
 
         {/*수정 사항 */}
-        <div className="flex-1 flex flex-col gap-2">
+        <div className="flex-1 flex flex-col gap-2 overflow-hidden">
           {/* 수정 사항 아이템 */}
-          <Card className="flex-1 flex flex-col overflow-hidden" style={{ maxHeight: '60%' }}>
-            <CardHeader className="py-1 shrink-0">
+          <Card className="flex-1 flex flex-col overflow-hidden">
+            <CardHeader className="py-1">
               <CardTitle>
                 <h3 className="text-[15px] font-semibold">수정 사항</h3>
               </CardTitle>
             </CardHeader>
             <CardContent className="flex-1 overflow-auto">
-              <div className="space-y-1">
-                <table className="w-full">
+              <div className="overflow-auto max-h-full">
+                <table className="w-full table-auto">
                   <thead>
                     <tr className="border-b">
                       <th className="px-2 py-1 text-left text-[12px] w-[80%]">아이템명</th>
@@ -1530,187 +1526,181 @@ const getModifiedItems = useCallback(() => {
             </CardContent>
           </Card>
 
-              {/* 현재 계약 수익성 */}
-          <Card className="h-25 shadow-md hover:shadow-lg transition-shadow">
-            <div className="h-full p-4">
-              <div className="flex items-center gap-2 mb-3">
-                <CardTitle className="text-sm font-medium text-gray-700">현재 계약</CardTitle>
-                {selectedSilsonType && (
-                  <Badge variant="outline" className="bg-blue-50 text-blue-600 text-[12px]">
-                    실손 차감 적용
-                  </Badge>
-                )}
-
-
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                {/* 월납P */}
-                <div className="bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100">
-                  <div className="text-[12px] text-gray-500 mb-1">월납P</div>
-                  <div className="text-sm font-semibold text-gray-900">
+        {/* 현재 계약 수익성 */}
+        <Card className="h-auto">
+          <div className="h-full p-2">
+            <div className="flex items-center gap-1 mb-2">
+              <CardTitle className="text-sm font-medium text-gray-700">현재 계약</CardTitle>
+            </div>
+            <div className="grid grid-cols-3 gap-1">
+              {/* 월납P */}
+              <div className="bg-gray-50 rounded-md p-1 text-center">
+                <div className="text-[12px] text-gray-500 mb-1">월납P&nbsp;&nbsp;
+                  <span className="text-sm font-semibold text-gray-900">
                     ₩{Math.floor(originalMetrics.totalPrice).toLocaleString()}
+                  </span>
+                </div>
+              </div>
+
+              {/* KMV */}
+              <div className="bg-gray-50 rounded-md p-1 text-center">
+                <div className="flex flex-col">
+                  <div className="text-[12px] text-gray-500 mb-1">KMV&nbsp;&nbsp;
+                  <span className="text-sm font-semibold text-gray-900">
+                    ₩{Math.floor(originalMetrics.totalProfit).toLocaleString()}
+                  </span>
+                  {selectedSilsonType && contract?.silson_discount && (
+                    <div className="text-[12px] text-blue-600 mt-1 truncate" title={`차감 KMV: ₩${Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}`}>
+                      차감: ₩{Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}
+                    </div>
+                  )}
                   </div>
                 </div>
+              </div>
 
-                {/* KMV */}
-                <div className="bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100">
-                  <div className="flex flex-col">
-                    <div className="text-[12px] text-gray-500 mb-1">KMV</div>
-                    <div className="text-sm font-semibold text-gray-900">
-                      ₩{Math.floor(originalMetrics.totalProfit).toLocaleString()}
+              {/* KMV(%) */}
+              <div className="bg-gray-50 rounded-md p-1 text-center">
+                <div className="flex flex-col">
+                  <div className="text-[12px] text-gray-500 mb-1">KMV(%)&nbsp;&nbsp;
+                  <span className="text-sm font-semibold text-gray-900">
+                    {Math.floor(originalMetrics.profitability)}%
+                  </span>
+                  {selectedSilsonType && contract?.silson_discount && (
+                    <div className="text-[12px] text-blue-600 mt-1 truncate" title={`차감 후 KMV(%): ${Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%`}>
+                      차감 후: {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
                     </div>
-                    {selectedSilsonType && contract?.silson_discount && (
-                      <div className="text-[12px] text-blue-600 mt-1 truncate" title={`차감 KMV: ₩${Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}`}>
-                        차감: ₩{Math.floor(contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0).toLocaleString()}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* KMV(%) */}
-                <div className="bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100">
-                  <div className="flex flex-col">
-                    <div className="text-[12px] text-gray-500 mb-1">KMV(%)</div>
-                    <div className="text-sm font-semibold text-gray-900">
-                      {Math.floor(originalMetrics.profitability)}%
-                    </div>
-                    {selectedSilsonType && contract?.silson_discount && (
-                      <div className="text-[12px] text-blue-600 mt-1 truncate" title={`차감 후 KMV(%): ${Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%`}>
-                        차감 후: {Math.floor(((originalMetrics.totalProfit + (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0)) / originalMetrics.totalPrice) * 100)}%
-                      </div>
-                    )}
+                  )}
                   </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
+        </Card>
 
+        {/* 수정 후 계약 수익성 */}
+        <Card className="h-auto">
+          <div className="h-full p-2">
+            <div className="flex items-center gap-1 mb-2">
+              <CardTitle className="text-sm font-medium text-gray-700">수정 후</CardTitle>
 
-          <Card className="h-25 shadow-md hover:shadow-lg transition-shadow">
-            <div className="h-full p-4">
-              <div className="flex items-center gap-2 mb-3">
-                <CardTitle className="text-sm font-medium text-gray-700">수정 후</CardTitle>
-                {selectedSilsonType && (
-                  <Badge variant="outline" className="bg-blue-50 text-blue-600 text-[12px]">
-                    실손 차감 적용
-                  </Badge>
+                {/* 영향도 배지 추가 */}
+                {modifications.length > 0 && (() => {
+                  const currentMetrics = calculateMetrics(contract.items);
+                  const newTotalPrice = modifiedMetrics.totalPrice;
+                  const newTotalProfit = modifiedMetrics.totalProfit;
+                  
+                  const currentProfitability = currentMetrics.totalPrice > 0 
+                    ? (currentMetrics.totalProfit / currentMetrics.totalPrice) * 100 
+                    : 0;
+                  const newProfitability = newTotalPrice > 0 
+                    ? (newTotalProfit / newTotalPrice) * 100 
+                    : 0;
+
+                  const impact = newProfitability - currentProfitability;
+
+                  // 영향도 레벨 결정
+                  let level;
+                  if (impact > PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER.threshold) {
+                    level = PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER;
+                  } else if (impact > PROFITABILITY_IMPACT_LEVELS.BETTER.threshold) {
+                    level = PROFITABILITY_IMPACT_LEVELS.BETTER;
+                  } else if (impact > PROFITABILITY_IMPACT_LEVELS.SIMILAR.threshold) {
+                    level = PROFITABILITY_IMPACT_LEVELS.SIMILAR;
+                  } else if (impact > PROFITABILITY_IMPACT_LEVELS.WORSE.threshold) {
+                    level = PROFITABILITY_IMPACT_LEVELS.WORSE;
+                  } else {
+                    level = PROFITABILITY_IMPACT_LEVELS.MUCH_WORSE;
+                  }
+
+                  return (
+                    <Badge 
+                      variant="outline" 
+                      className={level.color}
+                    >
+                      {`${impact > 0 ? '+' : ''}${Math.floor(impact)}%`}
+                    </Badge>
+                  );
+                })()}
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+            {/* 월납P */}
+            <div className={`bg-gray-50 rounded-md p-1 text-center ${
+              modifiedMetrics.totalPrice !== originalMetrics.totalPrice 
+                ? 'ring-2 ring-yellow-200' 
+                : ''
+            }`}>
+              <div className="flex flex-col">
+                <div className="text-[12px] text-gray-500 mb-1">월납P&nbsp;&nbsp;
+                <span className="text-sm font-semibold text-gray-900">
+                  ₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}
+                </span>
+                {modifications.length > 0 && (
+                  <div className="text-[12px] text-blue-600 mt-1">
+                    {(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)) > 0 ? '+' : ''}
+                    ₩{(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)).toLocaleString()}
+                  </div>
                 )}
-
-                 {/* 영향도 배지 추가 */}
-                  {modifications.length > 0 && (() => {
-                    const currentMetrics = calculateMetrics(contract.items);
-                    const newTotalPrice = modifiedMetrics.totalPrice;
-                    const newTotalProfit = modifiedMetrics.totalProfit;
-                    
-                    const currentProfitability = currentMetrics.totalPrice > 0 
-                      ? (currentMetrics.totalProfit / currentMetrics.totalPrice) * 100 
-                      : 0;
-                    const newProfitability = newTotalPrice > 0 
-                      ? (newTotalProfit / newTotalPrice) * 100 
-                      : 0;
-
-                    const impact = newProfitability - currentProfitability;
-
-                    // 영향도 레벨 결정
-                    let level;
-                    if (impact > PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER.threshold) {
-                      level = PROFITABILITY_IMPACT_LEVELS.MUCH_BETTER;
-                    } else if (impact > PROFITABILITY_IMPACT_LEVELS.BETTER.threshold) {
-                      level = PROFITABILITY_IMPACT_LEVELS.BETTER;
-                    } else if (impact > PROFITABILITY_IMPACT_LEVELS.SIMILAR.threshold) {
-                      level = PROFITABILITY_IMPACT_LEVELS.SIMILAR;
-                    } else if (impact > PROFITABILITY_IMPACT_LEVELS.WORSE.threshold) {
-                      level = PROFITABILITY_IMPACT_LEVELS.WORSE;
-                    } else {
-                      level = PROFITABILITY_IMPACT_LEVELS.MUCH_WORSE;
-                    }
-
-                    return (
-                      <Badge 
-                        variant="outline" 
-                        className={level.color}
-                      >
-                        {`${impact > 0 ? '+' : ''}${Math.floor(impact)}%`}
-                      </Badge>
-                    );
-                  })()}
+                </div>
               </div>
-              <div className="grid grid-cols-3 gap-4">
-              {/* 월납P */}
-              <div className={`bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100 ${
-                modifiedMetrics.totalPrice !== originalMetrics.totalPrice 
+            </div>
+
+              {/* KMV */}
+              <div className={`bg-gray-50 rounded-md p-1 text-center ${
+                modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
                   ? 'ring-2 ring-yellow-200' 
                   : ''
               }`}>
                 <div className="flex flex-col">
-                  <div className="text-[12px] text-gray-500 mb-1">월납P</div>
-                  <div className="text-sm font-semibold text-gray-900">
-                    ₩{Math.floor(modifiedMetrics.totalPrice).toLocaleString()}
-                  </div>
-                  {modifications.length > 0 && (
-                    <div className="text-[12px] text-blue-600 mt-1">
-                      {(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)) > 0 ? '+' : ''}
-                      ₩{(Math.floor(modifiedMetrics.totalPrice) - Math.floor(originalMetrics.totalPrice)).toLocaleString()}
-                    </div>
-                  )}
+                  <div className="text-[12px] text-gray-500 mb-1">KMV&nbsp;&nbsp;
+                  <span className="text-sm font-semibold text-gray-900">
+                    ₩{Math.floor(
+                      modifiedMetrics.totalProfit + 
+                      (selectedSilsonType && contract?.silson_discount 
+                        ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                        : 0)
+                    ).toLocaleString()}
+                  </span>
                 </div>
               </div>
+              </div>
 
-                {/* KMV */}
-                <div className={`bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100 ${
-                  modifiedMetrics.totalProfit !== originalMetrics.totalProfit 
-                    ? 'ring-2 ring-yellow-200' 
-                    : ''
-                }`}>
-                  <div className="flex flex-col">
-                    <div className="text-[12px] text-gray-500 mb-1">KMV</div>
-                    <div className="text-sm font-semibold text-gray-900">
-                      ₩{Math.floor(
-                        modifiedMetrics.totalProfit + 
+              {/* KMV(%) */}
+              <div className={`bg-gray-50 rounded-md p-1 text-center ${
+                modifiedMetrics.profitability !== originalMetrics.profitability 
+                  ? 'ring-2 ring-yellow-200' 
+                  : ''
+              }`}>
+                <div className="flex flex-col">
+                  <div className="text-[12px] text-gray-500 mb-1">KMV(%)&nbsp;&nbsp;
+                  <span className={`text-sm font-semibold ${
+                    contract?.channel ? (
+                      ((modifiedMetrics.totalProfit + 
                         (selectedSilsonType && contract?.silson_discount 
                           ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
-                          : 0)
-                      ).toLocaleString()}
-                    </div>
-                  </div>
-                </div>
-
-                {/* KMV(%) */}
-                <div className={`bg-gray-50 rounded-lg p-3 transition-all hover:bg-gray-100 ${
-                  modifiedMetrics.profitability !== originalMetrics.profitability 
-                    ? 'ring-2 ring-yellow-200' 
-                    : ''
-                }`}>
-                  <div className="flex flex-col">
-                    <div className="text-[12px] text-gray-500 mb-1">KMV(%)</div>
-                    <div className={`text-sm font-semibold ${
-                      contract?.channel ? (
-                        ((modifiedMetrics.totalProfit + 
-                          (selectedSilsonType && contract?.silson_discount 
-                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
-                            : 0)) / modifiedMetrics.totalPrice) * 100 >= CHANNEL_KMV_TARGETS[contract.channel]
-                          ? 'text-red-500'
-                          : 'text-blue-500'
-                      ) : 'text-gray-900'
-                    }`}>
-                      {Math.floor(
-                        ((modifiedMetrics.totalProfit + 
-                          (selectedSilsonType && contract?.silson_discount 
-                            ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
-                            : 0)) / modifiedMetrics.totalPrice) * 100
-                      )}%
-                    </div>
+                          : 0)) / modifiedMetrics.totalPrice) * 100 >= CHANNEL_KMV_TARGETS[contract.channel]
+                        ? 'text-red-500'
+                        : 'text-blue-500'
+                    ) : 'text-gray-900'
+                  }`}>
+                    {Math.floor(
+                      ((modifiedMetrics.totalProfit + 
+                        (selectedSilsonType && contract?.silson_discount 
+                          ? (contract.silson_discount.find(d => d.tag === selectedSilsonType)?.kmv_adj || 0) 
+                          : 0)) / modifiedMetrics.totalPrice) * 100
+                    )}%
+                  </span>
                   </div>
                 </div>
               </div>
             </div>
-          </Card>
           </div>
-          </div>
+        </Card>
+        </div>
       </div>
+    </div>
 
         {/* 오른쪽 패널: 전체 아이템 목록 */}
-        <Card className="w-[50%] overflow-hidden flex flex-col">
+        <Card className="w-[50%] flex flex-col h-full">
           <CardHeader className="py-1">
             <CardTitle>
               <div className="flex flex-col gap-2 w-full">
