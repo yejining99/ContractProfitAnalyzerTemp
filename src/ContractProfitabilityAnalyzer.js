@@ -1243,7 +1243,7 @@ const getModifiedItems = useCallback(() => {
       {/* 메인 컨텐츠 영역 */}
       <div className="flex flex-1 p-2 gap-2 overflow-hidden">
         {/* 왼쪽 패널*/}
-        <div className="w-[50%] flex flex-col gap-2 h-screen">
+        <div className="w-[50%] overflow-hidden flex flex-col h-full">
           {/* 검색과 기본 정보를 포함하는 카드 */}
           <Card className="w-full shadow-sm">
             <CardHeader className="py-1">
@@ -1258,7 +1258,7 @@ const getModifiedItems = useCallback(() => {
                   <input 
                     type="text"
                     placeholder="계약 번호 입력"
-                    className="w-[200px] p-2 border rounded"
+                    className="w-[200px] px-2 py-1 border rounded text-[12px]"
                     value={contractId}
                     onChange={(e) => setContractId(e.target.value)}
                   />
@@ -2027,7 +2027,7 @@ const getModifiedItems = useCallback(() => {
                 <input
                   type="text"
                   placeholder="아이템 검색..."
-                  className="flex-grow p-2 border rounded bg-white shadow-sm focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all"
+                  className="w-[200px] px-2 py-1 border rounded text-[12px]"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
