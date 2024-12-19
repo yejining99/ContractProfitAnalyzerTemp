@@ -187,6 +187,9 @@ const ContractProfitabilityAnalyzer = () => {
   const [selectedSilsonType, setSelectedSilsonType] = useState(null);
   // 현재 계약 아이템 섹션 접힘 상��� 추가
   const [isContractItemsCollapsed, setIsContractItemsCollapsed] = useState(false);
+  // 상태 추가
+  const [isContractExpanded, setIsContractExpanded] = useState(false);
+  const [isModificationsExpanded, setIsModificationsExpanded] = useState(false);
 
   // 스크롤을 위한 ref 추가
   const itemListRef = useRef(null);
@@ -327,7 +330,7 @@ const ContractProfitabilityAnalyzer = () => {
 
     // modType이 'remove'일 때의 로직 수정
     if (modType === 'remove') {
-        // originalItem인 경우에는 originalItem의 수량을 마지막으로 업데이트
+        // 세트 아이템인 경우
         if (setInfo) {
             // 세트 아이템 삭제 로직은 그대로 유지
             const newModifications = modifications.filter(mod => 
@@ -340,8 +343,7 @@ const ContractProfitabilityAnalyzer = () => {
                     newModifications.push({
                         id: originalSetItem.id,
                         action: 'remove',
-                        // 원래 수량 유지
-                        quantity: originalSetItem.quantity
+                        quantity: quantity || item.quantity
                     });
                 }
             });
@@ -352,7 +354,7 @@ const ContractProfitabilityAnalyzer = () => {
             // 기존 아이템이든 아니든 삭제 처리
             const newModifications = modifications.filter(mod => mod.id !== item.id);
             if (originalItem) {
-                newModifications.push({ id: item.id, action: 'remove' });
+                newModifications.push({ id: item.id, action: 'remove', quantity: quantity || item.quantity });
             }
             setModifications(newModifications);
         }
@@ -839,7 +841,7 @@ const ContractProfitabilityAnalyzer = () => {
                 ₩{Math.floor(calculateSetMetrics()?.totalProfit || 0).toLocaleString()}
               </td>
               <td className="px-2 py-1 text-[12px] text-right">
-                {Math.floor(profitability)}%
+                {Math.floor(calculateSetMetrics()?.profitability || 0).toLocaleString()}%
               </td>
               <td className="px-2 py-1 text-[12px]">
                 {/* 세트 전체 행에는 액션 버튼 없음 */}
@@ -937,7 +939,7 @@ const ContractProfitabilityAnalyzer = () => {
                     세트
                   </Badge>
                 )}
-                <span className="font-medium text-[12px]">{details?.name}</span>
+                <span className="font-medium text-[12px] whitespace-nowrap">{details?.name}</span>
                 {showThemeBadge && details?.theme && (
                   Array.isArray(details.theme) 
                     ? details.theme.map(t => (
@@ -1327,20 +1329,49 @@ const getModifiedItems = useCallback(() => {
 
           {/* 현재 계약 아이템과 중간 패널을 가로로 배치 */}
           <div className="flex flex-1 gap-2 overflow-hidden">
-          <Card className="flex-1 flex flex-col overflow-hidden">
-            <CardHeader className="py-1">
-              <h3 className="text-[15px] font-semibold">현재 계약 아이템</h3>
-            </CardHeader>
+            <Card className={`flex flex-col overflow-hidden ${
+              isContractExpanded ? 'flex-[3]' : 'flex-[1]'
+            } ${
+              isModificationsExpanded ? 'hidden' : ''  // 추가: 수정 사항이 확대되면 축소
+            }`}>
+              <CardHeader className="py-1">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-[15px] font-semibold">현재 계약 아이템</h3>
+                  <button
+                    onClick={() => {
+                      setIsContractExpanded(!isContractExpanded);
+                      setIsModificationsExpanded(false); // 다른 카드는 축소
+                    }}
+                    className={`
+                      inline-flex items-center justify-center
+                      min-w-[64px] px-3 py-1.5
+                      text-[12px] font-medium
+                      rounded-md shadow-sm
+                      transition-all duration-200
+                      ${isContractExpanded 
+                        ? 'bg-white text-black-500 border border-black-500 hover:bg-blue-50 active:bg-blue-100' 
+                        : 'bg-white text-black-500 border border-black-500 hover:bg-blue-50 active:bg-blue-100'
+                      }
+                    `}
+                  >
+                    {isContractExpanded ? '접기' : '펼치기'}
+                  </button>
+                </div>
+              </CardHeader>
               <CardContent className="flex-1 overflow-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b">
-                        <th className="px-2 py-1 text-left text-[12px] w-[80%]">아이템명</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[40%]">아이템명</th>
                         <th className="px-2 py-1 text-left text-[12px] w-[3%]"></th>
                         <th className="px-2 py-1 text-left text-[12px] w-[13%]">가입금액</th>
-                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
-                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV</th>
-                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV(%)</th>
+                        {isContractExpanded && (
+                          <>
+                          <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
+                          <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV</th>
+                          <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV(%)</th>
+                          </>
+                        )}
                         <th className="px-2 py-1 text-[12px] w-[5%]"></th>
                       </tr>
                     </thead>
@@ -1376,18 +1407,22 @@ const getModifiedItems = useCallback(() => {
                                 </td>
                                 <td className="px-2 py-1 text-[12px] text-center"></td>
                                 <td className="px-2 py-1 text-[12px]"></td>
-                                <td className="px-2 py-1 text-[12px] text-right">
-                                  ₩{Math.floor(setMetrics.totalPrice).toLocaleString()}
-                                </td>
-                                <td className="px-2 py-1 text-[12px] text-right">
-                                  ₩{Math.floor(setMetrics.totalProfit).toLocaleString()}
-                                </td>
-                                <td className="px-2 py-1 text-[12px] text-right">
-                                  {setMetrics.totalPrice > 0 
-                                    ? Math.floor((setMetrics.totalProfit / setMetrics.totalPrice) * 100)
-                                    : 0}%
-                                </td>
-                                <td className="px-2 py-1 text-[12px]"></td>
+                                  {isContractExpanded && (
+                                    <>
+                                  <td className="px-2 py-1 text-[12px] text-right">
+                                    ₩{Math.floor(setMetrics.totalPrice).toLocaleString()}
+                                  </td>
+                                  <td className="px-2 py-1 text-[12px] text-right">
+                                    ₩{Math.floor(setMetrics.totalProfit).toLocaleString()}
+                                  </td>
+                                  <td className="px-2 py-1 text-[12px] text-right">
+                                    {setMetrics.totalPrice > 0 
+                                      ? Math.floor((setMetrics.totalProfit / setMetrics.totalPrice) * 100)
+                                      : 0}%
+                                  </td>
+                                  </>
+                                  )}
+                                  <td className="px-2 py-1 text-[12px]"></td>
                               </tr>
                             )
                           });
@@ -1410,6 +1445,8 @@ const getModifiedItems = useCallback(() => {
                                   <td className="px-2 py-1 text-[12px] whitespace-nowrap">
                                     {formatAmountToManWon(setItem.quantity)}
                                   </td>
+                                  {isContractExpanded && (
+                                    <>
                                   <td className="px-2 py-1 text-[12px] text-right">
                                     ₩{Math.floor(setItem.totalPrice).toLocaleString()}
                                   </td>
@@ -1421,6 +1458,8 @@ const getModifiedItems = useCallback(() => {
                                       ? Math.floor((setItem.totalProfit / setItem.totalPrice) * 100)
                                       : 0}%
                                   </td>
+                                  </>
+                                  )}
                                   <td className="px-2 py-1 text-[12px]">
                                     <div className="flex justify-end gap-1">
                                       <button
@@ -1443,11 +1482,13 @@ const getModifiedItems = useCallback(() => {
                           itemId: item.id,
                           element: (
                             <tr key={item.id} className="border-b last:border-b-0">
-                              <td className="font-medium text-[12px] whitespace-nowrap">{item.name}</td>
+                              <td className="font-medium text-[12px] whitespace-nowrap whitespace-nowrap">{item.name}</td>
                               <td className="px-2 py-1 text-[12px] text-center"></td>
-                              <td className="px-2 py-1 text-[12px]">
+                              <td className="px-2 py-1 text-[12px] whitespace-nowrap">
                                 {formatAmountToManWon(item.quantity)}
                               </td>
+                              {isContractExpanded && (
+                                <>
                               <td className="px-2 py-1 text-[12px] text-right">
                                 ₩{Math.floor(item.totalPrice).toLocaleString()}
                               </td>
@@ -1459,6 +1500,8 @@ const getModifiedItems = useCallback(() => {
                                   ? Math.floor((item.totalProfit / item.totalPrice) * 100)
                                   : 0}%
                               </td>
+                              </>
+                              )}
                               <td className="px-2 py-1 text-[12px]">
                                 <div className="flex justify-end gap-1">
                                   <button
@@ -1487,60 +1530,86 @@ const getModifiedItems = useCallback(() => {
             </CardContent>
           </Card>
 
-
-        {/*수정 사항 */}
-        <div className="flex-1 flex flex-col gap-2 overflow-hidden">
-          {/* 수정 사항 아이템 */}
-          <Card className="flex-1 flex flex-col overflow-hidden">
-            <CardHeader className="py-1">
-              <CardTitle>
-                <h3 className="text-[15px] font-semibold">수정 사항</h3>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-1 overflow-auto">
-              <div className="overflow-auto max-h-full">
-                <table className="w-full table-auto">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="px-2 py-1 text-left text-[12px] w-[80%]">아이템명</th>
-                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">증가율</th>
-                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">가입금액</th>
-                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
-                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV</th>
-                      <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV(%)</th>
-                      <th className="px-2 py-1 text-left w-[1%]"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {modifications.map(mod => (
-                  <ItemRow key={mod.id} item={mod} />
-                ))}
-                  </tbody>
-                </table>
-                {modifications.length === 0 && (
-                  <div className="text-center text-gray-500 py-4">
-                    수정 사항이 없습니다
-                  </div>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-
-        {/* 현재 계약 수익성 */}
-        <Card className="h-auto">
-          <div className="h-full p-2">
-            <div className="flex items-center gap-1 mb-2">
-              <CardTitle className="text-sm font-medium text-gray-700">현재 계약</CardTitle>
-            </div>
-            <div className="grid grid-cols-3 gap-1">
-              {/* 월납P */}
-              <div className="bg-gray-50 rounded-md p-1 text-center">
-                <div className="text-[12px] text-gray-500 mb-1">월납P&nbsp;&nbsp;
-                  <span className="text-sm font-semibold text-gray-900">
-                    ₩{Math.floor(originalMetrics.totalPrice).toLocaleString()}
-                  </span>
+          {/* 수정 사항 부분 - isContractExpanded가 true일 때는 숨김 */}
+          <div className={`flex-1 flex flex-col gap-2 overflow-hidden ${
+            isContractExpanded ? 'hidden' : ''
+          }`}>
+            {/* 수정 사항 아이템 */}
+            <Card className={`flex flex-col overflow-hidden ${
+              isModificationsExpanded ? 'flex-[3]' : 'flex-[2]'
+            }`}>
+              <CardHeader className="py-1">
+                <div className="flex justify-between items-center">
+                  <CardTitle>
+                    <h3 className="text-[15px] font-semibold">수정 사항</h3>
+                  </CardTitle>
+                  <button
+                    onClick={() => {
+                      setIsModificationsExpanded(!isModificationsExpanded);
+                      setIsContractExpanded(false); // 다른 카드는 축소
+                    }}
+                    className={`
+                      inline-flex items-center justify-center
+                      min-w-[64px] px-3 py-1.5
+                      text-[12px] font-medium
+                      rounded-md shadow-sm
+                      transition-all duration-200
+                      ${isModificationsExpanded 
+                        ? 'bg-white text-black-500 border border-black-500 hover:bg-blue-50 active:bg-blue-100' 
+                        : 'bg-white text-black-500 border border-black-500 hover:bg-blue-50 active:bg-blue-100'
+                      }
+                    `}
+                  >
+                    {isModificationsExpanded ? '접기' : '펼치기'}
+                  </button>
                 </div>
-              </div>
+              </CardHeader>
+              <CardContent className="flex-1 overflow-auto">
+                <div className="overflow-auto max-h-full">
+                  <table className="w-full table-auto">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">아이템명</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">증가율</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">가입금액</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV</th>
+                        <th className="px-2 py-1 text-left text-[12px] w-[10%]">KMV(%)</th>
+                        <th className="px-2 py-1 text-left w-[1%]"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {modifications.map(mod => (
+                    <ItemRow key={mod.id} item={mod} />
+                  ))}
+                    </tbody>
+                  </table>
+                  {modifications.length === 0 && (
+                    <div className="text-center text-gray-500 py-4">
+                      수정 사항이 없습니다
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 현재 계약 수익성 */}
+            <Card className={`h-auto ${
+              isModificationsExpanded ? 'hidden' : ''  // 수정 사항이 확대되면 숨김
+            }`}>
+              <div className="h-full p-2">
+                <div className="flex items-center gap-1 mb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700">현재 계약</CardTitle>
+                </div>
+                <div className="grid grid-cols-3 gap-1">
+                  {/* 월납P */}
+                  <div className="bg-gray-50 rounded-md p-1 text-center">
+                    <div className="text-[12px] text-gray-500 mb-1">월납P&nbsp;&nbsp;
+                      <span className="text-sm font-semibold text-gray-900">
+                        ₩{Math.floor(originalMetrics.totalPrice).toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
 
               {/* KMV */}
               <div className="bg-gray-50 rounded-md p-1 text-center">
@@ -1577,11 +1646,13 @@ const getModifiedItems = useCallback(() => {
           </div>
         </Card>
 
-        {/* 수정 후 계약 수익성 */}
-        <Card className="h-auto">
-          <div className="h-full p-2">
-            <div className="flex items-center gap-1 mb-2">
-              <CardTitle className="text-sm font-medium text-gray-700">수정 후</CardTitle>
+            {/* 수정 후 계약 수익성 */}
+            <Card className={`h-auto ${
+              isModificationsExpanded ? 'hidden' : ''  // 수정 사항이 확대되면 숨김
+            }`}>
+              <div className="h-full p-2">
+                <div className="flex items-center gap-1 mb-2">
+                  <CardTitle className="text-sm font-medium text-gray-700">수정 후</CardTitle>
 
                 {/* 영향도 배지 추가 */}
                 {modifications.length > 0 && (() => {
@@ -2032,7 +2103,7 @@ const getModifiedItems = useCallback(() => {
                             <table className="w-full">
                               <thead>
                                 <tr className="border-b">
-                                  <th className="px-2 py-1 text-left text-[12px] w-[70%]">아이템명</th>
+                                  <th className="px-2 py-1 text-left text-[12px] w-[60%]">아이템명</th>
                                   <th className="px-2 py-1 text-left text-[12px] w-[10%]">증가율</th>
                                   <th className="px-2 py-1 text-left text-[12px] w-[10%]">가입금액</th>
                                   <th className="px-2 py-1 text-left text-[12px] w-[10%]">월납P</th>
